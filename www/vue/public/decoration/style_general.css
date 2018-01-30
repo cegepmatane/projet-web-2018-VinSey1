@@ -1,0 +1,72 @@
+/*
+COULEURS
+
+paletton.com
+	
+	Palette 1: Variations Turquoise
+	- #225F5D
+	- #C9EBEA
+	- #59908D
+	- #063533
+	- #225F5D
+
+	Palette 2: Variations Saumon
+	- #FF8E6A
+	- #FFCCBC
+	- #FFAA8F
+	- #FF754A
+	- #EC501F
+
+	Palette 3: Variations Vert pomme
+	- #C3E85D
+	- #EAFBB9
+	- #D9F688
+	- #9FC535
+	- #729316
+
+*/
+
+/*
+
+
+
+
+
+*/
+
+body {
+	background-color: #59908D;
+}
+
+
+
+/*
+h1{
+	color: ;
+}
+*/
+
+/*
+p{
+	
+}
+*/
+
+.logo_Cegep_Matane {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+#titre_survie_etudiante {
+	
+	font-size: 300%;
+	font-weight: bold;
+	font-family: "Times New Roman", Times, serif;
+	text-align: center;
+	
+}
+
+
+
+
