@@ -10,7 +10,7 @@
 	$produit->descriptionProduit = "Bonjour, je vends cette casserole qui ne me sert plus, j'habite
 	actuellement au Cégep de Matane";
 	$produit->detailsVente = "Je ne livre pas et je n'envoie pas par la poste, il faudra venir la chercher à Matane au Cégep";
-	$produit->adresse
+	$produit->adresse = "616 Avenue du Saint-Rédempteur G4W 1L1 Matane QC Québec";
 
 ?>
 
