@@ -7,13 +7,12 @@
 </head>
 <body>
 	<header>
-		<h1>Page de développement</h1>
+		<h3>Page de développement</h3>
+		<h1> Survie étudiante<h1>
+		<img src=./illustrations/petit/cegepmatane_logo_petit.png>
+
 	</header>
-		
-	<h1>
-		Projet de site de e-commerce par des étudiants du Cégep de Matane
-	</h1>
-	<img src=./illustrations/moyen/cegepmatane_logo.png>
+
 	
 </body>
 </html>
