@@ -1,3 +1,22 @@
+<? php
+	// Données test
+	$produit1 = new stdClass();
+	$produit1->identifiantDeVente = 1;
+	$produit1->identifiantVendeur = 04519875102;
+	$produit1->titreDeVente = "Casserole en metal";
+	$produit1->categorie = 0;  // 0 : casserole
+	$produit1->prix = 20.0;
+	$produit->identifiantMonnaie = 0;  // 0 : dollars
+	$produit->descriptionProduit = "Bonjour, je vends cette casserole qui ne me sert plus, j'habite
+	actuellement au Cégep de Matane";
+	$produit->detailsVente = "Je ne livre pas et je n'envoie pas par la poste, il faudra venir la chercher à Matane au Cégep";
+	$produit->adresse
+
+?>
+
+
+
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -14,6 +33,8 @@
 		</div>
 	</header>
 
+	
+	
 	
 </body>
 </html>

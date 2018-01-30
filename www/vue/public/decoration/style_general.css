@@ -8,7 +8,7 @@ paletton.com
 	- #C9EBEA
 	- #59908D
 	- #063533
-	- #225F5D
+
 
 	Palette 2: Variations Saumon
 	- #FF8E6A
@@ -57,6 +57,12 @@ p{
 	top: 0;
 	right: 0;
 }
+
+.liste_article {
+	color-background:#225F5D 
+}
+
+
 
 #titre_survie_etudiante {
 	
