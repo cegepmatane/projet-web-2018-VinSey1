@@ -1,4 +1,4 @@
-<? php
+<?php
 	// Données test
 	$produit1 = new stdClass();
 	$produit1->identifiantDeVente = "ez1ezac15hy8j";
@@ -11,7 +11,8 @@
 	actuellement au Cégep de Matane";
 	$produit1->detailsVente = "Je ne livre pas et je n'envoie pas par la poste, il faudra venir la chercher à Matane au Cégep";
 	$produit1->adresse = "616 Avenue du Saint-Rédempteur G4W 1L1 Matane QC Québec";
-
+	$produit1->image = "illustrations/tests/casserole.jpg";
+	
 	$produit2 = new stdClass();
 	$produit2->identifiantDeVente = "wr54u8ix1v18r9";
 	$produit2->identifiantVendeur = 04524803548;
@@ -21,6 +22,7 @@
 	$produit2->identifiantMonnaie = 0;  // 0 : dollarss
 	$produit2->descriptionProduit = "Bonjour, je vends cet ensemble de couverts, ils sont en parfait état";
 	$produit2->detailsVente = "Je peux vous les apporter si vous habitez à québec, sinon il va falloira aller les chercher vous-même";
+	$produit2->image = "illustrations/tests/couverts.jpg";
 	
 	$produit3 = new stdClass();
 	$produit3->identifiantDeVente = "d2j8e62g1j7y9s";
@@ -31,7 +33,15 @@
 	$produit3->identifiantMonnaie = 0;  // 0 : dollarss
 	$produit3->descriptionProduit = "Vends serviette, taille 1.5m * 0.7m";
 	$produit3->detailsVente = "Je ne peux pas livrer il va falloir venir les chercher chez moi, j'habite à Montréal";
-
+	$produit3->image = "illustrations/tests/serviette.jpg";
+	
+	
+	$tableauProduit = array(
+		$produit1,
+		$produit2,
+		$produit3,
+	);
+	
 ?>
 
 
@@ -52,9 +62,22 @@
 			<img src=./illustrations/petit/cegepmatane_logo_petit.png>
 		</div>
 	</header>
+	
+	<section>
+	
+		<?php 
+			foreach($tableauProduit as $produitCourant){
+		?>		
+		
+			<img src="<?=$produitCourant->image?>"/>
+		
+		
+		
 
-	
-	
+		<?php	
+		}
+		?>
+	</section>
 	
 </body>
 </html>
