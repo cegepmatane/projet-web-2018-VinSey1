@@ -179,3 +179,27 @@ p{
     font-size: 20px;
 }
 
+#titrevendeur{
+	
+	text-align:left;
+	text-decoration:underline;
+}
+
+#imgvente {
+	max-width: 500px;
+    height: auto;
+    border: 1.5px black solid;
+    padding: 10px;
+    vertical-align: middle;
+    float : left;
+    margin-right : 20px;
+	
+}
+
+.tdinfovendeur{
+	padding-bottom: 20px;
+    width : auto;
+    padding-right: 10px;
+	
+}
+
