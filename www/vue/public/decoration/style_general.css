@@ -36,6 +36,9 @@ paletton.com
 
 body {
 	background-color: #59908D;
+	margin: 10px;
+	padding: 10px;
+	
 }
 
 
@@ -61,6 +64,13 @@ p{
 .liste_article {
 	color-background:#225F5D 
 	text-align: center;
+}
+
+.colonne_selection_categorie_produit{
+	
+	position: absolute;
+	padding: 10px;
+	
 }
 
 
