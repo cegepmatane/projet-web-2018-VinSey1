@@ -70,7 +70,11 @@
 		?>		
 				<div>
 				<img src="<?=$produitCourant->image?>" class="photo_miniature_produit"/>
-				<span class="description_produit"> <?=$produitCourant->titreDeVente?></span>
+				<span class = "titre_produit"><?=$produitCourant->titreDeVente?></span>
+					<?=$produitCourant->descriptionProduit?>
+	
+						
+
 				</div>
 				
 		<?php	
