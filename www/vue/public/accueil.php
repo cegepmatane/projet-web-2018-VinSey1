@@ -21,21 +21,17 @@
 	$produit2->identifiantMonnaie = 0;  // 0 : dollarss
 	$produit2->descriptionProduit = "Bonjour, je vends cet ensemble de couverts, ils sont en parfait état";
 	$produit2->detailsVente = "Je peux vous les apporter si vous habitez à québec, sinon il va falloira aller les chercher vous-même";
-	$produit2->adresse = "616 Avenue de la Poutine 421 ";
 	
 	$produit3 = new stdClass();
 	$produit3->identifiantDeVente = "d2j8e62g1j7y9s";
 	$produit3->identifiantVendeur = 045215249;
-	$produit3->titreDeVente = "Casserole";
-	$produit3->categorie = 0;  // 0 : ustensiles de cuisine
-	$produit3->prix = 12.0;
+	$produit3->titreDeVente = "Vend serviette de bain";
+	$produit3->categorie = 1;  // 1 : Hygiène
+	$produit3->prix = 8.0;
 	$produit3->identifiantMonnaie = 0;  // 0 : dollarss
-	$produit3->descriptionProduit = "Bonjour, je vends cet ensemble de couverts, ils sont en parfait état";
-	$produit3->detailsVente = "Je peux vous les apporter si vous habitez à québec, sinon il va falloira aller les chercher vous-même";
-	$produit3->adresse = "616 Avenue de la Poutine 421 ";
-	
-	
-	
+	$produit3->descriptionProduit = "Vends serviette, taille 1.5m * 0.7m";
+	$produit3->detailsVente = "Je ne peux pas livrer il va falloir venir les chercher chez moi, j'habite à Montréal";
+
 ?>
 
 
