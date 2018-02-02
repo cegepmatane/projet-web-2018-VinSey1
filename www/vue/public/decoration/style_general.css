@@ -76,6 +76,21 @@ p{
 .photo_miniature_produit{
 	
 	height: 100px;
+	vertical-align:top;
+	margin: 20px;
+	
+}
+
+.description_produit{
+	
+	
+	
+}
+
+.panneau_liste_produit{
+	
+	text-align:center;
+	color-background:#063533;
 	
 }
 

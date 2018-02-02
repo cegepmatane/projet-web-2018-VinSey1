@@ -63,14 +63,16 @@
 		</div>
 	</header>
 	
-	<section>
+	<section class="panneau_liste_produit">
 	
 		<?php 
 			foreach($tableauProduit as $produitCourant){
 		?>		
-
-				<img src="<?=$produitCourant->image?>" class="photo_miniature_produit"/>	
-
+				<div>
+				<img src="<?=$produitCourant->image?>" class="photo_miniature_produit"/>
+				<span class="description_produit"> <?=$produitCourant->titreDeVente?></span>
+				</div>
+				
 		<?php	
 		}
 		?>
