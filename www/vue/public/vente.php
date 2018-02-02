@@ -33,17 +33,17 @@
 <img id="imgvente" src="illustrations/petit/<?=$produit1->illustration?>"/>
 <table id="informations">
     <tr>
-        <td class="tdinfovendeur">
+        <td class="tdinfovente">
             Description : <?=$produit1->descriptionProduit?>
         </td>
     </tr>
 	<tr>
-		<td class="tdinfovendeur">
+		<td class="tdinfovente">
 			Detail : <?=$produit1->detailsVente?>
         </td>
 	</tr>
 	<tr>
-		<td class="tdinfovendeur">
+		<td class="tdinfovente">
 			 Prix : <?=$produit1->prix?>
         </td>
 	</tr>
@@ -60,9 +60,11 @@
           Adresse : <?=$produit1->adresse?>
       
     </p>
-   
-
+   <p id="boutonAchat">
+		<input type="button" value="ACHETE ICI !">
+	</p>
 </body>
 </html>
 	
+
 	

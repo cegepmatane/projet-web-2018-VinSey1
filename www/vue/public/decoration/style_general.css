@@ -35,7 +35,7 @@ paletton.com
 */
 
 body {
-	background-color: #59908D;
+	background-color: #FFCCBC;
 	margin: 10px;
 	padding: 10px;
 	
@@ -194,12 +194,27 @@ p{
     float : left;
     margin-right : 20px;
 	
+	
 }
 
 .tdinfovendeur{
+
+    width : auto;
+    padding-right: 10px;
+	float : center;
+	
+}
+
+.tdinfovente {
 	padding-bottom: 20px;
     width : auto;
     padding-right: 10px;
+}
+
+#boutonAchat {
+	margin-right:10px;
+	float : right;
+	background-color: red;
 	
 }
 
