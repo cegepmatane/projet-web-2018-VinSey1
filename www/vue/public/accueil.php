@@ -68,11 +68,8 @@
 		<?php 
 			foreach($tableauProduit as $produitCourant){
 		?>		
-		
-			<img src="<?=$produitCourant->image?>"/>
-		
-		
-		
+
+				<img src="<?=$produitCourant->image?>" class="photo_miniature_produit"/>	
 
 		<?php	
 		}
