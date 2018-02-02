@@ -117,8 +117,7 @@ p{
 {
     font : bold 11px Batang, arial, serif;
     list-style-type : none;
-    padding-bottom : 31px;
-    border-bottom : 1px solid #9EA0A1;
+    padding-bottom : 11px;
     margin-left : 0;
     font-size: 20px;
 }
@@ -128,7 +127,7 @@ p{
     height : 28px;
     background-color: #F4F9FD;
     margin : 2px 2px 0 2px;
-    border : 1px solid #9EA0A1;
+    border : 1px solid black;
 }
 #onglets li.active
 {
@@ -148,7 +147,6 @@ p{
 }
 #imgprofil {
 	max-width: 300px;
-    height: auto;
     border: 1.5px black solid;
     padding: 10px;
     vertical-align: middle;
@@ -165,8 +163,19 @@ p{
     margin : 10px;
 }
 .tdprofil{
-    padding-bottom: 50px;
+    padding-bottom: 15px;
     width : auto;
     padding-right: 80px;
+}
+#contenu{
+    padding : 5px;
+    border : 1px solid black;
+}
+.ventesachatskarma{
+    margin-left : 100px;
+}
+.boutonprofil{
+    margin-left: 1270px;
+    font-size: 20px;
 }
 

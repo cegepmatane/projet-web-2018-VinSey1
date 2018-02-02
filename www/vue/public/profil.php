@@ -9,19 +9,13 @@
     $profil1->adresse = "616 Avenue Saint Rédempteur";
     $profil1->codepostal = "G4W 1L1 QC";
     $profil1->pays = "Canada";
+    $profil1->nbachats = "6";
     $profil1->nbventes = "54";
     $profil1->karma = "100%";
     $profil1->illustration = "profil.png";
-	
-    $profil2 = new stdClass();
-	$profil2->id = 1;
-	$profil2->nom = "Seyller";
-    $profil2->prenom = "Vincent";
-    $profil2->pseudonyme = "VinSey1";
-    $profil2->email = "vseyller@laposte.net";
-    $profil2->adresse = "616 Avenue Saint Rédempteur";
-    $profil2->codepostal = "G4W 1L1 QC";
-    $profil2->pays = "Canada";
+    $profil1->age = "20";
+    $profil1->ville = "Matane";
+    $profil1->telephone = "418-562-2609";
 
 ?>
 <!DOCTYPE html>
@@ -45,35 +39,83 @@
         <li><a href="Connexion.html"> Modifier </a></li>
     </ul>
 </div>
-<img id="imgprofil" src="illustrations/tests/<?=$profil1->illustration?>"/>
-<table id="informations">
-    <tr>
+<div id="contenu">
+    <img id="imgprofil" src="illustrations/tests/<?=$profil1->illustration?>"/>
+    <table id="informations">
+        <tr>
+            <td class="tdprofil">
+                Pseudonyme : <?=$profil1->pseudonyme?>
+            </td>
+        </tr>
+        <tr>
+            <td class="tdprofil">
+                Nom : <?=$profil1->nom?>
+            </td>
+            <td class="tdprofil">
+                Prénom : <?=$profil1->prenom?>
+            </td>
+        </tr>
+        <tr>
+            <td class="tdprofil">
+                Âge : <?=$profil1->age?>
+        <tr>
+            <td class="tdprofil">
+                Adresse : <?=$profil1->adresse?>
+            </td>
+        </tr>
+        <tr>
+            <td class="tdprofil">
+                Ville : <?=$profil1->ville?>
+            </td>
+            <td class="tdprofil">
+                Code Postal : <?=$profil1->codepostal?>
+            </td>
+        </tr>
+        <tr>
+            <td class="tdprofil">
+                Pays : <?=$profil1->pays?>
+            </td>
+        </tr>
+        <tr>
         <td class="tdprofil">
-            Pseudonyme : <?=$profil1->pseudonyme?>
-        </td>
-    </tr>
-    <tr>
+                E-mail : <?=$profil1->email?>
+            </td>
+        </tr>
+        <tr>
         <td class="tdprofil">
-            Nom : <?=$profil1->nom?>
-        </td>
-        <td class="tdprofil">
-            Prénom : <?=$profil1->prenom?>
-        </td>
-        <td class="tdprofil">
-            E-mail : <?=$profil1->email?>
-        </td>
-    </tr>
-    <tr>
-        <td class="tdprofil">
-            Adresse : <?=$profil1->adresse?>
-        </td>
-        <td class="tdprofil">
-            Code Postal : <?=$profil1->codepostal?>
-        </td>
-        <td class="tdprofil">
-            Pays : <?=$profil1->pays?>
-        </td>
-    </tr>
-</table>
+                Téléphone : <?=$profil1->telephone?>
+            </td>
+        </tr>
+    </table>
+    <div class="ventesachatskarma">
+        <table>
+            <tr>
+                <td>
+                    Ventes :
+                </td>
+                <td>
+                    <?=$profil1->nbventes?>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Achats :
+                </td>
+                <td>   
+                    <?=$profil1->nbachats?>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Karma :
+                </td>
+                <td>
+                    <?=$profil1->karma?>
+                </td>
+            </tr>
+    </table>
+    </div>
+    <input class = "boutonprofil" type="button" value="Modifier vos informations">
+</div>
 </body>
 </html>
