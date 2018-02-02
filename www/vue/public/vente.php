@@ -1,16 +1,68 @@
-<!doctype html>
+<?php 
+	// Création des données test
+	$produit1 = new stdClass();
+	$produit1->id = 1;
+    $produit1->identifiantDeVente = "ez1ezac15hy8j";
+    $produit1->identifiantVendeur = "04519875102";
+    $produit1->titreDeVente = "Oreiller";
+    $produit1->categorie = 3;  // 3 : literie
+    $produit1->prix = 20.0;
+    $produit1->identifiantMonnaie = 0;  // 0 : dollars
+    $produit1->descriptionProduit = "Bonjour, je vends cet oreiller qui ne me sert plus, j'habite
+    actuellement au Cégep de Matane";
+    $produit1->detailsVente = "Je ne livre pas et je n'envoie pas par la poste, il faudra venir la chercher à Matane au Cégep";
+    $produit1->adresse = "616 Avenue du Saint-Rédempteur G4W 1L1 Matane QC Québec";
+	$produit1->illustration = "oreiller.png";
+	$produit1->nom = "Vincent";
+
+?>
+
+
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="utf-8">
-	<title>Vente</title>
-	<link rel="stylesheet" type="text/css" href="decoration/style_general.css">	
+	<meta charset="utf-8"/>
+	<link rel = "stylesheet" href = "decoration/style_general.css">		
+	<title> Vente d'un objet</title>
 </head>
-<body>
-	<header>
-		<h1 id="titre_general">Vente d'objet</h1>
-		<nav id="navigation-menu">
-		</nav>
-	</header>
-	
+<body id="generalproduit">
+<header>
+	<h1 id="titre_general"> <?=$produit1->titreDeVente?> à vendre </h1>
+	<h2 id="titreprofil">Produit de <?=$produit1->identifiantVendeur?></h2>
+</header>	
+<img id="imgvente" src="illustrations/petit/<?=$produit1->illustration?>"/>
+<table id="informations">
+    <tr>
+        <td class="tdinfovendeur">
+            Description : <?=$produit1->descriptionProduit?>
+        </td>
+    </tr>
+	<tr>
+		<td class="tdinfovendeur">
+			Detail : <?=$produit1->detailsVente?>
+        </td>
+	</tr>
+	<tr>
+		<td class="tdinfovendeur">
+			 Prix : <?=$produit1->prix?>
+        </td>
+	</tr>
+</table>
+	<h2 id="titrevendeur"> Vendeur : </h2>
+	<p class="tdinfovendeur">
+		Nom : <?=$produit1->nom?>
+	</p>
+    <p class="tdinfovendeur">   
+		Identifiant Vendeur : <?=$produit1->identifiantVendeur?>
+    </p>
+    <p class="tdinfovendeur">
+        
+          Adresse : <?=$produit1->adresse?>
+      
+    </p>
+   
 
+</body>
+</html>
+	
 	
