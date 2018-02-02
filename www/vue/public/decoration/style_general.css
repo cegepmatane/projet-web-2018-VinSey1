@@ -106,4 +106,27 @@ p{
 {
     background : #fff;
 }
+#imgprofil {
+	max-width: 300px;
+    height: auto;
+    border: 1.5px black solid;
+    padding: 10px;
+    vertical-align: middle;
+    float : left;
+    margin-right : 20px;
+}
+#generalprofil{
+    font-family: Arial, Helvetica, sans-serif;
+}
+#titreprofil{
+    text-align:center;
+}
+#informations{
+    margin : 10px;
+}
+.tdprofil{
+    padding-bottom: 50px;
+    width : auto;
+    padding-right: 80px;
+}
 
