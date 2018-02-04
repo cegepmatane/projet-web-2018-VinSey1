@@ -39,40 +39,40 @@
 	</li>
 </ul>
 <header>
-	<h1 id="titre_general"> <?=$produit1->titreDeVente?> à vendre </h1>
+	<h1 id="titre-general"> <?=$produit1->titreDeVente?> à vendre </h1>
 	<h2 id="titreprofil">Produit de <?=$produit1->identifiantVendeur?></h2>
 </header>	
-<img class="imgvente" src="illustrations/petit/<?=$produit1->illustration?>"/>
+<img class="img-vente" src="illustrations/petit/<?=$produit1->illustration?>"/>
 <table class="informations">
     <tr>
-        <td class="tdinfovente">
+        <td class="td-info-vente">
             Description : <?=$produit1->descriptionProduit?>
         </td>
     </tr>
 	<tr>
-		<td class="tdinfovente">
+		<td class="td-info-vente">
 			Detail : <?=$produit1->detailsVente?>
         </td>
 	</tr>
 	<tr>
-		<td class="tdinfovente">
+		<td class="td-info-vente">
 			 Prix : <?=$produit1->prix?>
         </td>
 	</tr>
 </table>
-	<h2 id="titrevendeur"> Vendeur : </h2>
-	<p class="tdinfovendeur">
+	<h2 id="titre-vendeur"> Vendeur : </h2>
+	<p class="td-info-vendeur">
 		Nom : <?=$produit1->nom?>
 	</p>
-    <p class="tdinfovendeur">   
+    <p class="td-info-vendeur">   
 		Identifiant Vendeur : <?=$produit1->identifiantVendeur?>
     </p>
-    <p class="tdinfovendeur">
+    <p class="td-info-vendeur">
         
           Adresse : <?=$produit1->adresse?>
       
     </p>
-   <p id="boutonAchat">
+   <p id="bouton-Achat">
 		<input type="button" value="ACHETE ICI !">
 	</p>
 </body>
