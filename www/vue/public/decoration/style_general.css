@@ -41,25 +41,25 @@ body {
 	
 }
 
-.logo_Cegep_Matane {
+.logo-Cegep-Matane {
 	position: absolute;
 	top: 0;
 	right: 0;
 }
 
-.liste_article {
+.liste-article {
 	color-background:#225F5D 
 	text-align: center;
 }
 
-.colonne_selection_categorie_produit{
+.colonne-selection-categorie-produit{
 	
 	position: absolute;
 	padding: 10px;
 	
 }
 
-.photo_miniature_produit{
+.photo-miniature-produit{
 	
 	height: 100px;
 	vertical-align:center;	
@@ -67,14 +67,14 @@ body {
 	
 }
 
-.panneau_liste_produit{
+.panneau-liste-produit{
 	
 	text-align:center;
 	color-background:#063533;
 	
 }
 
-#titre_general {
+#titre-general {
 	font-size: 300%;
 	font-weight: bold;
 	text-decoration:underline;
@@ -84,7 +84,7 @@ body {
 }
 
 
-#titre_survie_etudiante {
+#titre-survie-etudiante {
 	
 	font-size: 300%;
 	font-weight: bold;
@@ -196,13 +196,13 @@ body {
     font-size: 20px;
 }
 
-#titrevendeur{
+#titre-vendeur{
 	
 	text-align:left;
 	text-decoration:underline;
 }
 
-.imgvente {
+.img-vente {
 	max-width: 500px;
     height: auto;
     border: 1.5px black solid;
@@ -214,7 +214,7 @@ body {
 	
 }
 
-.tdinfovendeur{
+.td-info-vendeur{
 
     width : auto;
     padding-right: 10px;
@@ -222,13 +222,13 @@ body {
 	
 }
 
-.tdinfovente {
+.td-info-vente {
 	padding-bottom: 20px;
     width : auto;
     padding-right: 10px;
 }
 
-#boutonAchat {
+#bouton-Achat {
 	margin-right:10px;
 	float : right;
 	background-color: red;

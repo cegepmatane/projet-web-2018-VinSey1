@@ -53,8 +53,8 @@
 <body>
 	<header>
 		<i>Page de développement</i>
-		<p id="titre_survie_etudiante"> Survie étudiante</p>
-		<div class="logo_Cegep_Matane">
+		<p id="titre-survie-etudiante"> Survie étudiante</p>
+		<div class="logo-Cegep-Matane">
 			<img src=./illustrations/petit/cegepmatane_logo_petit.png>
 		</div>
 	</header>
