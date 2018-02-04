@@ -62,27 +62,63 @@
 			<img src=./illustrations/petit/cegepmatane_logo_petit.png>
 		</div>
 	</header>
-
-	<input type="text" name="nato_pf" id="barre-de-recherche" />
+	<div  id="barre-de-recherche" >
+		<input type="text" name="nato_pf"/>
+	</div>
+	<table id = "tabeau-principal-page-accueil">
 	
-	<table id = "tableau-principal-page-accueil">
-	
-		<tr>
-			<td>
-				test
+		<th>
+			<td id="colonne-gauche-accueil">
+				<p>
+					<b>
+						Catégories
+					</b>
+				</p>
+				<table>
+					<tr>
+						<td>
+							Catégorie 1
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Catégorie 2
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Catégorie 3
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Catégorie 4
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Catégorie 5
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Catégorie 6
+						</td>
+					</tr>
+				</table>
 			</td>
 
 			<td>
 			<?php 
 					foreach($tableauProduit as $produitCourant){
 				?>		
-				<table>
+				<table id="colonne-centrale-accueil">
 					<tr>
 						<td>
 							<img src="<?=$produitCourant->image?>" class="photo_miniature_produit"/>
 						</td>
 						<td>
-							<table id="information">
+							<table >
 								<tr>
 									<td>
 										<?=$produitCourant->titreDeVente?>
@@ -91,6 +127,11 @@
 								<tr>
 									<td>
 										Prix: <?=$produitCourant->prix?> $
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<button type="button">Acheter</button>
 									</td>
 								</tr>
 						
@@ -103,8 +144,31 @@
 				?>
 			</td>
 
-			<td>test</td>
-		</tr>
+			<td id="colonne-droite-accueil">
+
+					<button type="button">Vendre un objet</button>
+					<p>
+						<i> 
+							Identification 
+						</i>
+					</p>
+					<table id ="tableau-identification-accueil">
+						<tr >
+							<td>
+								<button type="button">Se connecter</button>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<button type="button">S'inscrire</button>	
+							</td>
+						</tr>
+					</table>
+					
+
+
+			</td>
+		</th>
 	
 	
 	</table>

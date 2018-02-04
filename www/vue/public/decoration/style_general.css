@@ -41,20 +41,6 @@ body {
 	
 }
 
-
-
-/*
-h1{
-	color: ;
-}
-*/
-
-/*
-p{
-	
-}
-*/
-
 .logo_Cegep_Matane {
 	position: absolute;
 	top: 0;
@@ -76,14 +62,8 @@ p{
 .photo_miniature_produit{
 	
 	height: 100px;
-	vertical-align:top;
+	vertical-align:center;	
 	margin: 20px;
-	
-}
-
-.description_produit{
-	
-	
 	
 }
 
@@ -109,9 +89,9 @@ p{
 	font-size: 300%;
 	font-weight: bold;
 	font-family: "Times New Roman", Times, serif;
-	text-align: center;
-	
+	text-align: center;	
 }
+
 
 #onglets
 {
@@ -162,9 +142,32 @@ p{
 
 #barre-de-recherche{
 	text-align:center;
+
 }
 #tabeau-principal-page-accueil{
-	width:100%;
+	width:100%;	
+}
+
+#colonne-gauche-accueil{
+	width:10%;
+	border:1px solid black;
+}
+
+#colonne-droite-accueil{
+	width:10%;
+	border:1px solid black;
+}
+
+#colonne-centrale-accueil{
+	width: 100%;
+	border: 1px solid black;
+
+}
+
+#tableau-identification-accueil{
+	
+	border: 1px solid black;
+	
 }
 
 .informations{
