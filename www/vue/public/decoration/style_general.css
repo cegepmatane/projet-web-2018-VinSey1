@@ -292,3 +292,45 @@ body {
 	color: black;
 	text-decoration: white;
 }
+
+
+.element-selectionne {
+	background-color: #EC501F;
+    color: white;
+}
+
+
+
+
+.slider {
+    -webkit-appearance: none; 
+    appearance: none;
+    width: 80%; 
+    height: 25px; 
+    background: #FFCCBC; 
+    outline: none; 
+    opacity: 0.7; 
+    -webkit-transition: .2s; 
+    transition: opacity .2s;
+}
+
+
+.slider:hover {
+    opacity: 1; 
+}
+
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none;
+    width: 25px; 
+    background: #EC501F; 
+    cursor: pointer; 
+}
+
+.slider::-moz-range-thumb {
+    width: 20px; 
+    height: 25px; 
+    background: #EC501F; 
+    cursor: pointer; 
+}
