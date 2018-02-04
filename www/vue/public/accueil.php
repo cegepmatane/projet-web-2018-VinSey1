@@ -63,6 +63,7 @@
 		</div>
 	</header>
 	<div  id="barre-de-recherche" >
+		<img src=./illustrations/petit/loupe.png id="image-loupe">
 		<input type="text" name="nato_pf"/>
 	</div>
 	<table id = "tabeau-principal-page-accueil">

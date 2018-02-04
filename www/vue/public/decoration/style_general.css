@@ -143,6 +143,7 @@ body {
 #barre-de-recherche{
 	text-align:center;
 
+
 }
 #tabeau-principal-page-accueil{
 	width:100%;	
@@ -165,9 +166,12 @@ body {
 }
 
 #tableau-identification-accueil{
-	
-	border: 1px solid black;
-	
+	border: 1px solid black;	
+}
+
+#image-loupe{
+	height: 25px;
+	vertical-align:bottom;
 }
 
 .informations{
