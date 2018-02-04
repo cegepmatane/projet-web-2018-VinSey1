@@ -15,6 +15,9 @@
 	$produit1->illustration = "oreiller.png";
 	$produit1->nom = "Vincent";
 
+	$profil_courant = new stdClass();
+	$profil_courant->nom = "Eliott";
+
 ?>
 
 
@@ -26,6 +29,15 @@
 	<title> Vente d'un objet</title>
 </head>
 <body id="generalproduit">
+<ul id="bouton-profil-courant">
+	<li><a href="profil.php">Bonjour <?=$profil_courant->nom?></a>
+		<ul>
+			<li><a href="profil.php">Vos achats</a></li>
+			<li><a href="profil.php">Vos ventes</a></li>
+			<li><a href="profil.php">Modifier vos informations</a></li>
+		</ul>
+	</li>
+</ul>
 <header>
 	<h1 id="titre_general"> <?=$produit1->titreDeVente?> à vendre </h1>
 	<h2 id="titreprofil">Produit de <?=$produit1->identifiantVendeur?></h2>
