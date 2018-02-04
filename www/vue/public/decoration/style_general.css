@@ -159,7 +159,15 @@ p{
 #titreprofil{
     text-align:center;
 }
-#informations{
+
+#barre-de-recherche{
+	text-align:center;
+}
+#tabeau-principal-page-accueil{
+	width:100%;
+}
+
+.informations{
     margin : 10px;
 }
 .tdprofil{
@@ -185,7 +193,7 @@ p{
 	text-decoration:underline;
 }
 
-#imgvente {
+.imgvente {
 	max-width: 500px;
     height: auto;
     border: 1.5px black solid;

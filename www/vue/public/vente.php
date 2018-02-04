@@ -30,8 +30,8 @@
 	<h1 id="titre_general"> <?=$produit1->titreDeVente?> à vendre </h1>
 	<h2 id="titreprofil">Produit de <?=$produit1->identifiantVendeur?></h2>
 </header>	
-<img id="imgvente" src="illustrations/petit/<?=$produit1->illustration?>"/>
-<table id="informations">
+<img class="imgvente" src="illustrations/petit/<?=$produit1->illustration?>"/>
+<table class="informations">
     <tr>
         <td class="tdinfovente">
             Description : <?=$produit1->descriptionProduit?>

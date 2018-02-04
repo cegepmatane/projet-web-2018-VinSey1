@@ -62,25 +62,54 @@
 			<img src=./illustrations/petit/cegepmatane_logo_petit.png>
 		</div>
 	</header>
-	
-	<section class="panneau_liste_produit">
-	
-		<?php 
-			foreach($tableauProduit as $produitCourant){
-		?>		
-				<div>
-				<img src="<?=$produitCourant->image?>" class="photo_miniature_produit"/>
-				<span class = "titre_produit"><?=$produitCourant->titreDeVente?></span>
-					<?=$produitCourant->descriptionProduit?>
-	
-						
 
-				</div>
-				
-		<?php	
-		}
-		?>
-	</section>
+	<input type="text" name="nato_pf" id="barre-de-recherche" />
+	
+	<table id = "tableau-principal-page-accueil">
+	
+		<tr>
+			<td>
+				test
+			</td>
+
+			<td>
+			<?php 
+					foreach($tableauProduit as $produitCourant){
+				?>		
+				<table>
+					<tr>
+						<td>
+							<img src="<?=$produitCourant->image?>" class="photo_miniature_produit"/>
+						</td>
+						<td>
+							<table id="information">
+								<tr>
+									<td>
+										<?=$produitCourant->titreDeVente?>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Prix: <?=$produitCourant->prix?> $
+									</td>
+								</tr>
+						
+							</table>
+						</td>
+					</tr>
+				</table>
+				<?php	
+				}
+				?>
+			</td>
+
+			<td>test</td>
+		</tr>
+	
+	
+	</table>
+	
+		
 	
 </body>
 </html>
