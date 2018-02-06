@@ -7,6 +7,7 @@
 	$domain = "messages";
 	bindtextdomain($domain, "Locale");
 	textdomain($domain);
+	
 
 	// Données test
 	$produit1 = new stdClass();
@@ -66,7 +67,7 @@
 <body>
 	<header>
 		<i>Page de développement</i>
-		<p id="titre-survie-etudiante"> Survie étudiante</p>
+		<p id="titre-survie-etudiante"> <?php echo gettext("Survie étudiante"); ?> </p>
 		<div class="logo-cegep-matane">
 			<img src=./illustrations/petit/cegepmatane_logo_petit.png>
 		</div>
@@ -81,38 +82,38 @@
 			<td id="colonne-gauche-accueil">
 				<p>
 					<b>
-						Catégories
+						<?php echo gettext("Catégories"); ?>
 					</b>
 				</p>
 				<table>
 					<tr>
 						<td>
-							Catégorie 1
+							<?php echo gettext("Catégories 1"); ?>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							Catégorie 2
+							<?php echo gettext("Catégories 2"); ?>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							Catégorie 3
+							<?php echo gettext("Catégories 3"); ?>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							Catégorie 4
+							<?php echo gettext("Catégories 4"); ?>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							Catégorie 5
+							<?php echo gettext("Catégories 5"); ?>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							Catégorie 6
+							<?php echo gettext("Catégories 6"); ?>
 						</td>
 					</tr>
 				</table>
@@ -136,12 +137,12 @@
 								</tr>
 								<tr>
 									<td>
-										Prix: <?=$produitCourant->prix?> $
+										<?php echo gettext("Prix");?>: <?=$produitCourant->prix?> $
 									</td>
 								</tr>
 								<tr>
 									<td>
-										<button type="button">Acheter</button>
+										<button type="button"><?php echo gettext("Acheter"); ?></button>
 									</td>
 								</tr>
 						
@@ -156,7 +157,7 @@
 
 			<td id="colonne-droite-accueil">
 
-					<button type="button">Vendre un objet</button>
+					<button type="button"><?php echo gettext("Vendre un objet"); ?></button>
 					<p>
 						<i> 
 							Identification 
@@ -165,12 +166,12 @@
 					<table id ="tableau-identification-accueil">
 						<tr >
 							<td>
-								<button type="button">Se connecter</button>
+								<button type="button"><?php echo gettext("Se connecter"); ?></button>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<button type="button">S'inscrire</button>	
+								<button type="button"><?php echo gettext("S'inscrire"); ?></button>	
 							</td>
 						</tr>
 					</table>
