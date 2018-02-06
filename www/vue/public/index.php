@@ -12,7 +12,7 @@
 	// Données test
 	$produit1 = new stdClass();
 	$produit1->identifiantDeVente = "ez1ezac15hy8j";
-	$produit1->identifiantVendeur = 04519875102;
+	$produit1->identifiantVendeur = 4519875102;
 	$produit1->titreDeVente = "Casserole en metal";
 	$produit1->categorie = 0;  // 0 : Ustensiles de cuisine
 	$produit1->prix = 20.0;
@@ -25,7 +25,7 @@
 	
 	$produit2 = new stdClass();
 	$produit2->identifiantDeVente = "wr54u8ix1v18r9";
-	$produit2->identifiantVendeur = 04524803548;
+	$produit2->identifiantVendeur = 4524803548;
 	$produit2->titreDeVente = "Ensemble de couverts";
 	$produit2->categorie = 0;  // 0 : ustensiles de cuisine
 	$produit2->prix = 12.0;
@@ -36,7 +36,7 @@
 	
 	$produit3 = new stdClass();
 	$produit3->identifiantDeVente = "d2j8e62g1j7y9s";
-	$produit3->identifiantVendeur = 045215249;
+	$produit3->identifiantVendeur = 45215249;
 	$produit3->titreDeVente = "Vend serviette de bain";
 	$produit3->categorie = 1;  // 1 : Hygiène
 	$produit3->prix = 8.0;
@@ -65,6 +65,8 @@
 	<title> Page dev </title>
 </head>
 <body>
+</body>
+</html>
 	<header>
 		<i>Page de développement</i>
 		<p id="titre-survie-etudiante"> <?php echo gettext("Survie étudiante"); ?> </p>
