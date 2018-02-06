@@ -128,5 +128,8 @@
     </div>
     <input class = "bouton-profil" type="button" value="<?php echo gettext("Modifier vos informations")?>">
 </div>
+
+ <a href="index.php">Accueil</a> 
+
 </body>
 </html>
