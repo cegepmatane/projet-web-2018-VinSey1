@@ -1,13 +1,4 @@
 <?php 
-
-	$language = "en_FR";
-	putenv("LANG=".$language);
-	setlocale(LC_ALL, $language);
-	
-	$domain = "messages";
-	bindtextdomain($domain, "Locale");
-	textdomain($domain);
-	
 	// Création des données test
 	$produit1 = new stdClass();
 	$produit1->id = 1;
@@ -35,53 +26,58 @@
 <head>
 	<meta charset="utf-8"/>
 	<link rel = "stylesheet" href = "decoration/style_general.css">		
-	<title> <?php echo gettext("Vente d'un objet"); ?></title>
+	<title> Vente d'un objet</title>
 </head>
+<ul id="navigation">
+	<li><a href="profil.php" title="Aller sur la page Profil">Aller sur la page Profil</a></li>
+	<li><a href="index.php" title="Aller sur la page Catalogue">Aller sur la page Accueil</a></li>
+	<li><a href="catalogue.php" title="Aller sur la page Catalogue">Aller sur la page Catalogue</a></li>
+</ul>
 <body id="generalproduit">
 <ul id="bouton-profil-courant">
-	<li><a href="profil.php"><?php echo gettext("Bonjour"); ?> <?=$profil_courant->nom?></a>
+	<li><a href="profil.php">Bonjour <?=$profil_courant->nom?></a>
 		<ul>
-			<li><a href="profil.php"><?php echo gettext("Vos achats"); ?></a></li>
-			<li><a href="profil.php"><?php echo gettext("Vos ventes"); ?></a></li>
-			<li><a href="profil.php"><?php echo gettext("Modifier vos informations"); ?></a></li>
+			<li><a href="profil.php">Vos achats</a></li>
+			<li><a href="profil.php">Vos ventes</a></li>
+			<li><a href="profil.php">Modifier vos informations</a></li>
 		</ul>
 	</li>
 </ul>
 <header>
-	<h1 id="titre-general"> <?=$produit1->titreDeVente?> <?php echo gettext("à vendre"); ?> </h1>
-	<h2 id="titreprofil"><?php echo gettext("Produit de"); ?> <?=$produit1->identifiantVendeur?></h2>
+	<h1 id="titre_general"> <?=$produit1->titreDeVente?> à vendre </h1>
+	<h2 id="titreprofil">Produit de <?=$produit1->identifiantVendeur?></h2>
 </header>	
-<img class="img-vente" src="illustrations/petit/<?=$produit1->illustration?>"/>
+<img class="imgvente" src="illustrations/petit/<?=$produit1->illustration?>"/>
 <table class="informations">
     <tr>
-        <td class="td-info-vente">
-            <?php echo gettext("Description"); ?> : <?=$produit1->descriptionProduit?>
+        <td class="tdinfovente">
+            Description : <?=$produit1->descriptionProduit?>
         </td>
     </tr>
 	<tr>
-		<td class="td-info-vente">
-			<?php echo gettext("Détail"); ?> : <?=$produit1->detailsVente?>
+		<td class="tdinfovente">
+			Detail : <?=$produit1->detailsVente?>
         </td>
 	</tr>
 	<tr>
-		<td class="td-info-vente">
-			 <?php echo gettext("Prix"); ?> : <?=$produit1->prix?>
+		<td class="tdinfovente">
+			 Prix : <?=$produit1->prix?>
         </td>
 	</tr>
 </table>
-	<h2 id="titre-vendeur"> <?php echo gettext("Vendeur"); ?> : </h2>
-	<p class="td-info-vendeur">
-		<?php echo gettext("Nom"); ?> : <?=$produit1->nom?>
+	<h2 id="titrevendeur"> Vendeur : </h2>
+	<p class="tdinfovendeur">
+		Nom : <?=$produit1->nom?>
 	</p>
-    <p class="td-info-vendeur">   
-		<?php echo gettext("Identifiant vendeur"); ?> : <?=$produit1->identifiantVendeur?>
+    <p class="tdinfovendeur">   
+		Identifiant Vendeur : <?=$produit1->identifiantVendeur?>
     </p>
-    <p class="td-info-vendeur">
+    <p class="tdinfovendeur">
         
-          <?php echo gettext("Adresse"); ?> : <?=$produit1->adresse?>
+          Adresse : <?=$produit1->adresse?>
       
     </p>
-   <p id="bouton-Achat">
+   <p id="boutonAchat">
 		<input type="button" value="ACHETE ICI !">
 	</p>
 </body>

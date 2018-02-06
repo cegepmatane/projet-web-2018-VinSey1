@@ -72,6 +72,11 @@
 			<img src=./illustrations/petit/cegepmatane_logo_petit.png>
 		</div>
 	</header>
+	<ul id="navigation">
+		<li><a href="profil.php" title="Aller sur la page Profil">Aller sur la page Profil</a></li>
+		<li><a href="catalogue.php" title="Aller sur la page Catalogue">Aller sur la page Catalogue</a></li>
+		<li><a href="vente.php" title="Aller sur la page Vente">Aller sur la page Vente</a></li>
+	</ul>
 	<div  id="barre-de-recherche" >
 		<img src=./illustrations/petit/loupe.png id="image-loupe">
 		<input type="text" name="nato_pf"/>

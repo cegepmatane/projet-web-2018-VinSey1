@@ -42,6 +42,11 @@
 <header>
 	<h1 id="titre-profil"> <?php echo gettext("Profil de $profil->pseudonyme") ?></h1>
 </header>	
+<ul id="navigation">
+	<li><a href="catalogue.php" title="Aller sur la page Catalogue">Aller sur la page Catalogue</a></li>
+	<li><a href="index.php" title="Aller sur la page Accueil">Aller sur la page Accueil</a></li>
+	<li><a href="vente.php" title="Aller sur la page Vente">Aller sur la page Vente</a></li>
+</ul>
 <ul id="onglets-profil">
     <li class="active"><a href="Informations.html"> <?php echo gettext("Informations") ?></a></li>
     <li><a href="Ventes.html"> <?php echo gettext("Ventes") ?></a></li>
@@ -128,8 +133,5 @@
     </div>
     <input class = "bouton-profil" type="button" value="<?php echo gettext("Modifier vos informations")?>">
 </div>
-
- <a href="index.php">Accueil</a> 
-
 </body>
 </html>
