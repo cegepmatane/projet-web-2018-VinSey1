@@ -48,37 +48,37 @@
 	</li>
 </ul>
 <header>
-	<h1 id="titre-general"> <?=$produit1->titreDeVente?> à vendre </h1>
-	<h2 id="titreprofil">Produit de <?=$produit1->identifiantVendeur?></h2>
+	<h1 id="titre-general"> <?=$produit1->titreDeVente?> <?php echo gettext("à vendre"); ?> </h1>
+	<h2 id="titreprofil"><?php echo gettext("Produit de"); ?> <?=$produit1->identifiantVendeur?></h2>
 </header>	
 <img class="img-vente" src="illustrations/petit/<?=$produit1->illustration?>"/>
 <table class="informations">
     <tr>
         <td class="td-info-vente">
-            Description : <?=$produit1->descriptionProduit?>
+            <?php echo gettext("Description"); ?> : <?=$produit1->descriptionProduit?>
         </td>
     </tr>
 	<tr>
 		<td class="td-info-vente">
-			Detail : <?=$produit1->detailsVente?>
+			<?php echo gettext("Détail"); ?> : <?=$produit1->detailsVente?>
         </td>
 	</tr>
 	<tr>
 		<td class="td-info-vente">
-			 Prix : <?=$produit1->prix?>
+			 <?php echo gettext("Prix"); ?> : <?=$produit1->prix?>
         </td>
 	</tr>
 </table>
-	<h2 id="titre-vendeur"> Vendeur : </h2>
+	<h2 id="titre-vendeur"> <?php echo gettext("Vendeur"); ?> : </h2>
 	<p class="td-info-vendeur">
-		Nom : <?=$produit1->nom?>
+		<?php echo gettext("Nom"); ?> : <?=$produit1->nom?>
 	</p>
     <p class="td-info-vendeur">   
-		Identifiant Vendeur : <?=$produit1->identifiantVendeur?>
+		<?php echo gettext("Identifiant vendeur"); ?> : <?=$produit1->identifiantVendeur?>
     </p>
     <p class="td-info-vendeur">
         
-          Adresse : <?=$produit1->adresse?>
+          <?php echo gettext("Adresse"); ?> : <?=$produit1->adresse?>
       
     </p>
    <p id="bouton-Achat">
