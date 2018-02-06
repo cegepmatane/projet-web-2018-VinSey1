@@ -1,4 +1,5 @@
 <?php
+	include 'UtilisateurDAO.php';
 
 	$language = "en_FR";
 	putenv("LANG=".$language);
@@ -185,5 +186,13 @@
 			</td>
 		</th>
 	</table>
+	<?php
+		
+		$testRequete = new UtilisateurDAO();
+		
+		$resultat = $testRequete->accesseur_par_identifiant(0);
+			
+	
+	?>
 </body>
 </html>
