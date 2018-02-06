@@ -1,4 +1,13 @@
 <?php 
+
+	$language = "en_FR";
+	putenv("LANG=".$language);
+	setlocale(LC_ALL, $language);
+	
+	$domain = "messages";
+	bindtextdomain($domain, "Locale");
+	textdomain($domain);
+	
 	// Création des données test
 	$produit1 = new stdClass();
 	$produit1->id = 1;
