@@ -62,7 +62,7 @@
 <body>
 	<header>
 		<i>Page de développement</i>
-		<p id="titre-survie-etudiante"> Survie étudiante</p>
+		<p id="titre-survie-etudiante"> <?php echo gettext("Survie Etudiante"); ?></p>
 		<div class="logo-Cegep-Matane">
 			<img src=./illustrations/petit/cegepmatane_logo_petit.png>
 		</div>
@@ -77,38 +77,38 @@
 			<td id="colonne-gauche-accueil">
 				<p>
 					<b>
-						Catégories
+						<?php echo gettext("Catégories"); ?>
 					</b>
 				</p>
 				<table>
 					<tr>
 						<td>
-							Catégorie 1
+							<?php echo gettext("Catégories 1"); ?>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							Catégorie 2
+							<?php echo gettext("Catégories 2"); ?>
 						</td>
 					</tr>
 					<tr>
 						<td  class="element-selectionne">
-							Catégorie 3
+							<?php echo gettext("Catégories 3"); ?>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							Catégorie 4
+							<?php echo gettext("Catégories 4"); ?>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							Catégorie 5
+							<?php echo gettext("Catégories 5"); ?>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							Catégorie 6
+							<?php echo gettext("Catégories 6"); ?>
 						</td>
 					</tr>
 				</table>
@@ -132,12 +132,12 @@
 								</tr>
 								<tr>
 									<td>
-										Prix: <?=$produitCourant->prix?> $
+										<?php echo gettext("Prix"); ?>: <?=$produitCourant->prix?> $
 									</td>
 								</tr>
 								<tr>
 									<td>
-										<button type="button">Acheter</button>
+										<button type="button"><?php echo gettext("Acheter"); ?></button>
 									</td>
 								</tr>
 						
@@ -153,11 +153,11 @@
 
 			<td id="colonne-droite-accueil">
 					<p>
-						Prix
+						<?php echo gettext("Prix:"); ?>
 					</p>
 					<div>
 						<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-						<p>De 0 à <span id="demo"></span> $</p>
+						<p><?php echo gettext("De 0 à"); ?> <span id="demo"></span> $</p>
 					</div>
 					<script>
 					var slider = document.getElementById("myRange");

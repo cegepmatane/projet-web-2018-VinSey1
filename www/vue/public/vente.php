@@ -35,15 +35,15 @@
 <head>
 	<meta charset="utf-8"/>
 	<link rel = "stylesheet" href = "decoration/style_general.css">		
-	<title> Vente d'un objet</title>
+	<title> <?php echo gettext("Vente d'un objet"); ?></title>
 </head>
 <body id="generalproduit">
 <ul id="bouton-profil-courant">
-	<li><a href="profil.php">Bonjour <?=$profil_courant->nom?></a>
+	<li><a href="profil.php"><?php echo gettext("Bonjour"); ?> <?=$profil_courant->nom?></a>
 		<ul>
-			<li><a href="profil.php">Vos achats</a></li>
-			<li><a href="profil.php">Vos ventes</a></li>
-			<li><a href="profil.php">Modifier vos informations</a></li>
+			<li><a href="profil.php"><?php echo gettext("Vos achats"); ?></a></li>
+			<li><a href="profil.php"><?php echo gettext("Vos ventes"); ?></a></li>
+			<li><a href="profil.php"><?php echo gettext("Modifier vos informations"); ?></a></li>
 		</ul>
 	</li>
 </ul>
