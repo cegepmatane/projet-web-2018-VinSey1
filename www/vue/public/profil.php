@@ -1,4 +1,17 @@
 <?php 
+
+    /*
+    $language = "fr_FR";
+    putenv("LANG=" . $language);
+    setlocale(LC_ALL, $language);
+
+    $domain = "messages";
+    bindtextdomain($domain,"Locale");
+    bind_textdomain_codeset($domain, 'UTF-8');
+    
+    textdomain($domain);
+    */
+    
 	// Création des données test
 	$profil = new stdClass();
 	$profil->id = 1;
@@ -23,65 +36,65 @@
 <head>
 	<meta charset="utf-8"/>
 	<link rel = "stylesheet" href = "decoration/style_general.css">		
-	<title> Profil d'un utilisateur</title>
+	<title> <?php echo gettext("Profil d'un utilisateur") ?></title>
 </head>
 <body id="general-profil">
 <header>
-	<h1 id="titre-profil">Profil de <?=$profil->pseudonyme?></h1>
+	<h1 id="titre-profil"> <?php echo gettext("Profil de $profil->pseudonyme") ?></h1>
 </header>	
 <ul id="onglets-profil">
-    <li class="active"><a href="Accueil.html"> Informations </a></li>
-    <li><a href="Accueil.html"> Ventes  </a></li>
-    <li><a href="Livre_or.html"> Achats </a></li>
-    <li><a href="Equipe.html"> Avis reçus </a></li>
-    <li><a href="Inscription.html"> Avis donnés </a></li>
-    <li><a href="Connexion.html"> Modifier </a></li>
+    <li class="active"><a href="Informations.html"> <?php echo gettext("Informations") ?></a></li>
+    <li><a href="Ventes.html"> <?php echo gettext("Ventes") ?></a></li>
+    <li><a href="Achats.html"> <?php echo gettext("Achats") ?></a></li>
+    <li><a href="Avis_recus.html"> <?php echo gettext("Avis reçus") ?></a></li>
+    <li><a href="Avis_donnes.html"> <?php echo gettext("Avis donnés") ?> </a></li>
+    <li><a href="Modifier.html"> <?php echo gettext("Modifier") ?> </a></li>
 </ul>
 <div id="contenu-profil">
     <img id="image-profil" src="illustrations/tests/<?=$profil->illustration?>"/>
     <table id="informations-profil">
         <tr>
             <td class="td-profil">
-                Pseudonyme : <?=$profil->pseudonyme?>
+                <?php echo gettext("Pseudonyme : $profil->pseudonyme") ?>
             </td>
         </tr>
         <tr>
             <td class="td-profil">
-                Nom : <?=$profil->nom?>
+                <?php echo gettext("Nom : $profil->nom") ?>
             </td>
             <td class="td-profil">
-                Prénom : <?=$profil->prenom?>
-            </td>
-        </tr>
-        <tr>
-            <td class="td-profil">
-                Âge : <?=$profil->age?>
-        <tr>
-            <td class="td-profil">
-                Adresse : <?=$profil->adresse?>
+                <?php echo gettext("Prénom : $profil->prenom") ?>
             </td>
         </tr>
         <tr>
             <td class="td-profil">
-                Ville : <?=$profil->ville?>
-            </td>
+                <?php echo gettext("Âge : $profil->age") ?>
+        <tr>
             <td class="td-profil">
-                Code Postal : <?=$profil->codepostal?>
+                <?php echo gettext("Adresse  $profil->adresse") ?>
             </td>
         </tr>
         <tr>
             <td class="td-profil">
-                Pays : <?=$profil->pays?>
+                <?php echo gettext("Ville : $profil->ville") ?>
+            </td>
+            <td class="td-profil">
+                <?php echo gettext("Code Postal : $profil->codepostal") ?>
             </td>
         </tr>
         <tr>
-        <td class="td-profil">
-                E-mail : <?=$profil->email?>
+            <td class="td-profil">
+                <?php echo gettext("Pays : $profil->pays") ?>
             </td>
         </tr>
         <tr>
         <td class="td-profil">
-                Téléphone : <?=$profil->telephone?>
+                <?php echo gettext("E-mail : $profil->email") ?>
+            </td>
+        </tr>
+        <tr>
+        <td class="td-profil">
+                <?php echo gettext("Téléphone : $profil->telephone") ?>
             </td>
         </tr>
     </table>
@@ -89,7 +102,7 @@
         <table>
             <tr>
                 <td>
-                    Ventes :
+                    <?php echo gettext("Ventes :") ?>
                 </td>
                 <td>
                     <?=$profil->nbventes?>
@@ -97,7 +110,7 @@
             </tr>
             <tr>
                 <td>
-                    Achats :
+                    <?php echo gettext("Achats :") ?>
                 </td>
                 <td>   
                     <?=$profil->nbachats?>
@@ -105,7 +118,7 @@
             </tr>
             <tr>
                 <td>
-                    Karma :
+                    <?php echo gettext("Karma :") ?>
                 </td>
                 <td>
                     <?=$profil->karma?>
@@ -113,7 +126,7 @@
             </tr>
     </table>
     </div>
-    <input class = "bouton-profil" type="button" value="Modifier vos informations">
+    <input class = "bouton-profil" type="button" value="<?php echo gettext("Modifier vos informations")?>">
 </div>
 </body>
 </html>
