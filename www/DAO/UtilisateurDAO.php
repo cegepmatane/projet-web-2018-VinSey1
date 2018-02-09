@@ -24,24 +24,14 @@ class UtilisateurDAO{
 		return $utilisateur;
 	}
 	
-	function insertion(){
+	function insertion($utilisateur){
 		
-		
-	}
+		global $connexionBDActive;
 	
-	//Fonction de test de connexion à la vase de donnée
-	function test(){
 		
-		global $connexionDBActive;
-		
-		$requete = $PDO->prepare("SHOW TABLES FROM survie_etudiante");
-		$requete->execute();
-		
-		$requete->setFetchMode(PDO::FETCH_ASSOC);
-		
-		return $requete->fetchAll();
 		
 	}
+
 	
 }
 ?>
