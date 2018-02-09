@@ -94,41 +94,21 @@
 </ul>
 <div id="contenu-profil">
 <?php foreach($tableauProduits as $produitCourant){ ?>		
-	<table id="colonne-centrale-accueil" >
-		<tr style="border : 1px solid black;">
-			<td style="border : 1px solid black;">
-                <table>
-                    <td>
-                        <img src="<?=$produitCourant->image?>" class="photo-miniature-produit"/>
-                    </td>
-                    <td id="contenu-vente-panneau">
-                        <h4><?=$produitCourant->titreDeVente?></h4>
-                        <button type"button">Accéder aux détails de la vente</button>
-                    </td>
-                </table
-			</td>
-			<td style="border : 1px solid black;">
-				<table style="border : 1px solid black;" >
-					<tr>
-						<td>
-							<?=$produitCourant->titreDeVente?>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Prix: <?=$produitCourant->prix?> $
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<button type="button">Acheter</button>
-						</td>
-					</tr>
-			
-				</table>
-			</td>
-		</tr>
-	</table>
+	<table style="border: 1px solid black; margin: auto; width: 1450px; text-align: center;">
+		<tr>
+			<td>
+                <img src="<?=$produitCourant->image?>" class="photo-miniature-produit"/>
+            </td>
+            <td>
+                <h4>Titre : <?=$produitCourant->titreDeVente?></h4>
+                <h5>ID : <?=$produitCourant->id?></br></h5>
+                <?=$produitCourant->descriptionProduit?>
+            </td>
+            <td style="text-align: right;">
+                <button type="button" style="width: 150px; height: 50px; margin-right: 20px">Modifier la vente</button>
+            </td>
+        </tr>
+    </table>
 <?php } ?>
 </div>
 </div>
