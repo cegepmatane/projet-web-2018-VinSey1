@@ -35,6 +35,18 @@ class UtilisateurDAO{
 		$requete->execute();
 		
 	}
+	
+	public function supprimerUtilisateur($utilisateur){
+		/*
+		global $connexionBDActive;
+		
+		$id = $utilisateur->getIdUtilisateur();
+		$prenom = $utilisateur->getPrenom();
+		$nom = $utilisateur->getNom();
+		
+		$requete-> = $connexionBDActive->prepare();
+		*/
+	}
 
 	
 }

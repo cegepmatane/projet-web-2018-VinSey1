@@ -179,15 +179,14 @@
 		</th>
 	</table>
 	<?php
-		
+		/*
 		$utilisateurDAO = new UtilisateurDAO();
 		
-		$utilisateur = $utilisateurDAO->chercherParIdentifiant(1);
+		$utilisateur = $utilisateurDAO->   ;
 		
 		var_dump($utilisateur);
 		
-		$utilisateurDAO->insererUtilisateur(new Utilisateur(0,	"Dominique", "Test"));
-	
+	*/
 	?>
 </body>
 </html>
