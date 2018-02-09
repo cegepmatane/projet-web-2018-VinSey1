@@ -13,6 +13,14 @@ class Utilisateur{
 		
 	}
 	
+	public function getPrenom(){
+		return $this->prenom;
+	}
+	
+	public function getidUtilisateur(){
+		return $this->idUtilisateur;
+	}
+	
 	function __construct($idUtilisateur, $nom, $prenom){
 		
 		$this->nom = $nom;
@@ -20,10 +28,6 @@ class Utilisateur{
 		$this->idUtilisateur = $idUtilisateur;
 		
 	}
-	
-	
-	
-	
 }
 
 

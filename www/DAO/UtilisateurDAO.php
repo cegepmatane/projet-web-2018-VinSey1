@@ -11,9 +11,7 @@ class UtilisateurDAO{
 		$requete = $connexionBDActive->prepare("SELECT * FROM utilisateur WHERE id_utilisateur = :identifiantDemande");
 		$requete->bindParam(':identifiantDemande', $identifiantDemande, PDO::PARAM_INT);
 		$requete->execute();
-		
-		//$requete->setFetchMode(PDO::FETCH_OBJ);
-		
+				
 		$resultat = $requete->fetch(PDO::FETCH_OBJ);		
 		
 		if ($resultat ){
@@ -24,11 +22,17 @@ class UtilisateurDAO{
 		return $utilisateur;
 	}
 	
-	function insertion($utilisateur){
+	public function insererUtilisateur($utilisateur){
 		
 		global $connexionBDActive;
 	
-		
+		$nom = $utilisateur->getNom();
+		$prenom = $utilisateur->getPrenom();
+	
+		$requete = $connexionBDActive->prepare("INSERT INTO utilisateur(prenom, nom) VALUES (:prenom, :nom) ");
+		$requete->bindParam(':prenom', $prenom, PDO::PARAM_STR);
+		$requete->bindParam(':nom', $nom, PDO::PARAM_STR);
+		$requete->execute();
 		
 	}
 

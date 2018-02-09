@@ -1,9 +1,7 @@
 <?php
-	
-	echo ( $_SERVER["DOCUMENT_ROOT"]."/configuration/configuration.php");
-
 	require_once $_SERVER["DOCUMENT_ROOT"]."/configuration/configuration.php";
 	require_once UTILISATEUR_DAO;
+	require_once UTILISATEUR_MODELE;
 	
 
 	// Données test
@@ -187,6 +185,8 @@
 		$utilisateur = $utilisateurDAO->chercherParIdentifiant(1);
 		
 		var_dump($utilisateur);
+		
+		$utilisateurDAO->insererUtilisateur(new Utilisateur(0,	"Dominique", "Test"));
 	
 	?>
 </body>

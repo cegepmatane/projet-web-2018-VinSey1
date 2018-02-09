@@ -4,7 +4,6 @@ class ConnexionBD{
 	
 	private $PDO;
 	
-
 	function getConnection(){
 		
 		return $this->PDO;
@@ -18,8 +17,7 @@ class ConnexionBD{
 								 ';port='.BD_PORT.
 								 ';dbname='.BD_NOM
 								 ,BD_UTILISATEUR
-								 ,BD_MDP);
-								  	
+								 ,BD_MDP);								  	
 		}
 		catch (PDOException $e){
 			echo ($e->getMessage());
