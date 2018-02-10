@@ -36,16 +36,15 @@ class UtilisateurDAO{
 		
 	}
 	
-	public function supprimerUtilisateur($utilisateur){
-		/*
+	
+	
+	public function supprimerUtilisateur($identifiant){
+		
 		global $connexionBDActive;
 		
-		$id = $utilisateur->getIdUtilisateur();
-		$prenom = $utilisateur->getPrenom();
-		$nom = $utilisateur->getNom();
-		
-		$requete-> = $connexionBDActive->prepare();
-		*/
+		$requete = $connexionBDActive->prepare("DELETE FROM utilisateur WHERE id_utilisateur = :identifiant");
+		$requete->bindParam(':identifiant', $identifiant, PDO::PARAM_INT);
+		$requete->execute();
 	}
 
 	

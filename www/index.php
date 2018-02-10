@@ -73,6 +73,8 @@
 		<li><a href="profil.php" title="Aller sur la page Profil"><?php echo gettext("Page profil"); ?></a></li>
 		<li><a href="catalogue.php" title="Aller sur la page Catalogue"><?php echo gettext("Page catalogue"); ?></a></li>
 		<li><a href="vente.php" title="Aller sur la page Vente"><?php echo gettext("Page de vente"); ?></a></li>
+		<li><a href="panneau-administration.php" title="Aller sur le panneau d'administration"><?php echo gettext("Page d'administration"); ?></a></li>
+
 	</ul>
 	<div  id="barre-de-recherche" >
 		<img src=./illustrations/petit/loupe.png id="image-loupe">
@@ -179,14 +181,12 @@
 		</th>
 	</table>
 	<?php
-		/*
+		
 		$utilisateurDAO = new UtilisateurDAO();
 		
-		$utilisateur = $utilisateurDAO->   ;
+		$utilisateur = $utilisateurDAO->supprimerUtilisateur(9);
 		
-		var_dump($utilisateur);
-		
-	*/
+	
 	?>
 </body>
 </html>
