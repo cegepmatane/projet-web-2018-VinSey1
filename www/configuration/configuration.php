@@ -7,10 +7,10 @@ define( "OBJET_MODELE", $_SERVER["DOCUMENT_ROOT"]."/modele/Objet.php"   );
 
 //---------- BD ---------------------
 define("BD_NOM", "survie_etudiante" );
-define("BD_HOTE", "localhost" );
-define("BD_PORT", "3307" );
+define("BD_HOTE", "158.69.192.249" );
+define("BD_PORT", "22" );
 define("BD_UTILISATEUR", "root");
-define("BD_MDP", "");
+define("BD_MDP", "GUEHJCo4");
 
 require_once($_SERVER["DOCUMENT_ROOT"]."/DAO/ConnexionBD.php");
 
