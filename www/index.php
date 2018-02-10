@@ -184,7 +184,9 @@
 		
 		$utilisateurDAO = new UtilisateurDAO();
 		
-		$utilisateur = $utilisateurDAO->supprimerUtilisateur(9);
+		$utilisateur = $utilisateurDAO->chercherParIdentifiant(1);
+		
+		return $utilisateur;
 		
 	
 	?>
