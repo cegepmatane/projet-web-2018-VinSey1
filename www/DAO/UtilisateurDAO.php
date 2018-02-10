@@ -28,10 +28,29 @@ class UtilisateurDAO{
 	
 		$nom = $utilisateur->getNom();
 		$prenom = $utilisateur->getPrenom();
+		$pseudonyme = $utilisateur->getPseudonyme();
+		$email = $utilisateur->getEmail();
+		$adresse = $utilisateur->getAdresse();
+		$codepostal = $utilisateur->getCodepostal();
+		$pays = $utilisateur->getPays();
+		$ville = $utilisateur->getVille();
+		$illustration = $utilisateur->getIllustration();
+		$age = $utilisateur->getAge();
+		$telephone = $utilisateur->getTelephone();
 	
-		$requete = $connexionBDActive->prepare("INSERT INTO utilisateur(prenom, nom) VALUES (:prenom, :nom) ");
-		$requete->bindParam(':prenom', $prenom, PDO::PARAM_STR);
+		$requete = $connexionBDActive->prepare("INSERT INTO utilisateur(nom, prenom, pseudonyme, email, adresse, codepostal, pays, ville, illustration, age, telephone) VALUES (:nom, :prenom, :pseudonyme, :email, :adresse, :codepostal, :pays, :ville, :illustration, :age, :telephone) ");
+		
 		$requete->bindParam(':nom', $nom, PDO::PARAM_STR);
+		$requete->bindParam(':prenom', $prenom, PDO::PARAM_STR);
+		$requete->bindParam(':pseudonyme', $pseudonyme, PDO::PARAM_STR);
+		$requete->bindParam(':email', $email, PDO::PARAM_STR);
+		$requete->bindParam(':adresse', $adresse, PDO::PARAM_STR);
+		$requete->bindParam(':codepostal', $codepostal, PDO::PARAM_STR);
+		$requete->bindParam(':pays', $pays, PDO::PARAM_STR);
+		$requete->bindParam(':ville', $ville, PDO::PARAM_STR);
+		$requete->bindParam(':illustration', $illustration, PDO::PARAM_STR);
+		$requete->bindParam(':age', $age, PDO::PARAM_INT);
+		$requete->bindParam(':telephone', $telephone, PDO::PARAM_STR);		
 		$requete->execute();
 		
 	}
@@ -47,6 +66,18 @@ class UtilisateurDAO{
 		$requete->execute();
 	}
 
+	public function chargerBaseUtilisateur(){
+		
+		global $connexionBDActive;
+		
+		$requete = $connexionBDActive->prepare("SELECT *FROM utilisateur");
+		
+		
+	}
+	
+	
+	
+	
 	
 }
 ?>

@@ -100,12 +100,12 @@
                 <img src="<?=$produitCourant->image?>" class="photo-miniature-produit"/>
             </td>
             <td>
-                <h4>Titre : <?=$produitCourant->titreDeVente?></h4>
+                <h4><?php echo gettext("Titre :"); ?> <?=$produitCourant->titreDeVente?></h4>
                 <h5>ID : <?=$produitCourant->id?></br></h5>
                 <?=$produitCourant->descriptionProduit?>
             </td>
             <td style="text-align: right;">
-                <button type="button" style="width: 150px; height: 50px; margin-right: 20px">Modifier la vente</button>
+                <button type="button" style="width: 150px; height: 50px; margin-right: 20px"><?php echo gettext("Modifier la vente"); ?></button>
             </td>
         </tr>
     </table>
