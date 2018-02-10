@@ -73,7 +73,7 @@ class Utilisateur{
 		return $this->telephone;
 	}
 		//mettre l'idUtilisateur en paramètre dans le constructeur alors que c'est la base de donnée qui va l'attribuer par auto-incrémentation ?
-	function __construct($idUtilisateur, $nom, $prenom, $pseudonyme, $email, $adresse, $codepostal, $pays, $ville, $nbventes, $nbachats, $illustrations, $age, $telephone ){
+	function __construct($idUtilisateur, $nom, $prenom, $pseudonyme, $email, $adresse, $codepostal, $pays, $ville, $nbventes, $nbachats, $illustration, $age, $telephone ){
 		
 		$this->idUtilisateur = $idUtilisateur;
 		$this->nom = $nom;

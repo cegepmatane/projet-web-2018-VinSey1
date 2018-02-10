@@ -16,13 +16,27 @@ class UtilisateurDAO{
 		
 		if ($resultat ){
 				
-			$utilisateur = new Utilisateur($resultat->id_utilisateur, $resultat->nom, $resultat->prenom);
-
-		}		
+			$utilisateur = new Utilisateur($resultat->id_utilisateur, 
+										   $resultat->nom, 
+										   $resultat->prenom,
+										   $resultat->pseudonyme,
+										   $resultat->email,
+										   $resultat->adresse,
+										   $resultat->codepostal,
+										   $resultat->pays,
+										   $resultat->ville,
+										   0,
+										   0,
+										   $resultat->illustration,
+										   $resultat->age,
+										   $resultat->telephone										   
+										   );
+		}			
 		return $utilisateur;
 	}
 	
 	public function insererUtilisateur($utilisateur){
+		
 		
 		global $connexionBDActive;
 	
@@ -34,11 +48,13 @@ class UtilisateurDAO{
 		$codepostal = $utilisateur->getCodepostal();
 		$pays = $utilisateur->getPays();
 		$ville = $utilisateur->getVille();
+		$nbachats = 0;
+		$nbventes = 0;
 		$illustration = $utilisateur->getIllustration();
 		$age = $utilisateur->getAge();
 		$telephone = $utilisateur->getTelephone();
 	
-		$requete = $connexionBDActive->prepare("INSERT INTO utilisateur(nom, prenom, pseudonyme, email, adresse, codepostal, pays, ville, illustration, age, telephone) VALUES (:nom, :prenom, :pseudonyme, :email, :adresse, :codepostal, :pays, :ville, :illustration, :age, :telephone) ");
+		$requete = $connexionBDActive->prepare("INSERT INTO utilisateur(nom, prenom, pseudonyme, email, adresse, codepostal, pays, ville, nbachats, nbventes, illustration, age, telephone) VALUES (:nom, :prenom, :pseudonyme, :email, :adresse, :codepostal, :pays, :ville, :nbachats, nbventes, :illustration, :age, :telephone)");
 		
 		$requete->bindParam(':nom', $nom, PDO::PARAM_STR);
 		$requete->bindParam(':prenom', $prenom, PDO::PARAM_STR);
@@ -48,9 +64,12 @@ class UtilisateurDAO{
 		$requete->bindParam(':codepostal', $codepostal, PDO::PARAM_STR);
 		$requete->bindParam(':pays', $pays, PDO::PARAM_STR);
 		$requete->bindParam(':ville', $ville, PDO::PARAM_STR);
+		$requete->bindParam(':nbachats', $nbachats, PDO::PARAM_INT);
+		$requete->bindParam(':nbventes', $nbventes, PDO::PARAM_INT);
 		$requete->bindParam(':illustration', $illustration, PDO::PARAM_STR);
 		$requete->bindParam(':age', $age, PDO::PARAM_INT);
-		$requete->bindParam(':telephone', $telephone, PDO::PARAM_STR);		
+		$requete->bindParam(':telephone', $telephone, PDO::PARAM_STR);
+		
 		$requete->execute();
 		
 	}
