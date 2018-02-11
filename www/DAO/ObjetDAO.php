@@ -38,7 +38,7 @@ class ObjetDAO{
 
 		
 	}
-	
+	/*
 	public function insererObjet($objet){
 			
 			
@@ -113,7 +113,7 @@ class ObjetDAO{
 		
 	}
 	
-	
+	*/
 	
 	
 }
