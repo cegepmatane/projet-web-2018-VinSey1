@@ -1,8 +1,11 @@
 <?php
 	require_once $_SERVER["DOCUMENT_ROOT"]."/configuration/configuration.php";
-	require_once UTILISATEUR_DAO;
-	require_once UTILISATEUR_MODELE;
+	echo("toto");
+	require_once OBJET_DAO;
+	require_once OBJET_MODELE;
 	
+	
+
 
 	// Données test
 	$produit1 = new stdClass();
@@ -180,7 +183,10 @@
 			</td>
 		</th>
 	</table>
+	
 	<?php
+	/*
+	
 		
 		$utilisateurDAO = new UtilisateurDAO();
 		
@@ -193,7 +199,8 @@
 			//print_r($utilisateur);*
 			echo $utilisateur->getNom();
 		}
-	
+		
+	*/
 	?>
 </body>
 </html>

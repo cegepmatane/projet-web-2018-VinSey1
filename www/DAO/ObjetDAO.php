@@ -1,5 +1,9 @@
 <?php
+echo ("allo");
+
 require_once OBJET_MODELE;
+
+echo ("bonjour");
 
 class ObjetDAO{
 	
@@ -32,41 +36,40 @@ class ObjetDAO{
 		}			
 		return $objet;
 
-		}		
-		return $objet;
+		
 	}
-	
-public function insererObjet($objet){
+/*	
+	public function insererObjet($objet){
+			
+			
+			global $connexionBDActive;
 		
+			$identifiantDeVente = $objet->getIdentifiantDeVente();
+			$identifiantVendeur = $objet->getIdentifiantVendeur();
+			$titreDeVente = $objet->getTitreDeVente();
+			$categorie = $objet->getCategorie();
+			$prix = $objet->getPrix();
+			$descriptionProduit = $objet->getDescriptionProduit();
+			$detailsVente = $objet->getDetailsVente();
+			$adresse = $objet->getAdresse();
+			$illustration = $objet->getIllustration();
+			
 		
-		global $connexionBDActive;
-	
-		$identifiantDeVente = $objet->getIdentifiantDeVente();
-		$identifiantVendeur = $objet->getIdentifiantVendeur();
-		$titreDeVente = $objet->getTitreDeVente();
-		$categorie = $objet->getCategorie();
-		$prix = $objet->getPrix();
-		$descriptionProduit = $objet->getDescriptionProduit();
-		$detailsVente = $objet->getDetailsVente();
-		$adresse = $objet->getAdresse();
-		$illustration = $objet->getIllustration();
-		
-	
-		$requete = $connexionBDActive->prepare("INSERT INTO objet(identifiantDeVente, identifiantVendeur, titreDeVente, categorie, prix, descriptionProduit, detailsVente, adresse, illustration) VALUES (:identifiantDeVente, :identifiantVendeur, :titreDeVente, :categorie, :prix, :descriptionProduit, :detailsVente, :adresse, :illustration)");
-		
-		$requete->bindParam(':identifiantDeVente', $identifiantDeVente, PDO::PARAM_STR);
-		$requete->bindParam(':identifiantVendeur', $identifiantVendeur, PDO::PARAM_STR);
-		$requete->bindParam(':titreDeVente', $titreDeVente, PDO::PARAM_STR);
-		$requete->bindParam(':categorie', $categorie, PDO::PARAM_STR);
-		$requete->bindParam(':prix', $prix, PDO::PARAM_STR);
-		$requete->bindParam(':descriptionProduit', $descriptionProduit, PDO::PARAM_STR);
-		$requete->bindParam(':detailsVente', $detailsVente, PDO::PARAM_STR);
-		$requete->bindParam(':adresse', $adresse, PDO::PARAM_STR);
-		$requete->bindParam(':illustration', $illustration, PDO::PARAM_STR);
-		
-		
-		$requete->execute();
-		
+			$requete = $connexionBDActive->prepare("INSERT INTO objet(identifiantDeVente, identifiantVendeur, titreDeVente, categorie, prix, descriptionProduit, detailsVente, adresse, illustration) VALUES (:identifiantDeVente, :identifiantVendeur, :titreDeVente, :categorie, :prix, :descriptionProduit, :detailsVente, :adresse, :illustration)");
+			
+			$requete->bindParam(':identifiantDeVente', $identifiantDeVente, PDO::PARAM_STR);
+			$requete->bindParam(':identifiantVendeur', $identifiantVendeur, PDO::PARAM_STR);
+			$requete->bindParam(':titreDeVente', $titreDeVente, PDO::PARAM_STR);
+			$requete->bindParam(':categorie', $categorie, PDO::PARAM_STR);
+			$requete->bindParam(':prix', $prix, PDO::PARAM_STR);
+			$requete->bindParam(':descriptionProduit', $descriptionProduit, PDO::PARAM_STR);
+			$requete->bindParam(':detailsVente', $detailsVente, PDO::PARAM_STR);
+			$requete->bindParam(':adresse', $adresse, PDO::PARAM_STR);
+			$requete->bindParam(':illustration', $illustration, PDO::PARAM_STR);
+			
+			
+			$requete->execute();
+			
 	}
 	
 	
@@ -84,7 +87,7 @@ public function insererObjet($objet){
 		
 		global $connexionBDActive;
 		
-		$requete = $connexionBDActive->prepare("SELECT *FROM objet");
+		$requete = $connexionBDActive->prepare("SELECT * FROM objet");
 		
 		
 	}
@@ -112,7 +115,7 @@ public function insererObjet($objet){
 	
 	
 	
-	
+*/	
 }
-?>
+
 ?>

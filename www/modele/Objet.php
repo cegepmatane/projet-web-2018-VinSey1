@@ -6,11 +6,11 @@ class Objet{
 	private $identifiantDeVente;
 	private $identifiantVendeur;
 	private $titreDeVente;
+	private $categorie;
 	private $prix;
 	private $descriptionProduit;
 	private $detailsVente;
 	private $adresse;
-	private $ville;
 	private $illustration;
 	
 
@@ -29,6 +29,10 @@ class Objet{
 	public function getTitreDeVente(){
 		return $this->titreDeVente;
 	}
+	
+	public function getCategorie(){
+		return $this->categorie;
+	} 
 	
 	public function getPrix(){
 		return $this->prix;
@@ -50,13 +54,14 @@ class Objet{
 		return $this->illustration;
 	}
 		
-		//mettre l'idObjet en paramètre dans le constructeur alors que c'est la base de donnée qui va l'attribuer par auto-incrémentation ?
-	function __construct($idObjet, $identifiantDeVente, $identifiantVendeur, $titreDeVente, $prix, $descriptionProduit, $detailsVente, $adresse, $illustration){
+
+	function __construct($idObjet, $identifiantDeVente, $identifiantVendeur, $titreDeVente, $categorie, $prix, $descriptionProduit, $detailsVente, $adresse, $illustration){
 		
 		$this->idObjet = $idObjet;
 		$this->identifiantDeVente = $identifiantDeVente;
 		$this->identifiantVendeur = $identifiantVendeur;
 		$this->titreDeVente = $titreDeVente;
+		$this->categorie = $categorie;
 		$this->prix = $prix;
 		$this->descriptionProduit = $descriptionProduit;
 		$this->detailsVente = $detailsVente;
