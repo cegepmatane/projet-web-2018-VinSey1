@@ -51,7 +51,7 @@ class Objet{
 	}
 		
 		//mettre l'idObjet en paramètre dans le constructeur alors que c'est la base de donnée qui va l'attribuer par auto-incrémentation ?
-	function __construct($idObjet, $identifiantDeVente, $identifiantVendeur, $titreDeVente, $prix, $descriptionProduit, $detailsVente, $adresse, $ville, $nbventes, $nbachats, $illustration, $age, $telephone ){
+	function __construct($idObjet, $identifiantDeVente, $identifiantVendeur, $titreDeVente, $prix, $descriptionProduit, $detailsVente, $adresse, $illustration){
 		
 		$this->idObjet = $idObjet;
 		$this->identifiantDeVente = $identifiantDeVente;
