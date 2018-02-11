@@ -186,8 +186,13 @@
 		
 		$utilisateur = $utilisateurDAO->chercherParIdentifiant(1);
 		
-		return $utilisateur;
+		var_dump($utilisateur);
 		
+		$listeUtilisateur = $utilisateurDAO->obtenirListeUtilisateur();
+		foreach($listeUtilisateur as $key => $utilisateur) {
+			//print_r($utilisateur);*
+			echo $utilisateur->getNom();
+		}
 	
 	?>
 </body>
