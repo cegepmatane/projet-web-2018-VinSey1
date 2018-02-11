@@ -1,5 +1,6 @@
 <?php
 require_once UTILISATEUR_MODELE;
+
 class UtilisateurDAO{
 	
 	public function chercherParIdentifiant($identifiantDemande){
