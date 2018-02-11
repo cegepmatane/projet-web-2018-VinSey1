@@ -41,15 +41,15 @@ public function insererObjet($objet){
 		
 		global $connexionBDActive;
 	
-		$identifiantDeVente = $utilisateur->getIdentifiantDeVente();
-		$identifiantVendeur = $utilisateur->getIdentifiantVendeur();
-		$titreDeVente = $utilisateur->getTitreDeVente();
-		$categorie = $utilisateur->getCategorie();
-		$prix = $utilisateur->getPrix();
-		$descriptionProduit = $utilisateur->getDescriptionProduit();
-		$detailsVente = $utilisateur->getDetailsVente();
-		$adresse = $utilisateur->getAdresse();
-		$illustration = $utilisateur->getIllustration();
+		$identifiantDeVente = $objet->getIdentifiantDeVente();
+		$identifiantVendeur = $objet->getIdentifiantVendeur();
+		$titreDeVente = $objet->getTitreDeVente();
+		$categorie = $objet->getCategorie();
+		$prix = $objet->getPrix();
+		$descriptionProduit = $objet->getDescriptionProduit();
+		$detailsVente = $objet->getDetailsVente();
+		$adresse = $objet->getAdresse();
+		$illustration = $objet->getIllustration();
 		
 	
 		$requete = $connexionBDActive->prepare("INSERT INTO objet(identifiantDeVente, identifiantVendeur, titreDeVente, categorie, prix, descriptionProduit, detailsVente, adresse, illustration) VALUES (:identifiantDeVente, :identifiantVendeur, :titreDeVente, :categorie, :prix, :descriptionProduit, :detailsVente, :adresse, :illustration)");
@@ -75,7 +75,7 @@ public function insererObjet($objet){
 		
 		global $connexionBDActive;
 		
-		$requete = $connexionBDActive->prepare("DELETE FROM objet WHERE id_utilisateur = :identifiant");
+		$requete = $connexionBDActive->prepare("DELETE FROM objet WHERE id_objet = :identifiant");
 		$requete->bindParam(':identifiant', $identifiant, PDO::PARAM_INT);
 		$requete->execute();
 	}
@@ -105,7 +105,7 @@ public function insererObjet($objet){
 		}
 		
 				
-		return $listeUtilisateur;
+		return $listeobjet;
 		
 		
 	}
