@@ -62,8 +62,6 @@ public function insererObjet($objet){
 		$requete->bindParam(':descriptionProduit', $descriptionProduit, PDO::PARAM_STR);
 		$requete->bindParam(':detailsVente', $detailsVente, PDO::PARAM_STR);
 		$requete->bindParam(':adresse', $adresse, PDO::PARAM_STR);
-		$requete->bindParam(':nbachats', $nbachats, PDO::PARAM_INT);
-		$requete->bindParam(':nbventes', $nbventes, PDO::PARAM_INT);
 		$requete->bindParam(':illustration', $illustration, PDO::PARAM_STR);
 		
 		
