@@ -17,40 +17,104 @@ class ObjetDAO{
 		
 		if ($resultat ){
 				
-			$objet = new objet($resultat->id_objet, $resultat->prix, $resultat->adresse);
+			$objet = new objet($resultat->id_objet, 
+										   $resultat->identifiantDeVente, 
+										   $resultat->identifiantVendeur,
+										   $resultat->titreDeVente,
+										   $resultat->categorie,
+										   $resultat->prix,
+										   $resultat->descriptionProduit,
+										   $resultat->detailsVente,
+										   $resultat->adresse,
+										   $resultat->illustration,
+										   										   
+										   );
+		}			
+		return $objet;
 
 		}		
 		return $objet;
 	}
 	
-		public function insererobjet($objet){
-	/*	
+public function insererObjet($objet){
+		
+		
 		global $connexionBDActive;
 	
-		$nom = $objet->getNom();
-		$prenom = $objet->getPrenom();
+		$identifiantDeVente = $utilisateur->getIdentifiantDeVente();
+		$identifiantVendeur = $utilisateur->getIdentifiantVendeur();
+		$titreDeVente = $utilisateur->getTitreDeVente();
+		$categorie = $utilisateur->getCategorie();
+		$prix = $utilisateur->getPrix();
+		$descriptionProduit = $utilisateur->getDescriptionProduit();
+		$detailsVente = $utilisateur->getDetailsVente();
+		$adresse = $utilisateur->getAdresse();
+		$illustration = $utilisateur->getIllustration();
+		
 	
-		$requete = $connexionBDActive->prepare("INSERT INTO objet(prenom, nom) VALUES (:prenom, :nom) ");
-		$requete->bindParam(':prenom', $prenom, PDO::PARAM_STR);
-		$requete->bindParam(':nom', $nom, PDO::PARAM_STR);
+		$requete = $connexionBDActive->prepare("INSERT INTO objet(identifiantDeVente, identifiantVendeur, titreDeVente, categorie, prix, descriptionProduit, detailsVente, adresse, illustration) VALUES (:identifiantDeVente, :identifiantVendeur, :titreDeVente, :categorie, :prix, :descriptionProduit, :detailsVente, :adresse, :illustration)");
+		
+		$requete->bindParam(':identifiantDeVente', $identifiantDeVente, PDO::PARAM_STR);
+		$requete->bindParam(':identifiantVendeur', $identifiantVendeur, PDO::PARAM_STR);
+		$requete->bindParam(':titreDeVente', $titreDeVente, PDO::PARAM_STR);
+		$requete->bindParam(':categorie', $categorie, PDO::PARAM_STR);
+		$requete->bindParam(':prix', $prix, PDO::PARAM_STR);
+		$requete->bindParam(':descriptionProduit', $descriptionProduit, PDO::PARAM_STR);
+		$requete->bindParam(':detailsVente', $detailsVente, PDO::PARAM_STR);
+		$requete->bindParam(':adresse', $adresse, PDO::PARAM_STR);
+		$requete->bindParam(':nbachats', $nbachats, PDO::PARAM_INT);
+		$requete->bindParam(':nbventes', $nbventes, PDO::PARAM_INT);
+		$requete->bindParam(':illustration', $illustration, PDO::PARAM_STR);
+		
+		
 		$requete->execute();
 		
 	}
 	
-	*/
 	
-	//public function supprimerobjet($objet){
-		/*
+	
+	public function supprimerObjet($identifiant){
+		
 		global $connexionBDActive;
 		
-		$id = $objet->getIdobjet();
-		$prenom = $objet->getPrenom();
-		$nom = $objet->getNom();
-		
-		$requete-> = $connexionBDActive->prepare();
-		*/
+		$requete = $connexionBDActive->prepare("DELETE FROM objet WHERE id_utilisateur = :identifiant");
+		$requete->bindParam(':identifiant', $identifiant, PDO::PARAM_INT);
+		$requete->execute();
 	}
 
+	public function chargerBaseObjet(){
+		
+		global $connexionBDActive;
+		
+		$requete = $connexionBDActive->prepare("SELECT *FROM objet");
+		
+		
+	}
+	
+	
+	public function obtenirListeObjet(){
+		
+		$listeObjet = [];
+		global $connexionBDActive;
+		$requete = $connexionBDActive->prepare("SELECT * FROM objet");
+		$requete->execute();
+		
+		$resultat = $requete->fetchAll(PDO::FETCH_OBJ);	
+		
+		foreach($resultat as $key => $enregistrementObjet) {
+			$objet = new Objet($enregistrementObjet->id_objet, $enregistrementObjet->identifiantDeVente, $enregistrementObjet->identifiantVendeur);
+			$listeObjet[]=$objet;
+		}
+		
+				
+		return $listeUtilisateur;
+		
+		
+	}
+	
+	
+	
 	
 }
+?>
 ?>
