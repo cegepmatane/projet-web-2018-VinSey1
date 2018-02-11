@@ -35,7 +35,7 @@ class Objet{
 	}
 	
 	public function getDescriptionProduit(){
-		return $this->prix;
+		return $this->descriptionProduit;
 	}
 	
 	public function getDetailsVente(){
