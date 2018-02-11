@@ -95,6 +95,26 @@ class UtilisateurDAO{
 	}
 	
 	
+	public function obtenirListeUtilisateur(){
+		
+		$listeUtilisateur = [];
+		global $connexionBDActive;
+		$requete = $connexionBDActive->prepare("SELECT * FROM utilisateur");
+		$requete->execute();
+		
+		$resultat = $requete->fetchAll(PDO::FETCH_OBJ);	
+		
+		foreach($resultat as $key => $enregistrementUtilisateur) {
+			$utilisateur = new Utilisateur($enregistrementUtilisateur->id_utilisateur, $enregistrementUtilisateur->nom, $enregistrementUtilisateur->prenom);
+			$listeUtilisateur[]=$utilisateur;
+		}
+		
+				
+		return $listeUtilisateur;
+		
+		
+	}
+	
 	
 	
 	
