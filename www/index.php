@@ -1,10 +1,8 @@
 <?php
 	require_once $_SERVER["DOCUMENT_ROOT"]."/configuration/configuration.php";
-	echo("toto");
+
 	require_once OBJET_DAO;
 	require_once OBJET_MODELE;
-	
-	
 
 
 	// Données test
@@ -185,6 +183,7 @@
 	</table>
 	
 	<?php
+		
 	/*
 	
 		

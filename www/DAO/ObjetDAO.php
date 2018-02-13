@@ -1,14 +1,11 @@
 <?php
-echo ("allo");
 
 require_once OBJET_MODELE;
-
-echo ("bonjour");
 
 class ObjetDAO{
 	
 	public function chercherParIdentifiant($identifiantDemande){
-
+		
 		$objet = null;
 		
 		global $connexionBDActive;
@@ -16,29 +13,27 @@ class ObjetDAO{
 		$requete = $connexionBDActive->prepare("SELECT * FROM objet WHERE id_objet = :identifiantDemande");
 		$requete->bindParam(':identifiantDemande', $identifiantDemande, PDO::PARAM_INT);
 		$requete->execute();
-				
-		$resultat = $requete->fetch(PDO::FETCH_OBJ);		
+			
+		$resultat = $requete->fetch(PDO::FETCH_OBJ);					
 		
 		if ($resultat ){
 				
-			$objet = new objet($resultat->id_objet, 
-										   $resultat->identifiantDeVente, 
-										   $resultat->identifiantVendeur,
-										   $resultat->titreDeVente,
-										   $resultat->categorie,
-										   $resultat->prix,
-										   $resultat->descriptionProduit,
-										   $resultat->detailsVente,
-										   $resultat->adresse,
-										   $resultat->illustration,
-										   										   
-										   );
+			$objet = new Objet($resultat->id_objet, 
+							   $resultat->identifiantDeVente, 
+							   $resultat->identifiantVendeur,
+							   $resultat->titreDeVente,
+							   $resultat->categorie,
+							   $resultat->prix,
+							   $resultat->descriptionProduit,
+							   $resultat->detailsVente,
+							   $resultat->adresse,
+							   $resultat->illustration	   									   
+							   );
 		}			
 		return $objet;
-
 		
 	}
-	/*
+	
 	public function insererObjet($objet){
 			
 			
@@ -113,7 +108,7 @@ class ObjetDAO{
 		
 	}
 	
-	*/
+	
 	
 	
 }
