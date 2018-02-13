@@ -1,34 +1,11 @@
 <?php 
 
-    /*
-    $language = "fr_FR";
-    putenv("LANG=" . $language);
-    setlocale(LC_ALL, $language);
+    require_once $_SERVER["DOCUMENT_ROOT"]."/configuration/configuration.dev.php";
 
-    $domain = "messages";
-    bindtextdomain($domain,"Locale");
-    bind_textdomain_codeset($domain, 'UTF-8');
+	require_once UTILISATEUR_DAO;
+	require_once UTILISATEUR_MODELE;
     
-    textdomain($domain);
-    */
-    
-	// Création des données test
-	$profil = new stdClass();
-	$profil->id = 1;
-	$profil->nom = "Baltz";
-    $profil->prenom = "Eliott";
-    $profil->pseudonyme = "Ace57880";
-    $profil->email = "eliott.baltz@gmail.com";
-    $profil->adresse = "616 Avenue Saint Rédempteur";
-    $profil->codepostal = "G4W 1L1 QC";
-    $profil->pays = "Canada";
-    $profil->nbachats = "6";
-    $profil->nbventes = "54";
-    $profil->karma = "100%";
-    $profil->illustration = "profil.png";
-    $profil->age = "20";
-    $profil->ville = "Matane";
-    $profil->telephone = "418-562-2609";
+	
 
 ?>
 <!DOCTYPE html>
@@ -41,9 +18,13 @@
 	<title> <?php echo gettext("Profil de $profil->pseudonyme") ?></title>
 </head>
 <body>
+	<?php
+		$utilisateurDAO = new UtilisateurDAO();
+		$utilisateur = $utilisateurDAO->chercherParIdentifiant(1);
+	?>
     <header>
         <div id="titre"> <?php echo gettext("Survie étudiante") ?></div>
-        <div id="sous-titre"> <?php echo gettext("Profil de $profil->pseudonyme") ?> </div>
+        <div id="sous-titre"> <?php echo gettext("Profil de ");echo $utilisateur->getPseudonyme(); ?> </div>
     </header>	
     <nav>
         <ul>
@@ -61,28 +42,27 @@
         <li><a href="Modifier.html"> <?php echo gettext("Modifier") ?> </a></li>
     </ul>
     <div id="contenu-profil">
-        <img id="image-profil" src="illustrations/tests/<?=$profil->illustration?>"/>
+        <img id="image-profil" src="illustrations/tests/<?php $utilisateur->getIllustration();?>"/>
         <ul>
             <div class="informations">
-                <li> <?php echo gettext("Pseudonyme : $profil->pseudonyme") ?> </li>
-                <li> <?php echo gettext("Nom : $profil->nom") ?> </li>
-                <li> <?php echo gettext("Prénom : $profil->prenom") ?> </li>
-                <li> <?php echo gettext("Âge : $profil->age") ?> </li>
+                <li> <?php echo gettext("Pseudonyme : "); echo $utilisateur->getPseudonyme(); ?> </li>
+                <li> <?php echo gettext("Nom : "); echo $utilisateur->getNom(); ?> </li>
+                <li> <?php echo gettext("Prénom : "); echo $utilisateur->getPrenom(); ?> </li>
+                <li> <?php echo gettext("Âge : "); echo $utilisateur->getAge(); ?> </li>
             </div>
             <div class="informations">
-                <li> <?php echo gettext("Adresse  $profil->adresse") ?> </li>
-                <li> <?php echo gettext("Ville : $profil->ville") ?> </li>
-                <li> <?php echo gettext("Code Postal : $profil->codepostal") ?> </li>
-                <li> <?php echo gettext("Pays : $profil->pays") ?> </li>
-                <li> <?php echo gettext("E-mail : $profil->email") ?> </li>
-                <li> <?php echo gettext("Téléphone : $profil->telephone") ?> </li>
+                <li> <?php echo gettext("Adresse : "); echo $utilisateur->getAdresse(); ?> </li>
+                <li> <?php echo gettext("Ville : "); echo $utilisateur->getVille(); ?> </li>
+                <li> <?php echo gettext("Code Postal : "); echo $utilisateur->getCodepostal(); ?> </li>
+                <li> <?php echo gettext("Pays : "); echo $utilisateur->getPays(); ?> </li>
+                <li> <?php echo gettext("E-mail : "); echo $utilisateur->getEmail(); ?> </li>
+                <li> <?php echo gettext("Téléphone : "); echo $utilisateur->getTelephone(); ?> </li>
             </div>
         </ul>
         <ul>
             <div class="statistiques">
-                <li> <?php echo gettext("Ventes : $profil->nbventes") ?> </li>
-                <li> <?php echo gettext("Achats : $profil->nbachats") ?> </li>
-                <li> <?php echo gettext("Karma : $profil->karma") ?> </li>
+                <li> <?php echo gettext("Ventes : "); echo $utilisateur->getNbventes(); ?> </li>
+                <li> <?php echo gettext("Achats : "); echo $utilisateur->getNbachats(); ?> </li>
             </div>
         </ul>
         <input type="button" value="<?php echo gettext("Modifier vos informations")?>">

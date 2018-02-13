@@ -38,7 +38,7 @@ class Utilisateur{
 	}
 	
 	public function getAdresse(){
-		return $this->email;
+		return $this->adresse;
 	}
 	
 	public function getCodepostal(){
