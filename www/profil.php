@@ -6,18 +6,18 @@
 ?>
 <!DOCTYPE html>
 <html lang="fr">
+	<?php
+		$utilisateurDAO = new UtilisateurDAO();
+		$utilisateur = $utilisateurDAO->chercherParIdentifiant(1);
+	?>
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width"/>
     <link rel="stylesheet" href="./decoration/style_general_test.css">
     <link rel="stylesheet" type="text/css" href="./decoration/MyFontsWebfontsKit.css">		
-	<title> <?php echo gettext("Profil de $profil->pseudonyme") ?></title>
+	<title> <?php echo gettext("Profil de ");echo $utilisateur->getPseudonyme(); ?></title>
 </head>
 <body>
-	<?php
-		$utilisateurDAO = new UtilisateurDAO();
-		$utilisateur = $utilisateurDAO->chercherParIdentifiant(1);
-	?>
     <header>
         <div id="titre"> <?php echo gettext("Survie étudiante") ?></div>
         <div id="sous-titre"> <?php echo gettext("Profil de ");echo $utilisateur->getPseudonyme(); ?> </div>
@@ -40,7 +40,7 @@
         <li><a href="Modifier.html"> <?php echo gettext("Modifier") ?> </a></li>
     </ul>
     <div id="contenu-profil">
-        <img id="image-profil" src="<?php=$utilisateur->getIllustration();?>"/>
+        <img src="<?=$utilisateur->getIllustration();?>" id="image-profil" />
         <ul>
             <div class="informations">
                 <li> <?php echo gettext("Pseudonyme : "); echo $utilisateur->getPseudonyme(); ?> </li>
