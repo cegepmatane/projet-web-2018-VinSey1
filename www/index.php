@@ -21,9 +21,10 @@
     </header>	
     <nav>
         <ul>
-            <li><a href="catalogue.php" title="Aller sur la page Catalogue">Aller sur la page Catalogue</a></li>
-            <li><a href="index.php" title="Aller sur la page Accueil">Aller sur la page Accueil</a></li>
+            <li><a href="profil.php" title="Aller sur la page Profil">Aller sur la page Profil</a></li>
+			<li><a href="catalogue.php" title="Aller sur la page Catalogue">Aller sur la page Catalogue</a></li>
             <li><a href="vente.php" title="Aller sur la page Vente">Aller sur la page Vente</a></li>
+			<li><a href="panneau-administration.php" title="Aller sur la page Panneau d'administration">Aller sur la page Panneau d'administration</a></li>
         </ul>
     </nav>
 	<div id="barre-de-recherche" >
