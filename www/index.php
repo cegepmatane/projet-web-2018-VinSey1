@@ -2,143 +2,66 @@
 	require_once $_SERVER["DOCUMENT_ROOT"]."/configuration/configuration.dev.php";
 
 	require_once OBJET_DAO;
-	require_once OBJET_MODELE;
+	require_once OBJET_MODELE;	
 ?>
 
-
-
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<link rel = "stylesheet" href = "decoration/style_general.css">		
-	<title> Page dev </title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel = "stylesheet" href = "./decoration/style_general_test.css">
+    <link rel="stylesheet" type="text/css" href="./decoration/MyFontsWebfontsKit.css">		
+	<title> <?php echo gettext("Page d'accueil") ?></title>
 </head>
 <body>
-</body>
-</html>
-	<header>
-		<i>Page de développement</i>
-		<p id="titre-survie-etudiante"> <?php echo gettext("Survie étudiante"); ?> </p>
-		<div class="logo-cegep-matane">
-			<img src=./illustrations/petit/cegepmatane_logo_petit.png>
-		</div>
-	</header>
-	<ul id="navigation">
-		<li><a href="profil.php" title="Aller sur la page Profil"><?php echo gettext("Page profil"); ?></a></li>
-		<li><a href="catalogue.php" title="Aller sur la page Catalogue"><?php echo gettext("Page catalogue"); ?></a></li>
-		<li><a href="vente.php" title="Aller sur la page Vente"><?php echo gettext("Page de vente"); ?></a></li>
-		<li><a href="panneau-administration.php" title="Aller sur le panneau d'administration"><?php echo gettext("Page d'administration"); ?></a></li>
-
-	</ul>
-	<div  id="barre-de-recherche" >
+    <header>
+        <div id="titre"> <?php echo gettext("Survie étudiante") ?></div>
+        <div id="sous-titre"> <?php echo gettext("Page d'accueil") ?> </div>
+    </header>	
+    <nav>
+        <ul>
+            <li><a href="catalogue.php" title="Aller sur la page Catalogue">Aller sur la page Catalogue</a></li>
+            <li><a href="index.php" title="Aller sur la page Accueil">Aller sur la page Accueil</a></li>
+            <li><a href="vente.php" title="Aller sur la page Vente">Aller sur la page Vente</a></li>
+        </ul>
+    </nav>
+	<div id="barre-de-recherche" >
 		<img src=./illustrations/petit/loupe.png id="image-loupe">
 		<input type="text" name="nato_pf"/>
 	</div>
-	<table id = "tabeau-principal-page-accueil">
-	
-		<th>
-			<td id="colonne-gauche-accueil">
-				<p>
-					<b>
-						<?php echo gettext("Catégories"); ?>
-					</b>
-				</p>
-				<table>
-					<tr>
-						<td>
-							<?php echo gettext("Catégories 1"); ?>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<?php echo gettext("Catégories 2"); ?>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<?php echo gettext("Catégories 3"); ?>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<?php echo gettext("Catégories 4"); ?>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<?php echo gettext("Catégories 5"); ?>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<?php echo gettext("Catégories 6"); ?>
-						</td>
-					</tr>
-				</table>
-			</td>
-
-			<td>
-			<?php 
-					$objetDAO = new ObjetDAO();
-					$listeObjet = $objetDAO->obtenirListeObjet();
-					foreach($listeObjet as $key => $objet) {
-							
-			?>		
-				<table id="colonne-centrale-accueil">
-					<tr>
-						<td>
-							<img src="<?$objet->getIllustration();?>" class="photo-miniature-produit"/>
-						</td>
-						<td>
-							<table >
-								<tr>
-									<td>
-										<?php echo $objet->getTitreDeVente();?>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<?php echo gettext("Prix");?>: <?php echo $objet->getPrix();?> $
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<button type="button"><?php echo gettext("Acheter"); ?></button>
-									</td>
-								</tr>
-						
-							</table>
-						</td>
-					</tr>
-				</table>
-				<?php	
-				}
-				?>
-			</td>
-
-			<td id="colonne-droite-accueil">
-
-					<button type="button"><?php echo gettext("Vendre un objet"); ?></button>
-					<p id="italique">
-							<?php echo gettext("Identification");?>: <?php echo $objet->getPrix();?> 
-					</p>
-					<table id ="tableau-identification-accueil">
-						<tr >
-							<td>
-								<button type="button"><?php echo gettext("Se connecter"); ?></button>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button type="button"><?php echo gettext("S'inscrire"); ?></button>	
-							</td>
-						</tr>
-					</table>
-			</td>
-		</th>
-	</table>
-	
+	<div id="contenu-index">
+		<ul id="zone-categories-index">
+			<div id="categories-index">
+				<li id="titre-categories"><h3><?php echo gettext("Catégories"); ?></h3></li>
+				<li><?php echo gettext("Catégorie 1"); ?></li>
+				<li><?php echo gettext("Catégorie 2"); ?></li>
+				<li><?php echo gettext("Catégorie 3"); ?></li>
+				<li><?php echo gettext("Catégorie 4"); ?></li>
+				<li><?php echo gettext("Catégorie 5"); ?></li>
+				<li><?php echo gettext("Catégorie 6"); ?></li>
+			</div>
+		</ul>
+		<div id="ensemble-produits">
+			<?php
+				$objetDAO = new ObjetDAO();
+				$listeObjet = $objetDAO->obtenirListeObjet();
+				foreach($listeObjet as $key => $objet) {
+			?>
+				<div class="produit-courant">
+					<img src="<?=$objet->getIllustration();?>" class="photo-miniature-produit"/>
+					<ul>
+						<li><?php echo $objet->getTitreDeVente();?></li>
+						<li><?php echo gettext("Prix");?>: <?php echo $objet->getPrix();?></li>
+						<li><button type="button"><?php echo gettext("Acheter"); ?></button></li>
+					</ul>
+				</div>
+			<?php } ?>
+		</div>
+		<u id="boutons-index">
+			<li><button type="button"><?php echo gettext("Vendre un objet"); ?></button></li>
+			<li><button type="button"><?php echo gettext("Se connecter"); ?></button></li>
+			<li><button type="button"><?php echo gettext("S'inscrire"); ?></button></li>
+		</ul>
 </body>
 </html>
