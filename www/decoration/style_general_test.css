@@ -1,3 +1,4 @@
+/* CSS GENERAL */
 body{
 	margin:0;
 }
@@ -74,7 +75,7 @@ nav a, #onglets-profil a{
 	border-bottom: 1px solid white;
 	background-color: white;
 }
-#contenu-profil{
+#contenu-profil, #contenu-vente{
 	padding: 10px;
 	margin: 5px;
 }
@@ -103,7 +104,7 @@ nav a, #onglets-profil a{
 #contenu-profil li{
 	padding: 2px;
 }
-#image-profil{
+#image-profil, #image-vente{
 	width: 200px;
     border: 1px solid black;
     padding: 10px;
@@ -112,7 +113,7 @@ nav a, #onglets-profil a{
     margin-right : 50px;
 }
 
-/* BALISES CSS POUR PAGE INDEX */
+/* BALISES CSS POUR PAGE INDEX ET CATALOGUE */
 #zone-categories-index{
 	float: left;
 	list-style-type: none;
@@ -189,4 +190,41 @@ nav a, #onglets-profil a{
 }
 #page-courante{
 	background-color: lightgrey;
+}
+
+/* BALISES CSS POUR VENTE */
+#contenu-vente .informations{
+	font-size: 20px;
+	list-style-type: none;
+	float: left;
+	display: block;
+	margin-top: 0 auto;
+}
+#contenu-vente .prix{
+	margin-left: 200px;
+	float:middle;
+	list-style-type: none;
+	display: block;
+	font-size: 50px;
+	text-align: center;
+	margin-top: 30px;
+}
+#contenu-vente .statistiques-vendeur{
+	text-align: left;
+	list-style-type: none;
+	float: left;
+	display: block;
+	margin-top: 20px;
+	font-size: 20px;
+}
+
+#contenu-vente h4{
+	margin: 5px;
+}
+
+#contenu-vente input{
+	margin-top: 50px;
+	margin-right: 200px;
+	float: right;
+	font-size: 20px;
 }

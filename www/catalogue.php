@@ -21,11 +21,11 @@
     </header>	
     <nav>
         <ul>
-			<li><a href="index.php" title="Aller sur la page d'Accueil">Page d'Accueil</a></li>
-            <li><a href="profil.php" title="Aller sur la page Profil">Page Profil</a></li>
-			<li id="page-courante">Page Catalogue</li>
-            <li><a href="vente.php" title="Aller sur la page Vente">Page Vente</a></li>
-			<li><a href="panneau-administration.php" title="Aller sur la page Panneau d'administration">Page Panneau d'administration</a></li>
+            <li><a href="index.php" title="<?php echo gettext("Aller sur la page d'Accueil")?>"><?php echo gettext("Page d'Accueil")?></a></li>
+			<li><a href="profil.php" title="<?php echo gettext("Aller sur la page Profil")?>"><?php echo gettext("Page Profil")?></a></li>
+			<li id="page-courante"><?php echo gettext("Page Catalogue")?></li>
+            <li><a href="vente.php" title="<?php echo gettext("Aller sur la page Vente")?>"><?php echo gettext("Page Vente")?></a></li>
+            <li><a href="panneau-administration.php" title="<?php echo gettext("Aller sur la page Panneau d'administration")?>"><?php echo gettext("Page Panneau d'administration")?></a></li>
         </ul>
     </nav>
 	<div id="barre-de-recherche" >
@@ -38,7 +38,7 @@
 				<li id="titre-categories"><h3><?php echo gettext("Catégories"); ?></h3></li>
 				<li><?php echo gettext("Catégorie 1"); ?></li>
 				<li><?php echo gettext("Catégorie 2"); ?></li>
-				<li id="categorie-selectionnee"><?php echo gettext("Literie"); ?></li>
+				<li id="categorie-selectionnee"><?php echo gettext("Catégorie 3"); ?></li>
 				<li><?php echo gettext("Catégorie 4"); ?></li>
 				<li><?php echo gettext("Catégorie 5"); ?></li>
 				<li><?php echo gettext("Catégorie 6"); ?></li>
@@ -61,9 +61,9 @@
 			<?php } ?>
 		</div>
 		<u id="boutons-index">
-			<li>Prix</li>
+			<li><?php echo gettext("Prix")?></li>
 			<li><input type="range" min="1" max="100" value="50" class="slider" id="myRange"></button></li>
-			<li><p>De 0 à <span id="demo"></span> $</p></li>
+			<li><?php echo gettext("De 0 à ")?> <span id="demo"></span> $</li>
 			<li><button type="button"><?php echo gettext("Se connecter"); ?></button></li>
 			<li><button type="button"><?php echo gettext("S'inscrire"); ?></button></li>
 		</ul>

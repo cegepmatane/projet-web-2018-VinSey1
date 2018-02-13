@@ -17,69 +17,51 @@
 
 	$profil_courant = new stdClass();
 	$profil_courant->nom = "Eliott";
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="utf-8"/>
-	<link rel = "stylesheet" href = "./decoration/style_general.css">		
-	<title> Vente d'un objet</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="stylesheet" href="./decoration/style_general_test.css">
+    <link rel="stylesheet" type="text/css" href="./decoration/MyFontsWebfontsKit.css">		
+	<title> <?php echo gettext("Vente n°$produit1->id") ?></title>
 </head>
-<ul id="navigation">
-	<li><a href="profil.php" title="Aller sur la page Profil">Aller sur la page Profil</a></li>
-	<li><a href= "index.php" title="Aller sur la page Catalogue">Aller sur la page Accueil</a></li>
-	<li><a href="catalogue.php" title="Aller sur la page Catalogue">Aller sur la page Catalogue</a></li>
-</ul>
-<body id="generalproduit">
-<ul id="bouton-profil-courant">
-	<li><a href="profil.php">Bonjour <?=$profil_courant->nom?></a>
+<body>
+    <header>
+        <div id="titre"> <?php echo gettext("Survie étudiante") ?></div>
+        <div id="sous-titre"><?php echo gettext("Vente n°$produit1->id") ?></div>
+    </header>	
+    <nav>
+        <ul>
+            <li><a href="index.php" title="<?php echo gettext("Aller sur la page d'Accueil")?>"><?php echo gettext("Page d'Accueil")?></a></li>
+            <li><a href="profil.php" title="<?php echo gettext("Aller sur la page Profil")?>"><?php echo gettext("Page Profil")?></a></li>
+            <li><a href="catalogue.php" title="<?php echo gettext("Aller sur la page Catalogue")?>"><?php echo gettext("Page Catalogue")?></a></li>
+            <li id="page-courante"><?php echo gettext("Page Vente")?></li>
+            <li><a href="panneau-administration.php" title="<?php echo gettext("Aller sur la page Panneau d'administration")?>"><?php echo gettext("Page Panneau d'administration")?></a></li>
+        </ul>
+	</nav>	
+	<div id="contenu-vente">
+		<img id="image-vente" src="illustrations/petit/<?=$produit1->illustration?>"/>
 		<ul>
-			<li><a href="profil.php">Vos achats</a></li>
-			<li><a href="profil.php">Vos ventes</a></li>
-			<li><a href="profil.php">Modifier vos informations</a></li>
+			<div class="informations">
+				<li><h4><?php echo gettext("Description")?></h4></li>
+				<li><?=$produit1->descriptionProduit?></li>
+				<li><h4><?php echo gettext("Détails")?></h4></li>
+				<li><?=$produit1->detailsVente?></li>
+			</div>
+			<div class="prix">
+				<li><?=$produit1->prix?> $</li>
 		</ul>
-	</li>
-</ul>
-<header>
-	<h1 id="titre_general"> <?=$produit1->titreDeVente?> à vendre </h1>
-	<h2 id="titreprofil">Produit de <?=$produit1->identifiantVendeur?></h2>
-</header>	
-<img class="imgvente" src="illustrations/petit/<?=$produit1->illustration?>"/>
-<table class="informations">
-    <tr>
-        <td class="tdinfovente">
-            Description : <?=$produit1->descriptionProduit?>
-        </td>
-    </tr>
-	<tr>
-		<td class="tdinfovente">
-			Detail : <?=$produit1->detailsVente?>
-        </td>
-	</tr>
-	<tr>
-		<td class="tdinfovente">
-			 Prix : <?=$produit1->prix?>
-        </td>
-	</tr>
-</table>
-	<h2 id="titrevendeur"> Vendeur : </h2>
-	<p class="tdinfovendeur">
-		Nom : <?=$produit1->nom?>
-	</p>
-    <p class="tdinfovendeur">   
-		Identifiant Vendeur : <?=$produit1->identifiantVendeur?>
-    </p>
-    <p class="tdinfovendeur">
-        
-          Adresse : <?=$produit1->adresse?>
-      
-    </p>
-   <p id="boutonAchat">
-		<input type="button" value="ACHETE ICI !">
-	</p>
+		<ul>
+			<div class="statistiques-vendeur">
+				<li><h4><?php echo gettext("Vendeur :")?></h4><?=$produit1->nom?></li>
+				<li><h4><?php echo gettext("Adresse :")?></h4><?=$produit1->adresse?></li>
+			</div>
+		</ul>
+		<input type="button" value="Acheter">
+	</div>
 </body>
 </html>
 	

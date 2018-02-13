@@ -24,11 +24,11 @@
     </header>	
     <nav>
         <ul>
-            <li><a href="index.php" title="Aller sur la page d'Accueil">Page d'Accueil</a></li>
-			<li id="page-courante">Page Profil</li>
-            <li><a href="catalogue.php" title="Aller sur la page Catalogue">Page Catalogue</a></li>
-            <li><a href="vente.php" title="Aller sur la page Vente">Page Vente</a></li>
-            <li><a href="panneau-administration.php" title="Aller sur la page Panneau d'administration">Page Panneau d'administration</a></li>
+            <li><a href="index.php" title="<?php echo gettext("Aller sur la page d'Accueil")?>"><?php echo gettext("Page d'Accueil")?></a></li>
+            <li id="page-courante"><?php echo gettext("Page Profil")?></li>
+            <li><a href="catalogue.php" title="<?php echo gettext("Aller sur la page Catalogue")?>"><?php echo gettext("Page Catalogue")?></a></li>
+            <li><a href="vente.php" title="<?php echo gettext("Aller sur la page Vente")?>"><?php echo gettext("Page Vente")?></a></li>
+            <li><a href="panneau-administration.php" title="<?php echo gettext("Aller sur la page Panneau d'administration")?>"><?php echo gettext("Page Panneau d'administration")?></a></li>
         </ul>
     </nav>
     <ul id="onglets-profil">

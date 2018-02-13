@@ -21,11 +21,11 @@
     </header>	
     <nav>
         <ul>
-			<li id="page-courante">Page d'Accueil</li>
-            <li><a href="profil.php" title="Aller sur la page Profil">Page Profil</a></li>
-			<li><a href="catalogue.php" title="Aller sur la page Catalogue">Page Catalogue</a></li>
-            <li><a href="vente.php" title="Aller sur la page Vente">Page Vente</a></li>
-			<li><a href="panneau-administration.php" title="Aller sur la page Panneau d'administration">Page Panneau d'administration</a></li>
+			<li id="page-courante"><?php echo gettext("Page d'Accueil")?></li>
+			<li><a href="profil.php" title="<?php echo gettext("Aller sur la page Profil")?>"><?php echo gettext("Page Profil")?></a></li>
+			<li><a href="catalogue.php" title="<?php echo gettext("Aller sur la page Catalogue")?>"><?php echo gettext("Page Catalogue")?></a></li>
+			<li><a href="vente.php" title="<?php echo gettext("Aller sur la page Vente")?>"><?php echo gettext("Page Vente")?></a></li>
+            <li><a href="panneau-administration.php" title="<?php echo gettext("Aller sur la page Panneau d'administration")?>"><?php echo gettext("Page Panneau d'administration")?></a></li>
         </ul>
     </nav>
 	<div id="barre-de-recherche" >
@@ -50,8 +50,6 @@
 				$listeObjet = $objetDAO->obtenirListeObjet();
 				foreach($listeObjet as $key => $objet) {
 					if ($objet->getVedette() == 1) {
-						
-					
 			?>
 				<div class="produit-courant">
 					<img src="<?=$objet->getIllustration();?>" class="photo-miniature-produit"/>
