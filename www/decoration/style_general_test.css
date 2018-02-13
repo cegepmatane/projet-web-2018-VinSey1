@@ -44,6 +44,8 @@ nav a, #onglets-profil a{
 	text-decoration: none;
 	color: black;
 }
+
+/* BALISES CSS POUR PAGE PROFIL */
 #onglets-profil{
 	margin: auto;
 	width: 90%;
@@ -108,4 +110,75 @@ nav a, #onglets-profil a{
     vertical-align: middle;
     float : left;
     margin-right : 50px;
+}
+
+/* BALISES CSS POUR PAGE INDEX */
+#zone-categories-index{
+	float: left;
+	list-style-type: none;
+	width: 15%;
+	height: 620px;
+	padding: 10px;
+	margin: 0 auto;
+	text-align: center;
+}
+#contenu-index{
+	padding: 10px;
+	margin: 5px;
+}
+#image-loupe{
+	height: 25px;
+	vertical-align:bottom;
+}
+#barre-de-recherche{
+	margin: 5px;
+	width: 100%;
+	text-align: center;
+}
+#barre-de-recherche input{
+	width: 15%;
+}
+#titre-categories{
+	font-family: Insolent;
+}
+.photo-miniature-produit{
+	height: 150px;
+}
+.produit-courant{
+	border-bottom: 1px solid black;
+	height: 200px;
+	margin: 4px;
+}
+.produit-courant ul{
+	float: right;
+	line-height: 50px;
+	list-style-type: none;
+	margin-right: 20%;
+	text-align: center;
+}
+.produit-courant img{
+	float: left;
+	margin: 20px;
+	margin-left: 20%;
+}
+#boutons-index{
+	float: left;
+	list-style-type: none;
+	text-align: center;
+	margin-top: 260px;
+}
+#ensemble-produits{
+	float: left;
+	margin: 0 auto;
+	width: 70%;
+	padding: 10px;
+}
+#boutons-index button{
+	margin-bottom: 20px;
+	width: 150px;
+}
+#categories-index{
+	margin-top: 150px;
+	border: 1px solid black;
+	padding-bottom: 50px;
 }

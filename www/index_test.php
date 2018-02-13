@@ -51,10 +51,7 @@
 	
 ?>
 
-
-
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="utf-8"/>
@@ -75,110 +72,38 @@
             <li><a href="vente.php" title="Aller sur la page Vente">Aller sur la page Vente</a></li>
         </ul>
     </nav>
-	<div  id="barre-de-recherche" >
+	<div id="barre-de-recherche" >
 		<img src=./illustrations/petit/loupe.png id="image-loupe">
 		<input type="text" name="nato_pf"/>
 	</div>
-	<table id = "tabeau-principal-page-accueil">
-	
-		<th>
-			<td id="colonne-gauche-accueil">
-				<p>
-					<b>
-						<?php echo gettext("Catégories"); ?>
-					</b>
-				</p>
-				<table>
-					<tr>
-						<td>
-							<?php echo gettext("Catégories 1"); ?>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<?php echo gettext("Catégories 2"); ?>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<?php echo gettext("Catégories 3"); ?>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<?php echo gettext("Catégories 4"); ?>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<?php echo gettext("Catégories 5"); ?>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<?php echo gettext("Catégories 6"); ?>
-						</td>
-					</tr>
-				</table>
-			</td>
-
-			<td>
-			<?php foreach($tableauProduit as $produitCourant) {
-							
-			?>		
-				<table id="colonne-centrale-accueil">
-					<tr>
-						<td>
-							<img src="<?=$produitCourant->image?>" class="photo-miniature-produit"/>
-						</td>
-						<td>
-							<table >
-								<tr>
-									<td>
-										<?php echo $produitCourant->titreDeVente;?>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<?php echo gettext("Prix");?>: <?php echo $produitCourant->prix;?> $
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<button type="button"><?php echo gettext("Acheter"); ?></button>
-									</td>
-								</tr>
-						
-							</table>
-						</td>
-					</tr>
-				</table>
-				<?php	
-				}
-				?>
-			</td>
-
-			<td id="colonne-droite-accueil">
-
-					<button type="button"><?php echo gettext("Vendre un objet"); ?></button>
-					<p id="italique">
-							<?php echo gettext("Identification");?>: <?php echo $produitCourant->prix;?> 
-					</p>
-					<table id ="tableau-identification-accueil">
-						<tr >
-							<td>
-								<button type="button"><?php echo gettext("Se connecter"); ?></button>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button type="button"><?php echo gettext("S'inscrire"); ?></button>	
-							</td>
-						</tr>
-					</table>
-			</td>
-		</th>
-	</table>
-	
+	<div id="contenu-index">
+		<ul id="zone-categories-index">
+			<div id="categories-index">
+				<li id="titre-categories"><h3><?php echo gettext("Catégories"); ?></h3></li>
+				<li><?php echo gettext("Catégorie 1"); ?></li>
+				<li><?php echo gettext("Catégorie 2"); ?></li>
+				<li><?php echo gettext("Catégorie 3"); ?></li>
+				<li><?php echo gettext("Catégorie 4"); ?></li>
+				<li><?php echo gettext("Catégorie 5"); ?></li>
+				<li><?php echo gettext("Catégorie 6"); ?></li>
+			</div>
+		</ul>
+		<div id="ensemble-produits">
+			<?php foreach($tableauProduit as $produitCourant) { ?>
+				<div class="produit-courant">
+					<img src="<?=$produitCourant->image?>" class="photo-miniature-produit"/>
+					<ul>
+						<li><?php echo $produitCourant->titreDeVente;?></li>
+						<li><?php echo gettext("Prix");?>: <?php echo $produitCourant->prix;?></li>
+						<li><button type="button"><?php echo gettext("Acheter"); ?></button></li>
+					</ul>
+				</div>
+			<?php } ?>
+		</div>
+		<u id="boutons-index">
+			<li><button type="button"><?php echo gettext("Vendre un objet"); ?></button></li>
+			<li><button type="button"><?php echo gettext("Se connecter"); ?></button></li>
+			<li><button type="button"><?php echo gettext("S'inscrire"); ?></button></li>
+		</ul>
 </body>
 </html>
