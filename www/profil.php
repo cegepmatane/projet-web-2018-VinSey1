@@ -1,6 +1,5 @@
 <?php 
-    require_once $_SERVER["DOCUMENT_ROOT"]."/configuration/configuration.dev.php";
-
+    require_once $_SERVER["DOCUMENT_ROOT"]."/www/configuration/configuration.dev.php";
 	require_once UTILISATEUR_DAO;
 	require_once UTILISATEUR_MODELE;
 ?>
@@ -27,7 +26,8 @@
             <li><a href="index.php" title="<?php echo gettext("Aller sur la page d'Accueil")?>"><?php echo gettext("Page d'Accueil")?></a></li>
             <li id="page-courante"><?php echo gettext("Page Profil")?></li>
             <li><a href="catalogue.php" title="<?php echo gettext("Aller sur la page Catalogue")?>"><?php echo gettext("Page Catalogue")?></a></li>
-            <li><a href="vente.php" title="<?php echo gettext("Aller sur la page Vente")?>"><?php echo gettext("Page Vente")?></a></li>
+            <li><a href="achat.php" title="<?php echo gettext("Aller sur la page d'Achat")?>"><?php echo gettext("Page d'Achat")?></a></li>
+			<li><a href="vente.php" title="<?php echo gettext("Aller sur la page de vente")?>"><?php echo gettext("Page de vente")?></a></li>
             <li><a href="panneau-administration.php" title="<?php echo gettext("Aller sur la page Panneau d'administration")?>"><?php echo gettext("Page Panneau d'administration")?></a></li>
         </ul>
     </nav>
