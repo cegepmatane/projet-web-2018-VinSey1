@@ -1,12 +1,8 @@
 <?php 
-
     require_once $_SERVER["DOCUMENT_ROOT"]."/configuration/configuration.dev.php";
 
 	require_once UTILISATEUR_DAO;
 	require_once UTILISATEUR_MODELE;
-    
-	
-
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -28,9 +24,10 @@
     </header>	
     <nav>
         <ul>
-            <li><a href="catalogue.php" title="Aller sur la page Catalogue">Aller sur la page Catalogue</a></li>
             <li><a href="index.php" title="Aller sur la page Accueil">Aller sur la page Accueil</a></li>
+			<li><a href="catalogue.php" title="Aller sur la page Catalogue">Aller sur la page Catalogue</a></li>
             <li><a href="vente.php" title="Aller sur la page Vente">Aller sur la page Vente</a></li>
+			<li><a href="panneau-administration.php" title="Aller sur la page Panneau d'administration">Aller sur la page Panneau d'administration</a></li>
         </ul>
     </nav>
     <ul id="onglets-profil">
@@ -42,7 +39,7 @@
         <li><a href="Modifier.html"> <?php echo gettext("Modifier") ?> </a></li>
     </ul>
     <div id="contenu-profil">
-        <img id="image-profil" src="illustrations/tests/<?php $utilisateur->getIllustration();?>"/>
+        <img id="image-profil" src="<?php=$utilisateur->getIllustration();?>"/>
         <ul>
             <div class="informations">
                 <li> <?php echo gettext("Pseudonyme : "); echo $utilisateur->getPseudonyme(); ?> </li>
