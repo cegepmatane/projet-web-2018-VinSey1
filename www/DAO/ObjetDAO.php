@@ -98,12 +98,12 @@ class ObjetDAO{
 		$resultat = $requete->fetchAll(PDO::FETCH_OBJ);	
 		
 		foreach($resultat as $key => $enregistrementObjet) {
-			$objet = new Objet($enregistrementObjet->id_objet, $enregistrementObjet->identifiantDeVente, $enregistrementObjet->identifiantVendeur);
+			$objet = new Objet($enregistrementObjet->id_objet, $enregistrementObjet->identifiantDeVente, $enregistrementObjet->identifiantVendeur, $enregistrementObjet->titreDeVente, $enregistrementObjet->categorie, $enregistrementObjet->prix, $enregistrementObjet->descriptionProduit, $enregistrementObjet->detailsVente, $enregistrementObjet->adresse, $enregistrementObjet->illustration);
 			$listeObjet[]=$objet;
 		}
 		
 				
-		return $listeobjet;
+		return $listeObjet;
 		
 		
 	}
