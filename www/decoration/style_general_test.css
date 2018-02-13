@@ -1,0 +1,92 @@
+nav{
+	width: 100%;
+	text-align: center;
+}
+nav ul, #onglets-profil{
+	list-style-type: none ;
+}
+nav li{
+	border: 1px solid black;
+	padding: 5px;
+}
+nav li, #onglets-profil li{
+	display: inline;
+	background-color: white;
+}
+nav li:hover{
+	background-color: lightgrey;
+}
+nav a, #onglets-profil a{
+	text-decoration: none;
+	color: black;
+}
+#titre-profil{
+	text-align: center;
+	font-family: Arial Narrow, sans-serif;
+}
+#onglets-profil{
+	margin-top: 50px;
+	margin-bottom: 4px;
+}
+#onglets-profil li{
+	margin-left: 2px;
+	margin-right: 2px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border: 1px solid black;
+}
+#onglets-profil a{
+	padding: 5px;
+	background-color: lightgray;
+}
+#onglets-profil a:hover{
+	background-color: white;
+}
+#onglets-profil li:hover{
+	border-bottom: 1px solid white;
+}
+#onglets-profil #active a{
+	border-bottom: 1px solid white;
+	background-color: white;
+}
+#contenu-profil{
+	border: 1px solid black;
+	padding: 10px;
+	padding-bottom: 300px;
+}
+#image-profil{
+	width: 200px;
+    border: 1px solid black;
+    padding: 10px;
+    vertical-align: middle;
+    float : left;
+    margin-right : 50px;
+}
+#contenu-profil input{
+	float: right;
+	font-size: 20px;
+	margin-top: 260px;
+}
+#contenu-profil ul{
+	list-style-type: none;
+}
+#contenu-profil .informations{
+	display: block;
+	float: left;
+	font-size: 20px;
+	padding : 20px;
+}
+#contenu-profil .statistiques{
+	margin-top: 190px;
+	display: block;
+	position: absolute;
+	font-size: 20px;
+	padding: 15px;
+}
+#contenu-profil li{
+	padding: 2px;
+}
+header{
+	width: 100%;
+	background-color: lightblue;
+}
