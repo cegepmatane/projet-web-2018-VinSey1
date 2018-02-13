@@ -5,6 +5,7 @@
 	require_once OBJET_MODELE;
 
 
+
 	// Données test
 	$produit1 = new stdClass();
 	$produit1->identifiantDeVente = "ez1ezac15hy8j";
@@ -126,8 +127,11 @@
 
 			<td>
 			<?php 
-					foreach($tableauProduit as $produitCourant){
-				?>		
+					$objetDAO = new ObjetDAO();
+					$listeObjet = $objetDAO->obtenirListeObjet();
+					foreach($listeObjet as $key => $objet) {
+							
+			?>		
 				<table id="colonne-centrale-accueil">
 					<tr>
 						<td>
@@ -137,12 +141,12 @@
 							<table >
 								<tr>
 									<td>
-										<?=$produitCourant->titreDeVente?>
+										<?php echo $objet->getTitreDeVente();?>
 									</td>
 								</tr>
 								<tr>
 									<td>
-										<?php echo gettext("Prix");?>: <?=$produitCourant->prix?> $
+										<?php echo gettext("Prix");?>: <?php echo $objet->getPrix();?> $
 									</td>
 								</tr>
 								<tr>
@@ -164,7 +168,7 @@
 
 					<button type="button"><?php echo gettext("Vendre un objet"); ?></button>
 					<p id="italique">
-							<?php echo gettext("Identification");?>: <?=$produitCourant->prix?> 
+							<?php echo gettext("Identification");?>: <?php echo $objet->getPrix();?> 
 					</p>
 					<table id ="tableau-identification-accueil">
 						<tr >
@@ -182,24 +186,5 @@
 		</th>
 	</table>
 	
-	<?php
-		
-	/*
-	
-		
-		$utilisateurDAO = new UtilisateurDAO();
-		
-		$utilisateur = $utilisateurDAO->chercherParIdentifiant(1);
-		
-		var_dump($utilisateur);
-		
-		$listeUtilisateur = $utilisateurDAO->obtenirListeUtilisateur();
-		foreach($listeUtilisateur as $key => $utilisateur) {
-			//print_r($utilisateur);*
-			echo $utilisateur->getNom();
-		}
-		
-	*/
-	?>
 </body>
 </html>
