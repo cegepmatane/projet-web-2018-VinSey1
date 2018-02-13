@@ -34,104 +34,58 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="utf-8"/>
-	<link rel = "stylesheet" href = "./decoration/style_general.css">		
-	<title> <?php echo gettext("Profil d'un utilisateur") ?></title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel = "stylesheet" href = "./decoration/style_general_test.css">
+    <link rel="stylesheet" type="text/css" href="./decoration/MyFontsWebfontsKit.css">		
+	<title> <?php echo gettext("Profil de $profil->pseudonyme") ?></title>
 </head>
-<body id="general-profil">
-<header>
-	<h1 id="titre-profil"> <?php echo gettext("Profil de $profil->pseudonyme") ?></h1>
-</header>	
-<ul id="navigation">
-	<li><a href="catalogue.php" title="Aller sur la page Catalogue">Aller sur la page Catalogue</a></li>
-	<li><a href="index.php" title="Aller sur la page Accueil">Aller sur la page Accueil</a></li>
-	<li><a href="vente.php" title="Aller sur la page Vente">Aller sur la page Vente</a></li>
-</ul>
-<ul id="onglets-profil">
-    <li class="active"><a href="Informations.html"> <?php echo gettext("Informations") ?></a></li>
-    <li><a href="Ventes.html"> <?php echo gettext("Ventes") ?></a></li>
-    <li><a href="Achats.html"> <?php echo gettext("Achats") ?></a></li>
-    <li><a href="Avis_recus.html"> <?php echo gettext("Avis reçus") ?></a></li>
-    <li><a href="Avis_donnes.html"> <?php echo gettext("Avis donnés") ?> </a></li>
-    <li><a href="Modifier.html"> <?php echo gettext("Modifier") ?> </a></li>
-</ul>
-<div id="contenu-profil">
-    <img id="image-profil" src="illustrations/tests/<?=$profil->illustration?>"/>
-    <table id="informations-profil">
-        <tr>
-            <td class="td-profil">
-                <?php echo gettext("Pseudonyme : $profil->pseudonyme") ?>
-            </td>
-        </tr>
-        <tr>
-            <td class="td-profil">
-                <?php echo gettext("Nom : $profil->nom") ?>
-            </td>
-            <td class="td-profil">
-                <?php echo gettext("Prénom : $profil->prenom") ?>
-            </td>
-        </tr>
-        <tr>
-            <td class="td-profil">
-                <?php echo gettext("Âge : $profil->age") ?>
-        <tr>
-            <td class="td-profil">
-                <?php echo gettext("Adresse  $profil->adresse") ?>
-            </td>
-        </tr>
-        <tr>
-            <td class="td-profil">
-                <?php echo gettext("Ville : $profil->ville") ?>
-            </td>
-            <td class="td-profil">
-                <?php echo gettext("Code Postal : $profil->codepostal") ?>
-            </td>
-        </tr>
-        <tr>
-            <td class="td-profil">
-                <?php echo gettext("Pays : $profil->pays") ?>
-            </td>
-        </tr>
-        <tr>
-        <td class="td-profil">
-                <?php echo gettext("E-mail : $profil->email") ?>
-            </td>
-        </tr>
-        <tr>
-        <td class="td-profil">
-                <?php echo gettext("Téléphone : $profil->telephone") ?>
-            </td>
-        </tr>
-    </table>
-    <div class="statistiques-profil">
-        <table>
-            <tr>
-                <td>
-                    <?php echo gettext("Ventes :") ?>
-                </td>
-                <td>
-                    <?=$profil->nbventes?>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <?php echo gettext("Achats :") ?>
-                </td>
-                <td>   
-                    <?=$profil->nbachats?>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <?php echo gettext("Karma :") ?>
-                </td>
-                <td>
-                    <?=$profil->karma?>
-                </td>
-            </tr>
-    </table>
+<body>
+    <header>
+        <div id="titre"> <?php echo gettext("Survie étudiante") ?></div>
+        <div id="sous-titre"> <?php echo gettext("Profil de $profil->pseudonyme") ?> </div>
+    </header>	
+    <nav>
+        <ul>
+            <li><a href="catalogue.php" title="Aller sur la page Catalogue">Aller sur la page Catalogue</a></li>
+            <li><a href="index.php" title="Aller sur la page Accueil">Aller sur la page Accueil</a></li>
+            <li><a href="vente.php" title="Aller sur la page Vente">Aller sur la page Vente</a></li>
+        </ul>
+    </nav>
+    <ul id="onglets-profil">
+        <li id="active"><a href="Informations.html"> <?php echo gettext("Informations") ?></a></li>
+        <li><a href="Ventes.html"> <?php echo gettext("Ventes") ?></a></li>
+        <li><a href="Achats.html"> <?php echo gettext("Achats") ?></a></li>
+        <li><a href="Avis_recus.html"> <?php echo gettext("Avis reçus") ?></a></li>
+        <li><a href="Avis_donnes.html"> <?php echo gettext("Avis donnés") ?></a></li>
+        <li><a href="Modifier.html"> <?php echo gettext("Modifier") ?> </a></li>
+    </ul>
+    <div id="contenu-profil">
+        <img id="image-profil" src="illustrations/tests/<?=$profil->illustration?>"/>
+        <ul>
+            <div class="informations">
+                <li> <?php echo gettext("Pseudonyme : $profil->pseudonyme") ?> </li>
+                <li> <?php echo gettext("Nom : $profil->nom") ?> </li>
+                <li> <?php echo gettext("Prénom : $profil->prenom") ?> </li>
+                <li> <?php echo gettext("Âge : $profil->age") ?> </li>
+            </div>
+            <div class="informations">
+                <li> <?php echo gettext("Adresse  $profil->adresse") ?> </li>
+                <li> <?php echo gettext("Ville : $profil->ville") ?> </li>
+                <li> <?php echo gettext("Code Postal : $profil->codepostal") ?> </li>
+                <li> <?php echo gettext("Pays : $profil->pays") ?> </li>
+                <li> <?php echo gettext("E-mail : $profil->email") ?> </li>
+                <li> <?php echo gettext("Téléphone : $profil->telephone") ?> </li>
+            </div>
+        </ul>
+        <ul>
+            <div class="statistiques">
+                <li> <?php echo gettext("Ventes : $profil->nbventes") ?> </li>
+                <li> <?php echo gettext("Achats : $profil->nbachats") ?> </li>
+                <li> <?php echo gettext("Karma : $profil->karma") ?> </li>
+            </div>
+        </ul>
+        <input type="button" value="<?php echo gettext("Modifier vos informations")?>">
     </div>
-    <input class = "bouton-profil" type="button" value="<?php echo gettext("Modifier vos informations")?>">
-</div>
 </body>
 </html>

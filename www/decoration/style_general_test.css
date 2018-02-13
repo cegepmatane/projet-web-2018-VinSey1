@@ -1,3 +1,23 @@
+body{
+	margin:0;
+}
+header{
+	width: 100%;
+	padding: 10px;
+	background-color: steelblue;
+}
+#titre{
+	text-align: center;
+	font-family: Insolent;
+	color: darkslategray;
+	font-size: 50px;
+}
+#sous-titre{
+	text-align: center;
+	font-size: 40px;
+	font-family: Verdana, sans-serif;
+	color: darkgray;
+}
 nav{
 	width: 100%;
 	text-align: left;
@@ -24,17 +44,12 @@ nav a, #onglets-profil a{
 	text-decoration: none;
 	color: black;
 }
-#titre{
-	text-align: center;
-	font-family: Insolent;
-	color: darkslategray;
-	font-size: 50px;
-}
 #onglets-profil{
 	margin: auto;
 	width: 90%;
 	margin-top: 20px;
 	border-bottom: 1px solid black;
+	padding-bottom: 5px;
 }
 #onglets-profil li{
 	margin-left: 2px;
@@ -61,16 +76,9 @@ nav a, #onglets-profil a{
 	padding: 10px;
 	margin: 5px;
 }
-#image-profil{
-	width: 200px;
-    border: 1px solid black;
-    padding: 10px;
-    vertical-align: middle;
-    float : left;
-    margin-right : 50px;
-}
 #contenu-profil input{
 	float: right;
+	margin-right: 50px;
 	font-size: 20px;
 	margin-top: 260px;
 }
@@ -93,17 +101,11 @@ nav a, #onglets-profil a{
 #contenu-profil li{
 	padding: 2px;
 }
-header{
-	width: 100%;
-	padding: 10px;
-	background-color: steelblue;
-}
-body{
-	margin:0;
-}
-#sous-titre-profil{
-	text-align: center;
-	font-size: 40px;
-	font-family: Verdana, sans-serif;
-	color: darkgray;
+#image-profil{
+	width: 200px;
+    border: 1px solid black;
+    padding: 10px;
+    vertical-align: middle;
+    float : left;
+    margin-right : 50px;
 }
