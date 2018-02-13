@@ -22,9 +22,33 @@
 			<li><a href="profil.php" title="<?php echo gettext("Aller sur la page Profil")?>"><?php echo gettext("Page Profil")?></a></li>
 			<li><a href="catalogue.php" title="<?php echo gettext("Aller sur la page Catalogue")?>"><?php echo gettext("Page Catalogue")?></a></li>
 			<li><a href="achat.php" title="<?php echo gettext("Aller sur la page Vente")?>"><?php echo gettext("Page d'Achat")?></a></li>
-			<li id="page-courante"><?php echo gettext("PAge de vente")?></li>
+			<li id="page-courante"><?php echo gettext("Page de vente")?></li>
             <li><a href="panneau-administration.php" title="<?php echo gettext("Aller sur la page Panneau d'administration")?>"><?php echo gettext("Page Panneau d'administration")?></a></li>
         </ul>
     </nav>
+	<form>
+		Type de produit<br>
+		<select>
+			<option value="autre">Autre</option>
+			<option value="couverts">Couverts</option>
+			<option value="literie">Literie</option>
+		</select>
+		<br>
+		Titre de la vente<br>
+		<input type="text"><br>
+		Description du produit<br>
+		<input type="text"><br>
+		Détails<br>
+		<input type="text"><br>
+		
+	
+	
+	
+	</form>
+	
+	
+	
+	
+	
 </body>
 </html>
