@@ -20,9 +20,11 @@ nav a, #onglets-profil a{
 	text-decoration: none;
 	color: black;
 }
-#titre-profil{
+#titre{
 	text-align: center;
-	font-family: Arial Narrow, sans-serif;
+	font-family: Insolent;
+	color: darkslategray;
+	font-size: 50px;
 }
 #onglets-profil{
 	margin-top: 50px;
@@ -53,6 +55,7 @@ nav a, #onglets-profil a{
 	border: 1px solid black;
 	padding: 10px;
 	padding-bottom: 300px;
+	margin: 5px;
 }
 #image-profil{
 	width: 200px;
@@ -88,5 +91,17 @@ nav a, #onglets-profil a{
 }
 header{
 	width: 100%;
-	background-color: lightblue;
+	padding: 10px;
+	background-color: steelblue;
+	border-bottom: 1px solid skyblue;
+}
+body{
+	margin:0;
+}
+#sous-titre-profil{
+	text-align: center;
+	font-size: 40px;
+	font-family: Verdana, sans-serif;
+	color: darkgray;
+	/*text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;*/
 }
