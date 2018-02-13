@@ -40,10 +40,14 @@
 		<input type="text"><br>
 		Détails<br>
 		<input type="text"><br>
-		
-	
-	
-	
+		Prix:
+		<input type="text"><br>
+		Monnaie:
+		<select>
+			<option value="euro">€</option>
+			<option value="dollars">$</option>
+			<option value="livre">£</option>
+		</select>	
 	</form>
 	
 	
