@@ -10,8 +10,8 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width"/>
-    <link rel = "stylesheet" href = "./decoration/style_general_test.css">
-    <link rel="stylesheet" type="text/css" href="./decoration/MyFontsWebfontsKit.css">		
+    <link rel="stylesheet" href="./decoration/style_general_test.css">
+    <link rel="stylesheet" type="text/css" href="./decoration/MyFontsWebfontsKit.css">			
 	<title> <?php echo gettext("Page d'accueil") ?></title>
 </head>
 <body>
@@ -21,10 +21,11 @@
     </header>	
     <nav>
         <ul>
-            <li><a href="profil.php" title="Aller sur la page Profil">Aller sur la page Profil</a></li>
-			<li><a href="catalogue.php" title="Aller sur la page Catalogue">Aller sur la page Catalogue</a></li>
-            <li><a href="vente.php" title="Aller sur la page Vente">Aller sur la page Vente</a></li>
-			<li><a href="panneau-administration.php" title="Aller sur la page Panneau d'administration">Aller sur la page Panneau d'administration</a></li>
+			<li id="page-courante">Page d'Accueil</li>
+            <li><a href="profil.php" title="Aller sur la page Profil">Page Profil</a></li>
+			<li><a href="catalogue.php" title="Aller sur la page Catalogue">Page Catalogue</a></li>
+            <li><a href="vente.php" title="Aller sur la page Vente">Page Vente</a></li>
+			<li><a href="panneau-administration.php" title="Aller sur la page Panneau d'administration">Page Panneau d'administration</a></li>
         </ul>
     </nav>
 	<div id="barre-de-recherche" >

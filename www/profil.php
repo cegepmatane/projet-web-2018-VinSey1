@@ -6,28 +6,29 @@
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-<?php
-		$utilisateurDAO = new UtilisateurDAO();
-		$utilisateur = $utilisateurDAO->chercherParIdentifiant(1);
-	?>
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width"/>
-    <link rel = "stylesheet" href = "./decoration/style_general_test.css">
+    <link rel="stylesheet" href="./decoration/style_general_test.css">
     <link rel="stylesheet" type="text/css" href="./decoration/MyFontsWebfontsKit.css">		
-	<title> <?php echo gettext("Profil de ");echo $utilisateur->getPseudonyme(); ?></title>
+	<title> <?php echo gettext("Profil de $profil->pseudonyme") ?></title>
 </head>
 <body>
+	<?php
+		$utilisateurDAO = new UtilisateurDAO();
+		$utilisateur = $utilisateurDAO->chercherParIdentifiant(1);
+	?>
     <header>
         <div id="titre"> <?php echo gettext("Survie étudiante") ?></div>
         <div id="sous-titre"> <?php echo gettext("Profil de ");echo $utilisateur->getPseudonyme(); ?> </div>
     </header>	
     <nav>
         <ul>
-            <li><a href="index.php" title="Aller sur la page Accueil">Aller sur la page Accueil</a></li>
-			<li><a href="catalogue.php" title="Aller sur la page Catalogue">Aller sur la page Catalogue</a></li>
-            <li><a href="vente.php" title="Aller sur la page Vente">Aller sur la page Vente</a></li>
-			<li><a href="panneau-administration.php" title="Aller sur la page Panneau d'administration">Aller sur la page Panneau d'administration</a></li>
+            <li><a href="index.php" title="Aller sur la page d'Accueil">Page d'Accueil</a></li>
+			<li id="page-courante">Page Profil</li>
+            <li><a href="catalogue.php" title="Aller sur la page Catalogue">Page Catalogue</a></li>
+            <li><a href="vente.php" title="Aller sur la page Vente">Page Vente</a></li>
+            <li><a href="panneau-administration.php" title="Aller sur la page Panneau d'administration">Page Panneau d'administration</a></li>
         </ul>
     </nav>
     <ul id="onglets-profil">

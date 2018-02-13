@@ -182,3 +182,11 @@ nav a, #onglets-profil a{
 	border: 1px solid black;
 	padding-bottom: 50px;
 }
+#categorie-selectionnee{
+	list-style-type: circle;
+	font-style: oblique;
+	text-decoration: underline;
+}
+#page-courante{
+	background-color: lightgrey;
+}
