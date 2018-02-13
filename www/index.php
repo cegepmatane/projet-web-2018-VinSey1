@@ -49,6 +49,9 @@
 				$objetDAO = new ObjetDAO();
 				$listeObjet = $objetDAO->obtenirListeObjet();
 				foreach($listeObjet as $key => $objet) {
+					if ($objet->getVedette() == 1) {
+						
+					
 			?>
 				<div class="produit-courant">
 					<img src="<?=$objet->getIllustration();?>" class="photo-miniature-produit"/>
@@ -58,7 +61,7 @@
 						<li><button type="button"><?php echo gettext("Acheter"); ?></button></li>
 					</ul>
 				</div>
-			<?php } ?>
+			<?php }} ?>
 		</div>
 		<u id="boutons-index">
 			<li><button type="button"><?php echo gettext("Vendre un objet"); ?></button></li>

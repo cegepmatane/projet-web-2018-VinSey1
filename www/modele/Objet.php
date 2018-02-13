@@ -12,6 +12,7 @@ class Objet{
 	private $detailsVente;
 	private $adresse;
 	private $illustration;
+	private $vedette;
 	
 
 	public function getIdObjet(){
@@ -53,9 +54,13 @@ class Objet{
 	public function getIllustration(){
 		return $this->illustration;
 	}
+	
+	public function getVedette(){
+		return $this->vedette;
+	}
 		
 
-	function __construct($idObjet, $identifiantDeVente, $identifiantVendeur, $titreDeVente, $categorie, $prix, $descriptionProduit, $detailsVente, $adresse, $illustration){
+	function __construct($idObjet, $identifiantDeVente, $identifiantVendeur, $titreDeVente, $categorie, $prix, $descriptionProduit, $detailsVente, $adresse, $illustration, $vedette){
 		
 		$this->idObjet = $idObjet;
 		$this->identifiantDeVente = $identifiantDeVente;
@@ -67,6 +72,7 @@ class Objet{
 		$this->detailsVente = $detailsVente;
 		$this->adresse = $adresse;
 		$this->illustration = $illustration;
+		$this->vedette = $vedette;
 	
 	}
 }

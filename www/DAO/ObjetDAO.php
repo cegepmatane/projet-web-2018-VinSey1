@@ -27,7 +27,8 @@ class ObjetDAO{
 							   $resultat->descriptionProduit,
 							   $resultat->detailsVente,
 							   $resultat->adresse,
-							   $resultat->illustration	   									   
+							   $resultat->illustration,
+							   $resulatt->vedette
 							   );
 		}			
 		return $objet;
@@ -48,9 +49,10 @@ class ObjetDAO{
 			$detailsVente = $objet->getDetailsVente();
 			$adresse = $objet->getAdresse();
 			$illustration = $objet->getIllustration();
+			$vedette = $objet->getVedette();
 			
 		
-			$requete = $connexionBDActive->prepare("INSERT INTO objet(identifiantDeVente, identifiantVendeur, titreDeVente, categorie, prix, descriptionProduit, detailsVente, adresse, illustration) VALUES (:identifiantDeVente, :identifiantVendeur, :titreDeVente, :categorie, :prix, :descriptionProduit, :detailsVente, :adresse, :illustration)");
+			$requete = $connexionBDActive->prepare("INSERT INTO objet(identifiantDeVente, identifiantVendeur, titreDeVente, categorie, prix, descriptionProduit, detailsVente, adresse, illustration, vedette) VALUES (:identifiantDeVente, :identifiantVendeur, :titreDeVente, :categorie, :prix, :descriptionProduit, :detailsVente, :adresse, :illustration, :vedette)");
 			
 			$requete->bindParam(':identifiantDeVente', $identifiantDeVente, PDO::PARAM_STR);
 			$requete->bindParam(':identifiantVendeur', $identifiantVendeur, PDO::PARAM_STR);
@@ -61,7 +63,7 @@ class ObjetDAO{
 			$requete->bindParam(':detailsVente', $detailsVente, PDO::PARAM_STR);
 			$requete->bindParam(':adresse', $adresse, PDO::PARAM_STR);
 			$requete->bindParam(':illustration', $illustration, PDO::PARAM_STR);
-			
+			$requete->bindParam(':vedette', $vedette, PDO::PARAM_STR);
 			
 			$requete->execute();
 			
@@ -98,7 +100,7 @@ class ObjetDAO{
 		$resultat = $requete->fetchAll(PDO::FETCH_OBJ);	
 		
 		foreach($resultat as $key => $enregistrementObjet) {
-			$objet = new Objet($enregistrementObjet->id_objet, $enregistrementObjet->identifiantDeVente, $enregistrementObjet->identifiantVendeur, $enregistrementObjet->titreDeVente, $enregistrementObjet->categorie, $enregistrementObjet->prix, $enregistrementObjet->descriptionProduit, $enregistrementObjet->detailsVente, $enregistrementObjet->adresse, $enregistrementObjet->illustration);
+			$objet = new Objet($enregistrementObjet->id_objet, $enregistrementObjet->identifiantDeVente, $enregistrementObjet->identifiantVendeur, $enregistrementObjet->titreDeVente, $enregistrementObjet->categorie, $enregistrementObjet->prix, $enregistrementObjet->descriptionProduit, $enregistrementObjet->detailsVente, $enregistrementObjet->adresse, $enregistrementObjet->illustration, $enregistrementObjet->vedette);
 			$listeObjet[]=$objet;
 		}
 		
