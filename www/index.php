@@ -89,7 +89,7 @@
 				<table id="colonne-centrale-accueil">
 					<tr>
 						<td>
-							<img src="<? $objet->getIllustration();?>" class="photo-miniature-produit"/>
+							<img src="<?$objet->getIllustration();?>" class="photo-miniature-produit"/>
 						</td>
 						<td>
 							<table >
