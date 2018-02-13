@@ -38,7 +38,7 @@
 				<li id="titre-categories"><h3><?php echo gettext("Catégories"); ?></h3></li>
 				<li><?php echo gettext("Catégorie 1"); ?></li>
 				<li><?php echo gettext("Catégorie 2"); ?></li>
-				<li id="categorie-selectionnee"><?php echo gettext("Catégorie 3"); ?></li>
+				<li id="categorie-selectionnee"><?php echo gettext("Literie"); ?></li>
 				<li><?php echo gettext("Catégorie 4"); ?></li>
 				<li><?php echo gettext("Catégorie 5"); ?></li>
 				<li><?php echo gettext("Catégorie 6"); ?></li>
