@@ -9,8 +9,8 @@ define( "OBJET_MODELE", $_SERVER["DOCUMENT_ROOT"]."/modele/Objet.php"   );
 define("BD_NOM", "survie_etudiante" );
 define("BD_HOTE", "localhost" );
 define("BD_PORT", "3307" );
-define("BD_UTILISATEUR", "root");
-define("BD_MDP", "");
+define("BD_UTILISATEUR", "projetweb");
+define("BD_MDP", "ProWeb");
 
 require_once($_SERVER["DOCUMENT_ROOT"]."/DAO/ConnexionBD.php");
 
