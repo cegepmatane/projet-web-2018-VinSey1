@@ -8,12 +8,12 @@
     <meta name="viewport" content="width=device-width"/>
     <link rel="stylesheet" href="./decoration/style_general_test.css">
     <link rel="stylesheet" type="text/css" href="./decoration/MyFontsWebfontsKit.css">		
-	<title> Création de compte</title>
+	<title> <?php echo gettext("Création de compte") ?></title>
 </head>
 <body>
     <header>
-        <div id="titre"> Survie étudiante</div>
-        <div id="sous-titre"> Création de compte </div>
+        <div id="titre"> <?php echo gettext("Survie étudiante") ?></div>
+        <div id="sous-titre"><?php echo gettext("Création de compte") ?> </div>
     </header>	
     <nav>
         <ul>
