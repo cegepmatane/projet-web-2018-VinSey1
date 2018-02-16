@@ -55,41 +55,39 @@
 <div>
 
 	<div class="contenu-onglet" id="contenu_onglet_ventes">
+	
 		<?php 
 		$objetDAO = new ObjetDAO();
 		$listeobjet = $objetDAO->obtenirListeObjet();
 		?>
 		<?php foreach($listeobjet as $key => $objet) { ?>		
-		<div class="produit-courant">
-						<img src="<?=$objet->getIllustration();?>" class="photo-miniature-produit"/>
-						<ul>
-							<li><?php echo $objet->getTitreDeVente();?></li>
-							<li><?php echo gettext("Prix");?>: <?php echo $objet->getPrix();?><?php echo gettext(" $");?></li>
-							<li><button type="button"><?php echo gettext("Acheter"); ?></button></li>
-						</ul>
-						<input type="button"><?php echo gettext("Modifier cette vente");?></input>
-					</div>
+			<div class="produit-courant">
+				<img src="<?=$objet->getIllustration();?>" class="photo-miniature-produit"/>
+				<ul>
+					<li><?php echo $objet->getTitreDeVente();?></li>
+					<li><?php echo gettext("Prix");?>: <?php echo $objet->getPrix();?><?php echo gettext(" $");?></li>
+					<button type="button"><?php echo gettext("Modifier cette vente");?></button>
+				</ul>
+			</div>
 		<?php } ?>
 	</div>
 
 	<div class="contenu-onglet" id="contenu_onglet_utilisateurs">
 	
 		<?php 
-	$utilisateurDAO = new UtilisateurDAO();
-	$listeutilisateur = $utilisateurDAO->obtenirListeUtilisateur();
-	?>
-	<?php foreach($listeutilisateur as $key => $objet) { ?>		
-		<div class="produit-courant">
-						<ul>
-							<li><?php echo $objet->getNom();?></li>
-							<li><?php echo $objet->getPrenom();?></li>
-							<li><?php echo $objet->getPseudonyme();?></li>
-							<li><?php echo gettext("Prix");?>: <?php echo $objet->getPrix();?><?php echo gettext(" $");?></li>
-							<li><button type="button"><?php echo gettext("Acheter"); ?></button></li>
-						</ul>
-					</div>
+		$utilisateurDAO = new UtilisateurDAO();
+		$listeutilisateur = $utilisateurDAO->obtenirListeUtilisateur();
+		?>
+		<?php foreach($listeutilisateur as $key => $objet) { ?>		
+			<div class="produit-courant">
+				<ul>
+					<li><?php echo gettext("Nom");?>: <?php echo $objet->getNom();?></li>
+					<li><?php echo gettext("Prenom");?>: <?php echo $objet->getPrenom();?></li>
+					<li><?php echo gettext("Pseudo");?>: <?php echo $objet->getPseudonyme();?></li>
+					<li><button type="button"><?php echo gettext("Modifier"); ?></button></li>
+				</ul>
+			</div>
 		<?php } ?>	
-		
 	</div>
 	
 </div>
