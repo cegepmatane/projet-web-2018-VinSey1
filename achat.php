@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width"/>
     <link rel="stylesheet" href="./decoration/style_general_test.css">
     <link rel="stylesheet" type="text/css" href="./decoration/MyFontsWebfontsKit.css">		
-	<title> <?php echo gettext("Vente n°$produit1->id") ?></title>
+	<title> <?php echo gettext("Vente n°"); echo $objet->getIdentifiantDeVente(); ?></title>
 </head>
 <body>
     <header>
