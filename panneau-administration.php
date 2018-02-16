@@ -28,14 +28,17 @@
 		
 		function changer_onglet(name){
 			
+			
+			document.getElementById('onglet_'+onglet_courant).className = "onglet-non-selectionne";
 			document.getElementById('contenu_onglet_'+onglet_courant).style.display = 'none';
 			document.getElementById('contenu_onglet_'+name).style.display = 'block';
+			document.getElementById('onglet_'+name).className = "onglet-selectionne";
 			onglet_courant = name;
 		}	
 		
 	</script>
 </head>
-<body id="general-profil">
+<body id="general-profil" >
 <header>
 	<h1 id="titre-profil"> <?php echo gettext("Panneau d'administration") ?></h1>
 </header>	
@@ -46,34 +49,32 @@
 	<li><a href="vente.php" title="<?php echo gettext("Aller sur la page de vente")?>"><?php echo gettext("Aller sur la page de vente")?></a></li>
 
 </ul>
-<div id="onglets-profil">
-    <span class="active" id="onglet_ventes" onclick="javascript:changer_onglet('ventes')" ><?php echo gettext("Catalogue des Ventes") ?></span>
-    <span id="onglet_utilisateurs" onclick="javascript:changer_onglet('utilisateurs')" ><?php echo gettext("Catalogue des utilisateurs") ?></span>
+<div class="onglet-cliquable">
+    <span id="onglet_ventes" onclick="javascript:changer_onglet('ventes');" ><?php echo gettext("Catalogue des Ventes") ?></span>
+    <span id="onglet_utilisateurs" onclick="javascript:changer_onglet('utilisateurs');" ><?php echo gettext("Catalogue des utilisateurs") ?></span>
 </div>
-<div id="contenu-profil" id="contenu_onglet_ventes">
-<?php 
+<div >
+
+	<div class="contenu-onglet" id="contenu_onglet_ventes">
+	<?php 
 	$objetDAO = new ObjetDAO();
 	$listeobjet = $objetDAO->obtenirListeObjet();
- ?>
-<?php foreach($listeobjet as $key => $objet) { ?>		
-	<table style="border: 1px solid black; margin: auto; width: 1450px; text-align: center;">
-		<tr>
-			<td>
-                <img src="<?=$objet->getIllustration();?>" class="photo-miniature-produit"/>
-            </td>
-            <td>
-                <h4><?php echo gettext("Titre :"); ?> <?=$objet->getTitreDeVente();?></h4>
-                <h5>ID : <?=$objet->getIdObjet();?></br></h5>
-                <?=$objet->getDescriptionProduit();?>
-            </td>
-            <td style="text-align: right;">
-                <button type="button" style="width: 150px; height: 50px; margin-right: 20px"><?php echo gettext("Modifier la vente"); ?></button>
-            </td>
-        </tr>
-    </table>
-<?php } ?>
+	?>
+	<?php foreach($listeobjet as $key => $objet) { ?>		
+	<div class="produit-courant">
+					<img src="<?=$objet->getIllustration();?>" class="photo-miniature-produit"/>
+					<ul>
+						<li><?php echo $objet->getTitreDeVente();?></li>
+						<li><?php echo gettext("Prix");?>: <?php echo $objet->getPrix();?><?php echo gettext(" $");?></li>
+						<li><button type="button"><?php echo gettext("Acheter"); ?></button></li>
+					</ul>
+				</div>
+	<?php } ?>
+	</div>
 
-<div id="contenu-profil" id="contenu_onglet_utilisateurs">
+	<div class="contenu-onglet" id="contenu_onglet_utilisateurs">
+		<p> onglet gestion utilisateur </p>
+	</div>
 	
 </div>
 <script type="text/javascript">
