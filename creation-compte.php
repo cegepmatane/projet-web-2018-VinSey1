@@ -22,19 +22,8 @@
             <li id="page-courante">Page Création de compte</li>
         </ul>
     </nav>
-    <form action="controleur_inscription.php" id="formulaire-creation">
-        <ul>
-            <li>Nom : <input type="text" name="nom" /></li>
-            <li>Prénom : <input type="text" name="prenom" /></li>
-            <li>Pseudonyme : <input type="text" name="pseudonyme" /></li>
-            <li>Adresse e-mail : <input type="text" name="email" /></li>
-            <li>Adresse : <input type="text" name="adresse" /></li>
-            <li>Code postal : <input type="text" name="codepostal" /></li>
-            <li>Pays : <input type="text" name="pays" /></li>
-            <li>Ville : <input type="text" name="ville" /></li>
-            <li>Âge : <input type="text" name="anneenaissance" /></li>
-            <li>Téléphone : <input type="text" name="telephone" /></li>
-        </ul>
+    <form>
+
     </form>
 </body>
 </html>

@@ -73,8 +73,7 @@ class Utilisateur{
 		return $this->telephone;
 	}
 		
-	function __construct($idUtilisateur, $nom, $prenom, $pseudonyme, $email, $adresse, $codepostal, $pays, $ville, $nbventes, $nbachats, $illustration, $age, $telephone ){
-		
+	function __construct($idUtilisateur, $nom, $prenom, $pseudonyme, $email, $adresse, $codepostal, $pays, $ville, $nbventes, $nbachats, $illustration, $age, $telephone ){	
 		
 		if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 			$this->idUtilisateur = $idUtilisateur;
