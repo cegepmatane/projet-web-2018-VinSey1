@@ -59,7 +59,6 @@ class Objet{
 		return $this->vedette;
 	}
 		
-
 	function __construct($idObjet, $identifiantDeVente, $identifiantVendeur, $titreDeVente, $categorie, $prix, $descriptionProduit, $detailsVente, $adresse, $illustration, $vedette){
 		
 		$this->idObjet = $idObjet;
