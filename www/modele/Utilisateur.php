@@ -72,24 +72,26 @@ class Utilisateur{
 	public function getTelephone(){
 		return $this->telephone;
 	}
-		//mettre l'idUtilisateur en paramètre dans le constructeur alors que c'est la base de donnée qui va l'attribuer par auto-incrémentation ?
+		
 	function __construct($idUtilisateur, $nom, $prenom, $pseudonyme, $email, $adresse, $codepostal, $pays, $ville, $nbventes, $nbachats, $illustration, $age, $telephone ){
 		
-		$this->idUtilisateur = $idUtilisateur;
-		$this->nom = $nom;
-		$this->prenom = $prenom;
-		$this->pseudonyme = $pseudonyme;
-		$this->email = $email;
-		$this->adresse = $adresse;
-		$this->codepostal = $codepostal;
-		$this->pays = $pays;
-		$this->ville = $ville;
-		$this->nbventes = $nbventes;
-		$this->nbachats = $nbachats;
-		$this->illustration = $illustration;
-		$this->age = $age;
-		$this->telephone = $telephone;
-			
+		
+		if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+			$this->idUtilisateur = $idUtilisateur;
+			$this->nom = $nom;
+			$this->prenom = $prenom;
+			$this->pseudonyme = $pseudonyme;
+			$this->email = $email;
+			$this->adresse = $adresse;
+			$this->codepostal = $codepostal;
+			$this->pays = $pays;
+			$this->ville = $ville;
+			$this->nbventes = $nbventes;
+			$this->nbachats = $nbachats;
+			$this->illustration = $illustration;
+			$this->age = $age;
+			$this->telephone = $telephone;
+		}
 	}
 }
 ?>
