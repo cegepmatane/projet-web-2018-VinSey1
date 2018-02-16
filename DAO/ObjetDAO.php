@@ -35,6 +35,37 @@ class ObjetDAO{
 		
 	}
 	
+	public function chercherParCategorie($categorieDemande){
+		
+		$objet = null;
+		
+		global $connexionBDActive;
+		
+		$requete = $connexionBDActive->prepare("SELECT * FROM objet WHERE categorie = :categorieDemande");
+		$requete->bindParam(':categorieDemande', $categorieDemande, PDO::PARAM_INT);
+		$requete->execute();
+			
+		$resultat = $requete->fetch(PDO::FETCH_OBJ);					
+		
+		if ($resultat ){
+				
+			$objet = new Objet($resultat->id_objet, 
+							   $resultat->identifiantDeVente, 
+							   $resultat->identifiantVendeur,
+							   $resultat->titreDeVente,
+							   $resultat->categorie,
+							   $resultat->prix,
+							   $resultat->descriptionProduit,
+							   $resultat->detailsVente,
+							   $resultat->adresse,
+							   $resultat->illustration,
+							   $resulatt->vedette
+							   );
+		}			
+		return $objet;
+		
+	}
+	
 	public function insererObjet($objet){
 			
 			
