@@ -36,11 +36,11 @@
 	<li><a href="vente.php" title="<?php echo gettext("Aller sur la page de vente")?>"><?php echo gettext("Aller sur la page de vente")?></a></li>
 
 </ul>
-<ul id="onglets-profil">
-    <li class="active"><a href="gestion-vente.html"> <?php echo gettext("Catalogue des Ventes") ?></a></li>
-    <li><a href="gestion-utilisateurs.html"> <?php echo gettext("Catalogue des utilisateurs") ?></a></li>
-</ul>
-<div id="contenu-profil" id="contenu_onglet_utilisateurs">
+<div id="onglets-profil">
+    <span class="active" id="contenu_onglet_ventes" onclick="javascript:changer_onglet('contenu_onglet_ventes')" ><?php echo gettext("Catalogue des Ventes") ?></span>
+    <span id="contenu_onglet_utilisateurs" onclick="javascript:changer_onglet('contenu_onglet_utilisateurs')" ><?php echo gettext("Catalogue des utilisateurs") ?></span>
+</div>
+<div id="contenu-profil" id="contenu_onglet_ventes">
 <?php 
 	$objetDAO = new ObjetDAO();
 	$listeobjet = $objetDAO->obtenirListeObjet();
@@ -66,5 +66,7 @@
 <div id="contenu-profil" id="contenu_onglet_utilisateurs">
 	
 </div>
+<script>
+</script>
 </body>
 </html>
