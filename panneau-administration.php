@@ -55,7 +55,13 @@
 <div>
 
 	<div class="contenu-onglet" id="contenu_onglet_ventes">
-	
+		
+			<?php echo gettext("Chercher des ventes");?></br>
+			<?php echo gettext("Identifiant de la vente");?> <input type="text" ></br>
+			<?php echo gettext("Identifiant du vendeur");?> <input type="text" ></br>
+			<?php echo gettext("Titre de vente");?> <input type="text" ></br>
+			<button type="button"><?php echo gettext("Chercher");?></button>
+					
 		<?php 
 		$objetDAO = new ObjetDAO();
 		$listeobjet = $objetDAO->obtenirListeObjet();
@@ -73,6 +79,13 @@
 	</div>
 
 	<div class="contenu-onglet" id="contenu_onglet_utilisateurs">
+	
+		<?php echo gettext("Chercher des utilisateurs");?></br>
+			<?php echo gettext("Identifiant");?> <input type="text" ></br>
+			<?php echo gettext("Nom");?> <input type="text" ></br>
+			<?php echo gettext("Prenom");?> <input type="text" ></br>
+			<?php echo gettext("Adresse mail");?> <input type="text" ></br>
+			<button type="button"><?php echo gettext("Chercher");?></button>
 	
 		<?php 
 		$utilisateurDAO = new UtilisateurDAO();
