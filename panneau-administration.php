@@ -2,6 +2,9 @@
 	require_once $_SERVER["DOCUMENT_ROOT"]."/configuration/configuration.dev.php";
 	require_once OBJET_DAO;
 	require_once OBJET_MODELE;	
+	require_once UTILISATEUR_DAO;
+	require_once UTILISATEUR_MODELE;
+	
     /*
     $language = "fr_FR";
     putenv("LANG=" . $language);
@@ -37,7 +40,7 @@
     <li class="active"><a href="gestion-vente.html"> <?php echo gettext("Catalogue des Ventes") ?></a></li>
     <li><a href="gestion-utilisateurs.html"> <?php echo gettext("Catalogue des utilisateurs") ?></a></li>
 </ul>
-<div id="contenu-profil">
+<div id="contenu-profil" id="contenu_onglet_utilisateurs">
 <?php 
 	$objetDAO = new ObjetDAO();
 	$listeobjet = $objetDAO->obtenirListeObjet();
@@ -59,7 +62,9 @@
         </tr>
     </table>
 <?php } ?>
-</div>
+
+<div id="contenu-profil" id="contenu_onglet_utilisateurs">
+	
 </div>
 </body>
 </html>
