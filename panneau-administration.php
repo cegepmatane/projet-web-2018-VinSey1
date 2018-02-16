@@ -24,6 +24,16 @@
 	<meta charset="utf-8"/>
 	<link rel = "stylesheet" href = "decoration/style_general.css">		
 	<title> <?php echo gettext("Panneau d'administration") ?></title>
+	<script type="text/javascript">
+		
+		function changer_onglet(name){
+			
+			document.getElementById('contenu_onglet_'+onglet_courant).style.display = 'none';
+			document.getElementById('contenu_onglet_'+name).style.display = 'block';
+			onglet_courant = name;
+		}	
+		
+	</script>
 </head>
 <body id="general-profil">
 <header>
@@ -37,8 +47,8 @@
 
 </ul>
 <div id="onglets-profil">
-    <span class="active" id="contenu_onglet_ventes" onclick="javascript:changer_onglet('contenu_onglet_ventes')" ><?php echo gettext("Catalogue des Ventes") ?></span>
-    <span id="contenu_onglet_utilisateurs" onclick="javascript:changer_onglet('contenu_onglet_utilisateurs')" ><?php echo gettext("Catalogue des utilisateurs") ?></span>
+    <span class="active" id="onglet_ventes" onclick="javascript:changer_onglet('ventes')" ><?php echo gettext("Catalogue des Ventes") ?></span>
+    <span id="onglet_utilisateurs" onclick="javascript:changer_onglet('utilisateurs')" ><?php echo gettext("Catalogue des utilisateurs") ?></span>
 </div>
 <div id="contenu-profil" id="contenu_onglet_ventes">
 <?php 
@@ -66,7 +76,11 @@
 <div id="contenu-profil" id="contenu_onglet_utilisateurs">
 	
 </div>
-<script>
+<script type="text/javascript">
+	
+	var onglet_courant = 'ventes';
+	changer_onglet(onglet_courant);
+	
 </script>
 </body>
 </html>
