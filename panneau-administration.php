@@ -1,4 +1,7 @@
 <?php 
+	require_once $_SERVER["DOCUMENT_ROOT"]."/configuration/configuration.dev.php";
+	require_once OBJET_DAO;
+	require_once OBJET_MODELE;	
     /*
     $language = "fr_FR";
     putenv("LANG=" . $language);
@@ -24,9 +27,9 @@
 	<h1 id="titre-profil"> <?php echo gettext("Panneau d'administration") ?></h1>
 </header>	
 <ul id="navigation">
-	<li><a href="catalogue.php" title="Aller sur la page Catalogue">Aller sur la page Catalogue</a></li>
-	<li><a href="index.php" title="Aller sur la page Accueil">Aller sur la page Accueil</a></li>
-	<li><a href="achat.php" title="Aller sur la page Vente">Aller sur la page d'Achat</a></li>
+	<li><a href="catalogue.php" title="Aller sur la page Catalogue"><?php echo gettext("Aller sur la page de catalogue")?></a></li>
+	<li><a href="index.php" title="Aller sur la page Accueil"><?php echo gettext("Aller sur la page d'accueil")?></a></li>
+	<li><a href="achat.php" title="Aller sur la page Vente"><?php echo gettext("Aller sur la page d'achat")?></a></li>
 	<li><a href="vente.php" title="<?php echo gettext("Aller sur la page de vente")?>"><?php echo gettext("Aller sur la page de vente")?></a></li>
 
 </ul>
@@ -35,16 +38,20 @@
     <li><a href="gestion-utilisateurs.html"> <?php echo gettext("Catalogue des utilisateurs") ?></a></li>
 </ul>
 <div id="contenu-profil">
-<?php foreach($tableauProduits as $produitCourant){ ?>		
+<?php 
+	$objetDAO = new ObjetDAO();
+	$listeobjet = $objetDAO->obtenirListeObjet();
+ ?>
+<?php foreach($listeobjet as $key => $objet) { ?>		
 	<table style="border: 1px solid black; margin: auto; width: 1450px; text-align: center;">
 		<tr>
 			<td>
-                <img src="<?=$produitCourant->image?>" class="photo-miniature-produit"/>
+                <img src="<?=$objet->getIllustration();?>" class="photo-miniature-produit"/>
             </td>
             <td>
-                <h4><?php echo gettext("Titre :"); ?> <?=$produitCourant->titreDeVente?></h4>
-                <h5>ID : <?=$produitCourant->id?></br></h5>
-                <?=$produitCourant->descriptionProduit?>
+                <h4><?php echo gettext("Titre :"); ?> <?=$objet->getTitreDeVente();?></h4>
+                <h5>ID : <?=$objet->getIdObjet();?></br></h5>
+                <?=$objet->getDescriptionProduit();?>
             </td>
             <td style="text-align: right;">
                 <button type="button" style="width: 150px; height: 50px; margin-right: 20px"><?php echo gettext("Modifier la vente"); ?></button>
