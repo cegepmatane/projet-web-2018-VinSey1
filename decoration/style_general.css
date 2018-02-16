@@ -26,14 +26,6 @@ paletton.com
 
 */
 
-/*
-
-
-
-
-
-*/
-
 body {
 	background-color: #FFCCBC;
 	margin: 10px;
@@ -329,3 +321,18 @@ body {
     background: #EC501F; 
     cursor: pointer; 
 }
+
+.contenu_onglet{
+	
+	border: solid black 1px;
+	display: none;
+	
+}
+
+
+
+
+
+
+
+
