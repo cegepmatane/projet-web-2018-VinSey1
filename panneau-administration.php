@@ -91,13 +91,15 @@
 		$utilisateurDAO = new UtilisateurDAO();
 		$listeutilisateur = $utilisateurDAO->obtenirListeUtilisateur();
 		?>
-		<?php foreach($listeutilisateur as $key => $objet) { ?>		
+		<?php foreach($listeutilisateur as $key => $objet) { ?>
 			<div class="produit-courant">
 				<ul>
 					<li><?php echo gettext("Nom");?>: <?php echo $objet->getNom();?></li>
 					<li><?php echo gettext("Prenom");?>: <?php echo $objet->getPrenom();?></li>
 					<li><?php echo gettext("Pseudo");?>: <?php echo $objet->getPseudonyme();?></li>
-					<li><button type="button"><?php echo gettext("Modifier"); ?></button></li>
+					<form action="profil.php">
+						<input type="submit" value="Modifier">
+					</form>
 				</ul>
 			</div>
 		<?php } ?>	
