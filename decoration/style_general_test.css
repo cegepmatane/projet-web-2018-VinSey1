@@ -228,3 +228,29 @@ nav a, #onglets-profil a{
 	float: right;
 	font-size: 20px;
 }
+
+/* BALISES CSS POUR PAGE CREATION COMPTE */
+#formulaire-creation ul{
+	list-style-type: none;
+}
+#formulaire-creation li{
+	padding: 5px;
+	text-align: right;
+}
+#formulaire-creation #blocs-formulaire{
+	display: block;
+	margin-left: 30%;
+	margin-right: 30%;
+}
+#formulaire-creation #blocs-formulaire div{
+	margin: 5px;
+	display: block;
+	float: left;
+}
+#formulaire-creation #bouton{
+	text-align: center;
+	width: 10%;
+	margin-top: 20px;
+	margin-left: 45%;
+	margin-right: 45%;
+}

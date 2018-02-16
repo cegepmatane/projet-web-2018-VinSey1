@@ -22,8 +22,26 @@
             <li id="page-courante">Page Création de compte</li>
         </ul>
     </nav>
-    <form>
-
+    <form action="controleur_inscription.php" id="formulaire-creation">
+        <ul>
+            <div id = "blocs-formulaire">
+                <div id = "bloc-formulaire-1">
+                    <li>Nom : <input type="text" name="nom" /></li>
+                    <li>Prénom : <input type="text" name="prenom" /></li>
+                    <li>Pseudonyme : <input type="text" name="pseudonyme" /></li>
+                    <li>Adresse e-mail : <input type="text" name="email" /></li>
+                    <li>Adresse : <input type="text" name="adresse" /></li>
+                </div>
+                <div id = "bloc-formulaire-2">
+                    <li>Code postal : <input type="text" name="codepostal" /></li>
+                    <li>Pays : <input type="text" name="pays" /></li>
+                    <li>Ville : <input type="text" name="ville" /></li>
+                    <li>Âge : <input type="text" name="anneenaissance" /></li>
+                    <li>Téléphone : <input type="text" name="telephone" /></li>
+                </div>
+            </div>
+        </ul>
+        <input id="bouton" type="submit" value="Valider" name="controleur_inscription"/>
     </form>
 </body>
 </html>
