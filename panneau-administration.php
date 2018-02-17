@@ -21,8 +21,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="utf-8"/>
-	<link rel = "stylesheet" href = "decoration/style_general_test.css">		
+<meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="stylesheet" href="./decoration/style_general_test.css">
+    <link rel="stylesheet" type="text/css" href="./decoration/MyFontsWebfontsKit.css">			
 	<title> <?php echo gettext("Panneau d'administration") ?></title>
 	<script type="text/javascript">
 		
@@ -37,84 +39,85 @@
 		
 	</script>
 </head>
-<body id="general-profil" >
-<header>
-	<h1 id="titre-profil"> <?php echo gettext("Panneau d'administration") ?></h1>
-</header>	
-	<nav>
-        <ul>
-			<li><a href="index.php" title="<?php echo gettext("Aller sur la page d'Accueil")?>"><?php echo gettext("Page Profil")?></a></li>
-			<li><a href="profil.php" title="<?php echo gettext("Aller sur la page Profil")?>"><?php echo gettext("Page Profil")?></a></li>
-			<li><a href="catalogue.php" title="<?php echo gettext("Aller sur la page Catalogue")?>"><?php echo gettext("Page Catalogue")?></a></li>
-			<li><a href="achat.php" title="<?php echo gettext("Aller sur la page d'achat")?>"><?php echo gettext("Page d'achat")?></a></li>
-			<li><a href="vente.php" title="<?php echo gettext("Aller sur la page de vente")?>"><?php echo gettext("Page de vente")?></a></li>
-            <li id="page-courante"><?php echo gettext("Page Panneau d'administration")?></li>
-			<li><a href="creation-compte.php" title="Aller sur la page Création de compte">Page Création de compte</a></li>
-		</ul>
-    </nav>
-<div class="onglet-cliquable">
-    <span id="onglet_ventes" onclick="javascript:changer_onglet('ventes');" ><?php echo gettext("Catalogue des Ventes") ?></span>
-    <span id="onglet_utilisateurs" onclick="javascript:changer_onglet('utilisateurs');" ><?php echo gettext("Catalogue des utilisateurs") ?></span>
-</div>
-<div>
-	<div class="contenu-onglet" id="contenu_onglet_ventes">
-		
-			<?php echo gettext("Chercher des ventes");?></br>
-			<?php echo gettext("Identifiant de la vente");?> <input type="text" ></br>
-			<?php echo gettext("Identifiant du vendeur");?> <input type="text" ></br>
-			<?php echo gettext("Titre de vente");?> <input type="text" ></br>
-			<button type="button"><?php echo gettext("Chercher");?></button>
-					
-		<?php 
-		$objetDAO = new ObjetDAO();
-		$listeobjet = $objetDAO->obtenirListeObjet();
-		?>
-		<?php foreach($listeobjet as $key => $objet) { ?>		
-			<div class="produit-courant">
-				<img src="<?=$objet->getIllustration();?>" class="photo-miniature-produit"/>
-				<ul>
-					<li><?php echo $objet->getTitreDeVente();?></li>
-					<li><?php echo gettext("Prix");?>: <?php echo $objet->getPrix();?><?php echo gettext(" $");?></li>
-					<button type="button"><?php echo gettext("Modifier cette vente");?></button>
-				</ul>
-			</div>
-		<?php } ?>
+<body>
+	<header>
+		<div id="titre"> <?php echo gettext("Survie étudiante") ?></div>
+        <div id="sous-titre"> <?php echo gettext("Page d'accueil") ?> </div>
+	</header>	
+		<nav>
+			<ul>
+				<li><a href="index.php" title="<?php echo gettext("Aller sur la page d'Accueil")?>"><?php echo gettext("Page Profil")?></a></li>
+				<li><a href="profil.php" title="<?php echo gettext("Aller sur la page Profil")?>"><?php echo gettext("Page Profil")?></a></li>
+				<li><a href="catalogue.php" title="<?php echo gettext("Aller sur la page Catalogue")?>"><?php echo gettext("Page Catalogue")?></a></li>
+				<li><a href="achat.php" title="<?php echo gettext("Aller sur la page d'achat")?>"><?php echo gettext("Page d'achat")?></a></li>
+				<li><a href="vente.php" title="<?php echo gettext("Aller sur la page de vente")?>"><?php echo gettext("Page de vente")?></a></li>
+				<li id="page-courante"><?php echo gettext("Page Panneau d'administration")?></li>
+				<li><a href="creation-compte.php" title="Aller sur la page Création de compte">Page Création de compte</a></li>
+			</ul>
+		</nav>
+	<div class="onglet-cliquable">
+		<span id="onglet_ventes" onclick="javascript:changer_onglet('ventes');" ><?php echo gettext("Catalogue des Ventes") ?></span>
+		<span id="onglet_utilisateurs" onclick="javascript:changer_onglet('utilisateurs');" ><?php echo gettext("Catalogue des utilisateurs") ?></span>
 	</div>
+	<div>
+		<div class="contenu-onglet" id="contenu_onglet_ventes">
+			
+				<?php echo gettext("Chercher des ventes");?></br>
+				<?php echo gettext("Identifiant de la vente");?> <input type="text" ></br>
+				<?php echo gettext("Identifiant du vendeur");?> <input type="text" ></br>
+				<?php echo gettext("Titre de vente");?> <input type="text" ></br>
+				<button type="button"><?php echo gettext("Chercher");?></button>
+						
+			<?php 
+			$objetDAO = new ObjetDAO();
+			$listeobjet = $objetDAO->obtenirListeObjet();
+			?>
+			<?php foreach($listeobjet as $key => $objet) { ?>		
+				<div class="produit-courant">
+					<img src="<?=$objet->getIllustration();?>" class="photo-miniature-produit"/>
+					<ul>
+						<li><?php echo $objet->getTitreDeVente();?></li>
+						<li><?php echo gettext("Prix");?>: <?php echo $objet->getPrix();?><?php echo gettext(" $");?></li>
+						<button type="button"><?php echo gettext("Modifier cette vente");?></button>
+					</ul>
+				</div>
+			<?php } ?>
+		</div>
 
-	<div class="contenu-onglet" id="contenu_onglet_utilisateurs">
-	
-		<?php echo gettext("Chercher des utilisateurs");?></br>
-			<?php echo gettext("Identifiant");?> <input type="text" ></br>
-			<?php echo gettext("Nom");?> <input type="text" ></br>
-			<?php echo gettext("Prenom");?> <input type="text" ></br>
-			<?php echo gettext("Adresse mail");?> <input type="text" ></br>
-			<button type="button"><?php echo gettext("Chercher");?></button>
-			<button type="button"><?php echo gettext("Créer un utilisateur");?></button>
-	
-		<?php 
-		$utilisateurDAO = new UtilisateurDAO();
-		$listeutilisateur = $utilisateurDAO->obtenirListeUtilisateur();
-		?>
-		<?php foreach($listeutilisateur as $key => $objet) { ?>
-			<div class="produit-courant">
-				<ul>
-					<li><?php echo gettext("Nom");?>: <?php echo $objet->getNom();?></li>
-					<li><?php echo gettext("Prenom");?>: <?php echo $objet->getPrenom();?></li>
-					<li><?php echo gettext("Pseudo");?>: <?php echo $objet->getPseudonyme();?></li>
-					<form action="profil.php">
-						<input type="submit" value="Modifier">
-					</form>
-				</ul>
-			</div>
-		<?php } ?>	
+		<div class="contenu-onglet" id="contenu_onglet_utilisateurs">
+		
+			<?php echo gettext("Chercher des utilisateurs");?></br>
+				<?php echo gettext("Identifiant");?> <input type="text" ></br>
+				<?php echo gettext("Nom");?> <input type="text" ></br>
+				<?php echo gettext("Prenom");?> <input type="text" ></br>
+				<?php echo gettext("Adresse mail");?> <input type="text" ></br>
+				<button type="button"><?php echo gettext("Chercher");?></button>
+				<button type="button"><?php echo gettext("Créer un utilisateur");?></button>
+		
+			<?php 
+			$utilisateurDAO = new UtilisateurDAO();
+			$listeutilisateur = $utilisateurDAO->obtenirListeUtilisateur();
+			?>
+			<?php foreach($listeutilisateur as $key => $objet) { ?>
+				<div class="produit-courant">
+					<ul>
+						<li><?php echo gettext("Nom");?>: <?php echo $objet->getNom();?></li>
+						<li><?php echo gettext("Prenom");?>: <?php echo $objet->getPrenom();?></li>
+						<li><?php echo gettext("Pseudo");?>: <?php echo $objet->getPseudonyme();?></li>
+						<form action="profil.php">
+							<input type="submit" value="Modifier">
+						</form>
+					</ul>
+				</div>
+			<?php } ?>	
+		</div>
+		
 	</div>
-	
-</div>
-<script type="text/javascript">
-	console.log("hello");
-	var onglet_courant = 'ventes';
-	changer_onglet(onglet_courant);
-	
-</script>
+	<script type="text/javascript">
+		console.log("hello");
+		var onglet_courant = 'ventes';
+		changer_onglet(onglet_courant);
+		
+	</script>
 </body>
 </html>
