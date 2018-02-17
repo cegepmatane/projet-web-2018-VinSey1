@@ -26,9 +26,10 @@
             <li><a href="index.php" title="<?php echo gettext("Aller sur la page d'Accueil")?>"><?php echo gettext("Page d'Accueil")?></a></li>
             <li id="page-courante"><?php echo gettext("Page Profil")?></li>
             <li><a href="catalogue.php" title="<?php echo gettext("Aller sur la page Catalogue")?>"><?php echo gettext("Page Catalogue")?></a></li>
-            <li><a href="achat.php" title="<?php echo gettext("Aller sur la page d'Achat")?>"><?php echo gettext("Page d'Achat")?></a></li>
+            <li><a href="achat.php" title="<?php echo gettext("Aller sur la page d'achat")?>"><?php echo gettext("Page d'achat")?></a></li>
 			<li><a href="vente.php" title="<?php echo gettext("Aller sur la page de vente")?>"><?php echo gettext("Page de vente")?></a></li>
             <li><a href="panneau-administration.php" title="<?php echo gettext("Aller sur la page Panneau d'administration")?>"><?php echo gettext("Page Panneau d'administration")?></a></li>
+            <li><a href="creation-compte.php" title="Aller sur la page Création de compte">Page Création de compte</a></li>
         </ul>
     </nav>
     <ul id="onglets-profil">

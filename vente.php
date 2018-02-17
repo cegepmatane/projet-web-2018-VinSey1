@@ -21,10 +21,10 @@
             <li><a href="index.php" title="Aller sur la page d'Accueil">Page d'Accueil</a></li>
             <li><a href="profil.php" title="Aller sur la page Profil">Page Profil</a></li>
             <li><a href="catalogue.php" title="Aller sur la page Catalogue">Page Catalogue</a></li>
-            <li><a href="vente.php" title="Aller sur la page Vente">Page Vente</a></li>
+            <li><a href="achat.php" title="Aller sur la page d'achat">Page d'achat</a></li>
+			<li id="page-courante">Page de vente</li>
 			<li><a href="panneau-administration.php" title="Aller sur la page Panneau d'administration">Page Panneau d'administration</a></li>
-			<li><a href="creation-comte.php" title="Aller sur la page Création de compte">Page Création de compte</a></li>
-            <li id="page-courante">Page Vente</li>
+			<li><a href="creation-compte.php" title="Aller sur la page Création de compte">Page Création de compte</a></li>
         </ul>
     </nav>
 	<form action="controleur_vente" id="formulaire-vente">
