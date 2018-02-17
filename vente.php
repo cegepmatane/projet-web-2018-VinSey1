@@ -27,7 +27,7 @@
 			<li><a href="creation-compte.php" title="Aller sur la page Création de compte">Page Création de compte</a></li>
         </ul>
     </nav>
-	<form action="controleur_vente" id="formulaire-vente">
+	<form action="mettreEnVente.php" id="formulaire-vente">
 		<ul>
 			<li><?php echo gettext("Type de produit :")?>
 				<select>

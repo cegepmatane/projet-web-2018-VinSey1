@@ -17,7 +17,7 @@ class ObjetDAO{
 		$resultat = $requete->fetch(PDO::FETCH_OBJ);					
 		
 		if ($resultat ){
-				
+			echo "hello";
 			$objet = new Objet($resultat->id_objet, 
 							   $resultat->identifiantVendeur,
 							   $resultat->titreDeVente,
@@ -27,9 +27,9 @@ class ObjetDAO{
 							   $resultat->detailsVente,
 							   $resultat->adresse,
 							   $resultat->illustration,
-							   $resulatt->vedette
+							   $resultat->vedette
 							   );
-		}			
+		}	
 		return $objet;
 		
 	}
