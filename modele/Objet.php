@@ -56,7 +56,7 @@ class Objet{
 		
 	function __construct($identifiantVendeur, $titreDeVente, $categorie, $prix, $descriptionProduit, $detailsVente, $adresse, $illustration, $vedette){
 		
-		
+		$this->idObjet = $idObjet;
 		$this->identifiantVendeur = $identifiantVendeur;
 		$this->titreDeVente = $titreDeVente;
 		$this->categorie = $categorie;

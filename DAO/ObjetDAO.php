@@ -17,7 +17,7 @@ class ObjetDAO{
 		$resultat = $requete->fetch(PDO::FETCH_OBJ);					
 		
 		if ($resultat ){
-			echo "hello";
+			
 			$objet = new Objet($resultat->id_objet, 
 							   $resultat->identifiantVendeur,
 							   $resultat->titreDeVente,
@@ -127,7 +127,7 @@ class ObjetDAO{
 		$resultat = $requete->fetchAll(PDO::FETCH_OBJ);	
 		
 		foreach($resultat as $key => $enregistrementObjet) {
-			$objet = new Objet($enregistrementObjet->id_objet, $enregistrementObjet->identifiantVendeur, $enregistrementObjet->titreDeVente, $enregistrementObjet->categorie, $enregistrementObjet->prix, $enregistrementObjet->descriptionProduit, $enregistrementObjet->detailsVente, $enregistrementObjet->adresse, $enregistrementObjet->illustration, $enregistrementObjet->vedette);
+			$objet = new Objet($enregistrementObjet->identifiantVendeur, $enregistrementObjet->titreDeVente, $enregistrementObjet->categorie, $enregistrementObjet->prix, $enregistrementObjet->descriptionProduit, $enregistrementObjet->detailsVente, $enregistrementObjet->adresse, $enregistrementObjet->illustration, $enregistrementObjet->vedette);
 			$listeObjet[]=$objet;
 		}
 		
