@@ -16,12 +16,12 @@
     <meta name="viewport" content="width=device-width"/>
     <link rel="stylesheet" href="./decoration/style_general_test.css">
     <link rel="stylesheet" type="text/css" href="./decoration/MyFontsWebfontsKit.css">		
-	<title> <?php echo gettext("Vente n°"); echo $objet->getIdentifiantDeVente(); ?></title>
+	<title> <?php echo gettext("Vente n°"); echo $objet->getIdObjet(); ?></title>
 </head>
 <body>
     <header>
         <div id="titre"> <?php echo gettext("Survie étudiante") ?></div>
-        <div id="sous-titre"><?php echo gettext("Vente n°"); echo $objet->getIdentifiantDeVente(); ?></div>
+        <div id="sous-titre"><?php echo gettext("Vente n°"); echo $objet->getIdObjet(); ?></div>
     </header>	
     <nav>
         <ul>
