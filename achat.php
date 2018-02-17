@@ -14,7 +14,6 @@
     $produit1->adresse = "616 Avenue du Saint-Rédempteur G4W 1L1 Matane QC Québec";
 	$produit1->illustration = "oreiller.png";
 	$produit1->nom = "Vincent";
-
 	$profil_courant = new stdClass();
 	$profil_courant->nom = "Eliott";
 ?>
