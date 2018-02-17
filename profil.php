@@ -45,7 +45,7 @@
         </ul>
     </nav>
     <div class="onglet-cliquable">
-	    <span id="onglet_informations" onclick="javascript:changer_onglet('informations');" ><?php echo gettext("Information") ?></span>
+	    <span id="onglet_informations" onclick="javascript:changer_onglet('informations');" ><?php echo gettext("Informations") ?></span>
 	    <span id="onglet_ventes" onclick="javascript:changer_onglet('ventes');" ><?php echo gettext("Ventes") ?></span>
 	    <span id="onglet_achats" onclick="javascript:changer_onglet('achats');" ><?php echo gettext("Informations") ?></span>
 	    <span id="onglet_avis_recus" onclick="javascript:changer_onglet('avis_recus');" ><?php echo gettext("Avis reçus") ?></span>
