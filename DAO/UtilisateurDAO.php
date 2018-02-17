@@ -30,7 +30,8 @@ class UtilisateurDAO{
 										   0,
 										   $resultat->illustration,
 										   $resultat->age,
-										   $resultat->telephone										   
+										   $resultat->telephone,
+										   $resultat->role,
 										   );
 		}			
 		return $utilisateur;
@@ -55,7 +56,7 @@ class UtilisateurDAO{
 		$age = $utilisateur->getAge();
 		$telephone = $utilisateur->getTelephone();
 	
-		$requete = $connexionBDActive->prepare("INSERT INTO utilisateur(nom, prenom, pseudonyme, email, adresse, codepostal, pays, ville, nbachats, nbventes, illustration, age, telephone) VALUES (:nom, :prenom, :pseudonyme, :email, :adresse, :codepostal, :pays, :ville, :nbachats, :nbventes, :illustration, :age, :telephone)");
+		$requete = $connexionBDActive->prepare("INSERT INTO utilisateur(nom, prenom, pseudonyme, email, adresse, codepostal, pays, ville, nbachats, nbventes, illustration, age, telephone, role) VALUES (:nom, :prenom, :pseudonyme, :email, :adresse, :codepostal, :pays, :ville, :nbachats, :nbventes, :illustration, :age, :telephone, :role)");
 		
 		$requete->bindParam(':nom', $nom, PDO::PARAM_STR);
 		$requete->bindParam(':prenom', $prenom, PDO::PARAM_STR);
@@ -70,7 +71,7 @@ class UtilisateurDAO{
 		$requete->bindParam(':illustration', $illustration, PDO::PARAM_STR);
 		$requete->bindParam(':age', $age, PDO::PARAM_INT);
 		$requete->bindParam(':telephone', $telephone, PDO::PARAM_STR);
-		
+		$requete->bindParam(':role', $role, PDO::PARAM_STR);
 		$requete->execute();
 		
 	}
@@ -106,7 +107,7 @@ class UtilisateurDAO{
 		$resultat = $requete->fetchAll(PDO::FETCH_OBJ);	
 		
 		foreach($resultat as $key => $enregistrementUtilisateur) {
-			$utilisateur = new Utilisateur($enregistrementUtilisateur->id_utilisateur, $enregistrementUtilisateur->nom, $enregistrementUtilisateur->prenom, $enregistrementUtilisateur->pseudonyme, $enregistrementUtilisateur->email, $enregistrementUtilisateur->adresse, $enregistrementUtilisateur->codepostal, $enregistrementUtilisateur->pays, $enregistrementUtilisateur->ville, $enregistrementUtilisateur->nbachats, $enregistrementUtilisateur->nbventes, $enregistrementUtilisateur->illustration, $enregistrementUtilisateur->age, $enregistrementUtilisateur->telephone );
+			$utilisateur = new Utilisateur($enregistrementUtilisateur->id_utilisateur, $enregistrementUtilisateur->nom, $enregistrementUtilisateur->prenom, $enregistrementUtilisateur->pseudonyme, $enregistrementUtilisateur->email, $enregistrementUtilisateur->adresse, $enregistrementUtilisateur->codepostal, $enregistrementUtilisateur->pays, $enregistrementUtilisateur->ville, $enregistrementUtilisateur->nbachats, $enregistrementUtilisateur->nbventes, $enregistrementUtilisateur->illustration, $enregistrementUtilisateur->age, $enregistrementUtilisateur->telephone, $enregistrementUtilisateur->role );
 			$listeUtilisateur[]=$utilisateur;
 		}
 		

@@ -16,6 +16,7 @@ class Utilisateur{
 	private $illustration;
 	private $age;
 	private $telephone;
+	private $role;
 
 	public function getidUtilisateur(){
 		return $this->idUtilisateur;
@@ -72,8 +73,12 @@ class Utilisateur{
 	public function getTelephone(){
 		return $this->telephone;
 	}
+	
+	public function getRole(){
+		return $this->role;
+	}
 		
-	function __construct($idUtilisateur, $nom, $prenom, $pseudonyme, $email, $adresse, $codepostal, $pays, $ville, $nbventes, $nbachats, $illustration, $age, $telephone ){	
+	function __construct($idUtilisateur, $nom, $prenom, $pseudonyme, $email, $adresse, $codepostal, $pays, $ville, $nbventes, $nbachats, $illustration, $age, $telephone, $role ){	
 		
 		if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 			$this->idUtilisateur = $idUtilisateur;
@@ -90,6 +95,7 @@ class Utilisateur{
 			$this->illustration = $illustration;
 			$this->age = $age;
 			$this->telephone = $telephone;
+			$this->role = $role;
 		}
 	}
 }
