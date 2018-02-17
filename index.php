@@ -66,7 +66,10 @@
 		<u id="boutons-index">
 			<li><button type="button"><?php echo gettext("Vendre un objet"); ?></button></li>
 			<li><button type="button"><?php echo gettext("Se connecter"); ?></button></li>
-			<li><button type="button"><?php echo gettext("S'inscrire"); ?></button></li>
+			<li>
+				<form action="creation-compte.php">
+					<input type="submit" value="S'inscrire"/></li>
+				</form>
 		</ul>
 </body>
 </html>

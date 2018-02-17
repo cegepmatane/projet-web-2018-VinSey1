@@ -25,5 +25,8 @@
 		$utilisateurDAO->insererUtilisateur($utilisateur);
 		
 	}
+	else{
+		echo "adresse mail erronée";
+	}
 
 ?>
