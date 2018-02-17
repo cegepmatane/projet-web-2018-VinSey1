@@ -21,7 +21,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8"/>
+	<meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width"/>
     <link rel="stylesheet" href="./decoration/style_general_test.css">
     <link rel="stylesheet" type="text/css" href="./decoration/MyFontsWebfontsKit.css">			
@@ -60,7 +60,7 @@
 		<span id="onglet_utilisateurs" onclick="javascript:changer_onglet('utilisateurs');" ><?php echo gettext("Catalogue des utilisateurs") ?></span>
 	</div>
 	<div>
-		<div class="contenu-onglet" id="contenu_onglet_ventes">
+		<div class="onglets-profil" id="contenu_onglet_ventes">
 			
 				<?php echo gettext("Chercher des ventes");?></br>
 				<?php echo gettext("Identifiant de la vente");?> <input type="text" ></br>
