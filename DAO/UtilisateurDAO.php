@@ -55,7 +55,8 @@ class UtilisateurDAO{
 		$illustration = $utilisateur->getIllustration();
 		$age = $utilisateur->getAge();
 		$telephone = $utilisateur->getTelephone();
-		$role = $role->getRole();
+		$role = $utilisateur->getRole();
+
 	
 		$requete = $connexionBDActive->prepare("INSERT INTO utilisateur(nom, prenom, pseudonyme, email, adresse, codepostal, pays, ville, nbachats, nbventes, illustration, age, telephone, role) VALUES (:nom, :prenom, :pseudonyme, :email, :adresse, :codepostal, :pays, :ville, :nbachats, :nbventes, :illustration, :age, :telephone, :role)");
 		

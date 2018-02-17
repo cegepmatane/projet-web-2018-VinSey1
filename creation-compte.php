@@ -14,6 +14,32 @@
     <header>
         <div id="titre"> <?php echo gettext("Survie étudiante") ?></div>
         <div id="sous-titre"><?php echo gettext("Création de compte") ?> </div>
+		
+		<?php
+		
+		$utilisateur = new Utilisateur(0, 
+									   "cqcf",
+									   "crqcfqe",
+									   "xfeqsfe",
+									   "eqcfe334",
+									   "3DExdz",
+									   "cfrscfqr",
+									   "cgrsgvr",
+									   "gvtsrg",
+									   0, 
+									   0,
+									   "image",
+									   56,
+									   "grqcgq",
+									   0
+									   );
+		$utilisateurDAO = new UtilisateurDAO();
+		$utilisateurDAO->insererUtilisateur($utilisateur);
+		
+		
+		?>
+		
+		
     </header>	
     <nav>
         <ul>
@@ -26,7 +52,7 @@
 			<li id="page-courante">Page Création de compte</li>
 		</ul>
     </nav>
-    <form action="inscription.php" id="formulaire-creation">
+    <form action="controleur/inscription.php" id="formulaire-creation" method="post">
         <ul>
             <div id = "blocs-formulaire">
                 <div id = "bloc-formulaire-1">
