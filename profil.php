@@ -44,41 +44,53 @@
             <li><a href="creation-compte.php" title="Aller sur la page Création de compte">Page Création de compte</a></li>
         </ul>
     </nav>
-    <ul id="onglets-profil">
-	
-	    <span id="informations" onclick="javascript:changer_onglet('informations');" ><?php echo gettext("Information") ?></span>
-	    <span id="ventes" onclick="javascript:changer_onglet('ventes');" ><?php echo gettext("Ventes") ?></span>
-	    <span id="achats" onclick="javascript:changer_onglet('achats');" ><?php echo gettext("Informations") ?></span>
-	    <span id="avis_recus" onclick="javascript:changer_onglet('avis_recus');" ><?php echo gettext("Avis reçus") ?></span>
-	    <span id="avis_donnees" onclick="javascript:changer_onglet('avis_donnes');" ><?php echo gettext("Avis donnés") ?></span>
-        <li><a href="Modifier.html"> <?php echo gettext("Modifier") ?> </a></li>
-    </ul>
-    <div id="contenu-profil">
-        <img src="<?=$utilisateur->getIllustration();?>" id="image-profil" />
-        <ul>
-            <div class="informations">
-                <li> <?php echo gettext("Pseudonyme : "); echo $utilisateur->getPseudonyme(); ?> </li>
-                <li> <?php echo gettext("Nom : "); echo $utilisateur->getNom(); ?> </li>
-                <li> <?php echo gettext("Prénom : "); echo $utilisateur->getPrenom(); ?> </li>
-                <li> <?php echo gettext("Âge : "); echo $utilisateur->getAge(); ?> </li>
-            </div>
-            <div class="informations">
-                <li> <?php echo gettext("Adresse : "); echo $utilisateur->getAdresse(); ?> </li>
-                <li> <?php echo gettext("Ville : "); echo $utilisateur->getVille(); ?> </li>
-                <li> <?php echo gettext("Code Postal : "); echo $utilisateur->getCodepostal(); ?> </li>
-                <li> <?php echo gettext("Pays : "); echo $utilisateur->getPays(); ?> </li>
-                <li> <?php echo gettext("E-mail : "); echo $utilisateur->getEmail(); ?> </li>
-                <li> <?php echo gettext("Téléphone : "); echo $utilisateur->getTelephone(); ?> </li>
-            </div>
-        </ul>
-        <ul>
-            <div class="statistiques">
-                <li> <?php echo gettext("Ventes : "); echo $utilisateur->getNbventes(); ?> </li>
-                <li> <?php echo gettext("Achats : "); echo $utilisateur->getNbachats(); ?> </li>
-            </div>
-        </ul>
-        <input type="button" value="<?php echo gettext("Modifier vos informations")?>">
+    <div class="onglet-cliquable">
+	    <span id="onglet_informations" onclick="javascript:changer_onglet('informations');" ><?php echo gettext("Information") ?></span>
+	    <span id="onglet_ventes" onclick="javascript:changer_onglet('ventes');" ><?php echo gettext("Ventes") ?></span>
+	    <span id="onglet_achats" onclick="javascript:changer_onglet('achats');" ><?php echo gettext("Informations") ?></span>
+	    <span id="onglet_avis_recus" onclick="javascript:changer_onglet('avis_recus');" ><?php echo gettext("Avis reçus") ?></span>
+	    <span id="onglet_avis_donnes" onclick="javascript:changer_onglet('avis_donnes');" ><?php echo gettext("Avis donnés") ?></span>
     </div>
+	<div>
+		<div class="contenu-onglet" id="contenu_onglet_informations">
+			<img src="<?=$utilisateur->getIllustration();?>" id="image-profil" />
+			<ul>
+				<div class="informations">
+					<li> <?php echo gettext("Pseudonyme : "); echo $utilisateur->getPseudonyme(); ?> </li>
+					<li> <?php echo gettext("Nom : "); echo $utilisateur->getNom(); ?> </li>
+					<li> <?php echo gettext("Prénom : "); echo $utilisateur->getPrenom(); ?> </li>
+					<li> <?php echo gettext("Âge : "); echo $utilisateur->getAge(); ?> </li>
+				</div>
+				<div class="informations">
+					<li> <?php echo gettext("Adresse : "); echo $utilisateur->getAdresse(); ?> </li>
+					<li> <?php echo gettext("Ville : "); echo $utilisateur->getVille(); ?> </li>
+					<li> <?php echo gettext("Code Postal : "); echo $utilisateur->getCodepostal(); ?> </li>
+					<li> <?php echo gettext("Pays : "); echo $utilisateur->getPays(); ?> </li>
+					<li> <?php echo gettext("E-mail : "); echo $utilisateur->getEmail(); ?> </li>
+					<li> <?php echo gettext("Téléphone : "); echo $utilisateur->getTelephone(); ?> </li>
+				</div>
+			</ul>
+			<ul>
+				<div class="statistiques">
+					<li> <?php echo gettext("Ventes : "); echo $utilisateur->getNbventes(); ?> </li>
+					<li> <?php echo gettext("Achats : "); echo $utilisateur->getNbachats(); ?> </li>
+				</div>
+			</ul>
+			<input type="button" value="<?php echo gettext("Modifier vos informations")?>">
+		</div>
+		<div class="contenu-onglet" id="contenu_onglet_ventes">
+			liste des ventes
+		</div>
+		<div class="contenu-onglet" id="contenu_onglet_achats">
+			liste des achats
+		</div>
+		<div class="contenu-onglet" id="contenu_onglet_avis_recus">
+			liste des avis reçus
+		</div>
+		<div class="contenu-onglet" id="contenu_onglet_avis_donnes">
+			liste des avis donnes
+		</div>
+	</div>
 	<script type="text/javascript">
 		
 		var onglet_courant = 'informations';

@@ -22,7 +22,7 @@
 <html lang="fr">
 <head>
 	<meta charset="utf-8"/>
-	<link rel = "stylesheet" href = "decoration/style_general.css">		
+	<link rel = "stylesheet" href = "decoration/style_general_test.css">		
 	<title> <?php echo gettext("Panneau d'administration") ?></title>
 	<script type="text/javascript">
 		
@@ -53,7 +53,6 @@
     <span id="onglet_utilisateurs" onclick="javascript:changer_onglet('utilisateurs');" ><?php echo gettext("Catalogue des utilisateurs") ?></span>
 </div>
 <div>
-
 	<div class="contenu-onglet" id="contenu_onglet_ventes">
 		
 			<?php echo gettext("Chercher des ventes");?></br>
@@ -108,7 +107,7 @@
 	
 </div>
 <script type="text/javascript">
-	
+	console.log("hello");
 	var onglet_courant = 'ventes';
 	changer_onglet(onglet_courant);
 	
