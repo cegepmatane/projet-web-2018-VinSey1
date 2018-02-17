@@ -15,6 +15,18 @@
     <link rel="stylesheet" href="./decoration/style_general_test.css">
     <link rel="stylesheet" type="text/css" href="./decoration/MyFontsWebfontsKit.css">		
 	<title> <?php echo gettext("Profil de ");echo $utilisateur->getPseudonyme(); ?></title>
+	<script type="text/javascript">
+		
+		function changer_onglet(name){
+		
+			document.getElementById('onglet_'+onglet_courant).className = "onglet-non-selectionne";
+			document.getElementById('contenu_onglet_'+onglet_courant).style.display = 'none';
+			document.getElementById('contenu_onglet_'+name).style.display = 'block';
+			document.getElementById('onglet_'+name).className = "onglet-selectionne";
+			onglet_courant = name;
+		}	
+		
+	</script>
 </head>
 <body>
     <header>
@@ -33,11 +45,12 @@
         </ul>
     </nav>
     <ul id="onglets-profil">
-        <li id="active"><a href="Informations.html"> <?php echo gettext("Informations") ?></a></li>
-        <li><a href="Ventes.html"> <?php echo gettext("Ventes") ?></a></li>
-        <li><a href="Achats.html"> <?php echo gettext("Achats") ?></a></li>
-        <li><a href="Avis_recus.html"> <?php echo gettext("Avis reçus") ?></a></li>
-        <li><a href="Avis_donnes.html"> <?php echo gettext("Avis donnés") ?></a></li>
+	
+	    <span id="informations" onclick="javascript:changer_onglet('informations');" ><?php echo gettext("Information") ?></span>
+	    <span id="ventes" onclick="javascript:changer_onglet('ventes');" ><?php echo gettext("Ventes") ?></span>
+	    <span id="achats" onclick="javascript:changer_onglet('achats');" ><?php echo gettext("Informations") ?></span>
+	    <span id="avis_recus" onclick="javascript:changer_onglet('avis_recus');" ><?php echo gettext("Avis reçus") ?></span>
+	    <span id="avis_donnees" onclick="javascript:changer_onglet('avis_donnes');" ><?php echo gettext("Avis donnés") ?></span>
         <li><a href="Modifier.html"> <?php echo gettext("Modifier") ?> </a></li>
     </ul>
     <div id="contenu-profil">
@@ -66,5 +79,11 @@
         </ul>
         <input type="button" value="<?php echo gettext("Modifier vos informations")?>">
     </div>
+	<script type="text/javascript">
+		
+		var onglet_courant = 'informations';
+		changer_onglet(onglet_courant);
+		
+	</script>
 </body>
 </html>

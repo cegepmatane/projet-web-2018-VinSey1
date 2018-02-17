@@ -15,8 +15,6 @@
 			$categorie = 10;
 		}
 		
-		
-		
 		$objet = new Objet(0,
 							$_SESSION["utilisateurCourant"], 
 							$_POST["titreDeVente"],
@@ -29,10 +27,7 @@
 							$_POST["adresse"],
 							$_POST["illustration"],
 							0
-							)
-		
-		
-		
+							)			
 	}
 
 

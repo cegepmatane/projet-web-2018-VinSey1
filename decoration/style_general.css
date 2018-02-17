@@ -339,11 +339,16 @@ body {
 }
 
 .onglet-selectionne{
-	background : #00a500;
+	border-bottom: 1px solid #fff;
+    background-color: #00a500;
 }
 
 .onget-non-selectionne{
-	abckground : #FFCCBC;
+	float : left;
+    height : 28px;
+    background-color: #F4F9FD;
+    margin : 2px 2px 0 2px;
+    border : 1px solid black;
 }
 
 
