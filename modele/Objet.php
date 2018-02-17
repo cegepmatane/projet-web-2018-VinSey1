@@ -3,7 +3,6 @@
 class Objet{
 
 	private $idObjet;
-	private $identifiantDeVente;
 	private $identifiantVendeur;
 	private $titreDeVente;
 	private $categorie;
@@ -17,10 +16,6 @@ class Objet{
 
 	public function getIdObjet(){
 		return $this->idObjet;
-	}
-	
-	public function getIdentifiantDeVente(){
-		return $this->identifiantDeVente;	
 	}
 	
 	public function getIdentifiantVendeur(){
@@ -59,10 +54,9 @@ class Objet{
 		return $this->vedette;
 	}
 		
-	function __construct($idObjet, $identifiantDeVente, $identifiantVendeur, $titreDeVente, $categorie, $prix, $descriptionProduit, $detailsVente, $adresse, $illustration, $vedette){
+	function __construct($idObjet, $identifiantVendeur, $titreDeVente, $categorie, $prix, $descriptionProduit, $detailsVente, $adresse, $illustration, $vedette){
 		
 		$this->idObjet = $idObjet;
-		$this->identifiantDeVente = $identifiantDeVente;
 		$this->identifiantVendeur = $identifiantVendeur;
 		$this->titreDeVente = $titreDeVente;
 		$this->categorie = $categorie;

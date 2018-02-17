@@ -5,7 +5,7 @@
 	
 	if ( isset($_POST['controleur_vente'])){
 		
-		
+		$objet = new Objet(0,$_POST[""],)
 		
 	}
 
