@@ -25,7 +25,7 @@
     <meta name="viewport" content="width=device-width"/>
     <link rel="stylesheet" href="./decoration/style_general_test.css">
     <link rel="stylesheet" type="text/css" href="./decoration/MyFontsWebfontsKit.css">			
-	<title> <?php echo gettext("Panneau d'administration") ?></title>
+	<title><?php echo gettext("Panneau d'administration") ?></title>
 	<script type="text/javascript">
 		
 		function changer_onglet(name){
@@ -42,7 +42,7 @@
 <body>
 	<header>
 		<div id="titre"> <?php echo gettext("Survie étudiante") ?></div>
-        <div id="sous-titre"> <?php echo gettext("Page d'accueil") ?> </div>
+        <div id="sous-titre"> <?php echo gettext("Panneau d'administration") ?> </div>
 	</header>	
 		<nav>
 			<ul>
