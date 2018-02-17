@@ -17,7 +17,19 @@
 		
 		
 		
-		$objet = new Objet(0,$_SESSION["utilisateurCourant"], $_POST["titreDeVente"],$_POST["titreDeVente"],$categorie)
+		$objet = new Objet(0,
+							$_SESSION["utilisateurCourant"], 
+							$_POST["titreDeVente"],
+							$_POST["titreDeVente"],
+							$categorie, 
+							$_POST["prix"],
+							$categorie, 
+							$_POST["descriptionProduit"], 
+							$_POST["details"],
+							$_POST["adresse"],
+							$_POST["illustration"],
+							0
+							)
 		
 		
 		

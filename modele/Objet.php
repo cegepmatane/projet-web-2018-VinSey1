@@ -37,7 +37,7 @@ class Objet{
 	public function getDescriptionProduit(){
 		return $this->descriptionProduit;
 	}
-	
+	identifiant
 	public function getDetailsVente(){
 		return $this->detailsVente;
 	}
@@ -65,8 +65,7 @@ class Objet{
 		$this->detailsVente = $detailsVente;
 		$this->adresse = $adresse;
 		$this->illustration = $illustration;
-		$this->vedette = $vedette;
-	
+		$this->vedette = $vedette;	
 	}
 }
 ?>

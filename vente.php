@@ -42,6 +42,8 @@
 			<li><input type="text" name="descriptionProduit" size="50" id="gros-texte"/></li>
 			<li><?php echo gettext("Détails : ")?></li>
 			<li><input type="text" name="details" size="50" id="gros-texte"/></li>
+			<li><?php echo gettext("Adresse : ")?></li>
+			<li><input type="text" name="adresse" size="50" id="gros-texte"/></li>
 			<li>
 				<?php echo gettext("Prix : ")?> <input type="text" name="prix" size="1"/>
 				<select >
