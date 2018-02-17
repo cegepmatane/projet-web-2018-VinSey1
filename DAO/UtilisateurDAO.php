@@ -17,7 +17,7 @@ class UtilisateurDAO{
 		
 		if ($resultat ){
 				
-			$utilisateur = new Utilisateur($resultat->id_utilisateur, 
+			$utilisateur = new Utilisateur( 
 										   $resultat->nom, 
 										   $resultat->prenom,
 										   $resultat->pseudonyme,

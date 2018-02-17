@@ -5,7 +5,7 @@
 	
 	if (isset($_POST['controleur_inscription'])){
 		
-		$utilisateur = new Utilisateur(0, 
+		$utilisateur = new Utilisateur( 
 									   $_POST["nom"],
 									   $_POST["prenom"],
 									   $_POST["pseudonyme"],
@@ -25,8 +25,6 @@
 		$utilisateurDAO->insererUtilisateur($utilisateur);
 		
 	}
-	else{
-		echo "adresse mail erronée";
-	}
+	
 
 ?>
