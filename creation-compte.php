@@ -26,7 +26,7 @@
 			<li id="page-courante">Page Création de compte</li>
 		</ul>
     </nav>
-    <form action="controleur_inscription.php" id="formulaire-creation">
+    <form action="inscription.php" id="formulaire-creation">
         <ul>
             <div id = "blocs-formulaire">
                 <div id = "bloc-formulaire-1">
