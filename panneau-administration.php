@@ -86,6 +86,7 @@
 			<?php echo gettext("Prenom");?> <input type="text" ></br>
 			<?php echo gettext("Adresse mail");?> <input type="text" ></br>
 			<button type="button"><?php echo gettext("Chercher");?></button>
+			<button type="button"><?php echo gettext("Créer un utilisateur");?></button>
 	
 		<?php 
 		$utilisateurDAO = new UtilisateurDAO();
