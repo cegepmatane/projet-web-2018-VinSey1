@@ -18,7 +18,7 @@ class ObjetDAO{
 		
 		if ($resultat ){
 			
-			$objet = new Objet($resultat->id_objet, 
+			$objet = new Objet(
 							   $resultat->identifiantVendeur,
 							   $resultat->titreDeVente,
 							   $resultat->categorie,

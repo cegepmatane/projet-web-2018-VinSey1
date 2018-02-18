@@ -9,7 +9,7 @@
 <html lang="fr">
 	<?php	
 		$objetDAO = new ObjetDAO();
-		$objet = $objetDAO->chercherParIdentifiant(0);
+		$objet = $objetDAO->chercherParIdentifiant(2);
 
 	?>
 <head>
