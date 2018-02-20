@@ -92,6 +92,7 @@
 					</div>
 				</div>
 				<input id="bouton" type="submit" value="Valider" name="controleur_modification_utilisateur"/>
+				<input id="bouton" type="submit" value="Supprimer" name="controleur_suppression_utilisateur"/>
 			</ul>
 			
 		</form>
