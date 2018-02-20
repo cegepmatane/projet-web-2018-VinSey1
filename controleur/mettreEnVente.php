@@ -15,7 +15,7 @@
 			$categorie = 10;
 		}
 		
-		$objet = new Objet( 
+		$objet = new Objet( 0,
 							"session",
 							$_POST["titreDeVente"],
 							$categorie, 

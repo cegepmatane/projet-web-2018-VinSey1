@@ -7,17 +7,23 @@
 
 <!DOCTYPE html>
 <html lang="fr">
-	<?php	
+	<?php
 		$objetDAO = new ObjetDAO();
-		$objet = $objetDAO->chercherParIdentifiant(2);
-
+		
+		$idObjet = 1;
+		
+		if ( isset($_GET['idObjet']) ){
+			$idObjet = $_GET['idObjet'];
+		}
+		
+		$objet = $objetDAO->chercherParIdentifiant($idObjet);
 	?>
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width"/>
     <link rel="stylesheet" href="../../decoration/style_general_test.css">
     <link rel="stylesheet" type="text/css" href="../../decoration/MyFontsWebfontsKit.css">	
-	<title> <?php echo gettext("Vente n°"); ?></title>
+	<title> <?php echo gettext("Vente n°"); echo $objet->getIdObjet(); ?></title>
 </head>
 <body>
     <header>
