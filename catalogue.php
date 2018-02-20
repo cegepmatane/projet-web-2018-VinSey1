@@ -22,12 +22,12 @@
     <nav>
         <ul>
             <li><a href="index.php" title="<?php echo gettext("Aller sur la page d'Accueil")?>"><?php echo gettext("Page d'Accueil")?></a></li>
-			<li><a href="profil.php" title="<?php echo gettext("Aller sur la page Profil")?>"><?php echo gettext("Page Profil")?></a></li>
+			<li><a href="vue/prive/profil.php" title="<?php echo gettext("Aller sur la page Profil")?>"><?php echo gettext("Page Profil")?></a></li>
 			<li id="page-courante"><?php echo gettext("Page Catalogue")?></li>
-            <li><a href="achat.php" title="<?php echo gettext("Aller sur la page d'achat")?>"><?php echo gettext("Page d'achat")?></a></li>
-			<li><a href="vente.php" title="<?php echo gettext("Aller sur la page de vente")?>"><?php echo gettext("Page de vente")?></a></li>
-        	<li><a href="panneau-administration.php" title="<?php echo gettext("Aller sur la page Panneau d'administration")?>"><?php echo gettext("Page Panneau d'administration")?></a></li>
-			<li><a href="creation-compte.php" title="Aller sur la page Création de compte">Page Création de compte</a></li>
+            <li><a href="vue/prive/achat.php" title="<?php echo gettext("Aller sur la page d'achat")?>"><?php echo gettext("Page d'achat")?></a></li>
+			<li><a href="vue/prive/vente.php" title="<?php echo gettext("Aller sur la page de vente")?>"><?php echo gettext("Page de vente")?></a></li>
+        	<li><a href="vue/prive/panneau-administration.php" title="<?php echo gettext("Aller sur la page Panneau d'administration")?>"><?php echo gettext("Page Panneau d'administration")?></a></li>
+			<li><a href="vue/prive/screation-compte.php" title="Aller sur la page Création de compte">Page Création de compte</a></li>
 		</ul>
     </nav>
 	<div id="barre-de-recherche" >
