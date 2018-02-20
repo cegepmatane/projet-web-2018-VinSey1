@@ -23,8 +23,12 @@
 		$utilisateurDAO->modifierRole($_POST['idUtilisateur'], $_POST['role']);	
 		$utilisateurDAO->modifierIllustration($_POST['idUtilisateur'], $_POST['illustration']);	
 		
-		
+		echo 'Modification effectué !</br>';
+
+	}
+	else{
+		echo "La modification a échoué<br>";
 	}
 
-
 ?>
+<a href="../index.php">Acceuil</a>
