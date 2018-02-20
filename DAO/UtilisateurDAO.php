@@ -120,9 +120,9 @@ class UtilisateurDAO{
 	
 	public function modifierNom($idUtilisateur, $nom){
 		
-		global $connexionDBActive;
+		global $connexionBDActive;
 		
-		$requete = $connexionDBActive->prepare("UPDATE utilisateur	SET nom = :nom WHERE id_utilisateur = :idUtilisateur");
+		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET nom = :nom WHERE id_utilisateur = :idUtilisateur");
 		$requete->bindParam(':nom', $nom, PDO::PARAM_STR);
 		$requete->bindParam(':idUtilisateur', $idUtilisateur, PDO::PARAM_INT);
 	
@@ -132,7 +132,7 @@ class UtilisateurDAO{
 	
 	public function modifierPrenom($idUtilisateur, $prenom){
 		
-		global $connexionDBActive;
+		global $connexionBDActive;
 		
 		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET prenom = :prenom WHERE id_utilisateur = :idUtilisateur");
 		$requete->bindParam(':prenom', $prenom, PDO::PARAM_STR);
@@ -144,7 +144,7 @@ class UtilisateurDAO{
 	
 	public function modifierPseudonyme($idUtilisateur, $pseudonyme){
 		
-		global $connexionDBActive;
+		global $connexionBDActive;
 		
 		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET pseudonyme = :pseudonyme WHERE id_utilisateur = :idUtilisateur");
 		$requete->bindParam(':pseudonyme', $pseudonyme, PDO::PARAM_STR);
@@ -156,7 +156,7 @@ class UtilisateurDAO{
 	
 	public function modifierEmail($email, $pseudonyme){
 		
-		global $connexionDBActive;
+		global $connexionBDActive;
 		
 		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET email = :email WHERE id_utilisateur = :idUtilisateur");
 		$requete->bindParam(':email', $email, PDO::PARAM_STR);
@@ -168,7 +168,7 @@ class UtilisateurDAO{
 	
 	public function modifierAdresse($adresse, $pseudonyme){
 		
-		global $connexionDBActive;
+		global $connexionBDActive;
 		
 		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET adresse = :adresse WHERE id_utilisateur = :idUtilisateur");
 		$requete->bindParam(':adresse', $adresse, PDO::PARAM_STR);
@@ -181,7 +181,7 @@ class UtilisateurDAO{
 	
 	public function modifierCodepostal($codepostal, $pseudonyme){
 		
-		global $connexionDBActive;
+		global $connexionBDActive;
 		
 		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET codepostal = :codepostal WHERE id_utilisateur = :idUtilisateur");
 		$requete->bindParam(':codepostal', $codepostal, PDO::PARAM_STR);
@@ -193,7 +193,7 @@ class UtilisateurDAO{
 	
 	public function modifierPays($pays, $pseudonyme){
 		
-		global $connexionDBActive;
+		global $connexionBDActive;
 		
 		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET pays = :pays WHERE id_utilisateur = :idUtilisateur");
 		$requete->bindParam(':pays', $pays, PDO::PARAM_STR);
@@ -205,7 +205,7 @@ class UtilisateurDAO{
 	
 	public function modifierVille($ville, $pseudonyme){
 		
-		global $connexionDBActive;
+		global $connexionBDActive;
 		
 		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET ville = :ville WHERE id_utilisateur = :idUtilisateur");
 		$requete->bindParam(':ville', $ville, PDO::PARAM_STR);
@@ -217,7 +217,7 @@ class UtilisateurDAO{
 	
 	public function modifierNbachats($nbachats, $pseudonyme){
 		
-		global $connexionDBActive;
+		global $connexionBDActive;
 		
 		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET nbachats = :nbachats WHERE id_utilisateur = :idUtilisateur");
 		$requete->bindParam(':nbachats', $nbachats, PDO::PARAM_STR);
@@ -229,7 +229,7 @@ class UtilisateurDAO{
 	
 	public function modifierNbventes($nbventes, $pseudonyme){
 		
-		global $connexionDBActive;
+		global $connexionBDActive;
 		
 		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET nbventes = :nbventes WHERE id_utilisateur = :idUtilisateur");
 		$requete->bindParam(':nbventes', $nbventes, PDO::PARAM_STR);
@@ -241,7 +241,7 @@ class UtilisateurDAO{
 	
 	public function modifierIllustration($illustration, $pseudonyme){
 		
-		global $connexionDBActive;
+		global $connexionBDActive;
 		
 		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET illustration = :illustration WHERE id_utilisateur = :idUtilisateur");
 		$requete->bindParam(':illustration', $illustration, PDO::PARAM_STR);
@@ -253,7 +253,7 @@ class UtilisateurDAO{
 	
 	public function modifierAge($age, $pseudonyme){
 		
-		global $connexionDBActive;
+		global $connexionBDActive;
 		
 		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET age = :age WHERE id_utilisateur = :idUtilisateur");
 		$requete->bindParam(':age', $age, PDO::PARAM_STR);
@@ -265,7 +265,7 @@ class UtilisateurDAO{
 
 	public function modifierTelephone($telephone, $pseudonyme){
 		
-		global $connexionDBActive;
+		global $connexionBDActive;
 		
 		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET telephone = :telephone WHERE id_utilisateur = :idUtilisateur");
 		$requete->bindParam(':telephone', $telephone, PDO::PARAM_STR);
@@ -277,7 +277,7 @@ class UtilisateurDAO{
 	
 	public function modifierRole($role, $pseudonyme){
 		
-		global $connexionDBActive;
+		global $connexionBDActive;
 		
 		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET role = :role WHERE id_utilisateur = :idUtilisateur");
 		$requete->bindParam(':role', $role, PDO::PARAM_STR);
