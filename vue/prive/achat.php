@@ -53,18 +53,18 @@
 		<ul>
 			<li><?php echo gettext("Type de produit :")?>
 				<select>
-					<option value="<?php echo $objet->getCategorie();?>"><?php echo $objet->getCategorie();?></option>
-						<?php if( $objet->getCategorie() == "autre"){ ?>
-							<option value="couverts"><?php echo gettext("couverts")?></option>
-							<option value="literie"><?php echo gettext("literie")?></option>
+					<option selected value="<?php echo $objet->getCategorie();?>"><?php echo $objet->getCategorie();?></option>
+						<?php if( $objet->getCategorie() == "Autre"){ ?>
+							<option value="couverts"><?php echo gettext("Couverts")?></option>
+							<option value="literie"><?php echo gettext("Literie")?></option>
 						<?php } ?>
-						<?php if( $objet->getCategorie() == "couverts"){ ?>
-							<option value="couverts"><?php echo gettext("autre")?></option>
-							<option value="literie"><?php echo gettext("literie")?></option>
+						<?php if( $objet->getCategorie() == "Couverts"){ ?>
+							<option value="couverts"><?php echo gettext("Autre")?></option>
+							<option value="literie"><?php echo gettext("Literie")?></option>
 						<?php } ?>
-						<?php if( $objet->getCategorie() == "literie"){ ?>
-							<option value="couverts"><?php echo gettext("autre")?></option>
-							<option value="literie"><?php echo gettext("couverts")?></option>
+						<?php if( $objet->getCategorie() == "Literie"){ ?>
+							<option value="couverts"><?php echo gettext("Autre")?></option>
+							<option value="literie"><?php echo gettext("Couverts")?></option>
 						<?php } ?>
 				</select>
 			</li>
@@ -84,7 +84,14 @@
 					<option value="livre">£</option>
 				</select>	
 			</li>
-			<li><?php echo gettext("Mettre en vedette ?") ?> <input type="radio" name="vedette" value="1"> Oui <input type="radio" name="vedette" value="0"> Non
+			<li>
+				<?php if ( $objet->getVedette() == 1){ ?>
+					<?php echo gettext("Mettre en vedette ?") ?> <input checked type="radio" name="vedette" value="1"> Oui <input type="radio" name="vedette" value="0"> Non
+				<?php } ?>
+				<?php if ( $objet->getVedette() == 0){ ?>
+					<?php echo gettext("Mettre en vedette ?") ?> <input type="radio" name="vedette" value="1"> Oui <input checked type="radio" name="vedette" value="0"> Non
+				<?php } ?>
+			</li>
 		</ul>
 		<input id="bouton" type="submit" value="Valider" name="controleur_vente"/>
 	</form>
