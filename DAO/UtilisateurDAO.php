@@ -122,7 +122,7 @@ class UtilisateurDAO{
 		
 		global $connexionDBActive;
 		
-		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET nom = :nom WHERE id_utilisateur = :idUtilisateur");
+		$requete = $connexionDBActive->prepare("UPDATE utilisateur	SET nom = :nom WHERE id_utilisateur = :idUtilisateur");
 		$requete->bindParam(':nom', $nom, PDO::PARAM_STR);
 		$requete->bindParam(':idUtilisateur', $idUtilisateur, PDO::PARAM_INT);
 	
