@@ -6,13 +6,13 @@
 	if ( isset($_POST['controleur_vente'])){
 		
 		if ( isset($_POST['couverts'])){
-			$categorie = 0;
+			$categorie = "0";
 		}
 		else if ( isset($_POST['literie'] )){
-			$categorie = 1;
+			$categorie = "1";
 		}
 		else{
-			$categorie = 10;
+			$categorie = "10";
 		}
 		
 		$objet = new Objet( 0,
