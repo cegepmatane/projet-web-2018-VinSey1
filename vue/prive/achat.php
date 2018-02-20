@@ -53,9 +53,19 @@
 		<ul>
 			<li><?php echo gettext("Type de produit :")?>
 				<select>
-					<option value="autre"><?php echo gettext("Autre")?></option>
-					<option value="couverts"><?php echo gettext("Couverts")?></option>
-					<option value="literie"><?php echo gettext("Literie")?></option>
+					<option value="<?php echo $objet->getCategorie();?>"><?php echo $objet->getCategorie();?></option>
+						<?php if( $objet->getCategorie() == "autre"){ ?>
+							<option value="couverts"><?php echo gettext("couverts")?></option>
+							<option value="literie"><?php echo gettext("literie")?></option>
+						<?php } ?>
+						<?php if( $objet->getCategorie() == "couverts"){ ?>
+							<option value="couverts"><?php echo gettext("autre")?></option>
+							<option value="literie"><?php echo gettext("literie")?></option>
+						<?php } ?>
+						<?php if( $objet->getCategorie() == "literie"){ ?>
+							<option value="couverts"><?php echo gettext("autre")?></option>
+							<option value="literie"><?php echo gettext("couverts")?></option>
+						<?php } ?>
 				</select>
 			</li>
 			<li><?php echo gettext("Titre de la vente : ")?></li>
