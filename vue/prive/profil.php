@@ -65,32 +65,30 @@
 	-->
 	<div>
 		<!--<div class="contenu-onglet" id="contenu_onglet_informations">-->
-		<div class="contenu-profil">
-			<img src="<?=$utilisateur->getIllustration();?>" id="image-profil" />
+		<img src="<?=$utilisateur->getIllustration();?>" id="image-profil" />
+				
+		<form action="../../modifierUtilisateur.php" id="formulaire-modification" method="post">
 			<ul>
-				<div class="informations">
-					<li> <?php echo gettext("Pseudonyme : "); echo $utilisateur->getPseudonyme(); ?> </li>
-					<li> <?php echo gettext("Nom : "); echo $utilisateur->getNom(); ?> </li>
-					<li> <?php echo gettext("Prénom : "); echo $utilisateur->getPrenom(); ?> </li>
-					<li> <?php echo gettext("Âge : "); echo $utilisateur->getAge(); ?> </li>
+				<div id = "blocs-formulaire">
+					<div id = "bloc-formulaire-1">
+						<li>Nom : <input type="text" name="nom" value="<?php echo $utilisateur->getNom(); ?>"/></li>
+						<li>Prénom : <input type="text" name="prenom"  value="<?php echo $utilisateur->getPrenom(); ?>"/></li>
+						<li>Pseudonyme : <input type="text" name="pseudonyme"  value="<?php echo $utilisateur->getPseudonyme(); ?>"/></li>
+						<li>Adresse e-mail : <input type="text" name="email"  value="<?php echo $utilisateur->getEmail(); ?>"/></li>
+						<li>Adresse : <input type="text" name="adresse"  value="<?php echo $utilisateur->getAdresse(); ?>"/></li>
+					</div>
+					<div id = "bloc-formulaire-2">
+						<li>Code postal : <input type="text" name="codepostal"  value="<?php echo $utilisateur->getCodepostal(); ?>"/></li>
+						<li>Pays : <input type="text" name="pays"  value="<?php echo $utilisateur->getPays(); ?>"/></li>
+						<li>Ville : <input type="text" name="ville"  value="<?php echo $utilisateur->getVille(); ?>"/></li>
+						<li>Âge : <input type="text" name="anneenaissance"  value="<?php echo $utilisateur->getAge(); ?>"/></li>
+						<li>Téléphone : <input type="text" name="telephone"  value="<?php echo $utilisateur->getTelephone(); ?>"/></li>
+					</div>
 				</div>
-				<div class="informations">
-					<li> <?php echo gettext("Adresse : "); echo $utilisateur->getAdresse(); ?> </li>
-					<li> <?php echo gettext("Ville : "); echo $utilisateur->getVille(); ?> </li>
-					<li> <?php echo gettext("Code Postal : "); echo $utilisateur->getCodepostal(); ?> </li>
-					<li> <?php echo gettext("Pays : "); echo $utilisateur->getPays(); ?> </li>
-					<li> <?php echo gettext("E-mail : "); echo $utilisateur->getEmail(); ?> </li>
-					<li> <?php echo gettext("Téléphone : "); echo $utilisateur->getTelephone(); ?> </li>
-				</div>
+				<input id="bouton" type="submit" value="Valider" name="controleur_modification_utilisateur"/>
 			</ul>
-			<ul>
-				<div class="statistiques">
-					<li> <?php echo gettext("Ventes : "); echo $utilisateur->getNbventes(); ?> </li>
-					<li> <?php echo gettext("Achats : "); echo $utilisateur->getNbachats(); ?> </li>
-				</div>
-			</ul>
-			<input type="button" value="<?php echo gettext("Modifier vos informations")?>">
-		</div>
+			
+		</form>
 		
 		<!-- <div class="contenu-onglet" id="contenu_onglet_ventes"> -->
 		<div class="contenu-profil">

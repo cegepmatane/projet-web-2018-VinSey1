@@ -3,11 +3,7 @@
 	require_once OBJET_DAO;
 	require_once OBJET_MODELE;
 	
-	echo "hello";
-	
 	if ( isset($_POST['controleur_vente'])){
-		
-	echo "hello dans le if";
 	
 		if ( isset($_POST['couverts'])){
 			$categorie = "0";
