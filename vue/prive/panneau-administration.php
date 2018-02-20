@@ -79,6 +79,7 @@
 						<li><?php echo $objet->getTitreDeVente();?></li>
 						<li><?php echo gettext("Prix");?>: <?php echo $objet->getPrix();?><?php echo gettext(" $");?></li>
 						<li><a href="achat.php?idObjet=<?php echo $objet->getIdObjet(); ?>"> Modifier </a></li>
+						<li><a href="achat.php?idObjet=<?php echo $objet->getIdObjet(); ?>"> Supprimer </a></li>
 					</ul>
 				</div>
 			<?php } ?>
