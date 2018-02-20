@@ -15,19 +15,19 @@
 			$categorie = 10;
 		}
 		
-		$objet = new Objet(0,
-							$_SESSION["utilisateurCourant"], 
-							$_POST["titreDeVente"],
+		$objet = new Objet( 
+							"session",
 							$_POST["titreDeVente"],
 							$categorie, 
 							$_POST["prix"],
-							$categorie, 
 							$_POST["descriptionProduit"], 
 							$_POST["details"],
 							$_POST["adresse"],
-							$_POST["illustration"],
+							"image",
 							0
-							)			
+							)	
+		$objetDAO = new ObjetDAO();
+		$objetDAO->insererObjet($objet);
 	}
 
 
