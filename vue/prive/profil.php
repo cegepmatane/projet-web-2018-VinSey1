@@ -92,7 +92,10 @@
 					</div>
 				</div>
 				<input id="bouton" type="submit" value="Valider" name="controleur_modification_utilisateur"/>
-				<input id="bouton" type="submit" value="Supprimer" name="controleur_suppression_utilisateur"/>
+				<form action="../../controleur/supprimerUtilisateur.php" id="formulaire-modification" method="post">
+					<input type="hidden" name="idUtilisateur" value="<?php echo $utilisateur->getIdUtilisateur(); ?>"/>
+					<input id="bouton" type="submit" value="Supprimer" name="controleur_suppression_utilisateur"/>
+				</form>
 			</ul>
 			
 		</form>
