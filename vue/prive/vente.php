@@ -1,5 +1,5 @@
 <?php
-	require_once $_SERVER["DOCUMENT_ROOT"]."/configuration/configuration.dev.php";
+	require_once $_SERVER["DOCUMENT_ROOT"]."../../controleur/mettreEnVente.php";
 ?>
 
 <!DOCTYPE html>
