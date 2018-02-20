@@ -130,6 +130,17 @@ class UtilisateurDAO{
 		
 	}
 	
+	public function modifierPrenom($idUtilisateur, $prenom){
+		
+		global $connexionDBActive;
+		
+		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET prenom = :prenom WHERE id_utilisateur = :idUtilisateur");
+		$requete->bindParam(':prenom', $prenom, PDO::PARAM_STR);
+		$requete->bindParam(':idUitilisateur', $idUtilisateur, PDO::PARAM_INT);
+	
+		$requete->execute();
+		
+	}
 	
 }
 ?>
