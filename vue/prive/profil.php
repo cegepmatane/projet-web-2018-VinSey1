@@ -67,7 +67,7 @@
 		<!--<div class="contenu-onglet" id="contenu_onglet_informations">-->
 		<img src="<?=$utilisateur->getIllustration();?>" id="image-profil" />
 				
-		<form action="../../modifierUtilisateur.php" id="formulaire-modification" method="post">
+		<form action="../../controleur/modifierUtilisateur.php" id="formulaire-modification" method="post">
 			<ul>
 				<div id = "blocs-formulaire">
 					<div id = "bloc-formulaire-1">
@@ -83,6 +83,7 @@
 						<li>Ville : <input type="text" name="ville"  value="<?php echo $utilisateur->getVille(); ?>"/></li>
 						<li>Âge : <input type="text" name="anneenaissance"  value="<?php echo $utilisateur->getAge(); ?>"/></li>
 						<li>Téléphone : <input type="text" name="telephone"  value="<?php echo $utilisateur->getTelephone(); ?>"/></li>
+						<input type="hidden" name="idUtilisateur" value="<?php echo $utilisateur->getIdUtilisateur(); ?>"/>
 					</div>
 				</div>
 				<input id="bouton" type="submit" value="Valider" name="controleur_modification_utilisateur"/>
