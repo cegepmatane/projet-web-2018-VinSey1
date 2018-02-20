@@ -124,7 +124,7 @@ class UtilisateurDAO{
 		
 		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET nom = :nom WHERE id_utilisateur = :idUtilisateur");
 		$requete->bindParam(':nom', $nom, PDO::PARAM_STR);
-		$requete->bindParam(':idUitilisateur', $idUtilisateur, PDO::PARAM_INT);
+		$requete->bindParam(':idUtilisateur', $idUtilisateur, PDO::PARAM_INT);
 	
 		$requete->execute();
 		
@@ -136,7 +136,7 @@ class UtilisateurDAO{
 		
 		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET prenom = :prenom WHERE id_utilisateur = :idUtilisateur");
 		$requete->bindParam(':prenom', $prenom, PDO::PARAM_STR);
-		$requete->bindParam(':idUitilisateur', $idUtilisateur, PDO::PARAM_INT);
+		$requete->bindParam(':idUtilisateur', $idUtilisateur, PDO::PARAM_INT);
 	
 		$requete->execute();
 		
@@ -148,7 +148,7 @@ class UtilisateurDAO{
 		
 		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET pseudonyme = :pseudonyme WHERE id_utilisateur = :idUtilisateur");
 		$requete->bindParam(':pseudonyme', $pseudonyme, PDO::PARAM_STR);
-		$requete->bindParam(':idUitilisateur', $idUtilisateur, PDO::PARAM_INT);
+		$requete->bindParam(':idUtilisateur', $idUtilisateur, PDO::PARAM_INT);
 	
 		$requete->execute();
 		
@@ -160,14 +160,23 @@ class UtilisateurDAO{
 		
 		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET email = :email WHERE id_utilisateur = :idUtilisateur");
 		$requete->bindParam(':email', $email, PDO::PARAM_STR);
-		$requete->bindParam(':idUitilisateur', $idUtilisateur, PDO::PARAM_INT);
+		$requete->bindParam(':idUtilisateur', $idUtilisateur, PDO::PARAM_INT);
 	
 		$requete->execute();
 		
 	}
 	
+	public function modifierAdresse($adresse, $pseudonyme){
+		
+		global $connexionDBActive;
+		
+		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET adresse = :adresse WHERE id_utilisateur = :idUtilisateur");
+		$requete->bindParam(':adresse', $adresse, PDO::PARAM_STR);
+		$requete->bindParam(':idUtilisateur', $idUtilisateur, PDO::PARAM_INT);
 	
-	
+		$requete->execute();
+		
+	}
 	
 	
 	
