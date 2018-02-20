@@ -6,8 +6,8 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width"/>
-    <link rel="stylesheet" href="./decoration/style_general_test.css">
-    <link rel="stylesheet" type="text/css" href="./decoration/MyFontsWebfontsKit.css">		
+    <link rel="stylesheet" href="../../decoration/style_general_test.css">
+    <link rel="stylesheet" type="text/css" href="../../decoration/MyFontsWebfontsKit.css">		
 	<title> <?php echo gettext("Création de compte") ?></title>
 </head>
 <body>
