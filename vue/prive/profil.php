@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../../decoration/style_general_test.css">
     <link rel="stylesheet" type="text/css" href="../../decoration/MyFontsWebfontsKit.css">		
 	<title> <?php echo gettext("Profil de ");echo $utilisateur->getPseudonyme(); ?></title>
+	<!--
 	<script type="text/javascript">
 		
 		function changer_onglet(name){
@@ -27,6 +28,7 @@
 		}	
 		
 	</script>
+	-->
 </head>
 <body>
     <header>
