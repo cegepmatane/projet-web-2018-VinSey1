@@ -179,7 +179,17 @@ class UtilisateurDAO{
 	}
 	
 	
+	public function modifierCodepostal($codepostal, $pseudonyme){
+		
+		global $connexionDBActive;
+		
+		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET codepostal = :codepostal WHERE id_utilisateur = :idUtilisateur");
+		$requete->bindParam(':codepostal', $codepostal, PDO::PARAM_STR);
+		$requete->bindParam(':idUtilisateur', $idUtilisateur, PDO::PARAM_INT);
 	
+		$requete->execute();
+		
+	}
 	
 	
 	
