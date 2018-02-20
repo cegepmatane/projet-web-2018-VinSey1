@@ -5,7 +5,7 @@
 	
 	if ( isset($_POST['controleur_vente'])){
 		
-		/*if ( isset($_POST['couverts'])){
+		if ( isset($_POST['couverts'])){
 			$categorie = 0;
 		}
 		else if ( isset($_POST['literie'] )){
@@ -14,11 +14,11 @@
 		else{
 			$categorie = 10;
 		}
-		*/
+		
 		$objet = new Objet( 0,
 							"session",
 							$_POST["titreDeVente"],
-							"1", 
+							$categorie, 
 							$_POST["prix"],
 							$_POST["descriptionProduit"], 
 							$_POST["details"],
