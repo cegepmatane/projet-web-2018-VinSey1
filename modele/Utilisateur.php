@@ -97,6 +97,9 @@ class Utilisateur{
 			$this->telephone = $telephone;
 			$this->role = $role;
 		}
+		else{
+			echo 'adresse mail invalide</br>';
+		}
 	}
 }
 ?>

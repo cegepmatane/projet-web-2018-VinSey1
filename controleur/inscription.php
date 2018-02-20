@@ -24,6 +24,10 @@
 		$utilisateurDAO = new UtilisateurDAO();
 		$utilisateurDAO->insererUtilisateur($utilisateur);
 		
+		echo 'Ajout d\'utilisateur réussie</br>';
+	}
+	else{
+		echo 'Ajout d\'utilisateur échoué</br>';
 	}
 	
 
