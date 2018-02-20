@@ -191,11 +191,41 @@ class UtilisateurDAO{
 		
 	}
 	
+	public function modifierPays($pays, $pseudonyme){
+		
+		global $connexionDBActive;
+		
+		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET pays = :pays WHERE id_utilisateur = :idUtilisateur");
+		$requete->bindParam(':pays', $pays, PDO::PARAM_STR);
+		$requete->bindParam(':idUtilisateur', $idUtilisateur, PDO::PARAM_INT);
 	
+		$requete->execute();
+		
+	}	
 	
+	public function modifierVille($ville, $pseudonyme){
+		
+		global $connexionDBActive;
+		
+		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET ville = :ville WHERE id_utilisateur = :idUtilisateur");
+		$requete->bindParam(':ville', $ville, PDO::PARAM_STR);
+		$requete->bindParam(':idUtilisateur', $idUtilisateur, PDO::PARAM_INT);
 	
+		$requete->execute();
+		
+	}
 	
+	public function modifierNbachats($nbachats, $pseudonyme){
+		
+		global $connexionDBActive;
+		
+		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET nbachats = :nbachats WHERE id_utilisateur = :idUtilisateur");
+		$requete->bindParam(':nbachats', $nbachats, PDO::PARAM_STR);
+		$requete->bindParam(':idUtilisateur', $idUtilisateur, PDO::PARAM_INT);
 	
+		$requete->execute();
+		
+	}
 	
 	
 	
