@@ -56,7 +56,8 @@
     </div>
 	-->
 	<div>
-		<div class="contenu-onglet" id="contenu_onglet_informations">
+		<!--<div class="contenu-onglet" id="contenu_onglet_informations">-->
+		<div class="contenu-profil">
 			<img src="<?=$utilisateur->getIllustration();?>" id="image-profil" />
 			<ul>
 				<div class="informations">
@@ -82,16 +83,21 @@
 			</ul>
 			<input type="button" value="<?php echo gettext("Modifier vos informations")?>">
 		</div>
-		<div class="contenu-onglet" id="contenu_onglet_ventes">
+		
+		<!-- <div class="contenu-onglet" id="contenu_onglet_ventes"> -->
+		<div class="contenu-profil">
 			liste des ventes
 		</div>
-		<div class="contenu-onglet" id="contenu_onglet_achats">
+		<!-- <div class="contenu-onglet" id="contenu_onglet_achats"> -->
+		<div class="contenu-profil">	
 			liste des achats
 		</div>
-		<div class="contenu-onglet" id="contenu_onglet_avis_recus">
+		<!-- <div class="contenu-onglet" id="contenu_onglet_avis_recus"> -->
+		<div class="contenu-profil">	
 			liste des avis reçus
 		</div>
-		<div class="contenu-onglet" id="contenu_onglet_avis_donnes">
+		<!-- <div class="contenu-onglet" id="contenu_onglet_avis_donnes"> -->
+		<div class="contenu-profil">
 			liste des avis donnes
 		</div>
 	</div>
