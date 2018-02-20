@@ -49,28 +49,35 @@
 			<li><a href="creation-compte.php" title="Aller sur la page Création de compte">Page Création de compte</a></li>
 		</ul>
 	</nav>	
-	<div id="contenu-vente">
-		<img id="image-vente" src="<?=$objet->getIllustration();?>"/>
+	<form action="../../controleur/mettreEnVente.php" id="formulaire-vente" method="post">
 		<ul>
-			<div class="informations">
-				<li><h4><?php echo gettext("Description")?></h4></li>
-				<li><?php echo $objet->getDescriptionProduit();?></li>
-				<li><h4><?php echo gettext("Détails")?></h4></li>
-				<li><?php echo $objet->getDetailsVente();?></li>
-			</div>
-			<div class="prix">
-				<li><?php echo $objet->getPrix();?> $</li>
+			<li><?php echo gettext("Type de produit :")?>
+				<select>
+					<option value="autre"><?php echo gettext("Autre")?></option>
+					<option value="couverts"><?php echo gettext("Couverts")?></option>
+					<option value="literie"><?php echo gettext("Literie")?></option>
+				</select>
+			</li>
+			<li><?php echo gettext("Titre de la vente : ")?></li>
+			<li><input type="text" name="titreDeVente" size="50" value="<?php echo $objet->getTitreDeVente(); ?>" /></li>
+			<li><?php echo gettext("Description du produit : ")?></li>
+			<li><input type="text" name="descriptionProduit" size="50" id="gros-texte" value="<?php echo $objet->getDescriptionProduit(); ?>" /></li>
+			<li><?php echo gettext("Détails : ")?></li>
+			<li><input type="text" name="details" size="50" id="gros-texte" value="<?php echo $objet->getDetailsVente(); ?>" /></li>
+			<li><?php echo gettext("Adresse : ")?></li>
+			<li><input type="text" name="adresse" size="50" id="gros-texte" value="<?php echo $objet->getAdresse(); ?>"/></li>
+			<li>
+				<?php echo gettext("Prix : ")?> <input type="text" name="prix" size="1" value="<?php echo $objet->getPrix(); ?>"/>
+				<select >
+					<option value="euro">€</option>
+					<option value="dollars">$</option>
+					<option value="livre">£</option>
+				</select>	
+			</li>
+			<li><?php echo gettext("Mettre en vedette ?") ?> <input type="radio" name="vedette" value="1"> Oui <input type="radio" name="vedette" value="0"> Non
 		</ul>
-		<ul>
-			<div class="statistiques-vendeur">
-				<li><h4><?php echo gettext("Vendeur :")?></h4><?php echo $objet->getIdentifiantVendeur();?></li>
-				<li><h4><?php echo gettext("Adresse :")?></h4><?php echo $objet->getAdresse();?></li>
-			</div>
-		</ul>
-		<input type="button" value="Acheter">
-	</div>
+		<input id="bouton" type="submit" value="Valider" name="controleur_vente"/>
+	</form>
 </body>
 </html>
-	
-
-	
+</html>
