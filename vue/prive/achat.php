@@ -93,7 +93,7 @@
 				<?php } ?>
 			</li>
 		</ul>
-		<input id="bouton" type="submit" value="Valider" name="controleur_vente"/>
+		<input id="bouton" type="submit" value="Valider" name="controleur_modification_objet"/>
 	</form>
 </body>
 </html>
