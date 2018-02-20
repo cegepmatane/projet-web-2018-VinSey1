@@ -1,5 +1,5 @@
 <?php
-    require_once $_SERVER["DOCUMENT_ROOT"]."../../controleur/inscription.php";
+    require_once $_SERVER["DOCUMENT_ROOT"]."/controleur/inscription.php";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
