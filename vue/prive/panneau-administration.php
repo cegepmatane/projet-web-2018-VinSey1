@@ -78,9 +78,7 @@
 					<ul>
 						<li><?php echo $objet->getTitreDeVente();?></li>
 						<li><?php echo gettext("Prix");?>: <?php echo $objet->getPrix();?><?php echo gettext(" $");?></li>
-						<form action="achat.php?idObjet=<?php $objet->getIdObjet()?>">
-							<input type="submit" value="<?php echo gettext("Modifier cette vente");?>"/></li>
-						</form>
+						<li><a href="achat.php?idObjet=<?php echo $objet->getIdObjet(); ?>"> Modifier </a></li>
 					</ul>
 				</div>
 			<?php } ?>

@@ -14,8 +14,9 @@
 		
 		if ( isset($_GET['idObjet']) ){
 			$idObjet = $_GET['idObjet'];
+			
 		}
-		
+
 		$objet = $objetDAO->chercherParIdentifiant($idObjet);
 	?>
 <head>
