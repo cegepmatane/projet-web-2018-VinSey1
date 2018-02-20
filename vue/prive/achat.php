@@ -95,6 +95,10 @@
 		</ul>
 		<input id="bouton" type="submit" value="Valider" name="controleur_modification_objet"/>
 	</form>
+	<form action="../../controleur/supprimerObjet.php" id="formulaire-vente" method="post">
+					<input type="hidden" name="idObjet" value="<?php echo $objet->getIdObjet(); ?>"/>
+					<input id="bouton" type="submit" value="Supprimer" name="controleur_suppression_objet"/>
+	</form>
 </body>
 </html>
 </html>
