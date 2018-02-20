@@ -146,13 +146,38 @@ class UtilisateurDAO{
 		
 		global $connexionDBActive;
 		
-		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET prenom = :pseudonyme WHERE id_utilisateur = :idUtilisateur");
+		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET pseudonyme = :pseudonyme WHERE id_utilisateur = :idUtilisateur");
 		$requete->bindParam(':pseudonyme', $pseudonyme, PDO::PARAM_STR);
 		$requete->bindParam(':idUitilisateur', $idUtilisateur, PDO::PARAM_INT);
 	
 		$requete->execute();
 		
 	}
+	
+	public function modifierEmail($email, $pseudonyme){
+		
+		global $connexionDBActive;
+		
+		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET email = :email WHERE id_utilisateur = :idUtilisateur");
+		$requete->bindParam(':email', $email, PDO::PARAM_STR);
+		$requete->bindParam(':idUitilisateur', $idUtilisateur, PDO::PARAM_INT);
+	
+		$requete->execute();
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }
