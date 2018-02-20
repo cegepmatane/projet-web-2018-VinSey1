@@ -262,3 +262,27 @@ nav a, #onglets-profil a{
 }
 
 /* BALISES CSS POUR PAGE CREATION VENTE */
+#formulaire-vente ul{
+	list-style-type: none;
+	display: block;
+	margin-left: 37%;
+	margin-right: 30%;
+	width: 30%;
+}
+#formulaire-vente li{
+	padding: 5px;
+	text-align: left;
+}
+#formulaire-vente{
+	margin-left: auto;
+	margin-right: auto;
+}
+#formulaire-vente #bouton{
+	text-align: center;
+	width: 10%;
+	margin-left: 45%;
+	margin-right: 45%;
+}
+#formulaire-vente #gros-texte{
+	height: 75px;
+}
