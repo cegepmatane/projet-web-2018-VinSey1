@@ -5,7 +5,7 @@
 	
 	if (isset($_POST['controleur_inscription'])){
 		
-		$utilisateur = new Utilisateur( 
+		$utilisateur = new Utilisateur( 0,
 									   $_POST["nom"],
 									   $_POST["prenom"],
 									   $_POST["pseudonyme"],

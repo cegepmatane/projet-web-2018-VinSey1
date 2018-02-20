@@ -104,9 +104,7 @@
 						<li><?php echo gettext("Nom");?>: <?php echo $objet->getNom();?></li>
 						<li><?php echo gettext("Prenom");?>: <?php echo $objet->getPrenom();?></li>
 						<li><?php echo gettext("Pseudo");?>: <?php echo $objet->getPseudonyme();?></li>
-						<form action="profil.php">
-							<input type="submit" value="Modifier">
-						</form>
+						<li><a href="profil.php?idUtilisateur=<?php echo $objet->getidUtilisateur(); ?>"> Modifier </a></li>
 					</ul>
 				</div>
 			<?php } ?>	

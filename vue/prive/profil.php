@@ -7,7 +7,15 @@
 <html lang="fr">
 	<?php
 		$utilisateurDAO = new UtilisateurDAO();
-		$utilisateur = $utilisateurDAO->chercherParIdentifiant(1);
+		
+		$idUtilisateur = 1;
+		
+		if ( isset($_GET['idUtilisateur']) ){
+			$idUtilisateur = $_GET['idUtilisateur'];
+			
+		}		
+		
+		$utilisateur = $utilisateurDAO->chercherParIdentifiant($idUtilisateur);
 	?>
 <head>
     <meta charset="utf-8"/>
