@@ -25,9 +25,10 @@
 							$_POST["adresse"],
 							"image",
 							0
-							);
+							);	
+
 		$objetDAO = new ObjetDAO();
-		$objetDAO->insererObjet($objet);
+		$objetDAO->insererObjet($objet);	
 	}
 
 
