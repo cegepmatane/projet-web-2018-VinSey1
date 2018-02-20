@@ -46,6 +46,7 @@
             <li><a href="creation-compte.php" title="Aller sur la page Création de compte">Page Création de compte</a></li>
         </ul>
     </nav>
+	<!--
     <div class="onglet-cliquable">
 	    <span id="onglet_informations" onclick="javascript:changer_onglet('informations');" ><?php echo gettext("Informations") ?></span>
 	    <span id="onglet_ventes" onclick="javascript:changer_onglet('ventes');" ><?php echo gettext("Ventes") ?></span>
@@ -53,6 +54,7 @@
 	    <span id="onglet_avis_recus" onclick="javascript:changer_onglet('avis_recus');" ><?php echo gettext("Avis reçus") ?></span>
 	    <span id="onglet_avis_donnes" onclick="javascript:changer_onglet('avis_donnes');" ><?php echo gettext("Avis donnés") ?></span>
     </div>
+	-->
 	<div>
 		<div class="contenu-onglet" id="contenu_onglet_informations">
 			<img src="<?=$utilisateur->getIllustration();?>" id="image-profil" />

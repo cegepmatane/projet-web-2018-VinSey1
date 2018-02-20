@@ -280,13 +280,6 @@ nav a, #onglets-profil a{
 #formulaire-vente #gros-texte{
 	height: 75px;
 }
-
-.contenu-onglet{
-	
-	display: none;
-	
-}
-
 .onglet-cliquable{
 	margin: auto;
 	width: 90%;
@@ -304,8 +297,6 @@ nav a, #onglets-profil a{
 	border-bottom: 1px solid #fff;
     background-color: #00a500;
 }
-
-
 
 .onget-non-selectionne{
 	float : left;
