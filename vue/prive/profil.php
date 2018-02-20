@@ -76,6 +76,7 @@
 						<li>Pseudonyme : <input type="text" name="pseudonyme"  value="<?php echo $utilisateur->getPseudonyme(); ?>"/></li>
 						<li>Adresse e-mail : <input type="text" name="email"  value="<?php echo $utilisateur->getEmail(); ?>"/></li>
 						<li>Adresse : <input type="text" name="adresse"  value="<?php echo $utilisateur->getAdresse(); ?>"/></li>
+						<li>Illustration : <input type="text" name="telephone"  value="<?php echo $utilisateur->getIllustration(); ?>"/></li>
 					</div>
 					<div id = "bloc-formulaire-2">
 						<li>Code postal : <input type="text" name="codepostal"  value="<?php echo $utilisateur->getCodepostal(); ?>"/></li>
@@ -83,6 +84,10 @@
 						<li>Ville : <input type="text" name="ville"  value="<?php echo $utilisateur->getVille(); ?>"/></li>
 						<li>Âge : <input type="text" name="anneenaissance"  value="<?php echo $utilisateur->getAge(); ?>"/></li>
 						<li>Téléphone : <input type="text" name="telephone"  value="<?php echo $utilisateur->getTelephone(); ?>"/></li>
+						<li>Rôle : <input type="text" name="role"  value="<?php echo $utilisateur->getRole(); ?>"/></li>
+						<li>Nombre de vente : <input type="text" name="nbventes"  value="<?php echo $utilisateur->getNbventes(); ?>"/></li>
+						<li>Nombre d'achat : <input type="text" name="nbachats"  value="<?php echo $utilisateur->getNbachats(); ?>"/></li>
+
 						<input type="hidden" name="idUtilisateur" value="<?php echo $utilisateur->getIdUtilisateur(); ?>"/>
 					</div>
 				</div>
