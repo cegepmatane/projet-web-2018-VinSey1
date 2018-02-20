@@ -18,9 +18,9 @@
     </header>	
     <nav>
         <ul>
-            <li><a href="index.php" title="Aller sur la page d'Accueil">Page d'Accueil</a></li>
+            <li><a href="../../index.php" title="Aller sur la page d'Accueil">Page d'Accueil</a></li>
             <li><a href="profil.php" title="Aller sur la page Profil">Page Profil</a></li>
-            <li><a href="catalogue.php" title="Aller sur la page Catalogue">Page Catalogue</a></li>
+            <li><a href="../../catalogue.php" title="Aller sur la page Catalogue">Page Catalogue</a></li>
             <li><a href="achat.php" title="Aller sur la page d'achat">Page d'achat</a></li>
 			<li id="page-courante">Page de vente</li>
 			<li><a href="panneau-administration.php" title="Aller sur la page Panneau d'administration">Page Panneau d'administration</a></li>
