@@ -105,6 +105,7 @@
 						<li><?php echo gettext("Prenom");?>: <?php echo $objet->getPrenom();?></li>
 						<li><?php echo gettext("Pseudo");?>: <?php echo $objet->getPseudonyme();?></li>
 						<li><a href="profil.php?idUtilisateur=<?php echo $objet->getidUtilisateur(); ?>"> Modifier </a></li>
+						<li><a href="profil.php?idUtilisateur=<?php echo $objet->getidUtilisateur(); ?>"> Supprimer </a></li> 
 					</ul>
 				</div>
 			<?php } ?>	
