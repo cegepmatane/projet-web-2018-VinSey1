@@ -227,7 +227,64 @@ class UtilisateurDAO{
 		
 	}
 	
+	public function modifierNbventes($nbventes, $pseudonyme){
+		
+		global $connexionDBActive;
+		
+		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET nbventes = :nbventes WHERE id_utilisateur = :idUtilisateur");
+		$requete->bindParam(':nbventes', $nbventes, PDO::PARAM_STR);
+		$requete->bindParam(':idUtilisateur', $idUtilisateur, PDO::PARAM_INT);
 	
+		$requete->execute();
+		
+	}
 	
+	public function modifierIllustration($illustration, $pseudonyme){
+		
+		global $connexionDBActive;
+		
+		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET illustration = :illustration WHERE id_utilisateur = :idUtilisateur");
+		$requete->bindParam(':illustration', $illustration, PDO::PARAM_STR);
+		$requete->bindParam(':idUtilisateur', $idUtilisateur, PDO::PARAM_INT);
+	
+		$requete->execute();
+		
+	}
+	
+	public function modifierAge($age, $pseudonyme){
+		
+		global $connexionDBActive;
+		
+		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET age = :age WHERE id_utilisateur = :idUtilisateur");
+		$requete->bindParam(':age', $age, PDO::PARAM_STR);
+		$requete->bindParam(':idUtilisateur', $idUtilisateur, PDO::PARAM_INT);
+	
+		$requete->execute();
+		
+	}
+
+	public function modifierTelephone($telephone, $pseudonyme){
+		
+		global $connexionDBActive;
+		
+		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET telephone = :telephone WHERE id_utilisateur = :idUtilisateur");
+		$requete->bindParam(':telephone', $telephone, PDO::PARAM_STR);
+		$requete->bindParam(':idUtilisateur', $idUtilisateur, PDO::PARAM_INT);
+	
+		$requete->execute();
+		
+	}
+	
+	public function modifierRole($role, $pseudonyme){
+		
+		global $connexionDBActive;
+		
+		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET role = :role WHERE id_utilisateur = :idUtilisateur");
+		$requete->bindParam(':role', $role, PDO::PARAM_STR);
+		$requete->bindParam(':idUtilisateur', $idUtilisateur, PDO::PARAM_INT);
+	
+		$requete->execute();
+		
+	}
 }
 ?>
