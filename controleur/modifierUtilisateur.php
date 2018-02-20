@@ -16,7 +16,7 @@
 		$utilisateurDAO->modifierCodepostal($_POST['idUtilisateur'], $_POST['codepostal']);
 		$utilisateurDAO->modifierPays($_POST['idUtilisateur'], $_POST['pays']);			
 		$utilisateurDAO->modifierVille($_POST['idUtilisateur'], $_POST['ville']);
-		$utilisateurDAO->modifierAge($_POST['idUtilisateur'], $_POST['age']);
+		$utilisateurDAO->modifierAge($_POST['idUtilisateur'], $_POST['anneenaissance']);
 		$utilisateurDAO->modifierTelephone($_POST['idUtilisateur'], $_POST['telephone']);	
 		$utilisateurDAO->modifierNbventes($_POST['idUtilisateur'], $_POST['nbventes']);	
 		$utilisateurDAO->modifierNbachats($_POST['idUtilisateur'], $_POST['nbachats']);	
