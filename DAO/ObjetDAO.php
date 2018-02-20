@@ -90,7 +90,7 @@ class ObjetDAO{
 			$requete->bindParam(':detailsVente', $detailsVente, PDO::PARAM_STR);
 			$requete->bindParam(':adresse', $adresse, PDO::PARAM_STR);
 			$requete->bindParam(':illustration', $illustration, PDO::PARAM_STR);
-			$requete->bindParam(':vedette', $vedette, PDO::PARAM_STR);
+			$requete->bindParam(':vedette', $vedette, PDO::PARAM_INT);
 			
 			$requete->execute();
 			
