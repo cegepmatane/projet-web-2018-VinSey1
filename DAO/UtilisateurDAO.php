@@ -142,5 +142,18 @@ class UtilisateurDAO{
 		
 	}
 	
+	public function modifierPseudonyme($idUtilisateur, $pseudonyme){
+		
+		global $connexionDBActive;
+		
+		$requete = $connexionBDActive->prepare("UPDATE utilisateur	SET prenom = :pseudonyme WHERE id_utilisateur = :idUtilisateur");
+		$requete->bindParam(':pseudonyme', $pseudonyme, PDO::PARAM_STR);
+		$requete->bindParam(':idUitilisateur', $idUtilisateur, PDO::PARAM_INT);
+	
+		$requete->execute();
+		
+	}
+	
+	
 }
 ?>
