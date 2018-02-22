@@ -50,16 +50,16 @@ class ObjetDAO{
 		if ($resultat ){
 				
 			$objet = new Objet($resultat->id_objet, 
-							   $resultat->identifiantVendeur,
-							   $resultat->titreDeVente,
-							   $resultat->categorie,
-							   $resultat->prix,
-							   $resultat->descriptionProduit,
-							   $resultat->detailsVente,
-							   $resultat->adresse,
-							   $resultat->illustration,
-							   $resulatt->vedette
-							   );
+							    $resultat->identifiantVendeur,
+							    $resultat->titreDeVente,
+				 			   	$resultat->categorie,
+				 			   	$resultat->prix,
+				 			   	$resultat->descriptionProduit,
+				 			   	$resultat->detailsVente,
+				 			   	$resultat->adresse,
+				 			   	$resultat->illustration,
+				 			   	$resulatt->vedette
+				 			   );
 		}			
 		return $objet;
 		
@@ -137,10 +137,42 @@ class ObjetDAO{
 		
 		
 	}
+
+	public function modifierTitreDeVente($idObjet, $titreDeVente){
+		
+		global $connexionBDActive;
+		
+		$requete = $connexionBDActive->prepare("UPDATE objet	SET titre = :titre WHERE id_objet = :idObjet");
+		$requete->bindParam(':titre', $titreDeVente, PDO::PARAM_STR);
+		$requete->bindParam(':idObjet', $idObjet, PDO::PARAM_INT);
 	
+		$requete->execute();
+		
+	}
+
+	public function modifierDescriptionProduit($idObjet, $descriptionProduit){
+		
+		global $connexionBDActive;
+		
+		$requete = $connexionBDActive->prepare("UPDATE objet	SET descriptionProduit = :descriptionProduit WHERE id_objet = :idObjet");
+		$requete->bindParam(':descriptionProduit', $descriptionProduit, PDO::PARAM_STR);
+		$requete->bindParam(':idObjet', $idObjet, PDO::PARAM_INT);
 	
+		$requete->execute();
+		
+	}
+
+	public function modifierDetailsVente($idObjet, $descriptionProduit){
+		
+		global $connexionBDActive;
+		
+		$requete = $connexionBDActive->prepare("UPDATE objet	SET descriptionProduit = :descriptionProduit WHERE id_objet = :idObjet");
+		$requete->bindParam(':descriptionProduit', $descriptionProduit, PDO::PARAM_STR);
+		$requete->bindParam(':idObjet', $idObjet, PDO::PARAM_INT);
 	
-	
+		$requete->execute();
+		
+	}
 }
 
 ?>
