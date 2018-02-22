@@ -181,6 +181,8 @@ class ObjetDAO{
 		$requete = $connexionBDActive->prepare("UPDATE objet	SET adresse = :adresse WHERE id_objet = :idObjet");
 		$requete->bindParam(':adresse', $adresse, PDO::PARAM_STR);
 		$requete->bindParam(':idObjet', $idObjet, PDO::PARAM_INT);
+
+		$requete->execute();
 	}
 
 	public function modifierCategorie($idObjet, $categorie){
@@ -190,6 +192,8 @@ class ObjetDAO{
 		$requete = $connexionBDActive->prepare("UPDATE objet	SET categorie = :categorie WHERE id_objet = :idObjet");
 		$requete->bindParam(':categorie', $categorie, PDO::PARAM_STR);
 		$requete->bindParam(':idObjet', $idObjet, PDO::PARAM_INT);
+
+		$requete->execute();
 	}
 
 	public function modifierPrix($idObjet, $prix){
@@ -199,6 +203,8 @@ class ObjetDAO{
 		$requete = $connexionBDActive->prepare("UPDATE objet	SET prix = :prix WHERE id_objet = :idObjet");
 		$requete->bindParam(':prix', $prix, PDO::PARAM_INT);
 		$requete->bindParam(':idObjet', $idObjet, PDO::PARAM_INT);
+
+		$requete->execute();
 	}
 }
 
