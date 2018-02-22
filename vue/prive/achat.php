@@ -50,6 +50,7 @@
 		</ul>
 	</nav>	
 	<form action="../../controleur/modifierObjet.php" id="formulaire-vente" method="post">
+		<input type="hidden" name="idObjet" value="<?php echo $objet->getIdObjet(); ?>"/>
 		<ul>
 			<li><?php echo gettext("Type de produit :")?>
 				<select>

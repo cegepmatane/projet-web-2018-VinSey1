@@ -5,6 +5,7 @@
 	require_once OBJET_MODELE;
 
 	if (isset($_POST['controleur_modification_objet'])){
+		$categorie = "autre";
 		$objet = new ObjetDAO();
 		$objet->modifierTitreDeVente($_POST['idObjet'], $_POST['titreDeVente']);
 		$objet->modifierDescriptionProduit($_POST['idObjet'], $_POST['descriptionProduit']);
