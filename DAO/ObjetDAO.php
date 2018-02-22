@@ -162,16 +162,34 @@ class ObjetDAO{
 		
 	}
 
-	public function modifierDetailsVente($idObjet, $descriptionProduit){
+	public function modifierDetailsVente($idObjet, $detailsVente){
 		
 		global $connexionBDActive;
 		
-		$requete = $connexionBDActive->prepare("UPDATE objet	SET descriptionProduit = :descriptionProduit WHERE id_objet = :idObjet");
-		$requete->bindParam(':descriptionProduit', $descriptionProduit, PDO::PARAM_STR);
+		$requete = $connexionBDActive->prepare("UPDATE objet	SET detailsVente = :detailsVente WHERE id_objet = :idObjet");
+		$requete->bindParam(':detailsVente', $detailsVente, PDO::PARAM_STR);
 		$requete->bindParam(':idObjet', $idObjet, PDO::PARAM_INT);
 	
 		$requete->execute();
 		
+	}
+
+	public function modifierAdresse($idObjet, $adresse){
+
+		global $connexionBDActive;
+
+		$requete = $connexionBDActive->prepare("UPDATE objet	SET adresse = :adresse WHERE id_objet = :idObjet");
+		$requete->bindParam(':adresse', $adresse, PDO::PARAM_STR);
+		$requete->bindParam(':idObjet', $idObjet, PDO::PARAM_INT);
+	}
+
+	public function modifierCategorie(îdObjet, $categorie){
+
+		global $connexionBDActive;
+
+		$requete = $connexionBDActive->prepare("UPDATE objet	SET categorie = :categorie WHERE id_objet = :idObjet");
+		$requete->bindParam(':categorie', $categorie, PDO::PARAM_STR);
+		$requete->bindParam(':idObjet', $idObjet, PDO::PARAM_INT);
 	}
 }
 
