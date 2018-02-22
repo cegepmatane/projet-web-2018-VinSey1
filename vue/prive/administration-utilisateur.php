@@ -1,5 +1,6 @@
 <?php
-    require_once $_SERVER["DOCUMENT_ROOT"]."/controleur/inscription.php";
+    require_once $_SERVER["DOCUMENT_ROOT"]."/controleur/controleurUtilisateur.php";
+	
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -26,7 +27,7 @@
 			<li id="page-courante">Page Création de compte</li>
 		</ul>
     </nav>
-    <form action="../../controleur/inscription.php" id="formulaire-creation" method="post">
+    <form action="administration-utilisateur.php" id="formulaire-creation" method="post">
         <ul>
             <div id = "blocs-formulaire">
                 <div id = "bloc-formulaire-1">

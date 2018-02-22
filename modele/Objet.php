@@ -54,6 +54,24 @@ class Objet{
 		return $this->vedette;
 	}
 		
+	public function construireDonneesSecurise($idObjet, $identifiantVendeur, $titreDeVente, $categorie, $prix, $descriptionProduit, $detailsVente, $adresse, $illustration, $vedette){
+		
+		$this->idObjet = $idObjet;
+		$this->identifiantVendeur = $identifiantVendeur;
+		$this->titreDeVente = $titreDeVente;
+		$this->categorie = $categorie;
+		$this->prix = $prix;
+		$this->descriptionProduit = $descriptionProduit;
+		$this->detailsVente = $detailsVente;
+		$this->adresse = $adresse;
+		$this->illustration = $illustration;
+		$this->vedette = $vedette;
+		
+	}
+		
+	
+		
+		
 	function __construct($idObjet, $identifiantVendeur, $titreDeVente, $categorie, $prix, $descriptionProduit, $detailsVente, $adresse, $illustration, $vedette){
 
 		$this->idObjet = $idObjet;

@@ -17,7 +17,9 @@ class UtilisateurDAO{
 		
 		if ($resultat ){
 				
-			$utilisateur = new Utilisateur(
+			$utilisateur = new Utilisateur();
+				
+			$utilisateur->construireDonneesSecurise(
 										   $resultat->id_utilisateur,
 										   $resultat->nom, 
 										   $resultat->prenom,
@@ -109,7 +111,11 @@ class UtilisateurDAO{
 		$resultat = $requete->fetchAll(PDO::FETCH_OBJ);	
 		
 		foreach($resultat as $key => $enregistrementUtilisateur) {
-			$utilisateur = new Utilisateur($enregistrementUtilisateur->id_utilisateur, $enregistrementUtilisateur->nom, $enregistrementUtilisateur->prenom, $enregistrementUtilisateur->pseudonyme, $enregistrementUtilisateur->email, $enregistrementUtilisateur->adresse, $enregistrementUtilisateur->codepostal, $enregistrementUtilisateur->pays, $enregistrementUtilisateur->ville, $enregistrementUtilisateur->nbachats, $enregistrementUtilisateur->nbventes, $enregistrementUtilisateur->illustration, $enregistrementUtilisateur->age, $enregistrementUtilisateur->telephone, $enregistrementUtilisateur->role );
+			
+			$utilisateur = new Utilisateur();
+			
+			$utilisateur->construireDonneesSecurise($enregistrementUtilisateur->id_utilisateur, $enregistrementUtilisateur->nom, $enregistrementUtilisateur->prenom, $enregistrementUtilisateur->pseudonyme, $enregistrementUtilisateur->email, $enregistrementUtilisateur->adresse, $enregistrementUtilisateur->codepostal, $enregistrementUtilisateur->pays, $enregistrementUtilisateur->ville, $enregistrementUtilisateur->nbachats, $enregistrementUtilisateur->nbventes, $enregistrementUtilisateur->illustration, $enregistrementUtilisateur->age, $enregistrementUtilisateur->telephone, $enregistrementUtilisateur->role );						
+			
 			$listeUtilisateur[]=$utilisateur;
 		}
 		
