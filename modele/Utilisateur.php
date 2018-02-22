@@ -18,6 +18,9 @@ class Utilisateur{
 	private $telephone;
 	private $role;
 
+	
+	
+	
 	public function getidUtilisateur(){
 		return $this->idUtilisateur;
 	}

@@ -8,6 +8,10 @@
 		
 		$utilisateurDAO = new UtilisateurDAO();
 		
+		
+		
+		
+		
 		$utilisateurDAO->modifierNom($_POST['idUtilisateur'], $_POST['nom']);
 		$utilisateurDAO->modifierPrenom($_POST['idUtilisateur'], $_POST['prenom']);
 		$utilisateurDAO->modifierPseudonyme($_POST['idUtilisateur'], $_POST['pseudonyme']);
