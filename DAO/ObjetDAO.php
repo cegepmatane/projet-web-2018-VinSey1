@@ -183,12 +183,21 @@ class ObjetDAO{
 		$requete->bindParam(':idObjet', $idObjet, PDO::PARAM_INT);
 	}
 
-	public function modifierCategorie(îdObjet, $categorie){
+	public function modifierCategorie($idObjet, $categorie){
 
 		global $connexionBDActive;
 
 		$requete = $connexionBDActive->prepare("UPDATE objet	SET categorie = :categorie WHERE id_objet = :idObjet");
 		$requete->bindParam(':categorie', $categorie, PDO::PARAM_STR);
+		$requete->bindParam(':idObjet', $idObjet, PDO::PARAM_INT);
+	}
+
+	public function modifierPrix($idObjet, $prix){
+
+		global $connexionBDActive;
+
+		$requete = $connexionBDActive->prepare("UPDATE objet	SET prix = :prix WHERE id_objet = :idObjet");
+		$requete->bindParam(':prix', $prix, PDO::PARAM_INT);
 		$requete->bindParam(':idObjet', $idObjet, PDO::PARAM_INT);
 	}
 }
