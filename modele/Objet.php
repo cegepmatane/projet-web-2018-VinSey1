@@ -29,6 +29,11 @@ class Objet{
 		'titre-vide' => 'Le nom est vide',
 		'titre-trop-long' => 'Le titre fait plus de 250 caractères',
 		'titre-caracteres-speciaux' => 'Le titre contient des caractères invalides',
+
+		'id-vide' => 'L\'ID est vide',
+		'id-trop-long' => 'L\'ID fait plus de 11 caractères',
+		'titre-caracteres-speciaux' => 'L\'ID contient des caractères invalides',
+
 	];
 
 	private $listeMessageErreurActif = [];
@@ -107,7 +112,21 @@ class Objet{
 	
 	function setId($idObjet){
 		
-		$this->idObjet = $idObjet;
+		$this->idObjetTemporaire = filter_var($idObjet, FILTER_SANITIZE_NUMBER_INT);
+		if (empty($this->idObjetTemporaire)){
+			$this->listeMessageErreurActif['id'][] = $thislisteMessageErreur['id-vide'];
+		} else {
+			if (strlen((string)$this->idObjetTemporaire) > 11){
+				$this->listeMessageErreurActif['id'][] = $thislisteMessageErreur['id-trop-long'];
+			}
+			if (!is_int($this->idObjetTemporaire)){
+				$this->listeMessageErreurActif['id'][] = $thislisteMessageErreur['id-caracteres-speciaux'];
+			}
+		}
+
+		if(!$this->getListeErreurActifPourChamp('id')){
+			$this->idObjet = $this->idObjetTemporaire;
+		}
 
 	}
 	
@@ -179,7 +198,7 @@ class Objet{
 		
 		
 	}
-	
+
 	public function getListeErreurActifPourChamp($champ){		
 
 		if (isset($this->listeMessageErreurActif[$champ])){
