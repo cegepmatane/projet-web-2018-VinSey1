@@ -38,44 +38,55 @@ class Utilisateur{
 	
 		'identifiant-non-numerique' => 'L\'identifiant doit être un nombre',
 		'identifiant-vide' => 'L\'identifiant ne doit pas être vide',
+		'identifiant-trop-long' => 'L\'identifiant ne doit pas dépasser 11 chiffre',
 	
 		'nom-vide' => 'Le nom ne doit pas être vide',
-		'nom-trop-long' => 'Le nom ne doit pas faire plus de 250 caractères',
+		'nom-trop-long' => 'Le nom ne doit pas faire plus de 24 caractères',
 		'nom-non-alphabetique' => 'Le nom doit contenir uniquement des lettres',
 		
 		'prenom-vide' => 'Le prenom ne doit pas être vide',
-		'prenom-trop-long' => 'Le prenom ne doit pas faire plus de 250 caractères',
+		'prenom-trop-long' => 'Le prenom ne doit pas faire plus de 24 caractères',
 		'prenom-non-alphabetique' => 'Le prenom doit contenir uniquement des lettres',
 		
 		'pseudonyme-vide' => 'Le pseudonyme ne doit pas être vide',
-		'pseudonyme-trop-long' => 'Le pseudonyme ne doit pas faire plus de 250 caractères',
+		'pseudonyme-trop-long' => 'Le pseudonyme ne doit pas faire plus de 24 caractères',
 		
 		'email-vide' => 'L\'email ne doit pas être vide',
-		'email-invalide' => 'L\'email n\'est pas valide',	
+		'email-invalide' => 'L\'email n\'est pas valide',
+		'email-trop -long' => 'L\'email ne doit pas dépasser 30 caractères',
 		
 		'adresse-vide' => 'L\'adresse ne doit pas être vide',
+		'adresse-trop-longue' => 'L\'adresse ne doit pas dépasser 80 caractères',
 		
 		'codepostal-vide' => 'Le code postal ne doit pas être vide',
+		'codepostal-trop-long' => 'Le code postal ne doit pas dépasser 14 caractères',
 		
 		'pays-vide' => 'Le pays ne doit pas être vide',
+		'pays-trop-long' => 'Le pays ne doit pas dépasser 24 caractères',
 		
 		'ville-vide' => 'La ville ne doit pas être vide',
+		'ville-trop-longue' => 'La ville ne doit pas dépasser 24 caractères',
 		
 		'nbachats-vide' => 'Le nombre d\'achats ne doit pas être vide',
 		'nbachats-non-numerique' => 'Le nombre d\'achats doit être un entier',
+		'nbachats-trop-long' => 'Le nombre d\'acahts ne doit pas dépasser 11 chiffre',
 		
 		'nbventes-vide' => 'Le nombre de ventes ne doit pas être vide',
 		'nbventes-non-numerique' => 'Le nombre de ventes doit être un entier',
+		'nbachats-trop-long' => 'Le nombre d\'achats ne doit pas dépasser 11 chiffres',
 		
 		'illustration-vide' => 'Une illustration doit être donnée',
 		
 		'age-vide' => 'l\'age doit être renseigné',
 		'age-non-numerique' => 'l\'age doit être un entier',
+		'age-trop-long' => 'l\'age ne doit pas dépasser 11 chiffres',
 		
 		'telephone-vide' => 'Un numéro de téléphone doit être renseigné',
+		'telephone-trop-long' => 'Le numéro de téléphone ne doit pas dépasser 16 chiffres',
 		
 		'role-vide' => 'Un rôle doit être attribué',
-		'role-non-numerique' => 'Le rôle doit être un entier'
+		'role-non-numerique' => 'Le rôle doit être un entier',
+		'role-trop-long' => 'Le numéro de rôle ne doit pas dépasser 11 chiffres'
 	];
 	
 	private $listeMessageErreurActif = [];
@@ -211,7 +222,7 @@ class Utilisateur{
 						
 		}
 		
-		if ( strlen($this->nomTemporaire) > 250){
+		if ( strlen($this->nomTemporaire) > 24){
 			
 			$this->listeMessageErreurActif['nom'][] = $this->listeMessageErreur['nom-trop-long'];
 		}
@@ -238,7 +249,7 @@ class Utilisateur{
 			$this->listeMessageErreurActif['prenom'][] = $this->listeMessageErreur['prenom-vide'];
 		}
 		
-		if ( strlen($this->prenomTemporaire) > 250){
+		if ( strlen($this->prenomTemporaire) > 24){
 			
 			$this->listeMessageErreurActif['prenom'][] = $this->listeMessageErreur['prenom-trop-long'];
 		}
@@ -266,7 +277,7 @@ class Utilisateur{
 
 		}
 		
-		if ( strlen($this->prenomTemporaire) > 250){
+		if ( strlen($this->prenomTemporaire) > 24){
 			
 			$this->listeMessageErreurActif['pseudonyme'][] = $this->listeMessageErreur['pseudonyme-trop-long'];
 		}
