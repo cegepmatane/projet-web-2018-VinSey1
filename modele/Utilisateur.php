@@ -154,9 +154,7 @@ class Utilisateur{
 			}
 						
 		}
-		
-		var_dump($this->getListeErreurActifPourChamp('nom'));
-		
+				
 		if ( !$this->getListeErreurActifPourChamp('nom') ){
 				$this->nom = $this->nomTemporaire;
 		}

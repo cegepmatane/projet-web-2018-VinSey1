@@ -91,7 +91,6 @@ class UtilisateurDAO{
 	
 	public function insererUtilisateur($utilisateur){
 		
-		var_dump($utilisateur);
 		global $connexionBDActive;
 	
 		$nom = $utilisateur->getNom();

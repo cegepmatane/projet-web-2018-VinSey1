@@ -52,61 +52,71 @@
 	}
 	else {
 		
-		afficherLienAjoutUtilisateur();
-		afficherListeUtilisateur();
 		
-	}
-
-	if ( isset($_POST['actionFormulaire'])){
+		
+		if ( isset($_POST['actionFormulaire'])){
 		
 		$actionFormulaire = $_POST['actionFormulaire'];
 			
 		
 			
-		switch ( $actionFormulaire ){
-		
-			case   "Ajouter":
+			switch ( $actionFormulaire ){
+			
+				case   "Ajouter":
 
-				$utilisateur = new Utilisateur();
-			
+					$utilisateur = new Utilisateur();
 				
-			
-				if ( ajouter($utilisateur) ){}
+					
 				
-				else{
+					if ( ajouter($utilisateur) ){
+						
+						
+						afficherRetroactionPositive(gettext("Ajout d'utilisateur réussi"));
+
+						
+					}
 					
-					afficherFormulaireUtilisateur($actionFormulaire, $utilisateur);										
-				}
+					else{
+						
+						afficherFormulaireUtilisateur($actionFormulaire, $utilisateur);										
+					}
+						
+				
+					break;
+				
+				case   "Modifier":
+				
+					$utilisateur = new Utilisateur();
 					
+					if ( modifier($utilisateur) ){
+						
+						afficherRetroactionPositive(gettext("Modification d'utilisateur réussi"));
+						
+					}
+					else{
+						
+						afficherFormulaireUtilisateur($actionFormulaire, $utilisateur);
+						
+					}
+					
+				
+					break;
+				
+				case   "Supprimer":
+				
+					supprimer();
 			
 				break;
+			}
 			
-			case   "Modifier":
 			
-				$utilisateur = new Utilisateur();
-				
-				if ( modifier($utilisateur) ){
-					
-					
-					
-				}
-				else{
-					
-					afficherFormulaireUtilisateur($actionFormulaire, $utilisateur);
-					
-				}
-				
-			
-				break;
-			
-			case   "Supprimer":
-			
-				supprimer();
-		
-			break;
 		}
+		
+	}
+		
+afficherLienAjoutUtilisateur();
+afficherListeUtilisateur();
 	
-	}	
 	
 	
 	

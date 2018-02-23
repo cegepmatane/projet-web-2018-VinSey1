@@ -69,6 +69,14 @@ function afficherListeUtilisateur(){
 	<?php
 	}
 }
+
+function afficherRetroactionPositive($message){?>
+	
+	<p> <?php echo $message ?> </p>
+	
+	
+<?php	
+}
 ?>
 
 
