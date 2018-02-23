@@ -57,3 +57,7 @@
 		output.innerHTML = this.value;
 	}
 </script>
+<?php 
+	include "piedPage.php";
+
+?>
