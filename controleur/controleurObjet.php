@@ -6,7 +6,17 @@
 	require_once OBJET_MODELE;
 	
 	
-	if ( isset($_POST['actionFormulaire'])){
+	if ( isset($_POST['actionNaviguation'])){
+		
+		$idObjet=null;
+		
+		if (isset($_GET['idObjet'])){
+			
+			$idObjet = filter_var($_GET['idObjet'], FILTER_SANITIZE_STRING);
+			
+		}
+		
+		
 		
 			$actionFormulaire = $_POST['actionFormulaire'];
 
