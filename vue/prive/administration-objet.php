@@ -24,7 +24,7 @@ function afficherFormulaireObjet($actionFormulaire, $objet=null){
 				<div id = "bloc-formulaire-2">
 					<li>Categorie : <input type="text" name="categorie" value="<?php if ( $objet) echo $objet->getCategorie(); ?>"/></li>
 					<li>Prix : <input type="text" name="prix" value="<?php if ( $objet) echo $objet->getPrix(); ?>" /></li>
-					<li>Ville : <input type="text" name="ville"  value="<?php if ( $objet) echo $objet->getVille(); ?>" /></li>
+					<li>Description du produit : <input type="text" name="descriptionProduit"  value="<?php if ( $objet) echo $objet->getDescriptionProduit(); ?>" /></li>
 					<li>Âge : <input type="text" name="anneenaissance"  value="<?php if ( $objet) echo $objet->getAge(); ?>" /></li>
 					<li>Téléphone : <input type="text" name="telephone" value="<?php if ( $objet) echo $objet->getTelephone(); ?>" /></li>
 					<li>Nombre de ventes : <input type="text" name="nbventes" value="<?php if ( $objet) echo $objet->getNbventes(); ?>" /></li>
