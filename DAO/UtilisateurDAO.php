@@ -40,6 +40,48 @@ class UtilisateurDAO{
 		return $utilisateur;
 	}
 	
+	public function modifierUtilisateur($utilisateur){
+		
+		global $connexionBDActive;
+	
+		$nom = $utilisateur->getNom();
+		$prenom = $utilisateur->getPrenom();
+		$pseudonyme = $utilisateur->getPseudonyme();
+		$email = $utilisateur->getEmail();
+		$adresse = $utilisateur->getAdresse();
+		$codepostal = $utilisateur->getCodepostal();
+		$pays = $utilisateur->getPays();
+		$ville = $utilisateur->getVille();
+		$nbachats = 0;
+		$nbventes = 0;
+		$illustration = $utilisateur->getIllustration();
+		$age = $utilisateur->getAge();
+		$telephone = $utilisateur->getTelephone();
+		$role = $utilisateur->getRole();
+	
+		$requete = $connexionBDActive->prepare("UPDATE utilisateur(nom, prenom, pseudonyme, email, adresse, codepostal, pays, ville, nbachats, nbventes, illustration, age, telephone, role) VALUES (:nom, :prenom, :pseudonyme, :email, :adresse, :codepostal, :pays, :ville, :nbachats, :nbventes, :illustration, :age, :telephone, :role)");
+		
+		$requete->bindParam(':nom', $nom, PDO::PARAM_STR);
+		$requete->bindParam(':prenom', $prenom, PDO::PARAM_STR);
+		$requete->bindParam(':pseudonyme', $pseudonyme, PDO::PARAM_STR);
+		$requete->bindParam(':email', $email, PDO::PARAM_STR);
+		$requete->bindParam(':adresse', $adresse, PDO::PARAM_STR);
+		$requete->bindParam(':codepostal', $codepostal, PDO::PARAM_STR);
+		$requete->bindParam(':pays', $pays, PDO::PARAM_STR);
+		$requete->bindParam(':ville', $ville, PDO::PARAM_STR);
+		$requete->bindParam(':nbachats', $nbachats, PDO::PARAM_INT);
+		$requete->bindParam(':nbventes', $nbventes, PDO::PARAM_INT);
+		$requete->bindParam(':illustration', $illustration, PDO::PARAM_STR);
+		$requete->bindParam(':age', $age, PDO::PARAM_INT);
+		$requete->bindParam(':telephone', $telephone, PDO::PARAM_STR);
+		$requete->bindParam(':role', $role, PDO::PARAM_STR);
+		$requete->execute();
+		
+		
+	}
+	
+	
+	
 	public function insererUtilisateur($utilisateur){
 		
 		

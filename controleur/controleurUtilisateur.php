@@ -76,7 +76,38 @@
 
 	function modifier(){
 		
+		$utilisateur = new Utilisateur();
 		
+		$utilisateur->setNom($_POST['nom']);
+		$utilisateur->setPrenom($_POST['prenom']);
+		$utilisateur->setPseudonyme($_POST['pseudonyme']);
+		$utilisateur->setEmail($_POST['email']);
+		$utilisateur->setAdresse($_POST['adresse']);
+		$utilisateur->setCodepostal($_POST['codepostal']);
+		$utilisateur->setPays($_POST['pays']);			
+		$utilisateur->setVille($_POST['ville']);
+		$utilisateur->setAge($_POST['anneenaissance']);
+		$utilisateur->setTelephone($_POST['telephone']);	
+		$utilisateur->setNbventes($_POST['nbventes']);	
+		$utilisateur->setNbachats($_POST['nbachats']);	
+		$utilisateur->setRole($_POST['role']);	
+		$utilisateur->setIllustration($_POST['illustration']);	
+		
+		if ($utilisateur->estValide()){
+			
+			
+			
+			$utilisateurDAO = new UtilisateurDAO();
+			
+			$utilisateurDAO->modifierUtilisateur($utilisateur);
+			
+		}
+		else{
+			
+			
+			
+			
+		}
 		
 		
 	}
