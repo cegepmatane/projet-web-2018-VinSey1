@@ -12,7 +12,17 @@ class Objet{
 	private $adresse;
 	private $illustration;
 	private $vedette;
-	
+
+	private $idObjetTemporaire;
+	private $identifiantVendeurTemporaire;
+	private $titreDeVenteTemporaire;
+	private $categorieTemporaire;
+	private $prixTemporaire;
+	private $descriptionProduitTemporaire;
+	private $detailsVenteTemporaire;
+	private $adresseTemporaire;
+	private $illustrationTemporaire;
+	private $vedetteTemporaire;
 
 	public function getIdObjet(){
 		return $this->idObjet;
