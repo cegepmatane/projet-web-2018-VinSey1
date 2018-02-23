@@ -58,6 +58,8 @@
 		
 		if ($utilisateur->estValide()){
 			
+			
+			
 			$utilisateurDAO = new UtilisateurDAO();
 			
 			$utilisateurDAO->insererUtilisateur($utilisateur);
