@@ -24,6 +24,15 @@ class Objet{
 	private $illustrationTemporaire;
 	private $vedetteTemporaire;
 
+	private $listeMessageErreur = [
+
+		'titre-vide' => 'Le nom est vide',
+		'titre-trop-long' => 'Le titre fait plus de 250 caractères',
+		'titre-caracteres-speciaux' => 'Le titre contient des caractères invalides',
+	];
+
+	private $listeMessageErreurActif = [];
+
 	public function getIdObjet(){
 		return $this->idObjet;
 	}
@@ -99,22 +108,35 @@ class Objet{
 	function setId($idObjet){
 		
 		$this->idObjet = $idObjet;
-		
-		
+
 	}
 	
 	function setidentifiantVendeur($identifiantVendeur){
 		
 		$this->identifiantVendeur = $identifiantVendeur;
-		
-		
+
 	}
+
 	function setTitreDeVente($titreDeVente){
-		
-		$this->titreDeVente = $titreDeVente;
-		
-		
+
+		$this->titreDeVenteTemporaire = filter_var($titreDeVente, FILTER_SANITIZE_STRING);
+		if (empty($this->titreDeVenteTemporaire)){
+			$this->listeMessageErreurActif['titre'][] = $this->listeMessageErreur['titre-vide'];
+		} else {
+			if (strlen($this->titreDeVenteTemporaire) > 30){
+				$this->listeMessageErreurActif['titre'][] = $this->listeMessageErreur['titre-trop-long'];
+			}
+			if (!ctype_alpha($this->titreDeVenteTemporaire)){
+				$this->listeMessageErreurActif['titre'][] = $this->listeMessageErreur['titre-caracteres-speciaux'];
+			}
+		}
+
+		if(!$this->getListeErreurActifPourChamp('titre')){
+			$this->titreDeVente = $this->titreDeVenteTemporaire;
+		}
+
 	}
+
 	function setCategorie($categorie){
 		
 		$this->categorie = $categorie;
@@ -158,7 +180,14 @@ class Objet{
 		
 	}
 	
-	
+	public function getListeErreurActifPourChamp($champ){		
+
+		if (isset($this->listeMessageErreurActif[$champ])){
+			return $this->listeMessageErreurActif[$champ];
+		}
+		return [];
+
+	}
 	
 	
 }
