@@ -177,8 +177,7 @@ afficherListeUtilisateur();
 		$utilisateur->setNbachats($_POST['nbachats']);	
 		$utilisateur->setRole($_POST['role']);	
 		$utilisateur->setIllustration($_POST['illustration']);	
-		
-		
+				
 		/*
 		
 			estValide ne suffit pas, il faudrait questionner la BD pour savoir si cet utilisateur existe

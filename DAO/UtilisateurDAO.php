@@ -62,7 +62,7 @@ class UtilisateurDAO{
 		$telephone = $utilisateur->getTelephone();
 		$role = $utilisateur->getRole();
 	
-		$requete = $connexionBDActive->prepare("UPDATE utilisateur SET nom=:nom, prenom=:prenom, pseudonyme=:pseudonyme, email=:email, adresse=:adresse, codepostal=:codepostal, pays=:pays, ville=:ville, nbachats=:nbachats, nbventes=:nbventes, illustration=:illustration, age=:age, telephone=:telephone, role=:role WHERE id_Utilisateur=:idUtilisateur ");
+		$requete = $connexionBDActive->prepare("UPDATE utilisateur SET nom=:nom, prenom=:prenom, pseudonyme=:pseudonyme, email=:email, adresse=:adresse, codepostal=:codepostal, pays=:pays, ville=:ville, nbachats=:nbachats, nbventes=:nbventes, illustration=:illustration, age=:age, telephone=:telephone, role=:role WHERE id_utilisateur=:idUtilisateur ");
 												
 		
 		$requete->bindParam(':idUtilisateur', $idUtilisateur, PDO::PARAM_STR);

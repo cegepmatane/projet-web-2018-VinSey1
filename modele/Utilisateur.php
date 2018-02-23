@@ -41,12 +41,14 @@ class Utilisateur{
 	
 		'nom-vide' => 'Le nom ne doit pas être vide',
 		'nom-trop-long' => 'Le nom ne doit pas faire plus de 250 caractères',
-		'nom-alphabetique' => 'Le nom doit contenir uniquement des lettres',
+		'nom-non-alphabetique' => 'Le nom doit contenir uniquement des lettres',
 		
 		'prenom-vide' => 'Le prenom ne doit pas être vide',
 		'prenom-trop-long' => 'Le prenom ne doit pas faire plus de 250 caractères',
-		'prenom-non-alphabetique' => 'Le prenom doit contenir uniquement des lettres'
+		'prenom-non-alphabetique' => 'Le prenom doit contenir uniquement des lettres',
 		
+		'pseudonyme-vide' => 'Le pseudonyme ne doit pas être vide',
+		'pseudonyme-trop-long' => 'Le pseudonyme ne doit pas faire plus de 250 caractères'
 	];
 	
 	private $listeMessageErreurActif = [];
@@ -143,16 +145,12 @@ class Utilisateur{
 		if ( empty($this->idUtilisateurTemporaire)){
 			
 			$this->listeMessageErreurActif['idUtilisateur'][] = $this->listeMessageErreur['identifiant-vide'];
-			
 		}
-		else{
 			
-			if ( !filter_var($idUtilisateurTemporaire) ){
-				
-				$this->listeMessageErreurActif['idUtilsateur'][] = $this->listeMessageErreur['identifiant-non-numerique'];
-			}
-							
-		}
+		if ( !filter_var($this->idUtilisateurTemporaire) ){
+			
+			$this->listeMessageErreurActif['idUtilsateur'][] = $this->listeMessageErreur['identifiant-non-numerique'];
+		}	
 		
 		if ( !$this->getListeErreurActifPourChamp('idUtilisateur')){
 			
@@ -172,19 +170,18 @@ class Utilisateur{
 			$this->listeMessageErreurActif['nom'][] = $this->listeMessageErreur['nom-vide'];
 						
 		}
-		else{
-			if ( strlen($this->nomTemporaire) > 10){
-				
-				$this->listeMessageErreurActif['nom'][] = $this->listeMessageErreur['nom-trop-long'];
-			}
-			if ( !ctype_alpha($this->nomTemporaire) ){
-				
-				$this->listeMessageErreurActif['nom'][] = $this->listeMessageErreur['nom-non-alphabetique'];
-				
-			}
-						
+		
+		if ( strlen($this->nomTemporaire) > 250){
+			
+			$this->listeMessageErreurActif['nom'][] = $this->listeMessageErreur['nom-trop-long'];
 		}
-				
+		
+		if ( !ctype_alpha($this->nomTemporaire) ){
+			
+			$this->listeMessageErreurActif['nom'][] = $this->listeMessageErreur['nom-non-alphabetique'];
+			
+		}
+									
 		if ( !$this->getListeErreurActifPourChamp('nom') ){
 				$this->nom = $this->nomTemporaire;
 		}
@@ -193,36 +190,58 @@ class Utilisateur{
 	
 	public function setPrenom($prenom){
 		
-		$prenomTemporaire = filter_var($prenom, FILTER_SANITIZE_STRING);
+		$this->prenomTemporaire = filter_var($prenom, FILTER_SANITIZE_STRING);
+
 		
 		if ( empty($this->prenomTemporaire)){
 			
+			$this->listeMessageErreurActif['prenom'][] = $this->listeMessageErreur['prenom-vide'];
+		}
+		
+		if ( strlen($this->prenomTemporaire) > 250){
+			
+			$this->listeMessageErreurActif['prenom'][] = $this->listeMessageErreur['prenom-trop-long'];
+		}
+		
+		if ( !ctype_alpha($this->prenomTemporaire) ){
+			
+			$this->listeMessageErreurActif['prenom'][] = $this->listeMessageErreur['prenom-non-alphabetique'];
 			
 		}
 		
-		$this->prenom = $prenom;
+		
+		if ( !$this->getListeErreurActifPourChamp('prenom') ){
+				$this->prenom = $this->prenomTemporaire;
+		}
 		
 		
 	}
 	
 	public function setPseudonyme($pseudonyme){
 		
-		$pseudonymeTemporaire = filter_var($pseudonyme, FILTER_SANITIZE_STRING);
+		$this->pseudonymeTemporaire = filter_var($pseudonyme, FILTER_SANITIZE_STRING);
 		
 		if ( empty($this->pseudonymeTemporaire)){
 			
-			
+			$this->listeMessageErreurActif['pseudonyme'][] = $this->listeMessageErreur['pseudonyme-vide'];
+
 		}
 		
-		
-		$this->pseudonyme = $pseudonyme;
+		if ( strlen($this->prenomTemporaire) > 250){
+			
+			$this->listeMessageErreurActif['pseudonyme'][] = $this->listeMessageErreur['pseudonyme-trop-long'];
+		}
+				
+		if ( !$this->getListeErreurActifPourChamp('pseudonyme') ){
+				$this->pseudonyme = $this->pseudonymeTemporaire;
+		}
 		
 		
 	}
 	
 	public function setEmail($email){
 		
-		$emailTemporaire = filter_var($email, FILTER_SANITIZE_STRING);
+		$this->emailTemporaire = filter_var($email, FILTER_SANITIZE_STRING);
 		
 		if ( empty($this->emailTemporaire)){
 			
@@ -236,7 +255,7 @@ class Utilisateur{
 	
 	public function setAdresse($adresse){
 		
-		$adresseTemporaire = filter_var($adresse, FILTER_SANITIZE_STRING);
+		$this->adresseTemporaire = filter_var($adresse, FILTER_SANITIZE_STRING);
 		
 		if ( empty($this->adresseTemporaire)){
 			
@@ -250,7 +269,7 @@ class Utilisateur{
 	
 	public function setCodepostal($codepostal){
 		
-		$codepostalTemporaire = filter_var($codepostal, FILTER_SANITIZE_STRING);
+		$this->codepostalTemporaire = filter_var($codepostal, FILTER_SANITIZE_STRING);
 		
 		if ( empty($this->codepostalTemporaire)){
 			
@@ -264,7 +283,7 @@ class Utilisateur{
 	
 	public function setPays($pays){
 		
-		$paysTemporaire = filter_var($pays, FILTER_SANITIZE_STRING);
+		$this->paysTemporaire = filter_var($pays, FILTER_SANITIZE_STRING);
 		
 		if ( empty($this->paysTemporaire)){
 			
@@ -277,7 +296,7 @@ class Utilisateur{
 	
 	public function setVille($ville){
 		
-		$villeTemporaire = filter_var($ville, FILTER_SANITIZE_STRING);
+		$this->villeTemporaire = filter_var($ville, FILTER_SANITIZE_STRING);
 		
 		if ( empty($this->villeTemporaire)){
 			
@@ -291,7 +310,7 @@ class Utilisateur{
 	
 	public function setNbachats($nbachats){
 		
-		$nbachatsTemporaire = filter_var($nbachats, FILTER_SANITIZE_STRING);
+		$this->nbachatsTemporaire = filter_var($nbachats, FILTER_SANITIZE_STRING);
 		
 		if ( empty($this->nbachatsTemporaire)){
 			
@@ -304,7 +323,7 @@ class Utilisateur{
 	
 	public function setNbventes($nbventes){
 		
-		$nbventesTemporaire = filter_var($nbventes, FILTER_SANITIZE_STRING);
+		$this->nbventesTemporaire = filter_var($nbventes, FILTER_SANITIZE_STRING);
 		
 		if ( empty($this->nbventesTemporaire)){
 			
@@ -317,7 +336,7 @@ class Utilisateur{
 	
 	public function setIllustration($illustration){
 		
-		$illustrationTemporaire = filter_var($illustration, FILTER_SANITIZE_STRING);
+		$this->illustrationTemporaire = filter_var($illustration, FILTER_SANITIZE_STRING);
 		
 		if ( empty($this->illustrationTemporaire)){
 			
@@ -331,7 +350,7 @@ class Utilisateur{
 	
 	public function setAge($age){
 		
-		$ageTemporaire = filter_var($age, FILTER_SANITIZE_STRING);
+		$this->ageTemporaire = filter_var($age, FILTER_SANITIZE_STRING);
 		
 		if ( empty($this->ageTemporaire)){
 			
@@ -345,7 +364,7 @@ class Utilisateur{
 	
 	public function setTelephone($telephone){
 		
-		$telephoneTemporaire = filter_var($telephone, FILTER_SANITIZE_STRING);
+		$this->telephoneTemporaire = filter_var($telephone, FILTER_SANITIZE_STRING);
 		
 		if ( empty($this->telephoneTemporaire)){
 			
@@ -359,7 +378,7 @@ class Utilisateur{
 	
 	public function setRole($role){
 		
-		$roleTemporaire = filter_var($role, FILTER_SANITIZE_STRING);
+		$this->roleTemporaire = filter_var($role, FILTER_SANITIZE_STRING);
 		
 		if ( empty($this->roleTemporaire)){
 			
