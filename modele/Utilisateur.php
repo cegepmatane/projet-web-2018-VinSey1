@@ -109,23 +109,37 @@ class Utilisateur{
 		
 	public function construireDonneesSecurise($idUtilisateur, $nom, $prenom, $pseudonyme, $email, $adresse, $codepostal, $pays, $ville, $nbventes, $nbachats, $illustration, $age, $telephone, $role ){	
 		
-		$this->idUtilisateur = $idUtilisateur;
-		$this->nom = $nom;
-		$this->prenom = $prenom;
-		$this->pseudonyme = $pseudonyme;
-		$this->email = $email;
-		$this->adresse = $adresse;
-		$this->codepostal = $codepostal;
-		$this->pays = $pays;
-		$this->ville = $ville;
-		$this->nbventes = $nbventes;
-		$this->nbachats = $nbachats;
-		$this->illustration = $illustration;
-		$this->age = $age;
-		$this->telephone = $telephone;
-		$this->role = $role;
+
+			$this->idUtilisateur = $idUtilisateur;
+			$this->nom = $nom;
+			$this->prenom = $prenom;
+			$this->pseudonyme = $pseudonyme;
+			$this->email = $email;
+			$this->adresse = $adresse;
+			$this->codepostal = $codepostal;
+			$this->pays = $pays;
+			$this->ville = $ville;
+			$this->nbventes = $nbventes;
+			$this->nbachats = $nbachats;
+			$this->illustration = $illustration;
+			$this->age = $age;
+			$this->telephone = $telephone;
+			$this->role = $role;
+
+	}
+	
+	
+	public function setIdUtilisateur($idUtilisateur){
 		
-		}
+		
+		$this->idUtilisateurTemporaire = $idUtilisateur;
+		
+		
+		//filtres
+		
+		
+		$this->idUtilisateur = $this->idUtilisateurTemporaire;
+		
 	}
 	
 	public function setNom($nom){

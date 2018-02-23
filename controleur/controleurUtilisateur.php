@@ -13,7 +13,6 @@
 			$idUtilisateur = filter_var($_GET['idUtilisateur'], FILTER_SANITIZE_STRING);
 			
 		}
-	
 		
 		$actionNaviguation = $_GET['actionNaviguation'];
 		
@@ -28,8 +27,7 @@
 				
 				if ( $idUtilisateur ){
 					
-					$utilisateurDAO = new UtilisateurDAO();
-					$utilisateurDAO->supprimerUtilisateur($idUtilisateur);
+					supprimer($idUtilisateur);					
 					
 				}
 				
@@ -74,8 +72,7 @@
 						afficherRetroactionPositive(gettext("Ajout d'utilisateur réussi"));
 
 						
-					}
-					
+					}	
 					else{
 						
 						afficherFormulaireUtilisateur($actionFormulaire, $utilisateur);										
@@ -104,7 +101,7 @@
 				
 				case   "Supprimer":
 				
-					supprimer();
+					supprimer($idUtilisateur);
 			
 				break;
 			}
@@ -139,8 +136,6 @@ afficherListeUtilisateur();
 		
 		if ($utilisateur->estValide()){
 			
-			
-			
 			$utilisateurDAO = new UtilisateurDAO();
 			
 			$utilisateurDAO->insererUtilisateur($utilisateur);
@@ -151,10 +146,9 @@ afficherListeUtilisateur();
 	}
 		
 
-	function modifier(){
-		
-		$utilisateur = new Utilisateur();
-		
+	function modifier($utilisateur){
+				
+		$utilisateur->setIdUtilisateur($_POST['idUtilisateur']);
 		$utilisateur->setNom($_POST['nom']);
 		$utilisateur->setPrenom($_POST['prenom']);
 		$utilisateur->setPseudonyme($_POST['pseudonyme']);
@@ -170,10 +164,10 @@ afficherListeUtilisateur();
 		$utilisateur->setRole($_POST['role']);	
 		$utilisateur->setIllustration($_POST['illustration']);	
 		
+		var_dump($utilisateur);
+		
 		if ($utilisateur->estValide()){
-			
-			
-			
+				
 			$utilisateurDAO = new UtilisateurDAO();
 			
 			$utilisateurDAO->modifierUtilisateur($utilisateur);
