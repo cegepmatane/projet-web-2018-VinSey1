@@ -24,6 +24,7 @@
 			<li><a href="vente.php" title="<?php echo gettext("Aller sur la page de vente")?>"><?php echo gettext("Page de vente")?></a></li>
             <li><a href="panneau-administration.php" title="<?php echo gettext("Aller sur la page Panneau d'administration")?>"><?php echo gettext("Page Panneau d'administration")?></a></li>
 			<li><a href="administration-utilisateur.php" title="<?php echo gettext("Administration utilisateur")?>"><?php echo gettext("Aministration utilisateur")?></a></li>
+			<li><a href="administration-objet.php" title="Aller sur la page Administration Objet">Administration objet</a></li>
 		</ul>
     </nav>
 </body>
