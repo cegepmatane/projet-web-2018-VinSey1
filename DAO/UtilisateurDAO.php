@@ -44,6 +44,7 @@ class UtilisateurDAO{
 		
 		global $connexionBDActive;
 	
+		$idUtilisateur = $utilisateur->getidUtilisateur();
 		$nom = $utilisateur->getNom();
 		$prenom = $utilisateur->getPrenom();
 		$pseudonyme = $utilisateur->getPseudonyme();
@@ -52,15 +53,19 @@ class UtilisateurDAO{
 		$codepostal = $utilisateur->getCodepostal();
 		$pays = $utilisateur->getPays();
 		$ville = $utilisateur->getVille();
-		$nbachats = 0;
-		$nbventes = 0;
+		$nbachats = $utilisateur->getNbachats();
+		$nbventes = $tilisateur->getNbventes();
 		$illustration = $utilisateur->getIllustration();
 		$age = $utilisateur->getAge();
 		$telephone = $utilisateur->getTelephone();
 		$role = $utilisateur->getRole();
 	
-		$requete = $connexionBDActive->prepare("UPDATE utilisateur(nom, prenom, pseudonyme, email, adresse, codepostal, pays, ville, nbachats, nbventes, illustration, age, telephone, role) VALUES (:nom, :prenom, :pseudonyme, :email, :adresse, :codepostal, :pays, :ville, :nbachats, :nbventes, :illustration, :age, :telephone, :role)");
+		$requete = $connexionBDActive->prepare("UPDATE utilisateur nom, prenom, pseudonyme, email, adresse, codepostal, pays, ville, nbachats, nbventes, illustration, age, telephone, role
+												VALUES :nom, :prenom, :pseudonyme, :email, :adresse, :codepostal, :pays, :ville, :nbachats, :nbventes, :illustration, :age, :telephone, :role
+												WHERE id_utilisateur = :idUtilisateur
+												");
 		
+		$requete->bindParam(':idUtilisateur', $idUtilisateur, PDO::PARAM_STR);
 		$requete->bindParam(':nom', $nom, PDO::PARAM_STR);
 		$requete->bindParam(':prenom', $prenom, PDO::PARAM_STR);
 		$requete->bindParam(':pseudonyme', $pseudonyme, PDO::PARAM_STR);
@@ -75,9 +80,9 @@ class UtilisateurDAO{
 		$requete->bindParam(':age', $age, PDO::PARAM_INT);
 		$requete->bindParam(':telephone', $telephone, PDO::PARAM_STR);
 		$requete->bindParam(':role', $role, PDO::PARAM_STR);
+		
 		$requete->execute();
-		
-		
+			
 	}
 	
 	

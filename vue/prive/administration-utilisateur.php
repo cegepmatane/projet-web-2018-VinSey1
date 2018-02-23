@@ -1,36 +1,66 @@
 <?php 
 	include "entete.php";
 	require_once UTILISATEUR_CONTROLEUR;
-?>
+	
+	function afficherFormulaireUtilisateur($utilisateur=null){
 
-    <form action="administration-utilisateur.php" id="formulaire-creation" method="post">
+?>	
+		<form action="administration-utilisateur.php" id="formulaire-creation" method="post">
         <ul>
             <div id = "blocs-formulaire">
                 <div id = "bloc-formulaire-1">
-                    <li>Nom : <input type="text" name="nom" /></li>
-                    <li>Prénom : <input type="text" name="prenom" /></li>
-                    <li>Pseudonyme : <input type="text" name="pseudonyme" /></li>
-                    <li>Adresse e-mail : <input type="text" name="email" /></li>
-                    <li>Adresse : <input type="text" name="adresse" /></li>
-					<li>Illustration : <input type="text" name="illustration" /></li>
+					
+	
+					
+					<input type="hidden" name="idUtilisateur" value="<?php if ( $utilisateur) echo $utilisateur->getIdUtilisateur(); ?>"/>
+					
+                    <li>Nom : <input type="text" name="nom" value="<?php if ( $utilisateur) echo $utilisateur->getNom(); ?>" /></li>
+                    <li>Prénom : <input type="text" name="prenom" value="<?php if ( $utilisateur) echo $utilisateur->getPrenom(); ?>" /></li>
+                    <li>Pseudonyme : <input type="text" name="pseudonyme" value="<?php if ( $utilisateur) echo $utilisateur->getPseudonyme(); ?>" /></li>
+                    <li>Adresse e-mail : <input type="text" name="email"  value="<?php if ( $utilisateur) echo $utilisateur->getEmail(); ?>" /></li>
+                    <li>Adresse : <input type="text" name="adresse"  value="<?php if ( $utilisateur) echo $utilisateur->getAdresse(); ?>" /></li>
+					<li>Illustration : <input type="text" name="illustration" value="<?php if ( $utilisateur) echo $utilisateur->getIllustration(); ?>" /></li>
                 </div>	
                 <div id = "bloc-formulaire-2">
-                    <li>Code postal : <input type="text" name="codepostal" /></li>
-                    <li>Pays : <input type="text" name="pays" /></li>
-                    <li>Ville : <input type="text" name="ville" /></li>
-                    <li>Âge : <input type="text" name="anneenaissance" /></li>
-                    <li>Téléphone : <input type="text" name="telephone" /></li>
-					<li>Nombre de ventes : <input type="text" name="nbventes" /></li>
-					<li>Nombre d'achats : <input type="text" name="nbachats" /></li>
-					<li>Role : <input type="text" name="role" /></li>
+                    <li>Code postal : <input type="text" name="codepostal" value="<?php if ( $utilisateur) echo $utilisateur->getCodepostal(); ?>"/></li>
+                    <li>Pays : <input type="text" name="pays" value="<?php if ( $utilisateur) echo $utilisateur->getPays(); ?>" /></li>
+                    <li>Ville : <input type="text" name="ville"  value="<?php if ( $utilisateur) echo $utilisateur->getVille(); ?>" /></li>
+                    <li>Âge : <input type="text" name="anneenaissance"  value="<?php if ( $utilisateur) echo $utilisateur->getAge(); ?>" /></li>
+                    <li>Téléphone : <input type="text" name="telephone" value="<?php if ( $utilisateur) echo $utilisateur->getTelephone(); ?>" /></li>
+					<li>Nombre de ventes : <input type="text" name="nbventes" value="<?php if ( $utilisateur) echo $utilisateur->getNbventes(); ?>" /></li>
+					<li>Nombre d'achats : <input type="text" name="nbachats" value="<?php if ( $utilisateur) echo $utilisateur->getNbachats(); ?>" /></li>
+					<li>Role : <input type="text" name="role" value="<?php if ( $utilisateur) echo $utilisateur->getRole(); ?>" /></li>
                 </div>	
             </div>
         </ul>
         <input id="bouton" type="submit" value="Ajouter" name="actionFormulaire"/>
+		
     </form>		
-</body>
+		
+<?php		
+	}
+?>   
+<a href="administration-utilisateur.php?actionNaviguation=Ajouter"> Ajouter un utilisateur</a>
+<?php 
+
+	$utilisateurDAO = new UtilisateurDAO();
+	$listeutilisateur = $utilisateurDAO->obtenirListeUtilisateur();
+?>
+	<?php foreach($listeutilisateur as $key => $objet) {?>
+				<div class="produit-courant">
+					<ul>
+						<li><?php echo gettext("Nom");?>: <?php echo $objet->getNom();?></li>
+						<li><?php echo gettext("Prenom");?>: <?php echo $objet->getPrenom();?></li>
+						<li><?php echo gettext("Pseudo");?>: <?php echo $objet->getPseudonyme();?></li>
+						<li><a href="profil.php?actionNaviguation=modifier&idUtilisateur=<?php echo $objet->getidUtilisateur(); ?>"> Modifier </a></li>
+						<li><a href="profil.php?actionNaviguation=modifier&idUtilisateur=<?php echo $objet->getidUtilisateur(); ?>"> Supprimer </a></li> 
+					</ul>
+				</div>
+			<?php } ?>	
+
+
+
 <?php 
 	include "piedPage.php";
 
 ?>
-</html>

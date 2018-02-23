@@ -4,7 +4,52 @@
 	require_once UTILISATEUR_DAO;
 	require_once UTILISATEUR_MODELE;
 	
+	if ( isset($_GET['actionNaviguation'])){
+		
+		$idUtilisateur = null;
+		
+		if (isset($_GET['idUtilisateur'])){
+			
+			$idUtilisateur = filter_var($_GET['idUtilisateur'], FILTER_SANITIZE_STRING);
+			
+		}
 	
+		
+		$actionNaviguation = $_GET['actionNaviguation'];
+		
+		switch ( $actionNaviguation ){
+			
+			case "Ajouter":
+			
+				afficherFormulaireUtilisateur();
+			
+			
+			case "Supprimer":
+				
+				if ( $idUtilisateur ){
+					
+					$utilisateurDAO = new UtilisateurDAO();
+					$utilisateurDAO->supprimerUtilisateur($idUtilisateur);
+					
+				}
+				
+			break;
+			
+			case "Modifier":
+			
+				if ( $idUtilisateur ){
+					
+					$utilisateurDAO = new UtilisateurDAO();
+					$utilisateur = $utilisateurDAO->chercherParIdentifiant($idUtilisateur);
+					if ( $utilisateur){
+						afficherFormulaireUtilisateur($utilisateur);
+					}
+				}
+			
+			break;
+		}
+		
+	}
 	if ( isset($_POST['actionFormulaire'])){
 		
 			$actionFormulaire = $_POST['actionFormulaire'];
@@ -121,6 +166,12 @@
 	
 	
 	
+	
+	
+	
+	/*
+	
+	
 	if (isset($_POST['controleur_modification_utilisateur'])){
 		
 		$utilisateurDAO = new UtilisateurDAO();
@@ -173,6 +224,6 @@
 		$utilisateurDAO->supprimerUtilisateur($_POST['idUtilisateur']);
 
 	}
-
+*/
 
 ?>
