@@ -360,21 +360,16 @@ afficherListeObjet();
 
 	function modifier($objet){
 				
-		$objet->setIdobjet($_POST['idobjet']);
-		$objet->setNom($_POST['nom']);
-		$objet->setPrenom($_POST['prenom']);
-		$objet->setPseudonyme($_POST['pseudonyme']);
-		$objet->setEmail($_POST['email']);
-		$objet->setAdresse($_POST['adresse']);
-		$objet->setCodepostal($_POST['codepostal']);
-		$objet->setPays($_POST['pays']);			
-		$objet->setVille($_POST['ville']);
-		$objet->setAge($_POST['anneenaissance']);
-		$objet->setTelephone($_POST['telephone']);	
-		$objet->setNbventes($_POST['nbventes']);	
-		$objet->setNbachats($_POST['nbachats']);	
-		$objet->setRole($_POST['role']);	
+		$objet->setIdObjet($_POST['idobjet']);
+		$objet->setTitreDeVente($_POST['titreDeVente']);
+		$objet->setIdentifiantVendeur($_POST['identifiantVendeur']);
+		$objet->setAdresse($_POST['adresse']);	
 		$objet->setIllustration($_POST['illustration']);	
+		$objet->setCategorie($_POST['categorie']);
+		$objet->setPrix($_POST['prix']);
+		$objet->setDescriptionProduit($_POST['descriptionProduit']);	
+		$objet->setDetailsVente($_POST['detailsVente']);
+		$objet->setVedette($_POST['vedette']);	
 		
 		
 		/*
@@ -385,9 +380,9 @@ afficherListeObjet();
 		
 		if ($objet->estValide()){
 				
-			$objetDAO = new objetDAO();
+			$objetDAO = new ObjetDAO();
 			
-			$objetDAO->modifierobjet($objet);
+			$objetDAO->modifierObjet($objet);
 			
 			return true;
 		}
