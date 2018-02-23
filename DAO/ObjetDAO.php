@@ -19,17 +19,17 @@ class ObjetDAO{
 		if ($resultat ){
 			
 			$objet = new Objet(
-							   $resultat->id_objet,
-							   $resultat->identifiantVendeur,
-							   $resultat->titreDeVente,
-							   $resultat->categorie,
-							   $resultat->prix,
-							   $resultat->descriptionProduit,
-							   $resultat->detailsVente,
-							   $resultat->adresse,
-							   $resultat->illustration,
-							   $resultat->vedette
-							   );
+			 				   $resultat->id_objet,
+			 				   $resultat->identifiantVendeur,
+			 				   $resultat->titreDeVente,
+			 				   $resultat->categorie,
+			 				   $resultat->prix,
+			 				   $resultat->descriptionProduit,
+			 				   $resultat->detailsVente,
+			 				   $resultat->adresse,
+			 				   $resultat->illustration,
+			 				   $resultat->vedette
+			 				   );
 		}	
 		return $objet;
 		
