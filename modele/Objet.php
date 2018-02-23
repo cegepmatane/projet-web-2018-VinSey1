@@ -45,6 +45,10 @@ class Objet{
 		'description-trop-long' => 'La description fait plus de 500 caractères',
 		'description-caracteres-speciaux' => 'La description contient des caractères invalides',
 
+		'details-vide' => 'Les détails sont vides',
+		'details-trop-long' => 'Les détails font plus de 500 caractères',
+		'details-caracteres-speciaux' => 'Les détails contiennent des caractères invalides',
+
 	];
 
 	private $listeMessageErreurActif = [];
