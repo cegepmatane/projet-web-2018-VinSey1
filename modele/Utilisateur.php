@@ -104,10 +104,106 @@ class Utilisateur{
 		}
 		else{
 			echo 'adresse mail invalide</br>';
-		}
+		}	
+	}
+	
+	public function setNom($nom){
 		
+		$this->nom = $nom;
 		
 		
 	}
+	
+	public function setPrenom($prenom){
+		
+		$this->prenom = $prenom;
+		
+		
+	}
+	
+	public function setPseudonyme($nom){
+		
+		$this->pseudonyme = $pseudonyme;
+		
+		
+	}
+	
+	public function setEmail($nom){
+		
+		$this->email = $email;
+		
+		
+	}
+	
+	public function setAdresse($nom){
+		
+		$this->adresse = $adresse;
+		
+		
+	}
+	
+	public function setCodepostal($nom){
+		
+		$this->codepostal = $codepostal;
+		
+		
+	}
+	
+	public function setPays($nom){
+		
+		$this->pays = $pays;
+		
+	}
+	
+	public function setVille($nom){
+		
+		$this->ville = $ville;
+		
+		
+	}
+	
+	public function setNbachats($nom){
+		
+		
+		$this->nbachats = $nbachats;
+		
+	}
+	
+	public function setNbventes($nom){
+		
+		
+		$this->nbventes = $nbventes;
+		
+	}
+	
+	public function setIllustration($nom){
+		
+		$this->illustration = $illustration;
+		
+		
+	}
+	
+	public function setAge($nom){
+		
+		$this->age = $age;
+		
+		
+	}
+	
+	public function setTelephone($nom){
+		
+		$this->telephone = $telephone;
+		
+		
+	}
+	
+	public function setRole($nom){
+		
+		$this->role = $role;
+		
+		
+	}
+
+	
 }
 ?>

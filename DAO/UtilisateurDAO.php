@@ -114,7 +114,8 @@ class UtilisateurDAO{
 			
 			$utilisateur = new Utilisateur();
 			
-			$utilisateur->construireDonneesSecurise($enregistrementUtilisateur->id_utilisateur, $enregistrementUtilisateur->nom, $enregistrementUtilisateur->prenom, $enregistrementUtilisateur->pseudonyme, $enregistrementUtilisateur->email, $enregistrementUtilisateur->adresse, $enregistrementUtilisateur->codepostal, $enregistrementUtilisateur->pays, $enregistrementUtilisateur->ville, $enregistrementUtilisateur->nbachats, $enregistrementUtilisateur->nbventes, $enregistrementUtilisateur->illustration, $enregistrementUtilisateur->age, $enregistrementUtilisateur->telephone, $enregistrementUtilisateur->role );						
+			$utilisateur->construireDonneesSecurise($enregistrementUtilisateur->id_utilisateur, $enregistrementUtilisateur->nom, $enregistrementUtilisateur->prenom, $enregistrementUtilisateur->pseudonyme, $enregistrementUtilisateur->email, $enregistrementUtilisateur->adresse, $enregistrementUtilisateur->codepostal, $enregistrementUtilisateur->pays, $enregistrementUtilisateur->ville, $enregistrementUtilisateur->nbachats, $enregistrementUtilisateur->nbventes, $enregistrementUtilisateur->illustration, $enregistrementUtilisateur->age, $enregistrementUtilisateur->telephone, $enregistrementUtilisateur->role );
+						
 			
 			$listeUtilisateur[]=$utilisateur;
 		}

@@ -85,5 +85,18 @@ class Objet{
 		$this->illustration = $illustration;
 		$this->vedette = $vedette;	
 	}
+	
+	function setId(){
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
 }
 ?>
