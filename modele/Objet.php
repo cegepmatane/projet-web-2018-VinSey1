@@ -49,6 +49,14 @@ class Objet{
 		'details-trop-long' => 'Les détails font plus de 500 caractères',
 		'details-caracteres-speciaux' => 'Les détails contiennent des caractères invalides',
 
+		'adresse-vide' => 'L\'adresse est vide',
+		'adresse-trop-long' => 'L\'adresse fait plus de 50 caractères',
+		'adresse-caracteres-speciaux' => 'L\'adresse contient des caractères invalides',
+
+		'illustration-vide' => 'L\'illustration est vide',
+		'illustration-trop-long' => 'L\'illustration fait plus de 50 caractères',
+		'illustration-caracteres-speciaux' => 'L\'illustration contient des caractères invalides',
+
 	];
 
 	private $listeMessageErreurActif = [];
@@ -174,7 +182,7 @@ class Objet{
 			if (strlen($this->titreDeVenteTemporaire) > 30){
 				$this->listeMessageErreurActif['titre'][] = $this->listeMessageErreur['titre-trop-long'];
 			}
-			if (!ctype_alpha($this->titreDeVenteTemporaire)){
+			if (!ctype_alnum($this->titreDeVenteTemporaire)){
 				$this->listeMessageErreurActif['titre'][] = $this->listeMessageErreur['titre-caracteres-speciaux'];
 			}
 		}
@@ -218,7 +226,7 @@ class Objet{
 			if (strlen($this->descriptionProduitTemporaire) > 500){
 				$this->listeMessageErreurActif['description'][] = $this->listeMessageErreur['description-trop-long'];
 			}
-			if (!ctype_alpha($this->descriptionProduitTemporaire)){
+			if (!ctype_alnum($this->descriptionProduitTemporaire)){
 				$this->listeMessageErreurActif['description'][] = $this->listeMessageErreur['description-caracteres-speciaux'];
 			}
 		}
@@ -238,7 +246,7 @@ class Objet{
 			if (strlen($this->detailsVenteTemporaire) > 500){
 				$this->listeMessageErreurActif['details'][] = $this->listeMessageErreur['details-trop-long'];
 			}
-			if (!ctype_alpha($this->detailsVenteTemporaire)){
+			if (!ctype_alnum($this->detailsVenteTemporaire)){
 				$this->listeMessageErreurActif['details'][] = $this->listeMessageErreur['details-caracteres-speciaux'];
 			}
 		}
@@ -248,16 +256,44 @@ class Objet{
 		}
 		
 	}
+
 	function setAdresse($adresse){
 		
-		$this->adresse = $adresse;
-		
+		$this->adresseTemporaire = filter_var($adresse, FILTER_SANITIZE_STRING);
+		if (empty($this->adresseTemporaire)){
+			$this->listeMessageErreurActif['adresse'][] = $this->listeMessageErreur['adresse-vide'];
+		} else {
+			if (strlen($this->adresseTemporaire) > 50){
+				$this->listeMessageErreurActif['adresse'][] = $this->listeMessageErreur['adresse-trop-long'];
+			}
+			if (!ctype_alnum($this->adresseTemporaire)){
+				$this->listeMessageErreurActif['adresse'][] = $this->listeMessageErreur['adresse-caracteres-speciaux'];
+			}
+		}
+
+		if(!$this->getListeErreurActifPourChamp('adresse')){
+			$this->adresse = $this->adresseTemporaire;
+		}
 		
 	}
+
 	function setIllustration($illustration){
 		
-		$this->illustration = $illustration;
-		
+		$this->illustrationTemporaire = filter_var($illustration, FILTER_SANITIZE_STRING);
+		if (empty($this->illustrationTemporaire)){
+			$this->listeMessageErreurActif['illustration'][] = $this->listeMessageErreur['illustration-vide'];
+		} else {
+			if (strlen($this->illustrationTemporaire) > 50){
+				$this->listeMessageErreurActif['illustration'][] = $this->listeMessageErreur['illustration-trop-long'];
+			}
+			if (!ctype_alnum($this->illustrationTemporaire)){
+				$this->listeMessageErreurActif['illustration'][] = $this->listeMessageErreur['illustration-caracteres-speciaux'];
+			}
+		}
+
+		if(!$this->getListeErreurActifPourChamp('illustration')){
+			$this->illustration = $this->illustrationTemporaire;
+		}
 		
 	}
 	function setVedette($vedette){
