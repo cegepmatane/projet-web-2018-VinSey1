@@ -51,7 +51,7 @@ class Utilisateur{
 		'pseudonyme-trop-long' => 'Le pseudonyme ne doit pas faire plus de 250 caractères',
 		
 		'email-vide' => 'L\'email ne doit pas être vide',
-		'email-invalide' => 'L\'email n\'est pas valide'
+		'email-invalide' => 'L\'email n\'est pas valide',	
 		
 		'adresse-vide' => 'L\'adresse ne doit pas être vide',
 		
@@ -303,7 +303,8 @@ class Utilisateur{
 		
 		if ( empty($this->adresseTemporaire)){
 			
-			
+			$this->listeMessageErreurActif['adresse'][] = $this->listeMessageErreur['adresse-vide'];
+
 		}
 		
 		$this->adresse = $adresse;
@@ -317,7 +318,7 @@ class Utilisateur{
 		
 		if ( empty($this->codepostalTemporaire)){
 			
-			
+			$this->listeMessageErreurActif['codepostal'][] = $this->listeMessageErreur['codepostal-vide'];
 		}
 		
 		$this->codepostal = $codepostal;
@@ -331,7 +332,8 @@ class Utilisateur{
 		
 		if ( empty($this->paysTemporaire)){
 			
-			
+			$this->listeMessageErreurActif['pays'][] = $this->listeMessageErreur['pays-vide'];
+
 		}
 		
 		$this->pays = $pays;
@@ -344,7 +346,7 @@ class Utilisateur{
 		
 		if ( empty($this->villeTemporaire)){
 			
-			
+			$this->listeMessageErreurActif['ville'][] = $this->listeMessageErreur['ville-vide'];
 		}
 		
 		$this->ville = $ville;
@@ -358,7 +360,7 @@ class Utilisateur{
 		
 		if ( empty($this->nbachatsTemporaire)){
 			
-			
+			$this->listeMessageErreurActif['nbachats'][] = $this->listeMessageErreur['nbachats-vide'];
 		}
 		
 		$this->nbachats = $nbachats;
@@ -371,6 +373,7 @@ class Utilisateur{
 		
 		if ( empty($this->nbventesTemporaire)){
 			
+			$this->listeMessageErreurActif['nbventes'][] = $this->listeMessageErreur['nbventes-vide'];
 			
 		}
 		
@@ -384,6 +387,7 @@ class Utilisateur{
 		
 		if ( empty($this->illustrationTemporaire)){
 			
+			$this->listeMessageErreurActif['illustration'][] = $this->listeMessageErreur['illustration-vide'];
 			
 		}
 		
@@ -398,6 +402,7 @@ class Utilisateur{
 		
 		if ( empty($this->ageTemporaire)){
 			
+			$this->listeMessageErreurActif['age'][] = $this->listeMessageErreur['age-vide'];
 			
 		}
 		
@@ -412,7 +417,8 @@ class Utilisateur{
 		
 		if ( empty($this->telephoneTemporaire)){
 			
-			
+			$this->listeMessageErreurActif['telephone'][] = $this->listeMessageErreur['telephone-vide'];
+
 		}
 		
 		$this->telephone = $telephone;
@@ -426,6 +432,7 @@ class Utilisateur{
 		
 		if ( empty($this->roleTemporaire)){
 			
+			$this->listeMessageErreurActif['role'][] = $this->listeMessageErreur['role-vide'];			
 			
 		}
 	
