@@ -23,4 +23,3 @@
 			<li><a href="vue/prive/administration-objet.php" title="<?php echo gettext("Aller sur la page Administration Objet")?>"><?php echo gettext("Page Administration objet")?></a></li>
 		</ul>
     </nav>
-</body>
