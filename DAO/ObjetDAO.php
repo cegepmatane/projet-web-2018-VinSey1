@@ -65,6 +65,39 @@ class ObjetDAO{
 		
 	}
 	
+	
+	public funtion modifierObjet($objet){
+		
+		global $connexionBDActive;
+		
+		$idObjet = $objet->getIdObjet();
+		$identifiantVendeur = $objet->getIdentifiantVendeur();
+		$titreDeVente = $objet->getTitreDeVente();
+		$categorie = $objet->getCategorie();
+		$prix = $objet->getPrix();
+		$descriptionProduit = $objet->getDescriptionProduit();
+		$detailsVente = $objet->getDetailsVente();
+		$adresse = $objet->getAdresse();
+		$illustration = $objet->getIllustration();
+		$vedette = $objet->getVedette();
+		
+	
+		$requete = $connexionBDActive->prepare("UPDATE objet SET identifiantVendeur=:identifiantVendeur, titreDeVente=:titreDeVente, categorie=:categorie, prix=:prix, descriptionProduit=:descriptionProduit, detailsVente=:detailsVente, adresse=:adresse, illustration=:illustration, vedette=:vedette WHERE id_objet =:idObjet");
+		
+		$requete->bindParam(':idObjet', $idObjet, PDO::PARAM_STR);
+		$requete->bindParam(':identifiantVendeur', $identifiantVendeur, PDO::PARAM_STR);
+		$requete->bindParam(':titreDeVente', $titreDeVente, PDO::PARAM_STR);
+		$requete->bindParam(':categorie', $categorie, PDO::PARAM_STR);
+		$requete->bindParam(':prix', $prix, PDO::PARAM_STR);
+		$requete->bindParam(':descriptionProduit', $descriptionProduit, PDO::PARAM_STR);
+		$requete->bindParam(':detailsVente', $detailsVente, PDO::PARAM_STR);
+		$requete->bindParam(':adresse', $adresse, PDO::PARAM_STR);
+		$requete->bindParam(':illustration', $illustration, PDO::PARAM_STR);
+		$requete->bindParam(':vedette', $vedette, PDO::PARAM_INT);
+		
+		$requete->execute();
+	}
+	
 	public function insererObjet($objet){
 			
 			
