@@ -26,3 +26,4 @@
 			<li><a href="administration-utilisateur.php" title="<?php echo gettext("Administration utilisateur")?>"><?php echo gettext("Aministration utilisateur")?></a></li>
 		</ul>
     </nav>
+</body>
