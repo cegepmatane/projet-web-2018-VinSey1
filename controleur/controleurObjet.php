@@ -55,7 +55,78 @@
 		
 	}
 		
+	else {
 		
+		
+		
+		if ( isset($_POST['actionFormulaire'])){
+		
+		$actionFormulaire = $_POST['actionFormulaire'];
+			
+		
+			
+			switch ( $actionFormulaire ){
+			
+				case   "Ajouter":
+
+					$utilisateur = new Utilisateur();
+				
+					
+				
+					if ( ajouter($utilisateur) ){
+						
+						
+						afficherRetroactionPositive(gettext("Ajout d'utilisateur réussi"));
+
+						
+					}	
+					else{
+						
+						afficherFormulaireUtilisateur($actionFormulaire, $utilisateur);										
+					}
+						
+				
+					break;
+				
+				case   "Modifier":
+				
+					$utilisateur = new Utilisateur();
+					
+					if ( modifier($utilisateur) ){
+						
+						afficherRetroactionPositive(gettext("Modification d'utilisateur réussi"));
+						
+					}
+					else{
+						
+						afficherFormulaireUtilisateur($actionFormulaire, $utilisateur);
+						
+					}
+					
+				
+					break;
+				
+				case   "Supprimer":
+								
+					$utilisateur = new Utilisateur();		
+								
+					if ( supprimer($utilisateur) ){
+						
+						afficherRetroactionPositive(gettext("Supression d'utilisateur réussi"));
+						
+					}
+					else{
+						
+						afficherRetroactionNegative(gettext("l'utilisateur n'existe pas"));
+					}
+			
+				break;
+			}
+			
+			
+		}
+		
+	}	
 		
 		
 		
@@ -187,7 +258,79 @@
 		$objetDAO = new ObjetDAO();
 		$objetDAO->insererObjet($objet);	
 	}
+	
+	else {
+		
+		
+		
+		if ( isset($_POST['actionFormulaire'])){
+		
+		$actionFormulaire = $_POST['actionFormulaire'];
+			
+		
+			
+			switch ( $actionFormulaire ){
+			
+				case   "Ajouter":
 
+					$objet = new Objet();
+				
+					
+				
+					if ( ajouter($objet) ){
+						
+						
+						afficherRetroactionPositive(gettext("Ajout d'objet réussi"));
+
+						
+					}	
+					else{
+						
+						afficherFormulaireObjet($actionFormulaire, $objet);										
+					}
+						
+				
+					break;
+				
+				case   "Modifier":
+				
+					$objet = new Objet();
+					
+					if ( modifier($objet) ){
+						
+						afficherRetroactionPositive(gettext("Modification d'objet réussi"));
+						
+					}
+					else{
+						
+						afficherFormulaireObjet($actionFormulaire, $objet);
+						
+					}
+					
+				
+					break;
+				
+				case   "Supprimer":
+								
+					$objet = new Objet();		
+								
+					if ( supprimer($objet) ){
+						
+						afficherRetroactionPositive(gettext("Supression d'objet réussi"));
+						
+					}
+					else{
+						
+						afficherRetroactionNegative(gettext("l'objet n'existe pas"));
+					}
+			
+				break;
+			}
+			
+			
+		}
+		
+	}
 
 
 
