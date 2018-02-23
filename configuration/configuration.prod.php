@@ -1,13 +1,9 @@
 <?php
 define( "UTILISATEUR_DAO", $_SERVER["DOCUMENT_ROOT"]."/DAO/UtilisateurDAO.php"   );
 define( "UTILISATEUR_MODELE", $_SERVER["DOCUMENT_ROOT"]."/modele/Utilisateur.php"   );
-define( "UTILISATEUR_CONTROLEUR", $_SERVER["DOCUMENT_ROOT"]."/controleur/controleurUtilisateur.php" );
 
 define( "OBJET_DAO", $_SERVER["DOCUMENT_ROOT"]."/DAO/ObjetDAO.php"   );
 define( "OBJET_MODELE", $_SERVER["DOCUMENT_ROOT"]."/modele/Objet.php"   );
-define( "OBJET_CONTROLEUR", $_SERVER["DOCUMENT_ROOT"]."/controleur/controleurObjet.php" );
-
-
 
 //---------- BD ---------------------
 define("BD_NOM", "survie_etudiante" );

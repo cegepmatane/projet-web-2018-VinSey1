@@ -1,35 +1,44 @@
 <?php
 
+	
 	require_once UTILISATEUR_DAO;
 	require_once UTILISATEUR_MODELE;
 	
-	$actionFormulaire = $_POST['actionFormulaire'];
 	
-	switch ( $actionFormulaire ){
+	if ( isset($_POST['actionFormulaire'])){
 		
-		case   "ajouter":
+			$actionFormulaire = $_POST['actionFormulaire'];
 
-			ajouter();
+			
+		switch ( $actionFormulaire ){
 		
-			break;
-		
-		case   "modifier":
-		
-			modifier();
-		
-			break;
-		
-		case   "supprimer":
-		
-			supprimer();
-		
-			break;
-	}
-	
-	
-	
-	private function ajouter(){
+			case   "Ajouter":
 
+				ajouter();
+			
+				break;
+			
+			case   "Modifier":
+			
+				modifier();
+			
+				break;
+			
+			case   "Supprimer":
+			
+				supprimer();
+		
+			break;
+		}
+	
+	}	
+	
+	
+	
+	function ajouter(){
+
+		
+	
 		$utilisateur = new Utilisateur();
 		
 		$utilisateur->setNom($_POST['nom']);
@@ -47,17 +56,30 @@
 		$utilisateur->setRole($_POST['role']);	
 		$utilisateur->setIllustration($_POST['illustration']);	
 		
+		if ($utilisateur->estValide()){
+			
+			$utilisateurDAO = new UtilisateurDAO();
+			
+			$utilisateurDAO->insererUtilisateur($utilisateur);
+			
+		}
+		else{
+			
+			
+			
+			
+		}
 	}
 		
 
-	private function modifier(){
+	function modifier(){
 		
 		
 		
 		
 	}
 	
-	private function supprimer(){
+	function supprimer(){
 		
 		
 		

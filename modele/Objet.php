@@ -86,14 +86,67 @@ class Objet{
 		$this->vedette = $vedette;	
 	}
 	
-	function setId(){
+	function setId($idObjet){
 		
-		
+		$this->idObjet = $idObjet;
 		
 		
 	}
 	
-	
+	function setidentifiantVendeur($identifiantVendeur){
+		
+		$this->identifiantVendeur = $identifiantVendeur;
+		
+		
+	}
+	function setTitreDeVente($titreDeVente){
+		
+		$this->titreDeVente = $titreDeVente;
+		
+		
+	}
+	function setCategorie($categorie){
+		
+		$this->categorie = $categorie;
+		
+		
+	}
+	function setPrix($prix){
+		
+		$this->prix = $prix;
+		
+		
+	}
+	function setDescriptionProduit($DescriptionProduit){
+		
+		$this->descriptionProduit = $descriptionProduit;
+		
+		
+	}
+	function setDetailsVente($idObjet){
+		
+		$this->detailsVente = $detailsVente;
+		
+		
+	}
+	function setAdresse($adresse){
+		
+		$this->adresse = $adresse;
+		
+		
+	}
+	function setIllustration($illustration){
+		
+		$this->illustration = $illustration;
+		
+		
+	}
+	function setVedette($vedette){
+		
+		$this->vedette = $vedette;
+		
+		
+	}
 	
 	
 	

@@ -17,7 +17,33 @@ class Utilisateur{
 	private $age;
 	private $telephone;
 	private $role;
+	
+	private $idUtilisateurTemporaire;
+	private $nomTemporaire;
+	private $prenomTemporaire;
+	private $pseudonymeTemporaire;
+	private $emailTemporaire;
+	private $adresseTemporaire;
+	private $codepostalTemporaire;
+	private $paysTemporaire;
+	private $villeTemporaire;
+	private $nbachatsTemporaire;
+	private $nbventesTemporaire;
+	private $illustrationTemporaire;
+	private $ageTemporaire;
+	private $telephoneTemporaire;
+	private $roleTemporaire;
 
+	private $listeMessageErreur = [
+	
+		'nom-vide' => 'Le nom est vide',
+		'nom-trop-long' => 'Le nom fait plus de 250 caractères',
+		'nom-alphabetique' => 'Le nom doit contenir uniquement des lettres'
+		
+		
+	];
+	
+	private $listeMessageErreurActif = [];
 	
 	
 	
@@ -102,12 +128,31 @@ class Utilisateur{
 			$this->telephone = $telephone;
 			$this->role = $role;
 		}
-		else{
-			echo 'adresse mail invalide</br>';
-		}	
 	}
 	
 	public function setNom($nom){
+		
+		$this->nomTemporaire = filter_var($nom, FILTER_SANITIZE_STRING);
+		
+		if (empty($this->nomTemporaire)){
+			
+			$this->listeMessageErreurActif['nom'][] = $this->listeMessageErreur['nom-vide'];
+			
+		}
+		else{
+			if ( strlen($this->nomTemporaire) > 250){
+				
+				$this->listeMessageErreurActif['nom'][] = $this->listeMessageErreur['nom-trop-long'];
+			}
+			if ( !ctype_alpha($this->nomTemporaire) ){
+				
+				$this->listeMessageErreurActif['nom'][] = $this->listeMessageErreur['nom-alphabetique'];
+				
+			}
+			
+		}
+		
+		
 		
 		$this->nom = $nom;
 		
@@ -116,94 +161,187 @@ class Utilisateur{
 	
 	public function setPrenom($prenom){
 		
+		$prenomTemporaire = filter_var($prenom, FILTER_SANITIZE_STRING);
+		
+		if ( empty($this->prenomTemporaire)){
+			
+			
+		}
+		
 		$this->prenom = $prenom;
 		
 		
 	}
 	
-	public function setPseudonyme($nom){
+	public function setPseudonyme($pseudonyme){
+		
+		$pseudonymeTemporaire = filter_var($pseudonyme, FILTER_SANITIZE_STRING);
+		
+		if ( empty($this->pseudonymeTemporaire)){
+			
+			
+		}
+		
 		
 		$this->pseudonyme = $pseudonyme;
 		
 		
 	}
 	
-	public function setEmail($nom){
+	public function setEmail($email){
+		
+		$emailTemporaire = filter_var($email, FILTER_SANITIZE_STRING);
+		
+		if ( empty($this->emailTemporaire)){
+			
+			
+		}
 		
 		$this->email = $email;
 		
 		
 	}
 	
-	public function setAdresse($nom){
+	public function setAdresse($adresse){
+		
+		$adresseTemporaire = filter_var($adresse, FILTER_SANITIZE_STRING);
+		
+		if ( empty($this->adresseTemporaire)){
+			
+			
+		}
 		
 		$this->adresse = $adresse;
 		
 		
 	}
 	
-	public function setCodepostal($nom){
+	public function setCodepostal($codepostal){
+		
+		$codepostalTemporaire = filter_var($codepostal, FILTER_SANITIZE_STRING);
+		
+		if ( empty($this->codepostalTemporaire)){
+			
+			
+		}
 		
 		$this->codepostal = $codepostal;
 		
 		
 	}
 	
-	public function setPays($nom){
+	public function setPays($pays){
+		
+		$paysTemporaire = filter_var($pays, FILTER_SANITIZE_STRING);
+		
+		if ( empty($this->paysTemporaire)){
+			
+			
+		}
 		
 		$this->pays = $pays;
 		
 	}
 	
-	public function setVille($nom){
+	public function setVille($ville){
+		
+		$villeTemporaire = filter_var($ville, FILTER_SANITIZE_STRING);
+		
+		if ( empty($this->villeTemporaire)){
+			
+			
+		}
 		
 		$this->ville = $ville;
 		
 		
 	}
 	
-	public function setNbachats($nom){
+	public function setNbachats($nbachats){
 		
+		$nbachatsTemporaire = filter_var($nbachats, FILTER_SANITIZE_STRING);
+		
+		if ( empty($this->nbachatsTemporaire)){
+			
+			
+		}
 		
 		$this->nbachats = $nbachats;
 		
 	}
 	
-	public function setNbventes($nom){
+	public function setNbventes($nbventes){
 		
+		$nbventesTemporaire = filter_var($nbventes, FILTER_SANITIZE_STRING);
+		
+		if ( empty($this->nbventesTemporaire)){
+			
+			
+		}
 		
 		$this->nbventes = $nbventes;
 		
 	}
 	
-	public function setIllustration($nom){
+	public function setIllustration($illustration){
+		
+		$illustrationTemporaire = filter_var($illustration, FILTER_SANITIZE_STRING);
+		
+		if ( empty($this->illustrationTemporaire)){
+			
+			
+		}
 		
 		$this->illustration = $illustration;
 		
 		
 	}
 	
-	public function setAge($nom){
+	public function setAge($age){
+		
+		$ageTemporaire = filter_var($age, FILTER_SANITIZE_STRING);
+		
+		if ( empty($this->ageTemporaire)){
+			
+			
+		}
 		
 		$this->age = $age;
 		
 		
 	}
 	
-	public function setTelephone($nom){
+	public function setTelephone($telephone){
+		
+		$telephoneTemporaire = filter_var($telephone, FILTER_SANITIZE_STRING);
+		
+		if ( empty($this->telephoneTemporaire)){
+			
+			
+		}
 		
 		$this->telephone = $telephone;
 		
 		
 	}
 	
-	public function setRole($nom){
+	public function setRole($role){
 		
+		$roleTemporaire = filter_var($role, FILTER_SANITIZE_STRING);
+		
+		if ( empty($this->roleTemporaire)){
+			
+			
+		}
+	
 		$this->role = $role;
-		
-		
+			
 	}
 
+	public function estValide(){
+		return empty($this->listeMessageErreurActif);
+	}
+	
 	
 }
 ?>

@@ -28,6 +28,8 @@
 			<li><a href="vue/prive/achatvente.php" title="<?php echo gettext("Aller sur la page de vente")?>"><?php echo gettext("Page de vente")?></a></li>
             <li><a href="vue/prive/panneau-administration.php" title="<?php echo gettext("Aller sur la page Panneau d'administration")?>"><?php echo gettext("Page Panneau d'administration")?></a></li>
 			<li><a href="vue/prive/creation-compte.php" title="Aller sur la page Création de compte">Page Création de compte</a></li>
+			<li><a href="vue/prive/administration-utilisateur.php" title="Aller sur la page Création de compte">Administration utilisateur</a></li>
+
 		</ul>
     </nav>
 	<div id="barre-de-recherche" >
