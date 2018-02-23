@@ -190,8 +190,8 @@ class Utilisateur{
 	
 	
 	public function setIdUtilisateur($idUtilisateur){
-				
-		$this->idUtilisateurTemporaire = $idUtilisateur;
+					
+		$this->idUtilisateurTemporaire = filter_var($idUtilisateur, FILTER_SANITIZE_NUMBER_INT);
 		
 		if ( empty($this->idUtilisateurTemporaire)){
 			
@@ -384,14 +384,14 @@ class Utilisateur{
 	
 	public function setNbachats($nbachats){
 		
-		$this->nbachatsTemporaire = filter_var($nbachats, FILTER_SANITIZE_STRING);
+		$this->nbachatsTemporaire = filter_var($nbachats, FILTER_SANITIZE_NUMBER_INT);
 		
-		if ( empty($this->nbachatsTemporaire)){
+		if ( empty($this->nbachatsTemporaire) && $this->nbachatsTemporaire!= 0){
 			
 			$this->listeMessageErreurActif['nbachats'][] = $this->listeMessageErreur['nbachats-vide'];
 		}
 		
-		if ( !filter_var($this->nbachatsTemporaire, FILTER_VALIDATE_INT) ){
+		if ( filter_var($this->nbachatsTemporaire, FILTER_VALIDATE_INT) ){
 			
 			$this->listeMessageErreurActif['nbachats'][] = $this->listeMessageErreur['nbachats-non-numerique'];
 
@@ -411,15 +411,15 @@ class Utilisateur{
 	
 	public function setNbventes($nbventes){
 		
-		$this->nbventesTemporaire = filter_var($nbventes, FILTER_SANITIZE_STRING);
+		$this->nbventesTemporaire = filter_var($nbventes, FILTER_SANITIZE_NUMBER_INT);
 		
-		if ( empty($this->nbventesTemporaire)){
+		if ( empty($this->nbventesTemporaire) && $this->nbventesTemporaire != 0){
 			
 			$this->listeMessageErreurActif['nbventes'][] = $this->listeMessageErreur['nbventes-vide'];
 			
 		}
 		
-		if ( !filter_var($this->nbachatsTemporaire, FILTER_VALIDATE_INT) ){
+		if ( filter_var($this->nbachatsTemporaire, FILTER_VALIDATE_INT) ){
 			
 			$this->listeMessageErreurActif['nbventes'][] = $this->listeMessageErreur['nbventes-non-numerique'];
 
@@ -504,15 +504,15 @@ class Utilisateur{
 	
 	public function setRole($role){
 		
-		$this->roleTemporaire = filter_var($role, FILTER_SANITIZE_STRING);
+		$this->roleTemporaire = filter_var($role, FILTER_SANITIZE_NUMBER_INT);
 		
-		if ( empty($this->roleTemporaire)){
+		if ( empty($this->roleTemporaire) && $this->roleTemporaire != 0 ){
 			
 			$this->listeMessageErreurActif['role'][] = $this->listeMessageErreur['role-vide'];			
 			
 		}
 		
-		if ( !filter_var($this->roleTemporaire, FILTER_VALIDATE_INT) ){
+		if ( filter_var($this->roleTemporaire, FILTER_VALIDATE_INT) ){
 			
 			$this->listeMessageErreurActif['role'][] = $this->listeMessageErreur['role-non-numerique'];
 
