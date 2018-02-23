@@ -48,7 +48,10 @@ class Utilisateur{
 		'prenom-non-alphabetique' => 'Le prenom doit contenir uniquement des lettres',
 		
 		'pseudonyme-vide' => 'Le pseudonyme ne doit pas être vide',
-		'pseudonyme-trop-long' => 'Le pseudonyme ne doit pas faire plus de 250 caractères'
+		'pseudonyme-trop-long' => 'Le pseudonyme ne doit pas faire plus de 250 caractères',
+		
+		'email-vide' => 'L\'email ne doit pas être vide',
+		'email-invalide' => 'L\'email n\'est pas valide'
 	];
 	
 	private $listeMessageErreurActif = [];
@@ -207,8 +210,7 @@ class Utilisateur{
 			
 			$this->listeMessageErreurActif['prenom'][] = $this->listeMessageErreur['prenom-non-alphabetique'];
 			
-		}
-		
+		}	
 		
 		if ( !$this->getListeErreurActifPourChamp('prenom') ){
 				$this->prenom = $this->prenomTemporaire;
@@ -245,10 +247,17 @@ class Utilisateur{
 		
 		if ( empty($this->emailTemporaire)){
 			
+			$this->listeMessageErreurActif['email'][] = $this->listeMessageErreur['email-vide'];
 			
 		}
-		
-		$this->email = $email;
+		if ( !filter_var($this->emailTemporaire, FILTER_VALIDATE_EMAIL) ){
+			
+			$this->listeMessageErreurActif['email'][] = $this->listeMessageErreur['email-invalide'];
+			
+		}
+		if ( !$this->getListeErreurActifPourChamp('email') ){
+				$this->email = $this->emailTemporaire;
+		}
 		
 		
 	}
