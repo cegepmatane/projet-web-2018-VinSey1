@@ -25,11 +25,8 @@ function afficherFormulaireObjet($actionFormulaire, $objet=null){
 					<li>Categorie : <input type="text" name="categorie" value="<?php if ( $objet) echo $objet->getCategorie(); ?>"/></li>
 					<li>Prix : <input type="text" name="prix" value="<?php if ( $objet) echo $objet->getPrix(); ?>" /></li>
 					<li>Description du produit : <input type="text" name="descriptionProduit"  value="<?php if ( $objet) echo $objet->getDescriptionProduit(); ?>" /></li>
-					<li>Âge : <input type="text" name="anneenaissance"  value="<?php if ( $objet) echo $objet->getAge(); ?>" /></li>
-					<li>Téléphone : <input type="text" name="telephone" value="<?php if ( $objet) echo $objet->getTelephone(); ?>" /></li>
-					<li>Nombre de ventes : <input type="text" name="nbventes" value="<?php if ( $objet) echo $objet->getNbventes(); ?>" /></li>
-					<li>Nombre d'achats : <input type="text" name="nbachats" value="<?php if ( $objet) echo $objet->getNbachats(); ?>" /></li>
-					<li>Role : <input type="text" name="role" value="<?php if ( $objet) echo $objet->getRole(); ?>" /></li>
+					<li>Details de vente : <input type="text" name="detailsVente"  value="<?php if ( $objet) echo $objet->getDetailsVente(); ?>" /></li>
+					<li>Vedette : <input type="text" name="vedette" value="<?php if ( $objet) echo $objet->getVedette(); ?>" /></li>
 				</div>	
 			</div>
 		</ul>
@@ -46,19 +43,19 @@ function afficherLienAjoutobjet(){
 <?php
 }
 
-function afficherListeobjet(){
+function afficherListeObjet(){
 	
-	$objetDAO = new objetDAO();
-	$listeobjet = $objetDAO->obtenirListeobjet();
+	$objetDAO = new ObjetDAO();
+	$listeobjet = $objetDAO->obtenirListeObjet();
 	foreach($listeobjet as $key => $objet) { 
-		$naviguationModification = "administration-objet.php?actionNaviguation=Modifier&idobjet=".$objet->getidobjet();
-		$naviguationSuppression = "administration-objet.php?actionNaviguation=Supprimer&idobjet=".$objet->getidobjet();
+		$naviguationModification = "administration-objet.php?actionNaviguation=Modifier&idobjet=".$objet->getIdObjet();
+		$naviguationSuppression = "administration-objet.php?actionNaviguation=Supprimer&idobjet=".$objet->getIdObjet();
 	
 	?>
 		<div class="produit-courant">
 			<ul>
-				<li><?php echo gettext("Nom");?>: <?php echo $objet->getNom();?></li>
-				<li><?php echo gettext("Prenom");?>: <?php echo $objet->getPrenom();?></li>
+				<li><?php echo gettext("Titre de vente : ");?>: <?php echo $objet->getTitreDeVente();?></li>
+				<li><?php echo gettext("Identifiant vendeur : ");?>: <?php echo $objet->getIdentifiantVendeur();?></li>
 				<li><?php echo gettext("Pseudo");?>: <?php echo $objet->getPseudonyme();?></li>
 				<li><a href= <?php echo $naviguationModification ?> > Modifier </a></li>
 				<li><a href= <?php echo $naviguationSuppression ?> > Supprimer </a></li> 
