@@ -34,6 +34,10 @@ class Objet{
 		'id-trop-long' => 'L\'ID fait plus de 11 caractères',
 		'titre-caracteres-speciaux' => 'L\'ID contient des caractères invalides',
 
+		'identifiant-vide' => 'L\'identifiant du vendeur est vide',
+		'identifiant-trop-long' => 'L\identifiante du vendeur est trop long',
+		'identifiant-caracteres-speciaux' => 'L\'identifiant du vendeur contient des caractères invalides',
+
 	];
 
 	private $listeMessageErreurActif = [];
@@ -130,9 +134,23 @@ class Objet{
 
 	}
 	
-	function setidentifiantVendeur($identifiantVendeur){
+	function setIdentifiantVendeur($identifiantVendeur){
 		
-		$this->identifiantVendeur = $identifiantVendeur;
+		$this->identifiantVendeurTemporaire = filter_var($identifiantVendeur, FILTER_SANITIZE_STRING);
+		if (empty($this->identifiantVendeurTemporaire)){
+			$this->listeMessageErreurActif['identifiantVendeur'][] = $this->listeMessageErreur['identifiant-vide'];
+		} else {
+			if (strlen($this->identifiantVendeurTemporaire) > 12){
+				$this->listeMessageErreurActif['identifiantVendeur'][] = $this->listeMessageErreur['identifiant-trop-long'];
+			}
+			if (!ctype_alnum($this->identifiantVendeurTemporaire)){
+				$this->listeMessageErreurActif['identifiantVendeur'][] = $this->listeMessageErreur['identifiant-caracteres-speciaux'];
+			}
+		}
+
+		if(!$this->getListeErreurActifPourChamp('identifiantVendeur')){
+			$this->titreDeVente = $this->identifiantVendeurTemporaire;
+		}
 
 	}
 
