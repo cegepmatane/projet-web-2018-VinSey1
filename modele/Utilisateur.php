@@ -165,10 +165,7 @@ class Utilisateur{
 	}
 	
 	public function getRole(){
-		if ( $this->nbventes == 0 ){
-			return "0";
-		}
-		if ($this->role && $this->role != 0 ) return $this->role;
+		if (isset($this->role)) return $this->role;
 		else return $this->roleTemporaire;
 	}
 		
@@ -195,9 +192,7 @@ class Utilisateur{
 	public function setIdUtilisateur($idUtilisateur){
 					
 		$this->idUtilisateurTemporaire = filter_var($idUtilisateur, FILTER_SANITIZE_NUMBER_INT);
-				
-		var_dump($this->idUtilisateurTemporaire);
-				
+								
 		if ( !isset($this->idUtilisateurTemporaire)){
 			
 			$this->listeMessageErreurActif['idUtilisateur'][] = $this->listeMessageErreur['identifiant-vide'];

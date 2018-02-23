@@ -5,7 +5,6 @@ require_once UTILISATEUR_CONTROLEUR;
 
 
 function afficherFormulaireUtilisateur($actionFormulaire, $utilisateur=null){
-
 ?>	
 	<form action="administration-utilisateur.php" id="formulaire-creation" method="post">
 		<ul>

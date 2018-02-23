@@ -43,7 +43,7 @@
 					
 					$utilisateurDAO = new UtilisateurDAO();
 					$utilisateur = $utilisateurDAO->chercherParIdentifiant($idUtilisateur);
-					if ( $utilisateur){
+					if ( $utilisateur){						
 						afficherFormulaireUtilisateur($actionNaviguation, $utilisateur);
 					}
 				}
