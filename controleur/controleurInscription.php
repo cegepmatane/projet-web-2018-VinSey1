@@ -3,28 +3,29 @@
 	require_once UTILISATEUR_DAO;
 	require_once UTILISATEUR_MODELE;
 
-	$utilisateur = new Utilisateur();
 	
-	
-	afficherPremierFormulaire();
-	
-	
-	if ( isset($_POST['deuxiemeFormulaire'])){
+	if ( isset($_POST['actionFormulaire'])){
 		
-		afficherDeuxiemeFormulaire($utilisateur);
+		if ( $_POST['actionFormulaire'] == 'finPremierFormulaire' ){
+			
+			$utilisateur = new Utilisateur();
+			
+			$utilisateur->setNom($_POST['nom']);
+			$utilisateur->setPrenom($_POST['prenom']);
+			$utilisateur->setPseudonyme($_POST['pseudonyme']);
+			$utilisateur->setAge($_POST['anneenaissance']);		
+			$utilisateur->setIllustration($_POST['illustration']);
+			
+			
+			
+			
+		}
+		
+		
+		
 	}
-	
-	if ( isset($_POST['troisiemeFormulaire'])){
-		
-		afficherDeuxiemeFormulaire($utilisateur);
-	}
-	
-	if ( isset($_POST['validation'])){
-		
-		
-		
-		
-		
+	else{
+		afficherPremierFormulaire($utilisateur);
 	}
 	
 	
