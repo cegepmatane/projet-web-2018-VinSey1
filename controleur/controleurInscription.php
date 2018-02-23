@@ -6,6 +6,9 @@
 	
 	if ( isset($_POST['actionFormulaire'])){
 		
+		
+
+		
 		if ( $_POST['actionFormulaire'] == 'finPremierFormulaire' ){
 			
 			$utilisateur = new Utilisateur();
@@ -16,7 +19,15 @@
 			$utilisateur->setAge($_POST['anneenaissance']);		
 			$utilisateur->setIllustration($_POST['illustration']);
 			
-			
+			if ( $utilisateur->estValide()){
+				
+				afficherDeuxiemeFormulaire($utilisateur);
+			}
+			else{
+				
+				afficherPremierFormulaire($utilisateur);
+				
+			}
 			
 			
 		}
@@ -25,7 +36,7 @@
 		
 	}
 	else{
-		afficherPremierFormulaire($utilisateur);
+		afficherPremierFormulaire();
 	}
 	
 	
