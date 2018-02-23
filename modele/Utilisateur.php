@@ -151,9 +151,7 @@ class Utilisateur{
 				
 				$this->listeMessageErreurActif['idUtilsateur'][] = $this->listeMessageErreur['identifiant-non-numerique'];
 			}
-			
-			
-			
+							
 		}
 		
 		if ( !$this->getListeErreurActifPourChamp('idUtilisateur')){
