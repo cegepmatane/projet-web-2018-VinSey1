@@ -62,16 +62,20 @@ class Utilisateur{
 		'ville-vide' => 'La ville ne doit pas être vide',
 		
 		'nbachats-vide' => 'Le nombre d\'achats ne doit pas être vide',
+		'nbachats-non-numerique' => 'Le nombre d\'achats doit être un entier',
 		
 		'nbventes-vide' => 'Le nombre de ventes ne doit pas être vide',
+		'nbventes-non-numerique' => 'Le nombre de ventes doit être un entier',
 		
 		'illustration-vide' => 'Une illustration doit être donnée',
 		
 		'age-vide' => 'l\'age doit être renseigné',
+		'age-non-numerique' => 'l\'age doit être un entier',
 		
 		'telephone-vide' => 'Un numéro de téléphone doit être renseigné',
 		
-		'role-vide' => 'Un rôle doit être attribué'
+		'role-vide' => 'Un rôle doit être attribué',
+		'role-non-numerique' => 'Le rôle doit être un entier'
 	];
 	
 	private $listeMessageErreurActif = [];
@@ -156,7 +160,6 @@ class Utilisateur{
 		
 	public function construireDonneesSecurise($idUtilisateur, $nom, $prenom, $pseudonyme, $email, $adresse, $codepostal, $pays, $ville, $nbventes, $nbachats, $illustration, $age, $telephone, $role ){	
 		
-
 			$this->idUtilisateur = $idUtilisateur;
 			$this->nom = $nom;
 			$this->prenom = $prenom;
@@ -172,13 +175,11 @@ class Utilisateur{
 			$this->age = $age;
 			$this->telephone = $telephone;
 			$this->role = $role;
-
 	}
 	
 	
 	public function setIdUtilisateur($idUtilisateur){
-		
-		
+				
 		$this->idUtilisateurTemporaire = $idUtilisateur;
 		
 		if ( empty($this->idUtilisateurTemporaire)){
@@ -349,6 +350,12 @@ class Utilisateur{
 			$this->listeMessageErreurActif['ville'][] = $this->listeMessageErreur['ville-vide'];
 		}
 		
+		if ( !filter_var($this->nbachatsTemporaire, FILTER_VALIDATE_INT) ){
+			
+			$this->listeMessageErreurActif['nbachats'][] = $this->listeMessageErreur['nbachats-non-numerique'];
+
+		}
+		
 		$this->ville = $ville;
 		
 		
@@ -361,6 +368,12 @@ class Utilisateur{
 		if ( empty($this->nbachatsTemporaire)){
 			
 			$this->listeMessageErreurActif['nbachats'][] = $this->listeMessageErreur['nbachats-vide'];
+		}
+		
+		if ( !filter_var($this->nbachatsTemporaire, FILTER_VALIDATE_INT) ){
+			
+			$this->listeMessageErreurActif['nbachats'][] = $this->listeMessageErreur['nbachats-non-numerique'];
+
 		}
 		
 		$this->nbachats = $nbachats;
