@@ -107,7 +107,7 @@ class Objet{
 	
 		
 		
-	function __construct($idObjet, $identifiantVendeur, $titreDeVente, $categorie, $prix, $descriptionProduit, $detailsVente, $adresse, $illustration, $vedette){
+	public function construireDonneesSecurise($idObjet, $identifiantVendeur, $titreDeVente, $categorie, $prix, $descriptionProduit, $detailsVente, $adresse, $illustration, $vedette){
 
 		$this->idObjet = $idObjet;
 		$this->identifiantVendeur = $identifiantVendeur;
