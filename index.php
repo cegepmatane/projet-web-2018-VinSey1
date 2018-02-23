@@ -40,15 +40,16 @@
 				</div>
 			<?php }} ?>
 		</div>
-		<u id="boutons-index">
+		<ul id="boutons-index">
 			<li><button type="button"><?php echo gettext("Vendre un objet"); ?></button></li>
 			<li><button type="button"><?php echo gettext("Se connecter"); ?></button></li>
 			<li>
-				<form action="creation-compte.php">
-					<input type="submit" value="S'inscrire"/></li>
+				<form action="inscription.php">
+					<input type="submit" value="S'inscrire"/>
 				</form>
+			</li>
 		</ul>
+	</div>
 <?php 
 	include "piedPage.php";
-
 ?>
