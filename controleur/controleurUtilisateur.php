@@ -114,9 +114,7 @@
 					}
 					else{
 						
-						// Il faudrait peut-être un "afficherRetroactionNegative(gettext("l'utilisateur n'existe pas"))"
-						
-						afficherFormulaireUtilisateur($actionFormulaire, $utilisateur);
+						afficherRetroactionNegative(gettext("l'utilisateur n'existe pas"));
 					}
 			
 				break;
@@ -181,6 +179,12 @@ afficherListeUtilisateur();
 		$utilisateur->setIllustration($_POST['illustration']);	
 		
 		
+		/*
+		
+			estValide ne suffit pas, il faudrait questionner la BD pour savoir si cet utilisateur existe
+		
+		*/
+		
 		if ($utilisateur->estValide()){
 				
 			$utilisateurDAO = new UtilisateurDAO();
@@ -210,9 +214,7 @@ afficherListeUtilisateur();
 		$utilisateur->setNbventes($_POST['nbventes']);	
 		$utilisateur->setNbachats($_POST['nbachats']);	
 		$utilisateur->setRole($_POST['role']);	
-		$utilisateur->setIllustration($_POST['illustration']);	
-		
-		
+		$utilisateur->setIllustration($_POST['illustration']);
 		
 		if ( $utilisateur->estValide() ){
 			
@@ -226,68 +228,4 @@ afficherListeUtilisateur();
 		return false;
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	/*
-	
-	
-	if (isset($_POST['controleur_modification_utilisateur'])){
-		
-		$utilisateurDAO = new UtilisateurDAO();
-		
-		
-		$utilisateurDAO->modifierNom($_POST['idUtilisateur'], $_POST['nom']);
-		$utilisateurDAO->modifierPrenom($_POST['idUtilisateur'], $_POST['prenom']);
-		$utilisateurDAO->modifierPseudonyme($_POST['idUtilisateur'], $_POST['pseudonyme']);
-		$utilisateurDAO->modifierEmail($_POST['idUtilisateur'], $_POST['email']);
-		$utilisateurDAO->modifierAdresse($_POST['idUtilisateur'], $_POST['adresse']);
-		$utilisateurDAO->modifierCodepostal($_POST['idUtilisateur'], $_POST['codepostal']);
-		$utilisateurDAO->modifierPays($_POST['idUtilisateur'], $_POST['pays']);			
-		$utilisateurDAO->modifierVille($_POST['idUtilisateur'], $_POST['ville']);
-		$utilisateurDAO->modifierAge($_POST['idUtilisateur'], $_POST['anneenaissance']);
-		$utilisateurDAO->modifierTelephone($_POST['idUtilisateur'], $_POST['telephone']);	
-		$utilisateurDAO->modifierNbventes($_POST['idUtilisateur'], $_POST['nbventes']);	
-		$utilisateurDAO->modifierNbachats($_POST['idUtilisateur'], $_POST['nbachats']);	
-		$utilisateurDAO->modifierRole($_POST['idUtilisateur'], $_POST['role']);	
-		$utilisateurDAO->modifierIllustration($_POST['idUtilisateur'], $_POST['illustration']);	
-
-	}
-	
-	if (isset($_POST['controleur_inscription'])){
-		
-		$utilisateur = new Utilisateur( 0,
-									   $_POST["nom"],
-									   $_POST["prenom"],
-									   $_POST["pseudonyme"],
-									   $_POST["email"],
-									   $_POST["adresse"],
-									   $_POST["codepostal"],
-									   $_POST["pays"],
-									   $_POST["ville"],
-									   0, 
-									   0,
-									   "image",
-									   56,
-									   $_POST["telephone"],
-									   0
-									   );
-		$utilisateurDAO = new UtilisateurDAO();
-		$utilisateurDAO->insererUtilisateur($utilisateur);
-
-	}
-	
-	if (isset($_POST['controleur_suppression_utilisateur'])){
-	
-		
-		$utilisateurDAO = new UtilisateurDAO();
-		$utilisateurDAO->supprimerUtilisateur($_POST['idUtilisateur']);
-
-	}
-*/
-
 ?>

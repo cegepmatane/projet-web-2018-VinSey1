@@ -77,6 +77,14 @@ function afficherRetroactionPositive($message){?>
 	
 <?php	
 }
+/* peut etre pas necessaire  (utilisé dans suppression utilisateur)  */
+function afficherRetroactionNegative($message){?>
+	
+	<p> <?php echo $message ?> </p>
+	
+<?php	
+}
+
 ?>
 
 
