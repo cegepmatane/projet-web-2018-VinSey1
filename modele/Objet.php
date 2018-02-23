@@ -26,7 +26,7 @@ class Objet{
 
 	private $listeMessageErreur = [
 
-		'titre-vide' => 'Le nom est vide',
+		'titre-vide' => 'Le titre est vide',
 		'titre-trop-long' => 'Le titre fait plus de 250 caractères',
 		'titre-caracteres-speciaux' => 'Le titre contient des caractères invalides',
 
@@ -35,11 +35,15 @@ class Objet{
 		'titre-caracteres-speciaux' => 'L\'ID contient des caractères invalides',
 
 		'identifiant-vide' => 'L\'identifiant du vendeur est vide',
-		'identifiant-trop-long' => 'L\identifiante du vendeur est trop long',
+		'identifiant-trop-long' => 'L\'identifiante du vendeur fait plus de 12 caractères',
 		'identifiant-caracteres-speciaux' => 'L\'identifiant du vendeur contient des caractères invalides',
 
 		'prix-vide' => 'Le prix est vide',
 		'prix-caracteres-speciaux' => 'Le prix contient des caractères invalides',
+
+		'description-vide' => 'La description est vide',
+		'description-trop-long' => 'La description fait plus de 500 caractères',
+		'description-caracteres-speciaux' => 'La description contient des caractères invalides',
 
 	];
 
@@ -201,10 +205,23 @@ class Objet{
 
 	}
 
-	function setDescriptionProduit($DescriptionProduit){
+	function setDescriptionProduit($descriptionProduit){
 		
-		$this->descriptionProduit = $descriptionProduit;
-		
+		$this->descriptionProduitTemporaire = filter_var($descriptionProduit, FILTER_SANITIZE_STRING);
+		if (empty($this->descriptionProduitTemporaire)){
+			$this->listeMessageErreurActif['description'][] = $this->listeMessageErreur['description-vide'];
+		} else {
+			if (strlen($this->descriptionProduitTemporaire) > 30){
+				$this->listeMessageErreurActif['description'][] = $this->listeMessageErreur['description-trop-long'];
+			}
+			if (!ctype_alpha($this->descriptionProduitTemporaire)){
+				$this->listeMessageErreurActif['description'][] = $this->listeMessageErreur['description-caracteres-speciaux'];
+			}
+		}
+
+		if(!$this->getListeErreurActifPourChamp('description')){
+			$this->descriptionProduit = $this->descriptionProduitTemporaire;
+		}
 		
 	}
 
