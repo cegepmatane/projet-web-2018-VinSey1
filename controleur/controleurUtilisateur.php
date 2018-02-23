@@ -107,7 +107,17 @@
 								
 					$utilisateur = new Utilisateur();		
 								
-					supprimer($utilisateur);
+					if ( supprimer($utilisateur) ){
+						
+						afficherRetroactionPositive(gettext("Supression d'utilisateur réussi"));
+						
+					}
+					else{
+						
+						// Il faudrait peut-être un "afficherRetroactionNegative(gettext("l'utilisateur n'existe pas"))"
+						
+						afficherFormulaireUtilisateur($actionFormulaire, $utilisateur);
+					}
 			
 				break;
 			}
@@ -133,7 +143,7 @@ afficherListeUtilisateur();
 		$utilisateur->setCodepostal($_POST['codepostal']);
 		$utilisateur->setPays($_POST['pays']);			
 		$utilisateur->setVille($_POST['ville']);
-		$utilisateur->setAge($_POST['anneenaissance']);
+		$utilisateur->setAge($_POST['anneenaissance']);	
 		$utilisateur->setTelephone($_POST['telephone']);	
 		$utilisateur->setNbventes($_POST['nbventes']);	
 		$utilisateur->setNbachats($_POST['nbachats']);	
@@ -184,7 +194,7 @@ afficherListeUtilisateur();
 		
 	}
 	
-	function supprimer($itilisateur){
+	function supprimer($utilisateur){
 		
 		$utilisateur->setIdUtilisateur($_POST['idUtilisateur']);
 		$utilisateur->setNom($_POST['nom']);
@@ -208,7 +218,7 @@ afficherListeUtilisateur();
 			
 			$utilisateurDAO = new UtilisateurDAO();
 		
-			$utilisateurDAO->supprimerUtilisateur($idUtilisateur);
+			$utilisateurDAO->supprimerUtilisateur($utilisateur);
 		
 			return true;
 		}
