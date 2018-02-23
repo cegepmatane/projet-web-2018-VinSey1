@@ -44,6 +44,8 @@ class UtilisateurDAO{
 		
 		global $connexionBDActive;
 	
+		
+	
 		$idUtilisateur = $utilisateur->getidUtilisateur();
 		$nom = $utilisateur->getNom();
 		$prenom = $utilisateur->getPrenom();
@@ -54,7 +56,7 @@ class UtilisateurDAO{
 		$pays = $utilisateur->getPays();
 		$ville = $utilisateur->getVille();
 		$nbachats = $utilisateur->getNbachats();
-		$nbventes = $tilisateur->getNbventes();
+		$nbventes = $utilisateur->getNbventes();
 		$illustration = $utilisateur->getIllustration();
 		$age = $utilisateur->getAge();
 		$telephone = $utilisateur->getTelephone();
@@ -89,7 +91,7 @@ class UtilisateurDAO{
 	
 	public function insererUtilisateur($utilisateur){
 		
-		
+		var_dump($utilisateur);
 		global $connexionBDActive;
 	
 		$nom = $utilisateur->getNom();

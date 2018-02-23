@@ -21,7 +21,7 @@
 			
 			case "Ajouter":
 			
-				afficherFormulaireUtilisateur();
+				afficherFormulaireUtilisateur($actionNaviguation);
 			
 			
 			case "Supprimer":
@@ -42,7 +42,7 @@
 					$utilisateurDAO = new UtilisateurDAO();
 					$utilisateur = $utilisateurDAO->chercherParIdentifiant($idUtilisateur);
 					if ( $utilisateur){
-						afficherFormulaireUtilisateur($utilisateur);
+						afficherFormulaireUtilisateur($actionNaviguation, $utilisateur);
 					}
 				}
 			
@@ -50,22 +50,52 @@
 		}
 		
 	}
+	else {
+		
+		afficherLienAjoutUtilisateur();
+		afficherListeUtilisateur();
+		
+	}
+
 	if ( isset($_POST['actionFormulaire'])){
 		
-			$actionFormulaire = $_POST['actionFormulaire'];
-
+		$actionFormulaire = $_POST['actionFormulaire'];
+			
+		
 			
 		switch ( $actionFormulaire ){
 		
 			case   "Ajouter":
 
-				ajouter();
+				$utilisateur = new Utilisateur();
+			
+				
+			
+				if ( ajouter($utilisateur) ){}
+				
+				else{
+					
+					afficherFormulaireUtilisateur($actionFormulaire, $utilisateur);										
+				}
+					
 			
 				break;
 			
 			case   "Modifier":
 			
-				modifier();
+				$utilisateur = new Utilisateur();
+				
+				if ( modifier($utilisateur) ){
+					
+					
+					
+				}
+				else{
+					
+					afficherFormulaireUtilisateur($actionFormulaire, $utilisateur);
+					
+				}
+				
 			
 				break;
 			
@@ -80,11 +110,7 @@
 	
 	
 	
-	function ajouter(){
-
-		
-	
-		$utilisateur = new Utilisateur();
+	function ajouter($utilisateur){
 		
 		$utilisateur->setNom($_POST['nom']);
 		$utilisateur->setPrenom($_POST['prenom']);
@@ -109,13 +135,9 @@
 			
 			$utilisateurDAO->insererUtilisateur($utilisateur);
 			
+			return true;
 		}
-		else{
-			
-			
-			
-			
-		}
+		return false;			
 	}
 		
 

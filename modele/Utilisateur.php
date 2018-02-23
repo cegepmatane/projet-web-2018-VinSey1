@@ -134,13 +134,16 @@ class Utilisateur{
 		
 		$this->nomTemporaire = filter_var($nom, FILTER_SANITIZE_STRING);
 		
+		
 		if (empty($this->nomTemporaire)){
 			
-			$this->listeMessageErreurActif['nom'][] = $this->listeMessageErreur['nom-vide'];
 			
+			
+			$this->listeMessageErreurActif['nom'][] = $this->listeMessageErreur['nom-vide'];
+						
 		}
 		else{
-			if ( strlen($this->nomTemporaire) > 250){
+			if ( strlen($this->nomTemporaire) > 10){
 				
 				$this->listeMessageErreurActif['nom'][] = $this->listeMessageErreur['nom-trop-long'];
 			}
@@ -149,14 +152,15 @@ class Utilisateur{
 				$this->listeMessageErreurActif['nom'][] = $this->listeMessageErreur['nom-alphabetique'];
 				
 			}
-			
+						
 		}
 		
+		var_dump($this->getListeErreurActifPourChamp('nom'));
 		
-		
-		$this->nom = $nom;
-		
-		
+		if ( !$this->getListeErreurActifPourChamp('nom') ){
+				$this->nom = $this->nomTemporaire;
+		}
+			
 	}
 	
 	public function setPrenom($prenom){
@@ -339,7 +343,16 @@ class Utilisateur{
 	}
 
 	public function estValide(){
+		
 		return empty($this->listeMessageErreurActif);
+	}
+	
+	public function getListeErreurActifPourChamp($champ){		
+					
+		if (isset($this->listeMessageErreurActif[$champ])){
+			return $this->listeMessageErreurActif[$champ];
+		}
+		return [];
 	}
 	
 	
