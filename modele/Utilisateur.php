@@ -36,12 +36,15 @@ class Utilisateur{
 
 	private $listeMessageErreur = [
 	
-		'nom-vide' => 'Le nom est vide',
-		'nom-trop-long' => 'Le nom fait plus de 250 caractères',
+		'identifiant-non-numerique' => 'L\'identifiant doit être un nombre',
+		'identifiant-vide' => 'L\'identifiant ne doit pas être vide',
+	
+		'nom-vide' => 'Le nom ne doit pas être vide',
+		'nom-trop-long' => 'Le nom ne doit pas faire plus de 250 caractères',
 		'nom-alphabetique' => 'Le nom doit contenir uniquement des lettres',
 		
-		'prenom-vide' => 'Le prenom est vide',
-		'prenom-trop-long' => 'Le prenom fait plus de 250 caractères',
+		'prenom-vide' => 'Le prenom ne doit pas être vide',
+		'prenom-trop-long' => 'Le prenom ne doit pas faire plus de 250 caractères',
 		'prenom-non-alphabetique' => 'Le prenom doit contenir uniquement des lettres'
 		
 	];
@@ -137,11 +140,27 @@ class Utilisateur{
 		
 		$this->idUtilisateurTemporaire = $idUtilisateur;
 		
+		if ( empty($this->idUtilisateurTemporaire)){
+			
+			$this->listeMessageErreurActif['idUtilisateur'][] = $this->listeMessageErreur['identifiant-vide'];
+			
+		}
+		else{
+			
+			if ( !filter_var($idUtilisateurTemporaire) ){
+				
+				$this->listeMessageErreurActif['idUtilsateur'][] = $this->listeMessageErreur['identifiant-non-numerique'];
+			}
+			
+			
+			
+		}
 		
-		//filtres
-		
-		
-		$this->idUtilisateur = $this->idUtilisateurTemporaire;
+		if ( !$this->getListeErreurActifPourChamp('idUtilisateur')){
+			
+			$this->idUtilisateur = $this->idUtilisateurTemporaire;
+			
+		}
 		
 	}
 	
