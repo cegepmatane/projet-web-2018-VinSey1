@@ -308,7 +308,9 @@ class Utilisateur{
 
 		}
 		
-		$this->adresse = $adresse;
+		if ( !$this->getListeErreurActifPourChamp('adresse') ){
+				$this->adresse = $this->adresseTemporaire;
+		}
 		
 		
 	}
@@ -322,7 +324,9 @@ class Utilisateur{
 			$this->listeMessageErreurActif['codepostal'][] = $this->listeMessageErreur['codepostal-vide'];
 		}
 		
-		$this->codepostal = $codepostal;
+		if ( !$this->getListeErreurActifPourChamp('codepostal') ){
+				$this->codepostal = $this->codepostalTemporaire;
+		}
 		
 		
 	}
@@ -337,7 +341,9 @@ class Utilisateur{
 
 		}
 		
-		$this->pays = $pays;
+		if ( !$this->getListeErreurActifPourChamp('pays') ){
+				$this->pays = $this->paysTemporaire;
+		}
 		
 	}
 	
@@ -350,13 +356,10 @@ class Utilisateur{
 			$this->listeMessageErreurActif['ville'][] = $this->listeMessageErreur['ville-vide'];
 		}
 		
-		if ( !filter_var($this->nbachatsTemporaire, FILTER_VALIDATE_INT) ){
-			
-			$this->listeMessageErreurActif['nbachats'][] = $this->listeMessageErreur['nbachats-non-numerique'];
 
+		if ( !$this->getListeErreurActifPourChamp('ville') ){
+				$this->ville = $this->villeTemporaire;
 		}
-		
-		$this->ville = $ville;
 		
 		
 	}
@@ -376,7 +379,9 @@ class Utilisateur{
 
 		}
 		
-		$this->nbachats = $nbachats;
+		if ( !$this->getListeErreurActifPourChamp('nbachats') ){
+				$this->nbachats= $this->nbachatsTemporaire;
+		}
 		
 	}
 	
@@ -390,7 +395,15 @@ class Utilisateur{
 			
 		}
 		
-		$this->nbventes = $nbventes;
+		if ( !filter_var($this->nbachatsTemporaire, FILTER_VALIDATE_INT) ){
+			
+			$this->listeMessageErreurActif['nbventes'][] = $this->listeMessageErreur['nbventes-non-numerique'];
+
+		}
+		
+		if ( !$this->getListeErreurActifPourChamp('nbventes') ){
+				$this->nbventes= $this->nbventesTemporaire;
+		}
 		
 	}
 	
@@ -404,9 +417,9 @@ class Utilisateur{
 			
 		}
 		
-		$this->illustration = $illustration;
-		
-		
+		if ( !$this->getListeErreurActifPourChamp('illustration') ){
+				$this->illustration= $this->illustrationTemporaire;
+		}	
 	}
 	
 	public function setAge($age){
@@ -419,8 +432,15 @@ class Utilisateur{
 			
 		}
 		
-		$this->age = $age;
+		if ( !filter_var($this->nbachatsTemporaire, FILTER_VALIDATE_INT) ){
+			
+			$this->listeMessageErreurActif['age'][] = $this->listeMessageErreur['age-non-numerique'];
+
+		}
 		
+		if ( !$this->getListeErreurActifPourChamp('age') ){
+				$this->age= $this->ageTemporaire;
+		}
 		
 	}
 	
@@ -434,9 +454,10 @@ class Utilisateur{
 
 		}
 		
-		$this->telephone = $telephone;
-		
-		
+		if ( !$this->getListeErreurActifPourChamp('telephone') ){
+				$this->telephone= $this->telephoneTemporaire;
+		}
+			
 	}
 	
 	public function setRole($role){
@@ -448,9 +469,16 @@ class Utilisateur{
 			$this->listeMessageErreurActif['role'][] = $this->listeMessageErreur['role-vide'];			
 			
 		}
-	
-		$this->role = $role;
+		
+		if ( !filter_var($this->roleTemporaire, FILTER_VALIDATE_INT) ){
 			
+			$this->listeMessageErreurActif['role'][] = $this->listeMessageErreur['role-non-numerique'];
+
+		}
+	
+		if ( !$this->getListeErreurActifPourChamp('role') ){
+				$this->role= $this->roleTemporaire;
+		}		
 	}
 
 	public function estValide(){
