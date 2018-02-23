@@ -52,6 +52,26 @@ class Utilisateur{
 		
 		'email-vide' => 'L\'email ne doit pas être vide',
 		'email-invalide' => 'L\'email n\'est pas valide'
+		
+		'adresse-vide' => 'L\'adresse ne doit pas être vide',
+		
+		'codepostal-vide' => 'Le code postal ne doit pas être vide',
+		
+		'pays-vide' => 'Le pays ne doit pas être vide',
+		
+		'ville-vide' => 'La ville ne doit pas être vide',
+		
+		'nbachats-vide' => 'Le nombre d\'achats ne doit pas être vide',
+		
+		'nbventes-vide' => 'Le nombre de ventes ne doit pas être vide',
+		
+		'illustration-vide' => 'Une illustration doit être donnée',
+		
+		'age-vide' => 'l\'age doit être renseigné',
+		
+		'telephone-vide' => 'Un numéro de téléphone doit être renseigné',
+		
+		'role-vide' => 'Un rôle doit être attribué'
 	];
 	
 	private $listeMessageErreurActif = [];
@@ -274,13 +294,12 @@ class Utilisateur{
 		if ( !$this->getListeErreurActifPourChamp('email') ){
 				$this->email = $this->emailTemporaire;
 		}
-		
-		
+				
 	}
 	
 	public function setAdresse($adresse){
 		
-		$this->adresseTemporaire = filter_var($adresse, FILTER_SANITIZE_STRING);
+		$this->adresseTemporaire = $adresse;
 		
 		if ( empty($this->adresseTemporaire)){
 			
