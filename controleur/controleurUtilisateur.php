@@ -27,7 +27,11 @@
 				
 				if ( $idUtilisateur ){
 					
-					supprimer($idUtilisateur);					
+					$utilisateurDAO = new UtilisateurDAO();
+					$utilisateur = $utilisateurDAO->chercherParIdentifiant($idUtilisateur);
+					if ( $utilisateur){
+						afficherFormulaireUtilisateur($actionNaviguation, $utilisateur);
+					}				
 					
 				}
 				
@@ -100,8 +104,10 @@
 					break;
 				
 				case   "Supprimer":
-				
-					supprimer($idUtilisateur);
+								
+					$utilisateur = new Utilisateur();		
+								
+					supprimer($utilisateur);
 			
 				break;
 			}
@@ -164,7 +170,6 @@ afficherListeUtilisateur();
 		$utilisateur->setRole($_POST['role']);	
 		$utilisateur->setIllustration($_POST['illustration']);	
 		
-		var_dump($utilisateur);
 		
 		if ($utilisateur->estValide()){
 				
@@ -172,20 +177,43 @@ afficherListeUtilisateur();
 			
 			$utilisateurDAO->modifierUtilisateur($utilisateur);
 			
+			return true;
 		}
-		else{
-			
-			
-			
-			
-		}
+		return false;
 		
 		
 	}
 	
-	function supprimer(){
+	function supprimer($itilisateur){
+		
+		$utilisateur->setIdUtilisateur($_POST['idUtilisateur']);
+		$utilisateur->setNom($_POST['nom']);
+		$utilisateur->setPrenom($_POST['prenom']);
+		$utilisateur->setPseudonyme($_POST['pseudonyme']);
+		$utilisateur->setEmail($_POST['email']);
+		$utilisateur->setAdresse($_POST['adresse']);
+		$utilisateur->setCodepostal($_POST['codepostal']);
+		$utilisateur->setPays($_POST['pays']);			
+		$utilisateur->setVille($_POST['ville']);
+		$utilisateur->setAge($_POST['anneenaissance']);
+		$utilisateur->setTelephone($_POST['telephone']);	
+		$utilisateur->setNbventes($_POST['nbventes']);	
+		$utilisateur->setNbachats($_POST['nbachats']);	
+		$utilisateur->setRole($_POST['role']);	
+		$utilisateur->setIllustration($_POST['illustration']);	
 		
 		
+		
+		if ( $utilisateur->estValide() ){
+			
+			$utilisateurDAO = new UtilisateurDAO();
+		
+			$utilisateurDAO->supprimerUtilisateur($idUtilisateur);
+		
+			return true;
+		}
+		
+		return false;
 		
 	}
 	
