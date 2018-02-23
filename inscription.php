@@ -28,24 +28,13 @@
 						<li>Illustration : <input type="text" name="illustration" value="<?php if ( $utilisateur) echo $utilisateur->getIllustration(); ?>" />
 							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('illustration'));?>
 						</li>
-						<li><input type="hidden" name="adresse"  value="<?php if ( $utilisateur) echo $utilisateur->getAdresse(); ?>" />
-							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('adresse'));?>
-						</li>
-						<li><input type="hidden" name="codepostal" value="<?php if ( $utilisateur) echo $utilisateur->getCodepostal(); ?>"/>
-							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('codepostal'));?>
-						</li>
-						<li><input type="hidden" name="pays" value="<?php if ( $utilisateur) echo $utilisateur->getPays(); ?>" />
-							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('pays'));?>
-						</li>
-						<li><input type="hidden" name="ville"  value="<?php if ( $utilisateur) echo $utilisateur->getVille(); ?>" />
-							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('ville'));?>
-						</li>
-						<li><input type="hidden" name="email"  value="<?php if ( $utilisateur) echo $utilisateur->getEmail(); ?>" />
-							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('email'));?>
-						</li>
-						<li><input type="hidden" name="telephone" value="<?php if ( $utilisateur) echo $utilisateur->getTelephone(); ?>" />
-							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('telephone'));?>
-						</li>
+						<input type="hidden" name="adresse"  value="<?php if ( $utilisateur) echo $utilisateur->getAdresse(); ?>" />
+						<input type="hidden" name="codepostal" value="<?php if ( $utilisateur) echo $utilisateur->getCodepostal(); ?>"/>
+						<input type="hidden" name="pays" value="<?php if ( $utilisateur) echo $utilisateur->getPays(); ?>" />
+						<input type="hidden" name="ville"  value="<?php if ( $utilisateur) echo $utilisateur->getVille(); ?>" />
+						<input type="hidden" name="email"  value="<?php if ( $utilisateur) echo $utilisateur->getEmail(); ?>" />						
+						<input type="hidden" name="telephone" value="<?php if ( $utilisateur) echo $utilisateur->getTelephone(); ?>" />
+															
 					</div>
 				</div>
 			</ul>
@@ -61,21 +50,12 @@
 		<form action="inscription.php" id="formulaire-creation" method="post">
 			<div id = "blocs-formulaire">
 				<div id = "bloc-formulaire-1">
-					<li><input type="hidden" name="nom" value="<?php if ( $utilisateur) echo $utilisateur->getNom(); ?>" />  
-						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('nom'));?>												
-					</li>
-					<li><input type="hidden" name="prenom" value="<?php if ( $utilisateur) echo $utilisateur->getPrenom(); ?>" />
-						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('prenom'));?>												
-					</li>
-					<li><input type="hidden" name="anneenaissance"  value="<?php if ( $utilisateur) echo $utilisateur->getAge(); ?>" />
-						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('age'));?>
-					</li>
-					<li><input type="hidden" name="pseudonyme" value="<?php if ( $utilisateur) echo $utilisateur->getPseudonyme(); ?>" />
-						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('pseudonyme'));?>
-					</li>
-					<li><input type="hidden" name="illustration" value="<?php if ( $utilisateur) echo $utilisateur->getIllustration(); ?>" />
-						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('illustration'));?>
-					</li>
+					<input type="hidden" name="nom" value="<?php if ( $utilisateur) echo $utilisateur->getNom(); ?>" />  
+					<input type="hidden" name="prenom" value="<?php if ( $utilisateur) echo $utilisateur->getPrenom(); ?>" />
+					<input type="hidden" name="anneenaissance"  value="<?php if ( $utilisateur) echo $utilisateur->getAge(); ?>" />
+					<input type="hidden" name="pseudonyme" value="<?php if ( $utilisateur) echo $utilisateur->getPseudonyme(); ?>" />
+					<input type="hidden" name="illustration" value="<?php if ( $utilisateur) echo $utilisateur->getIllustration(); ?>" />
+	
 					<li>Adresse : <input type="text" name="adresse"  value="<?php if ( $utilisateur) echo $utilisateur->getAdresse(); ?>" />
 						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('adresse'));?>
 					</li>
@@ -88,12 +68,11 @@
 					<li>Ville : <input type="text" name="ville"  value="<?php if ( $utilisateur) echo $utilisateur->getVille(); ?>" />
 						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('ville'));?>
 					</li>
-					<li><input type="hidden" name="email"  value="<?php if ( $utilisateur) echo $utilisateur->getEmail(); ?>" />
-						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('email'));?>
-					</li>
-					<li><input type="hidden" name="telephone" value="<?php if ( $utilisateur) echo $utilisateur->getTelephone(); ?>" />
-						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('telephone'));?>
-					</li>
+					
+					<input type="hidden" name="email"  value="<?php if ( $utilisateur) echo $utilisateur->getEmail(); ?>" />
+					<input type="hidden" name="telephone" value="<?php if ( $utilisateur) echo $utilisateur->getTelephone(); ?>" />
+
+					
 				</div>
 			</div>
 			<input id="bouton" type="submit" value="finDeuxiemeFormulaire" name="actionFormulaire"/>			
@@ -108,33 +87,16 @@
 		<form action="inscription.php" id="formulaire-creation" method="post">
 			<div id = "blocs-formulaire">
 				<div id = "bloc-formulaire-1">
-					<li><input type="hidden" name="nom" value="<?php if ( $utilisateur) echo $utilisateur->getNom(); ?>" />  
-						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('nom'));?>												
-					</li>
-					<li><input type="hidden" name="prenom" value="<?php if ( $utilisateur) echo $utilisateur->getPrenom(); ?>" />
-						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('prenom'));?>												
-					</li>
-					<li><input type="hidden" name="anneenaissance"  value="<?php if ( $utilisateur) echo $utilisateur->getAge(); ?>" />
-						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('age'));?>
-					</li>
-					<li><input type="hidden" name="pseudonyme" value="<?php if ( $utilisateur) echo $utilisateur->getPseudonyme(); ?>" />
-						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('pseudonyme'));?>
-					</li>
-					<li><input type="hidden" name="illustration" value="<?php if ( $utilisateur) echo $utilisateur->getIllustration(); ?>" />
-						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('illustration'));?>
-					</li>
-					<li><input type="hidden" name="adresse"  value="<?php if ( $utilisateur) echo $utilisateur->getAdresse(); ?>" />
-						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('adresse'));?>
-					</li>
-					<li><input type="hidden" name="codepostal" value="<?php if ( $utilisateur) echo $utilisateur->getCodepostal(); ?>"/>
-						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('codepostal'));?>
-					</li>
-					<li><input type="hidden" name="pays" value="<?php if ( $utilisateur) echo $utilisateur->getPays(); ?>" />
-						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('pays'));?>
-					</li>
-					<li><input type="hidden" name="ville"  value="<?php if ( $utilisateur) echo $utilisateur->getVille(); ?>" />
-						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('ville'));?>
-					</li>
+					<input type="hidden" name="nom" value="<?php if ( $utilisateur) echo $utilisateur->getNom(); ?>" />  						
+					<input type="hidden" name="prenom" value="<?php if ( $utilisateur) echo $utilisateur->getPrenom(); ?>" />						
+					<input type="hidden" name="anneenaissance"  value="<?php if ( $utilisateur) echo $utilisateur->getAge(); ?>" />						
+					<input type="hidden" name="pseudonyme" value="<?php if ( $utilisateur) echo $utilisateur->getPseudonyme(); ?>" />						
+					<input type="hidden" name="illustration" value="<?php if ( $utilisateur) echo $utilisateur->getIllustration(); ?>" />						
+					<input type="hidden" name="adresse"  value="<?php if ( $utilisateur) echo $utilisateur->getAdresse(); ?>" />						
+					<input type="hidden" name="codepostal" value="<?php if ( $utilisateur) echo $utilisateur->getCodepostal(); ?>"/>						
+					<input type="hidden" name="pays" value="<?php if ( $utilisateur) echo $utilisateur->getPays(); ?>" />		
+					<input type="hidden" name="ville"  value="<?php if ( $utilisateur) echo $utilisateur->getVille(); ?>" />
+
 					<li>Adresse e-mail : <input type="text" name="email"  value="<?php if ( $utilisateur) echo $utilisateur->getEmail(); ?>" />
 						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('email'));?>
 					</li>
@@ -147,6 +109,12 @@
 		</form>	
 	
 	<?php
+	}
+	function afficherRetroactionPOisitive($message){?>
+		
+		<p> <?php echo $message ?><p>
+		
+	<?php	
 	}
 	?>
 	

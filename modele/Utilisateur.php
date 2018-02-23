@@ -462,7 +462,7 @@ class Utilisateur{
 			
 		}
 		
-		if ( !filter_var($this->ageTemporaire, FILTER_VALIDATE_INT) && $this->ageTemporaire != 0 ){
+		if ( !filter_var($this->ageTemporaire, FILTER_VALIDATE_INT) ){
 			
 			$this->listeMessageErreurActif['age'][] = $this->listeMessageErreur['age-non-numerique'];
 
