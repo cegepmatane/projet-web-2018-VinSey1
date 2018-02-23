@@ -26,4 +26,3 @@
 			<li><a href="administration-objet.php" title="Aller sur la page Administration Objet">Administration objet</a></li>
 		</ul>
     </nav>
-</body>

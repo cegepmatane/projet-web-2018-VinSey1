@@ -3,10 +3,10 @@
 
 	require_once OBJET_DAO;
 	require_once OBJET_MODELE;
+	include "entete.php";
+
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
 	<?php
 		$objetDAO = new ObjetDAO();
 		
@@ -18,37 +18,7 @@
 		}
 
 		$objet = $objetDAO->chercherParIdentifiant($idObjet);
-	?>
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width"/>
-    <link rel="stylesheet" href="../../decoration/style_general_test.css">
-    <link rel="stylesheet" type="text/css" href="../../decoration/MyFontsWebfontsKit.css">	
-	<title> <?php echo gettext("Vente n°"); echo $objet->getIdObjet(); ?></title>
-</head>
-<body>
-    <header>
-        <div id="titre"> <?php echo gettext("Survie étudiante") ?></div>
-        <div id="sous-titre"><?php echo gettext("Vente n°"); echo $objet->getIdObjet(); ?></div>
-    </header>	
-    <nav>
-        <ul>
-		<?php
-		/*
-			$test = $_SERVER["DOCUMENT_ROOT"]."index.php";
-			<li><a href="<?= $_SERVER["DOCUMENT_ROOT"]."/index.php" ?>" title="<?php echo gettext("Aller sur la page d'Accueil")?>"><?php echo gettext("Page d'Accueil")?></a></li>
-
-			*/
-		?>
-            <li><a href="../../index.php" title="<?php echo gettext("Aller sur la page d'Accueil")?>"><?php echo gettext("Page d'Accueil")?></a></li>
-            <li><a href="profil.php" title="<?php echo gettext("Aller sur la page Profil")?>"><?php echo gettext("Page Profil")?></a></li>
-            <li><a href="../../catalogue.php" title="<?php echo gettext("Aller sur la page Catalogue")?>"><?php echo gettext("Page Catalogue")?></a></li>
-            <li id="page-courante"><?php echo gettext("Page d'achat")?></li>
-			<li><a href="vente.php" title="<?php echo gettext("Aller sur la page de vente")?>"><?php echo gettext("Page de vente")?></a></li>
-            <li><a href="panneau-administration.php" title="<?php echo gettext("Aller sur la page Panneau d'administration")?>"><?php echo gettext("Page Panneau d'administration")?></a></li>
-			<li><a href="creation-compte.php" title="Aller sur la page Création de compte">Page Création de compte</a></li>
-		</ul>
-	</nav>	
+	?>	
 	<form action="../../controleur/modifierObjet.php" id="formulaire-vente" method="post">
 		<input type="hidden" name="idObjet" value="<?php echo $objet->getIdObjet(); ?>"/>
 		<ul>
