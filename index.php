@@ -3,36 +3,10 @@
 
 	require_once OBJET_DAO;
 	require_once OBJET_MODELE;	
+	include "entete.php";
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width"/>
-    <link rel="stylesheet" href="./decoration/style_general_test.css">
-    <link rel="stylesheet" type="text/css" href="./decoration/MyFontsWebfontsKit.css">			
-	<title> <?php echo gettext("Page d'accueil") ?></title>
-</head>
-<body>
-    <header>
-        <div id="titre"> <?php echo gettext("Survie étudiante") ?></div>
-        <div id="sous-titre"> <?php echo gettext("Page d'accueil") ?> </div>
-    </header>	
-    <nav>
-        <ul>
-			<li id="page-courante"><?php echo gettext("Page d'Accueil")?></li>
-			<li><a href="vue/prive/profil.php" title="<?php echo gettext("Aller sur la page Profil")?>"><?php echo gettext("Page Profil")?></a></li>
-			<li><a href="catalogue.php" title="<?php echo gettext("Aller sur la page Catalogue")?>"><?php echo gettext("Page Catalogue")?></a></li>
-			<li><a href="vue/prive/achat.php" title="<?php echo gettext("Aller sur la page d'achat")?>"><?php echo gettext("Page d'achat")?></a></li>
-			<li><a href="vue/prive/achatvente.php" title="<?php echo gettext("Aller sur la page de vente")?>"><?php echo gettext("Page de vente")?></a></li>
-            <li><a href="vue/prive/panneau-administration.php" title="<?php echo gettext("Aller sur la page Panneau d'administration")?>"><?php echo gettext("Page Panneau d'administration")?></a></li>
-			<li><a href="vue/prive/creation-compte.php" title="Aller sur la page Création de compte">Page Création de compte</a></li>
-			<li><a href="vue/prive/administration-utilisateur.php" title="Aller sur la page Administration utilisateur">Administration utilisateur</a></li>
-			<li><a href="vue/prive/administration-objet.php" title="Aller sur la page Administration Objet">Administration objet</a></li>
 
-		</ul>	
-    </nav>
 	<div id="barre-de-recherche" >
 		<img src=./illustrations/petit/loupe.png id="image-loupe">
 		<input type="text" name="nato_pf"/>
