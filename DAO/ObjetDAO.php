@@ -66,7 +66,7 @@ class ObjetDAO{
 	}
 	
 	
-	public funtion modifierObjet($objet){
+	public function modifierObjet($objet){
 		
 		global $connexionBDActive;
 		
