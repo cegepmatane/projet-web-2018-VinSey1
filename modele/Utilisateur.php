@@ -59,63 +59,79 @@ class Utilisateur{
 	
 	
 	public function getidUtilisateur(){
-		return $this->idUtilisateur;
+		
+		if ($this->idUtilisateur) return $this->idUtilisateur;
+		else return $this->idUtilisateurTemporaire;
 	}
 	
 	public function getNom(){
-		return $this->nom;	
+		if ($this->nom) return $this->nom;
+		else return $this->nomTemporaire;
 	}
 	
 	public function getPrenom(){
-		return $this->prenom;
+		if ($this->prenom) return $this->prenom;
+		else return $this->prenomTemporaire;
 	}
 	
 	public function getPseudonyme(){
-		return $this->pseudonyme;
+		if ($this->pseudonyme) return $this->pseudonyme;
+		else return $this->pseudonymeTemporaire;
 	}
 	
 	public function getEmail(){
-		return $this->email;
+		if ( $this->email ) return $this->email;
+		else return $this->emailTemporaire;
 	}
 	
 	public function getAdresse(){
-		return $this->adresse;
+		if ($this->adresse) return $this->adresse;
+		else return $this->adresseTemporaire;
 	}
 	
 	public function getCodepostal(){
-		return $this->codepostal;
+		if ($this->codepostal) return $this->codepostal;
+		else return $this->codepostalTemporaire;
 	}
 
 	public function getPays(){
-		return $this->pays;
+		if ($this->pays) return $this->pays;
+		else return $this->paysTemporaire;	
 	} 
 	
 	public function getVille(){
-		return $this->ville;
+		if ($this->ville) return $this->ville;
+		else return $this->villeTemporaire;
 	}
 	
 	public function getNbachats(){
-		return $this->nbachats;
+		if ($this->nbachats) return $this->nbachats;
+		else return $this->nbachatsTemporaire;
 	}
 	
 	public function getNbventes(){
-		return $this->nbventes;
+		if ($this->nbventes) return $this->nbventes;
+		else return $this->nbventesTemporaire;
 	}
 	
 	public function getIllustration(){
-		return $this->illustration;
+		if ($this->illustration) return $this->illustration;
+		else return $this->illustrationTemporaire;
 	}
 		
 	public function getAge(){
-		return $this->age;
+		if ($this->age) return $this->age;
+		else return $this->ageTemporaire;
 	}	
 	
 	public function getTelephone(){
-		return $this->telephone;
+		if ($this->telephone) return $this->telephone;
+		else return $this->telephoneTemporaire;
 	}
 	
 	public function getRole(){
-		return $this->role;
+		if ($this->role) return $this->role;
+		else return $this->roleTemporaire;
 	}
 		
 	public function construireDonneesSecurise($idUtilisateur, $nom, $prenom, $pseudonyme, $email, $adresse, $codepostal, $pays, $ville, $nbventes, $nbachats, $illustration, $age, $telephone, $role ){	
