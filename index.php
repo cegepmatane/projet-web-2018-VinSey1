@@ -48,5 +48,7 @@
 					<input type="submit" value="S'inscrire"/></li>
 				</form>
 		</ul>
-</body>
-</html>
+<?php 
+	include "piedPage.php";
+
+?>

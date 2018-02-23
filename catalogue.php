@@ -49,8 +49,7 @@
 			<li><button type="button"><?php echo gettext("S'inscrire"); ?></button></li>
 		</ul>
 	</div>
-</body>
-<script>
+	<script>
 	var slider = document.getElementById("myRange");
 	var output = document.getElementById("demo");
 	output.innerHTML = slider.value;
@@ -58,4 +57,3 @@
 		output.innerHTML = this.value;
 	}
 </script>
-</html>
