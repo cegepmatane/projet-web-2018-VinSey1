@@ -4,6 +4,7 @@
 	require_once OBJET_MODELE;	
 	require_once UTILISATEUR_DAO;
 	require_once UTILISATEUR_MODELE;
+	include "entete.php";
 	
     /*
     $language = "fr_FR";
@@ -18,14 +19,6 @@
     */
 
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-	<meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width"/>
-    <link rel="stylesheet" href="../../decoration/style_general_test.css">
-    <link rel="stylesheet" type="text/css" href="../../decoration/MyFontsWebfontsKit.css">		
-	<title><?php echo gettext("Panneau d'administration") ?></title>
 	<script type="text/javascript">
 		
 		function changer_onglet(name){
@@ -38,23 +31,6 @@
 		}	
 		
 	</script>
-</head>
-<body>
-	<header>
-		<div id="titre"> <?php echo gettext("Survie étudiante") ?></div>
-        <div id="sous-titre"> <?php echo gettext("Panneau d'administration") ?> </div>
-	</header>	
-		<nav>
-			<ul>
-				<li><a href="../../index.php" title="<?php echo gettext("Aller sur la page d'Accueil")?>"><?php echo gettext("Page d'Accueil")?></a></li>
-				<li><a href="profil.php" title="<?php echo gettext("Aller sur la page Profil")?>"><?php echo gettext("Page Profil")?></a></li>
-				<li><a href="../../catalogue.php" title="<?php echo gettext("Aller sur la page Catalogue")?>"><?php echo gettext("Page Catalogue")?></a></li>
-				<li><a href="achat.php" title="<?php echo gettext("Aller sur la page d'achat")?>"><?php echo gettext("Page d'achat")?></a></li>
-				<li><a href="vente.php" title="<?php echo gettext("Aller sur la page de vente")?>"><?php echo gettext("Page de vente")?></a></li>
-				<li id="page-courante"><?php echo gettext("Page Panneau d'administration")?></li>
-				<li><a href="creation-compte.php" title="Aller sur la page Création de compte">Page Création de compte</a></li>
-			</ul>
-		</nav>
 	<div class="onglet-cliquable">
 		<span id="onglet_ventes" onclick="javascript:changer_onglet('ventes');" ><?php echo gettext("Catalogue des Ventes") ?></span>
 		<span id="onglet_utilisateurs" onclick="javascript:changer_onglet('utilisateurs');" ><?php echo gettext("Catalogue des utilisateurs") ?></span>
