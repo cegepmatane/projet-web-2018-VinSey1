@@ -203,6 +203,13 @@ class Utilisateur{
 			$this->listeMessageErreurActif['idUtilsateur'][] = $this->listeMessageErreur['identifiant-non-numerique'];
 		}	
 		
+		if ( $this->idUtilisateurTemporaire > 99999999999 ){
+			
+			$this->listeMessageErreurActif['idUtilsateur'][] = $this->listeMessageErreur['identifiant-trop-long'];			
+			
+		}
+		
+		
 		if ( !$this->getListeErreurActifPourChamp('idUtilisateur')){
 			
 			$this->idUtilisateur = $this->idUtilisateurTemporaire;
@@ -390,6 +397,12 @@ class Utilisateur{
 
 		}
 		
+		if ( $this->nbachatsTemporaire > 99999999999 ){
+			
+			$this->listeMessageErreurActif['nbachats'][] = $this->listeMessageErreur['nbachats-trop-long'];			
+			
+		}
+		
 		if ( !$this->getListeErreurActifPourChamp('nbachats') ){
 				$this->nbachats= $this->nbachatsTemporaire;
 		}
@@ -410,6 +423,12 @@ class Utilisateur{
 			
 			$this->listeMessageErreurActif['nbventes'][] = $this->listeMessageErreur['nbventes-non-numerique'];
 
+		}
+		
+		if ( $this->nbventesTemporaire > 99999999999 ){
+			
+			$this->listeMessageErreurActif['nbventes'][] = $this->listeMessageErreur['nbventes-trop-long'];			
+			
 		}
 		
 		if ( !$this->getListeErreurActifPourChamp('nbventes') ){
@@ -449,6 +468,12 @@ class Utilisateur{
 
 		}
 		
+		if ( $this->ageTemporaire > 99999999999 ){
+			
+			$this->listeMessageErreurActif['age'][] = $this->listeMessageErreur['age-trop-long'];			
+			
+		}
+		
 		if ( !$this->getListeErreurActifPourChamp('age') ){
 				$this->age= $this->ageTemporaire;
 		}
@@ -463,6 +488,12 @@ class Utilisateur{
 			
 			$this->listeMessageErreurActif['telephone'][] = $this->listeMessageErreur['telephone-vide'];
 
+		}
+		
+		if ( $this->telephoneTemporaire > 99999999999 ){
+			
+			$this->listeMessageErreurActif['telephone'][] = $this->listeMessageErreur['telephone-trop-long'];			
+			
 		}
 		
 		if ( !$this->getListeErreurActifPourChamp('telephone') ){
@@ -485,6 +516,12 @@ class Utilisateur{
 			
 			$this->listeMessageErreurActif['role'][] = $this->listeMessageErreur['role-non-numerique'];
 
+		}
+		
+		if ( $this->roleTemporaire > 99999999999 ){
+			
+			$this->listeMessageErreurActif['role'][] = $this->listeMessageErreur['role-trop-long'];			
+			
 		}
 	
 		if ( !$this->getListeErreurActifPourChamp('role') ){
