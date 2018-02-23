@@ -115,10 +115,7 @@ class Objet{
 		$this->vedette = $vedette;
 		
 	}
-		
-	
-		
-		
+
 	public function construireDonneesSecurise($idObjet, $identifiantVendeur, $titreDeVente, $categorie, $prix, $descriptionProduit, $detailsVente, $adresse, $illustration, $vedette){
 
 		$this->idObjet = $idObjet;
@@ -131,6 +128,7 @@ class Objet{
 		$this->adresse = $adresse;
 		$this->illustration = $illustration;
 		$this->vedette = $vedette;	
+
 	}
 	
 	function setId($idObjet){
@@ -296,11 +294,11 @@ class Objet{
 		}
 		
 	}
+
 	function setVedette($vedette){
-		
+
 		$this->vedette = $vedette;
-		
-		
+
 	}
 
 	public function getListeErreurActifPourChamp($champ){		
@@ -311,7 +309,6 @@ class Objet{
 		return [];
 
 	}
-	
-	
+
 }
 ?>
