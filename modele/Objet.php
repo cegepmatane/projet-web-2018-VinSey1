@@ -27,12 +27,12 @@ class Objet{
 	private $listeMessageErreur = [
 
 		'titre-vide' => 'Le titre est vide',
-		'titre-trop-long' => 'Le titre fait plus de 250 caractères',
+		'titre-trop-long' => 'Le titre fait plus de 30 caractères',
 		'titre-caracteres-speciaux' => 'Le titre contient des caractères invalides',
 
 		'id-vide' => 'L\'ID est vide',
 		'id-trop-long' => 'L\'ID fait plus de 11 caractères',
-		'titre-caracteres-speciaux' => 'L\'ID contient des caractères invalides',
+		'id-caracteres-speciaux' => 'L\'ID contient des caractères invalides',
 
 		'identifiant-vide' => 'L\'identifiant du vendeur est vide',
 		'identifiant-trop-long' => 'L\'identifiant du vendeur fait plus de 12 caractères',
@@ -56,6 +56,14 @@ class Objet{
 		'illustration-vide' => 'L\'illustration est vide',
 		'illustration-trop-long' => 'L\'illustration fait plus de 50 caractères',
 		'illustration-caracteres-speciaux' => 'L\'illustration contient des caractères invalides',
+
+		'categorie-vide' => 'La catégorie est vide',
+		'categorie-trop-long' => 'La catégorie fait plus de 20 caractères',
+		'categorie-caracteres-speciaux' => 'La catégorie contient des caractères invalides',
+
+		'Vedette-vide' => 'Vedette est vide',
+		'Vedette-trop-long' => 'Vedette fait plus de 11 caractères',
+		'Vedette-caracteres-speciaux' => 'Vedette contient des caractères invalides',
 
 	];
 
@@ -177,10 +185,23 @@ class Objet{
 	}
 
 	function setCategorie($categorie){
-		
-		$this->categorie = $categorie;
-		
-		
+
+		$this->categorieTemporaire = filter_var($categorie, FILTER_SANITIZE_STRING);
+		if (empty($this->categorieTemporaire)){
+			$this->listeMessageErreurActif['categorie'][] = $this->listeMessageErreur['categorie-vide'];
+		} else {
+			if (strlen($this->categorieTemporaire) > 20){
+				$this->listeMessageErreurActif['categorie'][] = $this->listeMessageErreur['categorie-trop-long'];
+			}
+			if (!ctype_alpha($this->categorieTemporaire)){
+				$this->listeMessageErreurActif['categorie'][] = $this->listeMessageErreur['categorie-caracteres-speciaux'];
+			}
+		}
+
+		if(!$this->getListeErreurActifPourChamp('categorie')){
+			$this->categorie = $this->categorieTemporaire;
+		}
+
 	}
 
 	function setPrix($prix){
@@ -282,7 +303,22 @@ class Objet{
 
 	function setVedette($vedette){
 
-		$this->vedette = $vedette;
+		$this->vedetteTemporaire = filter_var($vedette, FILTER_SANITIZE_NUMBER_INT);
+		if (empty($this->vedetteTemporaire)){
+			$this->listeMessageErreurActif['vedette'][] = $thislisteMessageErreur['vedette-vide'];
+		} else {
+			if (strlen((string)$this->vedetteTemporaire) > 11){
+				$this->listeMessageErreurActif['vedette'][] = $thislisteMessageErreur['vedette-trop-long'];
+			}
+			if (!ctype_digit((string)$this->vedetteTemporaire)){
+				$this->listeMessageErreurActif['vedette'][] = $thislisteMessageErreur['vedette-caracteres-speciaux'];
+			}
+		}
+
+		if(!$this->getListeErreurActifPourChamp('vedette')){
+			$this->vedette = $this->vedetteTemporaire;
+		}
+
 
 	}
 
