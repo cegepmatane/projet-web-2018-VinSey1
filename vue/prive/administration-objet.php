@@ -37,7 +37,7 @@ function afficherFormulaireObjet($actionFormulaire, $objet=null){
 	
 }
 
-function afficherLienAjoutobjet(){ 
+function afficherLienAjoutObjet(){ 
 ?>
 <a href="administration-objet.php?actionNaviguation=Ajouter">Ajouter un objet</a>
 <?php
@@ -64,8 +64,22 @@ function afficherListeObjet(){
 	<?php
 	}
 }
-?>
+function afficherRetroactionPositive($message){?>
+	
+	<p> <?php echo $message ?> </p>
+	
+	
+<?php	
+}
+/* peut etre pas necessaire  (utilisé dans suppression objet)  */
+function afficherRetroactionNegative($message){?>
+	
+	<p> <?php echo $message ?> </p>
+	
+<?php	
+}
 
+?>
 
 <?php 
 	include "piedPage.php";
