@@ -16,6 +16,77 @@
 			
 		}
 		
+		$actionNaviguation = $_GET['actionNaviguation'];
+		
+		switch ( $actionNaviguation ){
+			
+			case "Ajouter":
+			
+				afficherFormulaireObjet($actionNaviguation);
+			
+			
+			case "Supprimer":
+				
+				if ( $idObjet ){
+					
+					$objetDAO = new ObjetDAO();
+					$objet = $objetDAO->chercherParIdentifiant($idObjet);
+					if ( $objet){
+						afficherFormulaireObjet($actionNaviguation, $objet);
+					}				
+					
+				}
+				
+			break;
+			
+			case "Modifier":
+			
+				if ( $idObjet ){
+					
+					$objetDAO = new ObjetDAO();
+					$objet = $objetDAO->chercherParIdentifiant($idObjet);
+					if ( $objet){
+						afficherFormulaireObjet($actionNaviguation, $objet);
+					}
+				}
+			
+			break;
+		}
+		
+	}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 			$actionFormulaire = $_POST['actionFormulaire'];
