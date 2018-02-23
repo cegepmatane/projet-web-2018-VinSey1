@@ -332,7 +332,6 @@ class Objet{
 	}
 	
 	public function estValide(){
-		
 		return empty($this->listeMessageErreurActif);
 	}
 }
