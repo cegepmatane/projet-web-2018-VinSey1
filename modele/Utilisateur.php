@@ -38,8 +38,11 @@ class Utilisateur{
 	
 		'nom-vide' => 'Le nom est vide',
 		'nom-trop-long' => 'Le nom fait plus de 250 caractères',
-		'nom-alphabetique' => 'Le nom doit contenir uniquement des lettres'
+		'nom-alphabetique' => 'Le nom doit contenir uniquement des lettres',
 		
+		'prenom-vide' => 'Le prenom est vide',
+		'prenom-trop-long' => 'Le prenom fait plus de 250 caractères',
+		'prenom-non-alphabetique' => 'Le prenom doit contenir uniquement des lettres'
 		
 	];
 	
@@ -149,8 +152,6 @@ class Utilisateur{
 		
 		if (empty($this->nomTemporaire)){
 			
-			
-			
 			$this->listeMessageErreurActif['nom'][] = $this->listeMessageErreur['nom-vide'];
 						
 		}
@@ -161,7 +162,7 @@ class Utilisateur{
 			}
 			if ( !ctype_alpha($this->nomTemporaire) ){
 				
-				$this->listeMessageErreurActif['nom'][] = $this->listeMessageErreur['nom-alphabetique'];
+				$this->listeMessageErreurActif['nom'][] = $this->listeMessageErreur['nom-non-alphabetique'];
 				
 			}
 						
