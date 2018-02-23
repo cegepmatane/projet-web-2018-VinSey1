@@ -69,20 +69,20 @@
 			
 				case   "Ajouter":
 
-					$utilisateur = new Utilisateur();
+					$objet = new objet();
 				
 					
 				
-					if ( ajouter($utilisateur) ){
+					if ( ajouter($objet) ){
 						
 						
-						afficherRetroactionPositive(gettext("Ajout d'utilisateur réussi"));
+						afficherRetroactionPositive(gettext("Ajout d'objet réussi"));
 
 						
 					}	
 					else{
 						
-						afficherFormulaireUtilisateur($actionFormulaire, $utilisateur);										
+						afficherFormulaireobjet($actionFormulaire, $objet);										
 					}
 						
 				
@@ -90,16 +90,16 @@
 				
 				case   "Modifier":
 				
-					$utilisateur = new Utilisateur();
+					$objet = new objet();
 					
-					if ( modifier($utilisateur) ){
+					if ( modifier($objet) ){
 						
-						afficherRetroactionPositive(gettext("Modification d'utilisateur réussi"));
+						afficherRetroactionPositive(gettext("Modification d'objet réussi"));
 						
 					}
 					else{
 						
-						afficherFormulaireUtilisateur($actionFormulaire, $utilisateur);
+						afficherFormulaireobjet($actionFormulaire, $objet);
 						
 					}
 					
@@ -108,16 +108,16 @@
 				
 				case   "Supprimer":
 								
-					$utilisateur = new Utilisateur();		
+					$objet = new objet();		
 								
-					if ( supprimer($utilisateur) ){
+					if ( supprimer($objet) ){
 						
-						afficherRetroactionPositive(gettext("Supression d'utilisateur réussi"));
+						afficherRetroactionPositive(gettext("Supression d'objet réussi"));
 						
 					}
 					else{
 						
-						afficherRetroactionNegative(gettext("l'utilisateur n'existe pas"));
+						afficherRetroactionNegative(gettext("l'objet n'existe pas"));
 					}
 			
 				break;
@@ -331,19 +331,103 @@
 		}
 		
 	}
+afficherLienAjoutObjet();
+afficherListeObjet();
+	
+	function ajouter($objet){
+		
+		$objet->setTitreDeVente($_POST['titreDeVente']);
+		$objet->setIdentifiantVendeur($_POST['identifiantVendeur']);
+		$objet->setAdresse($_POST['adresse']);	
+		$objet->setIllustration($_POST['illustration']);	
+		$objet->setCategorie($_POST['categorie']);
+		$objet->setPrix($_POST['prix']);
+		$objet->setDescriptionProduit($_POST['descriptionProduit']);	
+		$objet->setDetailsVente($_POST['detailsVente']);
+		$objet->setVedette($_POST['vedette']);
+		
+		if ($objet->estValide()){
+			
+			$objetDAO = new ObjetDAO();
+			
+			$objetDAO->insererObjet($objet);
+			
+			return true;
+		}
+		return false;			
+	}
+		
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	function modifier($objet){
+				
+		$objet->setIdobjet($_POST['idobjet']);
+		$objet->setNom($_POST['nom']);
+		$objet->setPrenom($_POST['prenom']);
+		$objet->setPseudonyme($_POST['pseudonyme']);
+		$objet->setEmail($_POST['email']);
+		$objet->setAdresse($_POST['adresse']);
+		$objet->setCodepostal($_POST['codepostal']);
+		$objet->setPays($_POST['pays']);			
+		$objet->setVille($_POST['ville']);
+		$objet->setAge($_POST['anneenaissance']);
+		$objet->setTelephone($_POST['telephone']);	
+		$objet->setNbventes($_POST['nbventes']);	
+		$objet->setNbachats($_POST['nbachats']);	
+		$objet->setRole($_POST['role']);	
+		$objet->setIllustration($_POST['illustration']);	
+		
+		
+		/*
+		
+			estValide ne suffit pas, il faudrait questionner la BD pour savoir si cet objet existe
+		
+		*/
+		
+		if ($objet->estValide()){
+				
+			$objetDAO = new objetDAO();
+			
+			$objetDAO->modifierobjet($objet);
+			
+			return true;
+		}
+		return false;
+		
+		
+	}
+	
+	function supprimer($objet){
+		
+		$objet->setIdobjet($_POST['idobjet']);
+		$objet->setNom($_POST['nom']);
+		$objet->setPrenom($_POST['prenom']);
+		$objet->setPseudonyme($_POST['pseudonyme']);
+		$objet->setEmail($_POST['email']);
+		$objet->setAdresse($_POST['adresse']);
+		$objet->setCodepostal($_POST['codepostal']);
+		$objet->setPays($_POST['pays']);			
+		$objet->setVille($_POST['ville']);
+		$objet->setAge($_POST['anneenaissance']);
+		$objet->setTelephone($_POST['telephone']);	
+		$objet->setNbventes($_POST['nbventes']);	
+		$objet->setNbachats($_POST['nbachats']);	
+		$objet->setRole($_POST['role']);	
+		$objet->setIllustration($_POST['illustration']);
+		
+		if ( $objet->estValide() ){
+			
+			$objetDAO = new objetDAO();
+		
+			$objetDAO->supprimerobjet($objet);
+		
+			return true;
+		}
+		
+		return false;
+		
+	}
 ?>
+
+
+
+
