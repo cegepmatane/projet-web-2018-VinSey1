@@ -38,6 +38,9 @@ class Objet{
 		'identifiant-trop-long' => 'L\identifiante du vendeur est trop long',
 		'identifiant-caracteres-speciaux' => 'L\'identifiant du vendeur contient des caractères invalides',
 
+		'prix-vide' => 'Le prix est vide',
+		'prix-caracteres-speciaux' => 'Le prix contient des caractères invalides',
+
 	];
 
 	private $listeMessageErreurActif = [];
@@ -123,7 +126,7 @@ class Objet{
 			if (strlen((string)$this->idObjetTemporaire) > 11){
 				$this->listeMessageErreurActif['id'][] = $thislisteMessageErreur['id-trop-long'];
 			}
-			if (!is_int($this->idObjetTemporaire)){
+			if (!ctype_digit((string)$this->idObjetTemporaire)){
 				$this->listeMessageErreurActif['id'][] = $thislisteMessageErreur['id-caracteres-speciaux'];
 			}
 		}
@@ -180,18 +183,31 @@ class Objet{
 		
 		
 	}
+
 	function setPrix($prix){
+
+		$this->prixTemporaire = filter_var($prix, FILTER_SANITIZE_NUMBER_FLOAT);
+		if (empty($this->prixTemporaire)){
+			$this->listeMessageErreurActif['prix'][] = $thislisteMessageErreur['prix-vide'];
+		} else {
+			if (!ctype_digit((string)$this->prixTemporaire)){
+				$this->listeMessageErreurActif['prix'][] = $thislisteMessageErreur['prix-caracteres-speciaux'];
+			}
+		}
 		
-		$this->prix = $prix;
-		
-		
+		if(!$this->getListeErreurActifPourChamp('prix')){
+			$this->prix = $this->prixTemporaire;
+		}
+
 	}
+
 	function setDescriptionProduit($DescriptionProduit){
 		
 		$this->descriptionProduit = $descriptionProduit;
 		
 		
 	}
+
 	function setDetailsVente($idObjet){
 		
 		$this->detailsVente = $detailsVente;
