@@ -95,7 +95,7 @@ class Utilisateur{
 	
 	public function getidUtilisateur(){
 		
-		if ($this->idUtilisateur) return $this->idUtilisateur;
+		if (isset($this->idUtilisateur)) return $this->idUtilisateur;
 		else return $this->idUtilisateurTemporaire;
 	}
 	
@@ -140,12 +140,12 @@ class Utilisateur{
 	}
 	
 	public function getNbachats(){
-		if ($this->nbachats) return $this->nbachats;
+		if (isset($this->nbachats)) return $this->nbachats;
 		else return $this->nbachatsTemporaire;
 	}
 	
 	public function getNbventes(){
-		if ($this->nbventes) return $this->nbventes;
+		if (isset($this->nbventes)) return $this->nbventes;
 		else return $this->nbventesTemporaire;
 	}
 	
@@ -155,7 +155,7 @@ class Utilisateur{
 	}
 		
 	public function getAge(){
-		if ($this->age) return $this->age;
+		if (isset($this->age)) return $this->age;
 		else return $this->ageTemporaire;
 	}	
 	
@@ -165,7 +165,10 @@ class Utilisateur{
 	}
 	
 	public function getRole(){
-		if ($this->role) return $this->role;
+		if ( $this->nbventes == 0 ){
+			return "0";
+		}
+		if ($this->role && $this->role != 0 ) return $this->role;
 		else return $this->roleTemporaire;
 	}
 		
@@ -192,8 +195,10 @@ class Utilisateur{
 	public function setIdUtilisateur($idUtilisateur){
 					
 		$this->idUtilisateurTemporaire = filter_var($idUtilisateur, FILTER_SANITIZE_NUMBER_INT);
-		
-		if ( empty($this->idUtilisateurTemporaire)){
+				
+		var_dump($this->idUtilisateurTemporaire);
+				
+		if ( !isset($this->idUtilisateurTemporaire)){
 			
 			$this->listeMessageErreurActif['idUtilisateur'][] = $this->listeMessageErreur['identifiant-vide'];
 		}
@@ -386,12 +391,12 @@ class Utilisateur{
 		
 		$this->nbachatsTemporaire = filter_var($nbachats, FILTER_SANITIZE_NUMBER_INT);
 		
-		if ( empty($this->nbachatsTemporaire) && $this->nbachatsTemporaire!= 0){
+		if ( !isset($this->nbachatsTemporaire)){
 			
 			$this->listeMessageErreurActif['nbachats'][] = $this->listeMessageErreur['nbachats-vide'];
 		}
 		
-		if ( filter_var($this->nbachatsTemporaire, FILTER_VALIDATE_INT) ){
+		if ( !filter_var($this->nbachatsTemporaire, FILTER_VALIDATE_INT) && $this->nbachatsTemporaire != 0 ){
 			
 			$this->listeMessageErreurActif['nbachats'][] = $this->listeMessageErreur['nbachats-non-numerique'];
 
@@ -413,13 +418,13 @@ class Utilisateur{
 		
 		$this->nbventesTemporaire = filter_var($nbventes, FILTER_SANITIZE_NUMBER_INT);
 		
-		if ( empty($this->nbventesTemporaire) && $this->nbventesTemporaire != 0){
+		if ( !isset($this->nbventesTemporaire)){
 			
 			$this->listeMessageErreurActif['nbventes'][] = $this->listeMessageErreur['nbventes-vide'];
 			
 		}
 		
-		if ( filter_var($this->nbachatsTemporaire, FILTER_VALIDATE_INT) ){
+		if ( !filter_var($this->nbventesTemporaire, FILTER_VALIDATE_INT) && $this->nbventesTemporaire!= 0){
 			
 			$this->listeMessageErreurActif['nbventes'][] = $this->listeMessageErreur['nbventes-non-numerique'];
 
@@ -454,15 +459,15 @@ class Utilisateur{
 	
 	public function setAge($age){
 		
-		$this->ageTemporaire = filter_var($age, FILTER_SANITIZE_STRING);
+		$this->ageTemporaire = filter_var($age, FILTER_SANITIZE_NUMBER_INT);
 		
-		if ( empty($this->ageTemporaire)){
+		if ( !isset($this->ageTemporaire)){
 			
 			$this->listeMessageErreurActif['age'][] = $this->listeMessageErreur['age-vide'];
 			
 		}
 		
-		if ( !filter_var($this->ageTemporaire, FILTER_VALIDATE_INT) ){
+		if ( !filter_var($this->ageTemporaire, FILTER_VALIDATE_INT) && $this->ageTemporaire != 0 ){
 			
 			$this->listeMessageErreurActif['age'][] = $this->listeMessageErreur['age-non-numerique'];
 
@@ -506,13 +511,13 @@ class Utilisateur{
 		
 		$this->roleTemporaire = filter_var($role, FILTER_SANITIZE_NUMBER_INT);
 		
-		if ( empty($this->roleTemporaire) && $this->roleTemporaire != 0 ){
+		if ( !isset($this->roleTemporaire)){
 			
 			$this->listeMessageErreurActif['role'][] = $this->listeMessageErreur['role-vide'];			
 			
 		}
-		
-		if ( filter_var($this->roleTemporaire, FILTER_VALIDATE_INT) ){
+					
+		if ( !filter_var($this->roleTemporaire, FILTER_VALIDATE_INT) && $this->roleTemporaire != 0 ){  // sinon pas considéré comme entier
 			
 			$this->listeMessageErreurActif['role'][] = $this->listeMessageErreur['role-non-numerique'];
 

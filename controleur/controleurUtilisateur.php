@@ -132,6 +132,7 @@ afficherListeUtilisateur();
 	
 	
 	function ajouter($utilisateur){
+
 		
 		$utilisateur->setNom($_POST['nom']);
 		$utilisateur->setPrenom($_POST['prenom']);
@@ -199,6 +200,7 @@ afficherListeUtilisateur();
 	
 	function supprimer($utilisateur){
 		
+		
 		$utilisateur->setIdUtilisateur($_POST['idUtilisateur']);
 		$utilisateur->setNom($_POST['nom']);
 		$utilisateur->setPrenom($_POST['prenom']);
@@ -214,6 +216,7 @@ afficherListeUtilisateur();
 		$utilisateur->setNbachats($_POST['nbachats']);	
 		$utilisateur->setRole($_POST['role']);	
 		$utilisateur->setIllustration($_POST['illustration']);
+		
 		
 		if ( $utilisateur->estValide() ){
 			
