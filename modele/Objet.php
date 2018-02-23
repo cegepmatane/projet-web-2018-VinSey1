@@ -35,7 +35,7 @@ class Objet{
 		'titre-caracteres-speciaux' => 'L\'ID contient des caractères invalides',
 
 		'identifiant-vide' => 'L\'identifiant du vendeur est vide',
-		'identifiant-trop-long' => 'L\'identifiante du vendeur fait plus de 12 caractères',
+		'identifiant-trop-long' => 'L\'identifiant du vendeur fait plus de 12 caractères',
 		'identifiant-caracteres-speciaux' => 'L\'identifiant du vendeur contient des caractères invalides',
 
 		'prix-vide' => 'Le prix est vide',
@@ -211,7 +211,7 @@ class Objet{
 		if (empty($this->descriptionProduitTemporaire)){
 			$this->listeMessageErreurActif['description'][] = $this->listeMessageErreur['description-vide'];
 		} else {
-			if (strlen($this->descriptionProduitTemporaire) > 30){
+			if (strlen($this->descriptionProduitTemporaire) > 500){
 				$this->listeMessageErreurActif['description'][] = $this->listeMessageErreur['description-trop-long'];
 			}
 			if (!ctype_alpha($this->descriptionProduitTemporaire)){
@@ -225,10 +225,23 @@ class Objet{
 		
 	}
 
-	function setDetailsVente($idObjet){
+	function setDetailsVente($detailsVente){
 		
-		$this->detailsVente = $detailsVente;
-		
+		$this->detailsVenteTemporaire = filter_var($detailsVente, FILTER_SANITIZE_STRING);
+		if (empty($this->detailsVenteTemporaire)){
+			$this->listeMessageErreurActif['details'][] = $this->listeMessageErreur['details-vide'];
+		} else {
+			if (strlen($this->detailsVenteTemporaire) > 500){
+				$this->listeMessageErreurActif['details'][] = $this->listeMessageErreur['details-trop-long'];
+			}
+			if (!ctype_alpha($this->detailsVenteTemporaire)){
+				$this->listeMessageErreurActif['details'][] = $this->listeMessageErreur['details-caracteres-speciaux'];
+			}
+		}
+
+		if(!$this->getListeErreurActifPourChamp('details')){
+			$this->detailsVente = $this->detailsVenteTemporaire;
+		}
 		
 	}
 	function setAdresse($adresse){
