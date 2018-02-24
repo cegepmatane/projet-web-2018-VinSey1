@@ -4,7 +4,7 @@
 	require_once OBJET_MODELE;
 	
 	
-	if ( isset($_POST['actionNaviguation'])){
+	if ( isset($_GET['actionNaviguation'])){
 		
 		$idObjet=null;
 		
