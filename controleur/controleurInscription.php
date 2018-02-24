@@ -64,7 +64,30 @@
 
 			}
 			
-		}		
+		}
+		else if ( $_POST['actionFormulaire'] == 'PrécédentDeuxiemeFormulaire' ){
+			
+			$utilisateur = new Utilisateur();
+			
+			$utilisateur->setAdresse($_POST['adresse']);
+			$utilisateur->setCodepostal($_POST['codepostal']);
+			$utilisateur->setPays($_POST['pays']);			
+			$utilisateur->setVille($_POST['ville']);
+			
+			afficherPremierFormulaire($utilisateur);
+			
+		}
+		else if ( $_POST['actionFormulaire'] == 'PrécédentTroisiemeFormulaire' ){
+			
+			$utilisateur = new Utilisateur();
+			$utilisateur->setAdresse($_POST['adresse']);
+			$utilisateur->setCodepostal($_POST['codepostal']);
+			$utilisateur->setPays($_POST['pays']);			
+			$utilisateur->setVille($_POST['ville']);
+			
+			afficherDeuxiemeFormulaire($utilisateur);
+			
+		}
 	}
 	else{
 		afficherPremierFormulaire();
@@ -85,9 +108,9 @@
 		$utilisateur->setVille($_POST['ville']);
 		$utilisateur->setAge($_POST['anneenaissance']);	
 		$utilisateur->setTelephone($_POST['telephone']);	
-		$utilisateur->setNbventes($_POST['nbventes']);	
-		$utilisateur->setNbachats($_POST['nbachats']);	
-		$utilisateur->setRole($_POST['role']);	
+		$utilisateur->setNbventes(0);	
+		$utilisateur->setNbachats(0);	
+		$utilisateur->setRole(0);	
 		$utilisateur->setIllustration($_POST['illustration']);	
 		
 		if ($utilisateur->estValide()){

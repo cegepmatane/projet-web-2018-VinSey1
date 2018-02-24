@@ -13,11 +13,12 @@
 			<ul>
 				<div id = "blocs-formulaire">
 					<div id = "bloc-formulaire-1">
-						<li>Nom : <input type="text" name="nom" value="<?php if ( $utilisateur) echo $utilisateur->getNom(); ?>" />  
-							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('nom'));?>												
-						</li>
+
 						<li>Prénom : <input type="text" name="prenom" value="<?php if ( $utilisateur) echo $utilisateur->getPrenom(); ?>" />
 							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('prenom'));?>												
+						</li>
+						<li>Nom : <input type="text" name="nom" value="<?php if ( $utilisateur) echo $utilisateur->getNom(); ?>" />  
+							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('nom'));?>												
 						</li>
 						<li>Âge : <input type="text" name="anneenaissance"  value="<?php if ( $utilisateur) echo $utilisateur->getAge(); ?>" />
 							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('age'));?>
@@ -62,19 +63,20 @@
 					<li>Code postal : <input type="text" name="codepostal" value="<?php if ( $utilisateur) echo $utilisateur->getCodepostal(); ?>"/>
 						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('codepostal'));?>
 					</li>
-					<li>Pays : <input type="text" name="pays" value="<?php if ( $utilisateur) echo $utilisateur->getPays(); ?>" />
-						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('pays'));?>
-					</li>
+					
 					<li>Ville : <input type="text" name="ville"  value="<?php if ( $utilisateur) echo $utilisateur->getVille(); ?>" />
 						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('ville'));?>
 					</li>
-					
+					<li>Pays : <input type="text" name="pays" value="<?php if ( $utilisateur) echo $utilisateur->getPays(); ?>" />
+						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('pays'));?>
+					</li>
 					<input type="hidden" name="email"  value="<?php if ( $utilisateur) echo $utilisateur->getEmail(); ?>" />
 					<input type="hidden" name="telephone" value="<?php if ( $utilisateur) echo $utilisateur->getTelephone(); ?>" />
 
 					
 				</div>
 			</div>
+			<input id="bouton" type="submit" value="PrécédentDeuxiemeFormulaire" name="actionFormulaire"/>			
 			<input id="bouton" type="submit" value="finDeuxiemeFormulaire" name="actionFormulaire"/>			
 		</form>
 	
@@ -105,6 +107,7 @@
 					</li>
 				</div>
 			</div>
+			<input id="bouton" type="submit" value="PrécédentTroisiemeForumulaire" name="actionFormulaire"/>			
 			<input id="bouton" type="submit" value="finTroisiemeFormulaire" name="actionFormulaire"/>			
 		</form>	
 	
