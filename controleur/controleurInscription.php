@@ -97,12 +97,18 @@
 			
 			$utilisateur = new Utilisateur();
 			
+			$utilisateur->setNom($_POST['nom']);
+			$utilisateur->setPrenom($_POST['prenom']);
+			$utilisateur->setPseudonyme($_POST['pseudonyme']);
+			$utilisateur->setAge($_POST['anneenaissance']);
+			$utilisateur->setIllustration($_POST['illustration']);
+			
 			$utilisateur->setAdresse($_POST['adresse']);
 			$utilisateur->setCodepostal($_POST['codepostal']);
 			$utilisateur->setPays($_POST['pays']);			
 			$utilisateur->setVille($_POST['ville']);
 			
-			
+			var_dump($utilisateur);
 			
 			afficherDeuxiemeFormulaire($utilisateur);
 			

@@ -106,7 +106,7 @@
 					</li>
 				</div>
 			</div>
-			<input id="bouton" type="submit" value="PrecedentTroisiemeForumulaire" name="actionFormulaire"/>			
+			<input id="bouton" type="submit" value="PrecedentTroisiemeFormulaire" name="actionFormulaire"/>			
 			<input id="bouton" type="submit" value="finTroisiemeFormulaire" name="actionFormulaire"/>			
 		</form>	
 	
