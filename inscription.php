@@ -44,7 +44,7 @@
 	<?php
 	}
 
-	function afficherDeuxiemeFormulaire($utilisateur){ 				var_dump($utilisateur);?>
+	function afficherDeuxiemeFormulaire($utilisateur){ ?>
 	
 		<p> Renseignement sur l'adressse <p>
 		<form action="inscription.php" id="formulaire-creation" method="post">
@@ -75,14 +75,14 @@
 					
 				</div>
 			</div>
-			<input id="bouton" type="submit" value="PrécédentDeuxiemeFormulaire" name="actionFormulaire"/>			
+			<input id="bouton" type="submit" value="PrecedentDeuxiemeFormulaire" name="actionFormulaire"/>			
 			<input id="bouton" type="submit" value="finDeuxiemeFormulaire" name="actionFormulaire"/>			
 		</form>
 	
 	<?php 
 	} 
 	
-	function afficherTroisiemeFormulaire($utilisateur) {var_dump($utilisateur);
+	function afficherTroisiemeFormulaire($utilisateur) {
 	?>
 		<p> Renseignement sur les communications <p>
 		<form action="inscription.php" id="formulaire-creation" method="post">
@@ -106,7 +106,7 @@
 					</li>
 				</div>
 			</div>
-			<input id="bouton" type="submit" value="PrécédentTroisiemeForumulaire" name="actionFormulaire"/>			
+			<input id="bouton" type="submit" value="PrecedentTroisiemeForumulaire" name="actionFormulaire"/>			
 			<input id="bouton" type="submit" value="finTroisiemeFormulaire" name="actionFormulaire"/>			
 		</form>	
 	

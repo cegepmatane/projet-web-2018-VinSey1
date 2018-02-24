@@ -80,25 +80,29 @@
 			}
 			
 		}
-		else if ( $_POST['actionFormulaire'] == 'PrécédentDeuxiemeFormulaire' ){
+		else if ( $_POST['actionFormulaire'] == 'PrecedentDeuxiemeFormulaire' ){
 			
 			$utilisateur = new Utilisateur();
 			
-			$utilisateur->setAdresse($_POST['adresse']);
-			$utilisateur->setCodepostal($_POST['codepostal']);
-			$utilisateur->setPays($_POST['pays']);			
-			$utilisateur->setVille($_POST['ville']);
-			
+			$utilisateur->setNom($_POST['nom']);
+			$utilisateur->setPrenom($_POST['prenom']);
+			$utilisateur->setPseudonyme($_POST['pseudonyme']);
+			$utilisateur->setAge($_POST['anneenaissance']);
+			$utilisateur->setIllustration($_POST['illustration']);
+				
 			afficherPremierFormulaire($utilisateur);
 			
 		}
-		else if ( $_POST['actionFormulaire'] == 'PrécédentTroisiemeFormulaire' ){
+		else if ( $_POST['actionFormulaire'] == 'PrecedentTroisiemeFormulaire' ){
 			
 			$utilisateur = new Utilisateur();
+			
 			$utilisateur->setAdresse($_POST['adresse']);
 			$utilisateur->setCodepostal($_POST['codepostal']);
 			$utilisateur->setPays($_POST['pays']);			
 			$utilisateur->setVille($_POST['ville']);
+			
+			
 			
 			afficherDeuxiemeFormulaire($utilisateur);
 			
