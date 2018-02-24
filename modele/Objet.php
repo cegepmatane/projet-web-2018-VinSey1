@@ -124,7 +124,7 @@ class Objet{
 		
 	}
 	
-	function setId($idObjet){
+	function setIdObjet($idObjet){
 		
 		$this->idObjetTemporaire = filter_var($idObjet, FILTER_SANITIZE_NUMBER_INT);
 		if (empty($this->idObjetTemporaire)){
