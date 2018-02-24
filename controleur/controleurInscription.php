@@ -107,9 +107,7 @@
 			$utilisateur->setCodepostal($_POST['codepostal']);
 			$utilisateur->setPays($_POST['pays']);			
 			$utilisateur->setVille($_POST['ville']);
-			
-			var_dump($utilisateur);
-			
+						
 			afficherDeuxiemeFormulaire($utilisateur);
 			
 		}

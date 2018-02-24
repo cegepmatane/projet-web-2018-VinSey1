@@ -38,7 +38,7 @@
 					</div>
 				</div>
 			</ul>
-			<input id="bouton" type="submit" value="finPremierFormulaire" name="actionFormulaire"/>
+			<button type="submit" value="finPremierFormulaire" name="actionFormulaire"/><?php echo gettext("Suivant");?></button>
 		</form>
 
 	<?php
@@ -75,8 +75,8 @@
 					
 				</div>
 			</div>
-			<input id="bouton" type="submit" value="PrecedentDeuxiemeFormulaire" name="actionFormulaire"/>			
-			<input id="bouton" type="submit" value="finDeuxiemeFormulaire" name="actionFormulaire"/>			
+			<button type="submit" value="PrecedentDeuxiemeFormulaire" name="actionFormulaire"/><?php echo gettext("Précédent")?></button>			
+			<button type="submit" value="finDeuxiemeFormulaire" name="actionFormulaire"/><?php echo gettext("Suivant")?></button>			
 		</form>
 	
 	<?php 
@@ -106,8 +106,8 @@
 					</li>
 				</div>
 			</div>
-			<input id="bouton" type="submit" value="PrecedentTroisiemeFormulaire" name="actionFormulaire"/>			
-			<input id="bouton" type="submit" value="finTroisiemeFormulaire" name="actionFormulaire"/>			
+			<button type="submit" value="PrecedentTroisiemeFormulaire" name="actionFormulaire"/><?php echo gettext("Précédent");?></button>		
+			<button type="submit" value="finTroisiemeFormulaire" name="actionFormulaire"/><?php echo gettext("Suivant");?></button>
 		</form>	
 	
 	<?php
