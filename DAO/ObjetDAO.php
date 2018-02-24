@@ -139,6 +139,9 @@ class ObjetDAO{
 		
 		global $connexionBDActive;
 		
+		$idObjet = $objet->getIdObjet();
+		
+		
 		$requete = $connexionBDActive->prepare("DELETE FROM objet WHERE id_objet = :identifiant");
 		$requete->bindParam(':identifiant', $identifiant, PDO::PARAM_INT);
 		$requete->execute();
