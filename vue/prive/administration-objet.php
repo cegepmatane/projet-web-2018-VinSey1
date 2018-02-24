@@ -38,6 +38,9 @@ function afficherFormulaireObjet($actionFormulaire, $objet=null){
 					<li>Details de vente : <input type="text" name="detailsVente"  value="<?php if ( $objet) echo $objet->getDetailsVente(); ?>" />
 						<?php if ( $objet) afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('detailsVente'));?>
 					</li>
+					<li>Vedette : <input type="text" name="vedette"  value="<?php if ( $objet) echo $objet->getVedette(); ?>" />
+						<?php if ( $objet) afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('vedette'));?>
+					</li>
 				</div>	
 			</div>
 		</ul>
