@@ -17,6 +17,13 @@
 			$utilisateur->setAge($_POST['anneenaissance']);		
 			$utilisateur->setIllustration($_POST['illustration']);
 			
+			if (!empty($_POST['adresse'])){ $utilisateur->setAdresse($_POST['adresse']);}
+			if (!empty($_POST['codepostal'])){ $utilisateur->setCodepostal($_POST['codepostal']);}
+			if (!empty($_POST['pays'])){ $utilisateur->setPays($_POST['pays']);}
+			if (!empty($_POST['ville'])){ $utilisateur->setVille($_POST['ville']);}
+			
+			
+			
 			if ( $utilisateur->estValide()){
 				
 				afficherDeuxiemeFormulaire($utilisateur);
@@ -89,6 +96,11 @@
 			$utilisateur->setPseudonyme($_POST['pseudonyme']);
 			$utilisateur->setAge($_POST['anneenaissance']);
 			$utilisateur->setIllustration($_POST['illustration']);
+			
+			$utilisateur->setAdresse($_POST['adresse']);
+			$utilisateur->setCodepostal($_POST['codepostal']);
+			$utilisateur->setPays($_POST['pays']);			
+			$utilisateur->setVille($_POST['ville']);
 				
 			afficherPremierFormulaire($utilisateur);
 			
@@ -107,7 +119,8 @@
 			$utilisateur->setCodepostal($_POST['codepostal']);
 			$utilisateur->setPays($_POST['pays']);			
 			$utilisateur->setVille($_POST['ville']);
-						
+			
+				
 			afficherDeuxiemeFormulaire($utilisateur);
 			
 		}
