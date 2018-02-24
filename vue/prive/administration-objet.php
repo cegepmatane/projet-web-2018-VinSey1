@@ -38,9 +38,6 @@ function afficherFormulaireObjet($actionFormulaire, $objet=null){
 					<li>Details de vente : <input type="text" name="detailsVente"  value="<?php if ( $objet) echo $objet->getDetailsVente(); ?>" />
 						<?php if ( $objet) afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('detailsVente'));?>
 					</li>
-					<li>Vedette : <input type="text" name="vedette" value="<?php if ( $objet) echo $objet->getVedette(); ?>" />
-						<?php if ( $objet) afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('detailsVente'));?>
-					</li>
 				</div>	
 			</div>
 		</ul>
@@ -68,9 +65,8 @@ function afficherListeObjet(){
 	?>
 		<div class="produit-courant">
 			<ul>
-				<li><?php echo gettext("Titre de vente : ");?>: <?php echo $objet->getTitreDeVente();?></li>
-				<li><?php echo gettext("Identifiant vendeur : ");?>: <?php echo $objet->getIdentifiantVendeur();?></li>
-				<li><?php echo gettext("Pseudo");?>: <?php echo $objet->getPseudonyme();?></li>
+				<li><?php echo gettext("Titre de vente");?>: <?php echo $objet->getTitreDeVente();?></li>
+				<li><?php echo gettext("Identifiant vendeur");?>: <?php echo $objet->getIdentifiantVendeur();?></li>
 				<li><a href= <?php echo $naviguationModification ?> > Modifier </a></li>
 				<li><a href= <?php echo $naviguationSuppression ?> > Supprimer </a></li> 
 			</ul>
