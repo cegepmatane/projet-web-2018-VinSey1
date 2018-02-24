@@ -60,8 +60,8 @@ function afficherLienAjoutObjet(){
 function afficherListeObjet(){
 	
 	$objetDAO = new ObjetDAO();
-	$listeobjet = $objetDAO->obtenirListeObjet();
-	foreach($listeobjet as $key => $objet) { 
+	$listeObjet = $objetDAO->obtenirListeObjet();
+	foreach($listeObjet as $key => $objet) { 
 		$naviguationModification = "administration-objet.php?actionNaviguation=Modifier&idobjet=".$objet->getIdObjet();
 		$naviguationSuppression = "administration-objet.php?actionNaviguation=Supprimer&idobjet=".$objet->getIdObjet();
 	
