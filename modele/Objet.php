@@ -263,20 +263,16 @@ class Objet{
 
 	function setAdresse($adresse){
 		
-		$this->adresseTemporaire = filter_var($adresse, FILTER_SANITIZE_STRING);
-		if (empty($this->adresseTemporaire)){
+		$this->adresseTemporaire = $adresse;
+		
+		if ( empty($this->adresseTemporaire)){
+			
 			$this->listeMessageErreurActif['adresse'][] = $this->listeMessageErreur['adresse-vide'];
-		} else {
-			if (strlen($this->adresseTemporaire) > 50){
-				$this->listeMessageErreurActif['adresse'][] = $this->listeMessageErreur['adresse-trop-long'];
-			}
-			if (!ctype_alnum($this->adresseTemporaire)){
-				$this->listeMessageErreurActif['adresse'][] = $this->listeMessageErreur['adresse-caracteres-speciaux'];
-			}
-		}
 
-		if(!$this->getListeErreurActifPourChamp('adresse')){
-			$this->adresse = $this->adresseTemporaire;
+		}
+		
+		if ( !$this->getListeErreurActifPourChamp('adresse') ){
+				$this->adresse = $this->adresseTemporaire;
 		}
 		
 	}
