@@ -51,7 +51,8 @@ class ObjetDAO{
 		
 		if ($resultat ){
 				
-			$objet = new Objet($resultat->id_objet, 
+			$objet = new Objet;
+			$objet->construireDonneesSecurise($resultat->id_objet, 
 							    $resultat->identifiantVendeur,
 							    $resultat->titreDeVente,
 				 			   	$resultat->categorie,
