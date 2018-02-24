@@ -13,7 +13,6 @@
 			<ul>
 				<div id = "blocs-formulaire">
 					<div id = "bloc-formulaire-1">
-
 						<li>Prénom : <input type="text" name="prenom" value="<?php if ( $utilisateur) echo $utilisateur->getPrenom(); ?>" />
 							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('prenom'));?>												
 						</li>
@@ -45,7 +44,7 @@
 	<?php
 	}
 
-	function afficherDeuxiemeFormulaire($utilisateur){?>
+	function afficherDeuxiemeFormulaire($utilisateur){ 				var_dump($utilisateur);?>
 	
 		<p> Renseignement sur l'adressse <p>
 		<form action="inscription.php" id="formulaire-creation" method="post">
@@ -83,7 +82,7 @@
 	<?php 
 	} 
 	
-	function afficherTroisiemeFormulaire($utilisateur) {
+	function afficherTroisiemeFormulaire($utilisateur) {var_dump($utilisateur);
 	?>
 		<p> Renseignement sur les communications <p>
 		<form action="inscription.php" id="formulaire-creation" method="post">
@@ -113,7 +112,7 @@
 	
 	<?php
 	}
-	function afficherRetroactionPOisitive($message){?>
+	function afficherRetroactionPositive($message){?>
 		
 		<p> <?php echo $message ?><p>
 		

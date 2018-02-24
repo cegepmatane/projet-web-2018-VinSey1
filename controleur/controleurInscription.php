@@ -32,7 +32,12 @@
 		}else if ( $_POST['actionFormulaire'] == 'finDeuxiemeFormulaire' ){
 				
 			$utilisateur = new Utilisateur();
-				
+			
+			$utilisateur->setNom($_POST['nom']);
+			$utilisateur->setPrenom($_POST['prenom']);
+			$utilisateur->setPseudonyme($_POST['pseudonyme']);
+			$utilisateur->setAge($_POST['anneenaissance']);		
+			$utilisateur->setIllustration($_POST['illustration']);
 			$utilisateur->setAdresse($_POST['adresse']);
 			$utilisateur->setCodepostal($_POST['codepostal']);
 			$utilisateur->setPays($_POST['pays']);			
@@ -51,11 +56,21 @@
 			
 			$utilisateur = new Utilisateur();
 		
+			$utilisateur->setNom($_POST['nom']);
+			$utilisateur->setPrenom($_POST['prenom']);
+			$utilisateur->setPseudonyme($_POST['pseudonyme']);
+			$utilisateur->setAge($_POST['anneenaissance']);		
+			$utilisateur->setIllustration($_POST['illustration']);
+			$utilisateur->setAdresse($_POST['adresse']);
+			$utilisateur->setCodepostal($_POST['codepostal']);
+			$utilisateur->setPays($_POST['pays']);			
+			$utilisateur->setVille($_POST['ville']);
 			$utilisateur->setTelephone($_POST['telephone']);
 			$utilisateur->setEmail($_POST['email']);
 			
-			if ( $utilisateur->estValide() && ajouter() ){
+			if ( $utilisateur->estValide() ){
 				
+				ajouter($utilisateur);
 				afficherRetroactionPositive(gettext("Votre compte a bien été créé"));
 			}
 			else{
@@ -94,34 +109,16 @@
 	}
 	
 	
-	function ajouter(){
-
-		$utilisateur = new Utilisateur();
+	function ajouter($utilisateur){
 		
-		$utilisateur->setNom($_POST['nom']);
-		$utilisateur->setPrenom($_POST['prenom']);
-		$utilisateur->setPseudonyme($_POST['pseudonyme']);
-		$utilisateur->setEmail($_POST['email']);
-		$utilisateur->setAdresse($_POST['adresse']);
-		$utilisateur->setCodepostal($_POST['codepostal']);
-		$utilisateur->setPays($_POST['pays']);			
-		$utilisateur->setVille($_POST['ville']);
-		$utilisateur->setAge($_POST['anneenaissance']);	
-		$utilisateur->setTelephone($_POST['telephone']);	
-		$utilisateur->setNbventes(0);	
-		$utilisateur->setNbachats(0);	
-		$utilisateur->setRole(0);	
-		$utilisateur->setIllustration($_POST['illustration']);	
+		$utilisateur->setNbachats(0);
+		$utilisateur->setNbventes(0);
+		$utilisateur->setRole(0);
+			
+		$utilisateurDAO = new UtilisateurDAO();
+			
+		$utilisateurDAO->insererUtilisateur($utilisateur);
 		
-		if ($utilisateur->estValide()){
-			
-			$utilisateurDAO = new UtilisateurDAO();
-			
-			$utilisateurDAO->insererUtilisateur($utilisateur);
-			
-			return true;
-		}
-		return false;			
 	}
 	
 	
