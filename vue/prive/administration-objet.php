@@ -13,7 +13,7 @@ function afficherFormulaireObjet($actionFormulaire, $objet=null){
 				<div id = "bloc-formulaire-1">		
 					<input type="hidden" name="idObjet" value="<?php if ( $objet) echo $objet->getIdObjet(); ?>"/>			
 					<li>Titre de vente : <input type="text" name="titreDeVente" value="<?php if ( $objet) echo $objet->getTitreDeVente(); ?>" />  
-						<?php if ( $objet) afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('titreDeVente'));?>												
+						<?php if ( $objet) afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('titre'));?>												
 					</li>
 					<li>Identifiant vendeur : <input type="text" name="identifiantVendeur" value="<?php if ( $objet) echo $objet->getIdentifiantVendeur(); ?>" />
 						<?php if ( $objet) afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('identifiantVendeur'));?>												
@@ -33,10 +33,10 @@ function afficherFormulaireObjet($actionFormulaire, $objet=null){
 						<?php if ( $objet) afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('prix'));?>
 					</li>
 					<li>Description du produit : <input type="text" name="descriptionProduit"  value="<?php if ( $objet) echo $objet->getDescriptionProduit(); ?>" />
-						<?php if ( $objet) afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('descriptionProduit'));?>
+						<?php if ( $objet) afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('description'));?>
 					</li>
 					<li>Details de vente : <input type="text" name="detailsVente"  value="<?php if ( $objet) echo $objet->getDetailsVente(); ?>" />
-						<?php if ( $objet) afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('detailsVente'));?>
+						<?php if ( $objet) afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('details'));?>
 					</li>
 					<li>Vedette : <input type="text" name="vedette"  value="<?php if ( $objet) echo $objet->getVedette(); ?>" />
 						<?php if ( $objet) afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('vedette'));?>

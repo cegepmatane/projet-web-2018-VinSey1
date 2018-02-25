@@ -199,7 +199,6 @@ afficherListeObjet();
 		$objet->setDescriptionProduit($_POST['descriptionProduit']);	
 		$objet->setDetailsVente($_POST['detailsVente']);
 		$objet->setVedette($_POST['vedette']);	
-		var_dump($objet);
 		if ( $objet->estValide() ){
 			
 			$objetDAO = new ObjetDAO();

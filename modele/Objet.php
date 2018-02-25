@@ -38,7 +38,7 @@ class Objet{
 		'identifiant-trop-long' => 'L\'identifiant du vendeur fait plus de 12 caractères',
 		'identifiant-caracteres-speciaux' => 'L\'identifiant du vendeur contient des caractères invalides',
 
-		'prix-vide' => 'Le prix est vide',
+		'prix-vide' => 'Le prix est vide ou contient des caractères invalides',
 		'prix-caracteres-speciaux' => 'Le prix contient des caractères invalides',
 
 		'description-vide' => 'La description est vide',
@@ -61,9 +61,8 @@ class Objet{
 		'categorie-trop-long' => 'La catégorie fait plus de 20 caractères',
 		'categorie-caracteres-speciaux' => 'La catégorie contient des caractères invalides',
 
-		'Vedette-vide' => 'Vedette est vide',
-		'Vedette-trop-long' => 'Vedette fait plus de 11 caractères',
-		'Vedette-caracteres-speciaux' => 'Vedette contient des caractères invalides',
+		'vedette-vide' => 'Vedette est vide ou contient des caractères invalides',
+		'vedette-trop-long' => 'Vedette fait plus de 11 caractères',
 
 	];
 
@@ -128,13 +127,13 @@ class Objet{
 		
 		$this->idObjetTemporaire = filter_var($idObjet, FILTER_SANITIZE_NUMBER_INT);
 		if (empty($this->idObjetTemporaire)){
-			$this->listeMessageErreurActif['id'][] = $thislisteMessageErreur['id-vide'];
+			$this->listeMessageErreurActif['id'][] = $this->listeMessageErreur['id-vide'];
 		} else {
 			if (strlen((string)$this->idObjetTemporaire) > 11){
-				$this->listeMessageErreurActif['id'][] = $thislisteMessageErreur['id-trop-long'];
+				$this->listeMessageErreurActif['id'][] = $this->listeMessageErreur['id-trop-long'];
 			}
 			if (!ctype_digit((string)$this->idObjetTemporaire)){
-				$this->listeMessageErreurActif['id'][] = $thislisteMessageErreur['id-caracteres-speciaux'];
+				$this->listeMessageErreurActif['id'][] = $this->listeMessageErreur['id-caracteres-speciaux'];
 			}
 		}
 
@@ -159,7 +158,7 @@ class Objet{
 		}
 
 		if(!$this->getListeErreurActifPourChamp('identifiantVendeur')){
-			$this->titreDeVente = $this->identifiantVendeurTemporaire;
+			$this->identifiantVendeur = $this->identifiantVendeurTemporaire;
 		}
 
 	}
@@ -208,11 +207,7 @@ class Objet{
 
 		$this->prixTemporaire = filter_var($prix, FILTER_SANITIZE_NUMBER_FLOAT);
 		if (empty($this->prixTemporaire)){
-			$this->listeMessageErreurActif['prix'][] = $thislisteMessageErreur['prix-vide'];
-		} else {
-			if (!ctype_digit((string)$this->prixTemporaire)){
-				$this->listeMessageErreurActif['prix'][] = $thislisteMessageErreur['prix-caracteres-speciaux'];
-			}
+			$this->listeMessageErreurActif['prix'][] = $this->listeMessageErreur['prix-vide'];
 		}
 		
 		if(!$this->getListeErreurActifPourChamp('prix')){
@@ -269,6 +264,10 @@ class Objet{
 			
 			$this->listeMessageErreurActif['adresse'][] = $this->listeMessageErreur['adresse-vide'];
 
+		} else {
+			if (!ctype_alnum($this->adresseTemporaire)){
+				$this->listeMessageErreurActif['adresse'][] = $this->listeMessageErreur['adresse-caracteres-speciaux'];
+			}
 		}
 		
 		if ( !$this->getListeErreurActifPourChamp('adresse') ){
@@ -301,13 +300,10 @@ class Objet{
 
 		$this->vedetteTemporaire = filter_var($vedette, FILTER_SANITIZE_NUMBER_INT);
 		if (empty($this->vedetteTemporaire)){
-			$this->listeMessageErreurActif['vedette'][] = $thislisteMessageErreur['vedette-vide'];
+			$this->listeMessageErreurActif['vedette'][] = $this->listeMessageErreur['vedette-vide'];
 		} else {
 			if (strlen((string)$this->vedetteTemporaire) > 11){
-				$this->listeMessageErreurActif['vedette'][] = $thislisteMessageErreur['vedette-trop-long'];
-			}
-			if (!ctype_digit((string)$this->vedetteTemporaire)){
-				$this->listeMessageErreurActif['vedette'][] = $thislisteMessageErreur['vedette-caracteres-speciaux'];
+				$this->listeMessageErreurActif['vedette'][] = $this->listeMessageErreur['vedette-trop-long'];
 			}
 		}
 
