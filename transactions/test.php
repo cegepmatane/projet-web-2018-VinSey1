@@ -24,5 +24,13 @@
 				"&DESC=".urlencode($objet->getDescriptionProduit()).
 				"&LOCALECODE=FR".
 				"&HDRIMG=".urlencode($objet->getIllustration());
-	echo $requete;
+	
+	$ch = curl_init($requete);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+
+	if (curl_exec($ch))
+	{echo "<p>OK !</p>";}
+	else
+	{echo "<p>Erreur</p><p>".curl_error($ch)."</p>";}
+	curl_close($ch);
 ?>
