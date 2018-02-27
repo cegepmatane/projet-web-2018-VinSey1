@@ -54,8 +54,8 @@
 					<ul>
 						<li><?php echo $objet->getTitreDeVente();?></li>
 						<li><?php echo gettext("Prix");?>: <?php echo $objet->getPrix();?><?php echo gettext(" $");?></li>
-						<li><a href="achat.php?idObjet=<?php echo $objet->getIdObjet(); ?>"> Modifier </a></li>
-						<li><a href="achat.php?idObjet=<?php echo $objet->getIdObjet(); ?>"> Supprimer </a></li>
+						<li><a href="administration-objet.php?idObjet=<?php echo $objet->getIdObjet(); ?>"> Modifier </a></li>
+						<li><a href="administration-objet.php?idObjet=<?php echo $objet->getIdObjet(); ?>"> Supprimer </a></li>
 					</ul>
 				</div>
 			<?php } ?>
@@ -75,14 +75,14 @@
 			$utilisateurDAO = new UtilisateurDAO();
 			$listeutilisateur = $utilisateurDAO->obtenirListeUtilisateur();
 			?>
-			<?php foreach($listeutilisateur as $key => $objet) { ?>
+			<?php foreach($listeutilisateur as $key => $utilisateur) { ?>
 				<div class="produit-courant">
 					<ul>
-						<li><?php echo gettext("Nom");?>: <?php echo $objet->getNom();?></li>
-						<li><?php echo gettext("Prenom");?>: <?php echo $objet->getPrenom();?></li>
-						<li><?php echo gettext("Pseudo");?>: <?php echo $objet->getPseudonyme();?></li>
-						<li><a href="profil.php?actionNaviguation=modifier&idUtilisateur=<?php echo $objet->getidUtilisateur(); ?>"> Modifier </a></li>
-						<li><a href="profil.php?actionNaviguation=modifier&idUtilisateur=<?php echo $objet->getidUtilisateur(); ?>"> Supprimer </a></li> 
+						<li><?php echo gettext("Nom");?>: <?php echo $utilisateur->getNom();?></li>
+						<li><?php echo gettext("Prenom");?>: <?php echo $utilisateur->getPrenom();?></li>
+						<li><?php echo gettext("Pseudo");?>: <?php echo $utilisateur->getPseudonyme();?></li>
+						<li><a href="administration-utilisateur.php?actionNaviguation=modifier&idUtilisateur=<?php echo $utilisateur->getidUtilisateur(); ?>"> Modifier </a></li>
+						<li><a href="administration-utilisateur.php?actionNaviguation=supprimer&idUtilisateur=<?php echo $utilisateur->getidUtilisateur(); ?>"> Supprimer </a></li> 
 					</ul>
 				</div>
 			<?php } ?>	
