@@ -1,5 +1,5 @@
 <?php
-	require_once $_SERVER["DOCUMENT_ROOT"]."/configuration/configuration.dev.php";
+	require_once $_SERVER["DOCUMENT_ROOT"]."/configuration/configuration.staging.php";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
