@@ -20,7 +20,7 @@
 				"&RETURNURL=".urlencode("return.php").
 				"&AMT=$objet->getPrix()".
 				"&CURRENCYCODE=EUR".
-				"&DESC=".urlencode($objet->getDescription()).
+				"&DESC=".urlencode($objet->getDescriptionProduit()).
 				"&LOCALECODE=FR".
 				"&HDRIMG=".urlencode($objet->getIllustration());
 	echo $requete;
