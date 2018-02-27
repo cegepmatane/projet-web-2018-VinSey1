@@ -43,7 +43,7 @@
 					
 				?>
 				
-				<?php echo gettext("Nombre d'objets :");?><?php $objetDAO->compterObjet(); ?> </br>
+				<?php echo gettext("Nombre d'objets : ");?><?php $objetDAO->compterObjet(); ?> </br>
 				<?php echo gettext("Chercher des ventes");?></br>
 				<?php echo gettext("Identifiant de la vente");?> <input type="text" ></br>
 				<?php echo gettext("Identifiant du vendeur");?> <input type="text" ></br>

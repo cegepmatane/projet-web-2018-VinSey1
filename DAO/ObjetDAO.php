@@ -182,14 +182,13 @@ class ObjetDAO{
 		
 		global $connexionBDActive;
 		
-		$requete = $connexionBDActive->prepare("SELECT COUNT(*) FROM objet");
+		$requete = $connexionBDActive->prepare("SELECT COUNT(*) as NbObjet FROM objet");
 		$requete->execute();
-		var_dump($requete);
-		$resulat = $requete->fetch(PDO::FETCH_OBJ);
-		if ($resultat) {
-			echo "t'es dedans";
-		}
-		echo "dommage";
+		
+		$resulat = $requete->fetch(PDO::FETCH_ASSOC);
+		
+		echo $resulat['NbObjet'];
+		
 		
 	}
 
