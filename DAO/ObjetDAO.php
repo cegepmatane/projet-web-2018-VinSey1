@@ -61,7 +61,7 @@ class ObjetDAO{
 				 			   	$resultat->detailsVente,
 				 			   	$resultat->adresse,
 				 			   	$resultat->illustration,
-				 			   	$resulatt->vedette
+				 			   	$resultat->vedette
 				 			   );
 		}			
 		return $objet;
