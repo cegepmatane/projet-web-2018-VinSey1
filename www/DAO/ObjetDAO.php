@@ -177,6 +177,16 @@ class ObjetDAO{
 		
 		
 	}
+	
+	public function compterObjet() {
+		
+		global $connexionBDActive;
+		
+		$requete = $connexionBDActive->prepare("SELECT COUNT * FROM objet");
+		$requete->execute();
+		
+		$resulat = $requete->fetchAll(PDO::FETCH_OBJ);
+	}
 
 }
 ?>
