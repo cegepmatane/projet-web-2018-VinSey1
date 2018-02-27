@@ -16,12 +16,12 @@
 		<ul id="zone-categories-index">
 			<div id="categories-index">
 				<li id="titre-categories"><h3><?php echo gettext("Catégories"); ?></h3></li>
-				<li onclick="montrerProduitCategorie(1)"><?php echo gettext("Catégorie 1"); ?></li>
-				<li onclick="montrerProduitCategorie(2)"><?php echo gettext("Catégorie 2"); ?></li>
-				<li onclick="montrerProduitCategorie(3)"><?php echo gettext("Catégorie 3"); ?></li>
-				<li onclick="montrerProduitCategorie(4)"><?php echo gettext("Catégorie 4"); ?></li>
-				<li onclick="montrerProduitCategorie(5)"><?php echo gettext("Catégorie 5"); ?></li>
-				<li onclick="montrerProduitCategorie(6)"><?php echo gettext("Catégorie 6"); ?></li>
+				<button type="button" onclick="montrerProduitCategorie(1)"><?php echo gettext("Catégorie 1"); ?></button>
+				<button type="button" onclick="montrerProduitCategorie(2)"><?php echo gettext("Catégorie 2"); ?></button>
+				<button type="button" onclick="montrerProduitCategorie(3)"><?php echo gettext("Catégorie 3"); ?></button>
+				<button type="button" onclick="montrerProduitCategorie(4)"><?php echo gettext("Catégorie 4"); ?></button>
+				<button type="button" onclick="montrerProduitCategorie(5)"><?php echo gettext("Catégorie 5"); ?></button>
+				<button type="button" onclick="montrerProduitCategorie(6)"><?php echo gettext("Catégorie 6"); ?></button>
 			</div>
 		</ul>
 		<div id="ensemble-produits">
