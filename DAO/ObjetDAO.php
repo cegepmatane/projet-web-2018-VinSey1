@@ -49,22 +49,14 @@ class ObjetDAO{
 			
 		$resultat = $requete->fetch(PDO::FETCH_OBJ);					
 		
-		if ($resultat ){
-				
-			$objet = new Objet;
-			$objet->construireDonneesSecurise($resultat->id_objet, 
-							    $resultat->identifiantVendeur,
-							    $resultat->titreDeVente,
-				 			   	$resultat->categorie,
-				 			   	$resultat->prix,
-				 			   	$resultat->descriptionProduit,
-				 			   	$resultat->detailsVente,
-				 			   	$resultat->adresse,
-				 			   	$resultat->illustration,
-				 			   	$resultat->vedette
-				 			   );
-		}			
-		return $objet;
+		foreach($resultat as $key => $enregistrementObjet) {
+			$objet = new Objet();
+			$objet->construireDonneesSecurise($enregistrementObjet->id_objet, $enregistrementObjet->identifiantVendeur, $enregistrementObjet->titreDeVente, $enregistrementObjet->categorie, $enregistrementObjet->prix, $enregistrementObjet->descriptionProduit, $enregistrementObjet->detailsVente, $enregistrementObjet->adresse, $enregistrementObjet->illustration, $enregistrementObjet->vedette);
+			$listeObjet[]=$objet;
+		}
+		
+					
+		return $listeObjet;
 		
 	}
 	

@@ -8,12 +8,12 @@
 	
 	$objetDAO = new ObjetDAO();
 	$listeObjet = $objetDAO->chercherParCategorie($categorie);
-	
-	var_dump($listeObjet);
-	
+		
 	if ( isset($listeObjet)){
 		
-			foreach($listeObjet as $key => $objet) {
+		var_dump($listeObjet);	
+		
+		foreach($listeObjet as $key => $objet) {
 		?>
 			<div class="produit-courant">
 				<img src="<?=$objet->getIllustration();?>" class="photo-miniature-produit"/>
