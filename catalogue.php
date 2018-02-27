@@ -1,14 +1,12 @@
-<?php
-	
-
-	
+<?php	
 	include "entete.php";
 	require_once OBJET_DAO;
 	require_once OBJET_MODELE;
 
+	
 ?>
 
-
+	<script src="ajax/montrerProduitCategorie.js"></script>
 	<div id="barre-de-recherche" >
 		<img src=./illustrations/petit/loupe.png id="image-loupe">
 		<input type="text" name="nato_pf"/>
@@ -18,12 +16,12 @@
 		<ul id="zone-categories-index">
 			<div id="categories-index">
 				<li id="titre-categories"><h3><?php echo gettext("Catégories"); ?></h3></li>
-				<li><?php echo gettext("Catégorie 1"); ?></li>
-				<li><?php echo gettext("Catégorie 2"); ?></li>
-				<li id="categorie-selectionnee"><?php echo gettext("Catégorie 3"); ?></li>
-				<li><?php echo gettext("Catégorie 4"); ?></li>
-				<li><?php echo gettext("Catégorie 5"); ?></li>
-				<li><?php echo gettext("Catégorie 6"); ?></li>
+				<li onclick="montrerProduitCategorie(1)"><?php echo gettext("Catégorie 1"); ?></li>
+				<li onclick="montrerProduitCategorie(2)"><?php echo gettext("Catégorie 2"); ?></li>
+				<li onclick="montrerProduitCategorie(3)"><?php echo gettext("Catégorie 3"); ?></li>
+				<li onclick="montrerProduitCategorie(4)"><?php echo gettext("Catégorie 4"); ?></li>
+				<li onclick="montrerProduitCategorie(5)"><?php echo gettext("Catégorie 5"); ?></li>
+				<li onclick="montrerProduitCategorie(6)"><?php echo gettext("Catégorie 6"); ?></li>
 			</div>
 		</ul>
 		<div id="ensemble-produits">
