@@ -15,10 +15,11 @@
 	include("fonction_api.php");
 	$requete = construit_url_paypal();
 
+	$prix = $objet->getPrix();
 	$requete = $requete."&METHOD=SetExpressCheckout".
 				"&CANCELURL=".urlencode("cancel.php").
 				"&RETURNURL=".urlencode("return.php").
-				"&AMT=$objet->getPrix()".
+				"&AMT=$prix".
 				"&CURRENCYCODE=EUR".
 				"&DESC=".urlencode($objet->getDescriptionProduit()).
 				"&LOCALECODE=FR".
