@@ -37,17 +37,19 @@
 	</div>
 	<div>
 		<div class="onglets-profil" id="contenu_onglet_ventes">
-			
+				<?php 
+					$objetDAO = new ObjetDAO();
+					$listeobjet = $objetDAO->obtenirListeObjet();
+				?>
+				
+				<?php echo gettext("Nombre d'objets");?><?php echo $objetDAO->compterObjet(); ?>
 				<?php echo gettext("Chercher des ventes");?></br>
 				<?php echo gettext("Identifiant de la vente");?> <input type="text" ></br>
 				<?php echo gettext("Identifiant du vendeur");?> <input type="text" ></br>
 				<?php echo gettext("Titre de vente");?> <input type="text" ></br>
 				<button type="button"><?php echo gettext("Chercher");?></button>
 						
-			<?php 
-			$objetDAO = new ObjetDAO();
-			$listeobjet = $objetDAO->obtenirListeObjet();
-			?>
+			
 			<?php foreach($listeobjet as $key => $objet) { ?>		
 				<div class="produit-courant">
 					<img src="<?=$objet->getIllustration();?>" class="photo-miniature-produit"/>
