@@ -1,19 +1,17 @@
 
-function montrerProduitCategorie(categorie){
-
-	console.log("bouton "+categorie);
+function listerTousLesObjets(){
 
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function(){
-		console.log("alerte");
+
 		if ( this.readyState == 4 && this.status == 200){
-			console.log("clic  "+categorie);
+
 			document.getElementById('ensemble-produits').innerHTML = this.responseText;
 		}
 		
 	};
 	
-	xmlhttp.open("GET", "/ajax/listerObjet.php?categorie="+categorie, true);
+	xmlhttp.open("GET", "/ajax/listerTousLesObjets.php", true);
 	xmlhttp.send();
 
 }

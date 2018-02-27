@@ -198,6 +198,18 @@ nav a, #onglets-profil a{
 	background-color: lightgrey;
 }
 
+#categorie{
+	
+	color-background: #ffcc66;
+	
+}
+
+#categorie-courante{
+	
+	color-background: #cc8800;
+}
+
+
 /* BALISES CSS POUR VENTE */
 #contenu-vente .informations{
 	font-size: 20px;

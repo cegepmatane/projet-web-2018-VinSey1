@@ -18,7 +18,11 @@
 				<ul>
 					<li><?php echo $objet->getTitreDeVente();?></li>
 					<li><?php echo gettext("Prix");?>: <?php echo $objet->getPrix();?><?php echo gettext(" $");?></li>
-					<li><button type="button"><?php echo gettext("Acheter"); ?></button></li>
+					<li>
+						<form action="achat.php">
+							<input type="submit" value="Acheter"/>
+						</form>
+					</li>
 				</ul>
 			</div>		
 		<?php

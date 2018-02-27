@@ -7,6 +7,7 @@
 ?>
 
 	<script src="ajax/montrerProduitCategorie.js"></script>
+	<script src="ajax/listerTousLesObjets.js"></script>
 	<div id="barre-de-recherche" >
 		<img src=./illustrations/petit/loupe.png id="image-loupe">
 		<input type="text" name="nato_pf"/>
@@ -22,6 +23,7 @@
 				<button type="button" onclick="montrerProduitCategorie(4)"><?php echo gettext("Catégorie 4"); ?></button>
 				<button type="button" onclick="montrerProduitCategorie(5)"><?php echo gettext("Catégorie 5"); ?></button>
 				<button type="button" onclick="montrerProduitCategorie(6)"><?php echo gettext("Catégorie 6"); ?></button>
+				<button type="button" onclick="listerTousLesObjets()"><?php echo gettext("Voir tous les objets"); ?></button>
 			</div>
 		</ul>
 		<div id="ensemble-produits">
@@ -35,7 +37,11 @@
 					<ul>
 						<li><?php echo $objet->getTitreDeVente();?></li>
 						<li><?php echo gettext("Prix");?>: <?php echo $objet->getPrix();?><?php echo gettext(" $");?></li>
-						<li><button type="button"><?php echo gettext("Acheter"); ?></button></li>
+						<li>
+							<form action="achat.php">
+								<input type="submit" value="Acheter"/>
+							</form>
+						</li>
 					</ul>
 				</div>
 			<?php } ?>
