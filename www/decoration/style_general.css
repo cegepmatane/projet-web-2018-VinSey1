@@ -1,355 +1,288 @@
-/*
-COULEURS
-
-paletton.com
-	
-	Palette 1: Variations Turquoise
-	- #225F5D
-	- #C9EBEA
-	- #59908D
-	- #063533
-
-
-	Palette 2: Variations Saumon
-	- #FF8E6A
-	- #FFCCBC
-	- #FFAA8F
-	- #FF754A
-	- #EC501F
-
-	Palette 3: Variations Vert pomme
-	- #C3E85D
-	- #EAFBB9
-	- #D9F688
-	- #9FC535
-	- #729316
-
-*/
-
-body {
-	background-color: #FFCCBC;
-	margin: 10px;
+/* CSS GENERAL */
+body{
+	margin:0;
+}
+header{
+	width: 100%;
 	padding: 10px;
-	
+	background-color: steelblue;
+}
+#titre{
+	text-align: center;
+	font-family: Insolent;
+	color: darkslategray;
+	font-size: 50px;
+}
+#sous-titre{
+	text-align: center;
+	font-size: 40px;
+	font-family: Verdana, sans-serif;
+	color: darkgray;
+}
+nav{
+	width: 100%;
+	text-align: left;
+	background-color: steelblue;
+	border-bottom: 1px solid darkblue;
+	margin: 0;
+	padding: 2px;
+}
+nav ul, #onglets-profil{
+	list-style-type: none ;
+}
+nav li{
+	border: 1px solid black;
+	padding: 5px;
+}
+nav li, #onglets-profil li{
+	display: inline;
+	background-color: white;
+}
+nav li:hover{
+	background-color: lightgrey;
+}
+nav a, #onglets-profil a{
+	text-decoration: none;
+	color: black;
 }
 
-.logo-cegep-matane {
+/* BALISES CSS POUR PAGE PROFIL */
+#onglets-profil{
+	margin: auto;
+	width: 90%;
+	margin-top: 20px;
+	border-bottom: 1px solid black;
+	padding-bottom: 5px;
+}
+#onglets-profil li{
+	margin-left: 2px;
+	margin-right: 2px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border: 1px solid black;
+}
+#onglets-profil a{
+	padding: 5px;
+	background-color: lightgray;
+}
+#onglets-profil a:hover{
+	background-color: white;
+}
+#onglets-profil li:hover{
+	border-bottom: 1px solid white;
+}
+#onglets-profil #active a{
+	border-bottom: 1px solid white;
+	background-color: white;
+}
+.contenu-profil, #contenu-vente{
+	padding: 10px;
+	margin: 5px;
+}
+.contenu-profil{
+	display: block;
+	border: 1px solid black;
+	float: left;
+	width: 100%;
+}
+.contenu-profil input{
+	float: right;
+	margin-right: 50px;
+	font-size: 20px;
+	margin-top: 260px;
+}
+.contenu-profil ul{
+	list-style-type: none;
+}
+.contenu-profil .informations{
+	display: block;
+	float: left;
+	font-size: 20px;
+	padding : 20px;
+}
+.contenu-profil .statistiques{
+	margin-top: 190px;
+	display: block;
 	position: absolute;
-	top: 0;
-	right: 0;
+	font-size: 20px;
+	padding: 15px;
+}
+.contenu-profil li{
+	padding: 2px;
+}
+#image-profil, #image-vente{
+	width: 200px;
+	border: 1px solid black;
+	padding: 10px;
+	vertical-align: middle;
+	float : left;
+	margin-right : 50px;
 }
 
-.liste-article {
-	color-background:#225F5D 
+/* BALISES CSS POUR PAGE INDEX ET CATALOGUE */
+#zone-categories-index{
+	float: left;
+	list-style-type: none;
+	width: 15%;
+	height: 620px;
+	padding: 10px;
+	margin: 0 auto;
 	text-align: center;
 }
-
-.colonne-selection-categorie-produit{
-	
-	position: absolute;
+#contenu-index{
 	padding: 10px;
-	
+	margin: 5px;
 }
-
-.photo-miniature-produit{
-	
-	height: 100px;
-	vertical-align:center;	
-	margin: 20px;
-	
-}
-
-.panneau-liste-produit{
-	
-	text-align:center;
-	color-background:#063533;
-	
-}
-
-
-#titre-survie-etudiante {
-	
-	font-size: 300%;
-	font-weight: bold;
-	font-family: "Times New Roman", Times, serif;
-	text-align: center;	
-}
-
-#italique{
-	font-style: italic;
-}
-
-#onglets-profil
-{
-    font : bold 11px Batang, arial, serif;
-    list-style-type : none;
-    padding-bottom : 11px;
-    margin-left : 0;
-    font-size: 20px;
-}
-#onglets-profil li
-{
-    float : left;
-    height : 28px;
-    background-color: #F4F9FD;
-    margin : 2px 2px 0 2px;
-    border : 1px solid black;
-}
-#onglets-profil li.active
-{
-    border-bottom: 1px solid #fff;
-    background-color: #fff;
-}
-#onglets-profil a
-{
-    display : block;
-    color : #666;
-    text-decoration : none;
-    padding : 4px;
-}
-#onglets-profil a:hover
-{
-    background : #fff;
-}
-#image-profil {
-	max-width: 300px;
-    border: 1.5px black solid;
-    padding: 10px;
-    vertical-align: middle;
-    float : left;
-    margin-right : 20px;
-}
-#general-profil{
-    font-family: Arial, Helvetica, sans-serif;
-}
-#titre-profil{
-    text-align:center;
-}
-
-#barre-de-recherche{
-	text-align:center;
-
-
-}
-#tabeau-principal-page-accueil{
-	width:100%;	
-}
-
-#colonne-gauche-accueil{
-	width:10%;
-	border:1px solid black;
-}
-
-#colonne-droite-accueil{
-	width:10%;
-	border:1px solid black;
-}
-
-#colonne-centrale-accueil{
-	width: 100%;
-	border: 1px solid black;
-
-}
-
-#tableau-identification-accueil{
-	border: 1px solid black;	
-}
-
 #image-loupe{
 	height: 25px;
 	vertical-align:bottom;
 }
-
-.informations-profil{
-    margin : 10px;
+#barre-de-recherche{
+	margin: 5px;
+	width: 100%;
+	text-align: center;
 }
-.td-profil{
-    padding-bottom: 15px;
-    width : auto;
-    padding-right: 80px;
+#barre-de-recherche input{
+	width: 15%;
 }
-#contenu-profil{
-    padding : 5px;
-    border : 1px solid black;
-	background-color: white;
-	padding-bottom: 33px;
+#titre-categories{
+	font-family: Insolent;
 }
-.statistiques-profil{
-    margin-left : 100px;
-	margin-top : 20px;
+.photo-miniature-produit{
+	height: 150px;
 }
-.bouton-profil{
+.produit-courant{
+	border-bottom: 1px solid black;
+	height: 200px;
+	margin: 4px;
+}
+.produit-courant ul{
 	float: right;
-    font-size: 20px;
+	line-height: 50px;
+	list-style-type: none;
+	margin-right: 20%;
+	text-align: center;
+}
+.produit-courant img{
+	float: left;
+	margin: 20px;
+	margin-left: 20%;
+}
+#boutons-index{
+	float: left;
+	list-style-type: none;
+	text-align: center;
+	margin-top: 260px;
+}
+#ensemble-produits{
+	float: left;
+	margin: 0 auto;
+	width: 70%;
+	padding: 10px;
+}
+#boutons-index button{
+	margin-bottom: 20px;
+	width: 150px;
+}
+#categories-index{
+	margin-top: 150px;
+	border: 1px solid black;
+	padding-bottom: 50px;
+}
+#categorie-selectionnee{
+	list-style-type: circle;
+	font-style: oblique;
+	text-decoration: underline;
+}
+#page-courante{
+	background-color: lightgrey;
 }
 
-#titre-vendeur{
-	
-	text-align:left;
-	text-decoration:underline;
+/* BALISES CSS POUR VENTE */
+#contenu-vente .informations{
+	font-size: 20px;
+	list-style-type: none;
+	float: left;
+	display: block;
+	margin-top: 0 auto;
+}
+#contenu-vente .prix{
+	margin-left: 200px;
+	float:middle;
+	list-style-type: none;
+	display: block;
+	font-size: 50px;
+	text-align: center;
+	margin-top: 30px;
+}
+#contenu-vente .statistiques-vendeur{
+	text-align: left;
+	list-style-type: none;
+	float: left;
+	display: block;
+	margin-top: 20px;
+	font-size: 20px;
 }
 
-.img-vente {
-	max-width: 500px;
-    height: auto;
-    border: 1.5px black solid;
-    padding: 10px;
-    vertical-align: middle;
-    float : left;
-    margin-right : 20px;
-	
-	
+#contenu-vente h4{
+	margin: 5px;
 }
 
-.td-info-vendeur{
-
-    width : auto;
-    padding-right: 10px;
-	float : center;
-	
-}
-
-.td-info-vente {
-	padding-bottom: 20px;
-    width : auto;
-    padding-right: 10px;
-}
-
-#bouton-Achat {
-	margin-right:10px;
-	float : right;
-	background-color: red;
-	
-}
-#bouton-profil-courant {
+#contenu-vente input{
+	margin-top: 50px;
+	margin-right: 200px;
 	float: right;
-	padding: 0;
-	margin-right:50px;
-	list-style:none;
-	text-align:center;
-	border: 1.5px solid black;
-	width: 120px;
-	background-color : lightgray;
-}
-#bouton-profil-courant ul{
-	padding:0;
-	margin:0;
-	list-style:none;
-	text-align:center;
-	border-left: 1.5px solid black;
-	border-right: 1.5px solid black;
-	border-bottom: 1.5px solid black;
-	background-color : lightgray;
-}
-#bouton-profil-courant li{
-	display:inline-block;
-	position:relative;
-	border-radius:8px 8px 0 0;
-	color: white;	
-}
-#bouton-profil-courant ul li{
-	display:inherit;
-	border-radius:0;
-}
-#bouton-profil-courant ul li:hover{
-	border-radius:0;
-}
-#bouton-profil-courant ul li:last-child{
-	border-radius:0 0 8px 8px;
-}
-#bouton-profil-courant ul{
-	position:absolute;
-	z-index: 1000;
-	max-height:0;
-	left: 0;
-	right: 0;
-	overflow:hidden;
-	-moz-transition: .8s all .3s;
-	-webkit-transition: .8s all .3s;
-	transition: .8s all .3s;
-}
-#bouton-profil-courant li:hover ul{
-	max-height:15em;
-}
-#bouton-profil-courant a{
-	color: black;
-	text-decoration: white;
-}
-#bouton-profil-courant a:visited{
-	color: black;
-	text-decoration: white;
+	font-size: 20px;
 }
 
-
-.element-selectionne {
-	background-color: #EC501F;
-    color: white;
+/* BALISES CSS POUR PAGE CREATION COMPTE */
+#formulaire-creation ul{
+	list-style-type: none;
+}
+#formulaire-creation li{
+	padding: 5px;
+	text-align: right;
+}
+#formulaire-creation #blocs-formulaire{
+	display: block;
+	margin-left: 30%;
+	margin-right: 30%;
+}
+#formulaire-creation #blocs-formulaire div{
+	margin: 5px;
+	display: block;
+	float: left;
+}
+#formulaire-creation #bouton{
+	text-align: center;
+	width: 10%;
+	margin-top: 20px;
+	margin-left: 45%;
+	margin-right: 45%;
 }
 
-
-
-
-.slider {
-    -webkit-appearance: none; 
-    appearance: none;
-    width: 80%; 
-    height: 25px; 
-    background: #FFCCBC; 
-    outline: none; 
-    opacity: 0.7; 
-    -webkit-transition: .2s; 
-    transition: opacity .2s;
+/* BALISES CSS POUR PAGE CREATION VENTE */
+#formulaire-vente ul{
+	list-style-type: none;
+	display: block;
+	margin-left: 37%;
+	margin-right: 30%;
+	width: 30%;
 }
-
-
-.slider:hover {
-    opacity: 1; 
+#formulaire-vente li{
+	padding: 5px;
+	text-align: left;
 }
-
-
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none; 
-    appearance: none;
-    width: 25px; 
-    background: #EC501F; 
-    cursor: pointer; 
+#formulaire-vente{
+	margin-left: auto;
+	margin-right: auto;
 }
-
-.slider::-moz-range-thumb {
-    width: 20px; 
-    height: 25px; 
-    background: #EC501F; 
-    cursor: pointer; 
+#formulaire-vente #bouton{
+	text-align: center;
+	width: 10%;
+	margin-left: 45%;
+	margin-right: 45%;
 }
-
-.contenu-onglet{
-	
-	display: none;
-	
+#formulaire-vente #gros-texte{
+	height: 75px;
 }
-
-.onglet-cliquable{
-	
-	font : bold 11px Batang, arial, serif;
-    list-style-type : none;
-    padding-bottom : 11px;
-    margin-left : 0;
-    font-size: 20px;
-	cursor:pointer;
-}
-
-.onglet-selectionne{
-	border-bottom: 1px solid #fff;
-    background-color: #00a500;
-}
-
-.onget-non-selectionne{
-	float : left;
-    height : 28px;
-    background-color: #F4F9FD;
-    margin : 2px 2px 0 2px;
-    border : 1px solid black;
-}
-
-
-
