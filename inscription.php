@@ -1,6 +1,6 @@
 <?php
 	include "entete.php";
-	require_once $_SERVER["DOCUMENT_ROOT"]."/configuration/configuration.dev.php";
+	
 
 	require_once LISTE_ERREUR_FORMULAIRE;
 	require_once INSCRIPTION_UTILISATEUR_CONTROLEUR;
