@@ -8,8 +8,8 @@
 	
 	$objetDAO = new ObjetDAO();
 	$listeObjet = $objetDAO->chercherParCategorie($categorie);
-		
-	if ( isset($listeObjet)){
+				
+	if ( ($listeObjet)){
 				
 		foreach($listeObjet as $key => $objet) {
 		?>
@@ -26,7 +26,7 @@
 	}
 	else{
 		
-		echo 'aucun objet dans cette catégorie !';
+		echo "aucun objet dans la catégorie ".$categorie." !";
 	}
 	
 	
