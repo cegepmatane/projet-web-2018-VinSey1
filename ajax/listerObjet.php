@@ -1,10 +1,13 @@
 <?php
 	
+	require_once $_SERVER["DOCUMENT_ROOT"]."/configuration/configuration.staging.php";
+	require_once OBJET_DAO;
+	require_once OBJET_MODELE;
 
 	$categorie = $_REQUEST["categorie"];
 	
 	$objetDAO = new ObjetDAO();
-	$objet = $objetDAO->chercherParCategorie($categorie);
+	$listeObjet = $objetDAO->chercherParCategorie($categorie);
 	
 	foreach($listeObjet as $key => $objet) {
 	?>
