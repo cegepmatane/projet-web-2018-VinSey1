@@ -15,3 +15,5 @@ Lien Wordpress : https://achatventevieetudiante.wordpress.com/
 Lien du drive : https://drive.google.com/drive/folders/1mM4ef_2SsDxx5OtWuNt2-Xodp4EIPWZM
 
 Lien de la page de développement : http://dev.achat-vente-vie-etudiante.ovh/index.php
+
+Lien de la page de staging : http://achat-vente-vie-etudiante.ovh/
