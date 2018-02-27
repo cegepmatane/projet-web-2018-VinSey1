@@ -65,8 +65,12 @@
 		</div>
 
 		<div class="contenu-onglet" id="contenu_onglet_utilisateurs">
-		
-			<?php echo gettext("Chercher des utilisateurs");?></br>
+				<?php 
+					$utilisateurDAO = new UtilisateurDAO();
+					$listeutilisateur = $utilisateurDAO->obtenirListeUtilisateur();
+				?>
+				<?php echo gettext("Nombre d'utilisateurs : ");?><?php $utilisateurDAO->compterUtilisateur(); ?></br>
+				<?php echo gettext("Chercher des utilisateurs");?></br>
 				<?php echo gettext("Identifiant");?> <input type="text" ></br>
 				<?php echo gettext("Nom");?> <input type="text" ></br>
 				<?php echo gettext("Prenom");?> <input type="text" ></br>
@@ -74,10 +78,7 @@
 				<button type="button"><?php echo gettext("Chercher");?></button>
 				<button type="button"><?php echo gettext("Créer un utilisateur");?></button>
 		
-			<?php 
-			$utilisateurDAO = new UtilisateurDAO();
-			$listeutilisateur = $utilisateurDAO->obtenirListeUtilisateur();
-			?>
+			
 			<?php foreach($listeutilisateur as $key => $utilisateur) { ?>
 				<div class="produit-courant">
 					<ul>

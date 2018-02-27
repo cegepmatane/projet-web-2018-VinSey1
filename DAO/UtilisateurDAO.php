@@ -184,5 +184,15 @@ class UtilisateurDAO{
 				
 	}
 	
+	public function compterUtilisateur() {
+		
+		global $connexionBDActive;
+		$requete = $connexionBDActive->prepare("SELECT COUNT(*) as NbUtilisateur FROM utilisateur");
+		$requete->execute();
+		
+		$resultat = $requete->fetch(PDO::FETCH_ASSOC);
+		echo $resultat['NbUtilisateur'];
+		
+	}
 }
 ?>
