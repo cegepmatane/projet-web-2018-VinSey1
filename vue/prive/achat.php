@@ -1,9 +1,10 @@
 <?php 
-	require_once $_SERVER["DOCUMENT_ROOT"]."/configuration/configuration.dev.php";
+	
 
+	
+	include "entete.php";
 	require_once OBJET_DAO;
 	require_once OBJET_MODELE;
-	include "entete.php";
 
 ?>
 

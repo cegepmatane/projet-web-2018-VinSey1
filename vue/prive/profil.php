@@ -1,8 +1,8 @@
 <?php 
-    require_once $_SERVER["DOCUMENT_ROOT"]."/configuration/configuration.dev.php";
+    include "entete.php";
 	require_once UTILISATEUR_DAO;
 	require_once UTILISATEUR_MODELE;
-	include "entete.php";
+	
 ?>
 	<!--
 	<script type="text/javascript">
