@@ -10,9 +10,7 @@
 	$listeObjet = $objetDAO->chercherParCategorie($categorie);
 		
 	if ( isset($listeObjet)){
-		
-		var_dump($listeObjet);	
-		
+				
 		foreach($listeObjet as $key => $objet) {
 		?>
 			<div class="produit-courant">
