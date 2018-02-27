@@ -63,7 +63,6 @@
 				</div>
 			<?php } ?>
 		</div>
-
 		<div class="contenu-onglet" id="contenu_onglet_utilisateurs">
 				<?php 
 					$utilisateurDAO = new UtilisateurDAO();

@@ -5,6 +5,7 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8"/>
+	<script src="echarts.js"></script>
     <meta name="viewport" content="width=device-width"/>
     <link rel="stylesheet" href="../../decoration/style_general.css">
     <link rel="stylesheet" type="text/css" href="../../decoration/MyFontsWebfontsKit.css">		
