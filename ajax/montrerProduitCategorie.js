@@ -9,7 +9,7 @@ function montrerProduitCategorie(categorie){
 		
 	};
 	
-	xmlhttp.open("GET", "listerObjet.php?q="+categorie, true);
+	xmlhttp.open("GET", "listerObjet.php?categorie="+categorie, true);
 	xmlhttp.send();
 
 }
