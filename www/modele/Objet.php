@@ -121,7 +121,7 @@ class Objet{
 		$this->illustration = $illustration;
 		$this->vedette = $vedette;
 		
-	}
+	}	
 	
 	function setIdObjet($idObjet){
 		
