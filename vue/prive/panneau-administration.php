@@ -35,6 +35,23 @@
 		<span id="onglet_ventes" onclick="javascript:changer_onglet('ventes');" ><?php echo gettext("Catalogue des Ventes") ?></span>
 		<span id="onglet_utilisateurs" onclick="javascript:changer_onglet('utilisateurs');" ><?php echo gettext("Catalogue des utilisateurs") ?></span>
 	</div>
+	<div id="chart" style="width: 500px; height: 350px;"></div>
+    	<script type="text/javascript>
+    		var myChart = echarts.init(document.getElementById('chart'));
+    		var option = {
+    			title: { text: 'ECharts Sample' },
+    			tooltip: { },
+    			legend: { data: [ 'Sales' ] },
+    			xAxis: { data: [ "shirt", "cardign", "chiffon shirt", "pants", "heels", "socks" ] },
+    			yAxis: { },
+    			series: [{
+    				name: 'Sales',
+    				type: 'bar',
+    				data: [5, 20, 36, 10, 10, 20]
+    			}]
+    		};
+    		myChart.setOption(option);
+    	</script>
 	<div>
 		<div class="onglets-profil" id="contenu_onglet_ventes">
 				<?php 
