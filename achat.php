@@ -22,11 +22,10 @@
 		<li>
 			<?php echo $objet->getPrix();?> $
 		</li>
-		<form action="#">
-			<input type="button" value="acheter">
-		</form>
 	</ul>	
-
+	<form action="#">
+		<input type="button" value="acheter">
+	</form>
 
 <?php
 	}

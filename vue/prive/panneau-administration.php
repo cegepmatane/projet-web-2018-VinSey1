@@ -36,7 +36,7 @@
 		<span id="onglet_utilisateurs" onclick="javascript:changer_onglet('utilisateurs');" ><?php echo gettext("Catalogue des utilisateurs") ?></span>
 	</div>
 	<div id="chart" style="width: 500px; height: 350px;"></div>
-    	<script type="text/javascript>
+    	<script type="text/javascript">
     		var myChart = echarts.init(document.getElementById('chart'));
     		var option = {
     			title: { text: 'ECharts Sample' },
