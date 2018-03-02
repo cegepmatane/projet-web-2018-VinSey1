@@ -39,10 +39,9 @@
     	<script type="text/javascript">
     		var myChart = echarts.init(document.getElementById('chart'));
     		var option = {
-				backgroundColor: '#2c343c',
 
 				title: {
-					text: 'Customized Pie',
+					text: 'Répartation des objets',
 					left: 'center',
 					top: 20,
 					textStyle: {
@@ -65,16 +64,16 @@
 				},
 				series : [
 					{
-						name:'访问来源',
+						name:'Categorie',
 						type:'pie',
 						radius : '55%',
 						center: ['50%', '50%'],
 						data:[
-							{value:335, name:'直接访问'},
-							{value:310, name:'邮件营销'},
-							{value:274, name:'联盟广告'},
-							{value:235, name:'视频广告'},
-							{value:400, name:'搜索引擎'}
+							{value:335, name:'Literie'},
+							{value:310, name:'Ustensiles'},
+							{value:274, name:'Ménage'},
+							{value:235, name:'Livres'},
+							{value:400, name:'Fournitures de bureau"}
 						].sort(function (a, b) { return a.value - b.value; }),
 						roseType: 'radius',
 						label: {
