@@ -1,5 +1,5 @@
 Données Test 
 ---
-Nom d'utilisateur API :	vseyller-facilitator_api1.free.fr
-Mot de passe d'API :	YDQNLGSQ7QA6LCU2
-Signature :	A.goQSt0j5GwaeC9B2UVbOPS0qcmAw2Lprh99fU5tgtd5PFWZI.F3T1l
+Nom d'utilisateur API :	vseyller-facilitator_api1.laposte.net
+Mot de passe d'API :	TJ2UDR4ZM7PZLF3R
+Signature :	AYvApQjPaEK2tFXuE1zKCJB4vLEIA.uqa8luYuOJZERQR3zTWmEpJpWz

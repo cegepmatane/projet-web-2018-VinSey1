@@ -2,11 +2,11 @@
     function construit_url_paypal()
     {
         $api_paypal = 'https://api-3t.sandbox.paypal.com/nvp?';
-        $version = 56.0;
+        $version = 95.0;
         
-        $user = 'vseyller-facilitator_api1.free.fr';
-        $pass = 'YDQNLGSQ7QA6LCU2';
-        $signature = 'A.goQSt0j5GwaeC9B2UVbOPS0qcmAw2Lprh99fU5tgtd5PFWZI.F3T1l';
+        $user = 'vseyller-facilitator_api1.laposte.net';
+        $pass = 'TJ2UDR4ZM7PZLF3R';
+        $signature = 'AYvApQjPaEK2tFXuE1zKCJB4vLEIA.uqa8luYuOJZERQR3zTWmEpJpWz';
 
         $api_paypal = $api_paypal.'VERSION='.$version.'&USER='.$user.'&PWD='.$pass.'&SIGNATURE='.$signature;
 
