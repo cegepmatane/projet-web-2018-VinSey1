@@ -39,10 +39,22 @@ class ObjetDAO{
 	
 	public function chercherParCategorie($categorieDemande){
 		
+		switch($categorieDemande){
+			
+			case 1:
+				$categorie = "Literie";
+			
+			case 2:
+				$categorie = "Couverts";
+			
+			case 3:
+				$categorie = "Autre";
+		}
+		
 		$listeObjet = [];
 		global $connexionBDActive;
 		$requete = $connexionBDActive->prepare("SELECT * FROM objet WHERE categorie = :categorieDemande");
-		$requete->bindParam(':categorieDemande', $categorieDemande, PDO::PARAM_INT);
+		$requete->bindParam(':categorieDemande', $categorie, PDO::PARAM_INT);
 		$requete->execute();
 		
 		$resultat = $requete->fetchAll(PDO::FETCH_OBJ);	
