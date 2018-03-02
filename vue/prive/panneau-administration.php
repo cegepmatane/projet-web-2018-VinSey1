@@ -35,9 +35,9 @@
 		<span id="onglet_ventes" onclick="javascript:changer_onglet('ventes');" ><?php echo gettext("Catalogue des Ventes") ?></span>
 		<span id="onglet_utilisateurs" onclick="javascript:changer_onglet('utilisateurs');" ><?php echo gettext("Catalogue des utilisateurs") ?></span>
 	</div>
-	<div id="chart" style="width: 500px; height: 350px;"></div>
+	<div id="chart1" style="width: 500px; height: 350px;"></div>
     	<script type="text/javascript">
-    		var myChart = echarts.init(document.getElementById('chart'));
+    		var myChart = echarts.init(document.getElementById('chart1'));
     		var option = {
 
 				title: {
@@ -108,6 +108,48 @@
 						}
 					}
 				]
+			};
+    		myChart.setOption(option);
+    	</script>
+		<div id="chart2" style="width: 500px; height: 350px;"></div>
+    	<script type="text/javascript">
+    		var myChart = echarts.init(document.getElementById('chart2'));
+    		var option = {
+				
+				
+				title: {
+					text: 'Nombre de connexions par jour',
+					left: 'center',
+					top: 20,
+					textStyle: {
+						color: '#ccc'
+					}
+				},
+
+				tooltip : {
+					
+					formatter: "<br/>{b} : {c} "
+				},
+
+				visualMap: {
+					show: false,
+					min: 10,
+					max: 400,
+					inRange: {
+						colorLightness: [0, 1]
+					}
+				},
+				xAxis: {
+					type: 'category',
+					data: ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim']
+				},
+				yAxis: {
+					type: 'value'
+				},
+				series: [{
+					data: [120, 200, 150, 80, 70, 110, 130],
+					type: 'bar'
+				}]
 			};
     		myChart.setOption(option);
     	</script>
