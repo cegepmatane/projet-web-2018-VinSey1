@@ -73,7 +73,7 @@
 							{value:310, name:'Ustensiles'},
 							{value:274, name:'Ménage'},
 							{value:235, name:'Livres'},
-							{value:400, name:'Fournitures de bureau"}
+							{value:400, name:'Fournitures de bureau'},
 						].sort(function (a, b) { return a.value - b.value; }),
 						roseType: 'radius',
 						label: {
