@@ -247,6 +247,12 @@ nav a, #onglets-profil a{
 	font-size: 20px;
 }
 
+#bloc-stat {
+	display: block;
+	margin-left: 30%;
+	margin-right: 30%;
+}
+
 /* BALISES CSS POUR PAGE CREATION COMPTE */
 #formulaire-creation ul{
 	list-style-type: none;
@@ -272,6 +278,7 @@ nav a, #onglets-profil a{
 	margin-left: 45%;
 	margin-right: 45%;
 }
+
 
 /* BALISES CSS POUR PAGE CREATION VENTE */
 #formulaire-vente ul{
