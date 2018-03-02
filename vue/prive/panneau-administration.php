@@ -41,7 +41,7 @@
     		var option = {
 
 				title: {
-					text: 'Répartation des objets',
+					text: 'Répartition des objets',
 					left: 'center',
 					top: 20,
 					textStyle: {
