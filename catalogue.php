@@ -2,7 +2,6 @@
 	include "entete.php";
 	require_once OBJET_DAO;
 	require_once OBJET_MODELE;
-	require_once "/controleur/controleurCatalogue.php";
 	include "barreDeRecherche.php";
 	include "listeObjets.php";
 ?>
