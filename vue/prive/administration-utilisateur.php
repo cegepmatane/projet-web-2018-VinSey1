@@ -46,28 +46,44 @@ function afficherFormulaireUtilisateur($actionFormulaire, $utilisateur=null){
 					</li>
 				</div>	
 				<div id = "bloc-formulaire-2">
-					<li>Code postal : <input type="text" name="codepostal" value="<?php if ( $utilisateur) echo $utilisateur->getCodepostal(); ?>"/>
+					<li>
+						<label for="code-postal"> <?php echo gettext("Code postal"); ?>: </label>
+						<input type="text" name="codepostal" id="code-postal" value="<?php if ( $utilisateur) echo $utilisateur->getCodepostal(); ?>"/>
 						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('codepostal'));?>
 					</li>
-					<li>Pays : <input type="text" name="pays" value="<?php if ( $utilisateur) echo $utilisateur->getPays(); ?>" />
+					<li>
+						<label for="pays"> <?php echo gettext("Pays"); ?>: </label>
+						<input type="text" name="pays" id="pays" value="<?php if ( $utilisateur) echo $utilisateur->getPays(); ?>" />
 						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('pays'));?>
 					</li>
-					<li>Ville : <input type="text" name="ville"  value="<?php if ( $utilisateur) echo $utilisateur->getVille(); ?>" />
+					<li>
+						<label for="ville"> <?php echo gettext("Ville"); ?>: </label>
+						<input type="text" name="ville"  value="<?php if ( $utilisateur) echo $utilisateur->getVille(); ?>" />
 						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('ville'));?>
 					</li>
-					<li>Âge : <input type="text" name="anneenaissance"  value="<?php if ( $utilisateur) echo $utilisateur->getAge(); ?>" />
+					<li>
+						<label for="age"> <?php echo gettext("Age"); ?>: </label>
+						<input type="text" name="anneenaissance" id="age" value="<?php if ( $utilisateur) echo $utilisateur->getAge(); ?>" />
 						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('age'));?>
 					</li>
-					<li>Téléphone : <input type="text" name="telephone" value="<?php if ( $utilisateur) echo $utilisateur->getTelephone(); ?>" />
+					<li>
+						<label for="telephone"> <?php echo gettext("Téléphone"); ?>: </label>
+						<input type="text" name="telephone" id="telephone" value="<?php if ( $utilisateur) echo $utilisateur->getTelephone(); ?>" />
 						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('telephone'));?>
 					</li>
-					<li>Nombre de ventes : <input type="text" name="nbventes" value="<?php if ( $utilisateur) echo $utilisateur->getNbventes(); ?>" />
+					<li>
+						<label for="nbventes"> <?php echo gettext("Nombre de ventes"); ?>: </label>
+						<input type="text" name="nbventes" id="nbventes" value="<?php if ( $utilisateur) echo $utilisateur->getNbventes(); ?>" />
 						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('nbventes'));?>
 					</li>
-					<li>Nombre d'achats : <input type="text" name="nbachats" value="<?php if ( $utilisateur) echo $utilisateur->getNbachats(); ?>" />
+					<li>
+						<label for="nbachats"> <?php echo gettext("Nombre d'achats"); ?>: </label>
+						<input type="text" name="nbachats" id="nbachats" value="<?php if ( $utilisateur) echo $utilisateur->getNbachats(); ?>" />
 						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('nbachats'));?>
 					</li>
-					<li>Role : <input type="text" name="role" value="<?php if ( $utilisateur) echo $utilisateur->getRole(); ?>" />
+					<li>
+						<label for="role"> <?php echo gettext("Role"); ?>: </label>
+						<input type="text" name="role" id="role" value="<?php if ( $utilisateur) echo $utilisateur->getRole(); ?>" />
 						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('role'));?>
 					</li>
 				</ul>
