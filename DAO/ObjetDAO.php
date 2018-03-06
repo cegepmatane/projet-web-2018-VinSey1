@@ -39,8 +39,6 @@ class ObjetDAO{
 	
 	public function chercherParCategorie($categorieDemande){
 		
-		echo $categorieDemande;
-		
 		switch($categorieDemande){
 			
 			case 1:
@@ -55,8 +53,6 @@ class ObjetDAO{
 				$categorie = "Autre";
 				break;
 		}
-		
-		echo $categorie;
 		
 		$listeObjet = [];
 		global $connexionBDActive;

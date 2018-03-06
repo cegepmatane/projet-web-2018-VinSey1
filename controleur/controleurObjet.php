@@ -18,12 +18,12 @@
 		
 		switch ( $actionNaviguation ){
 			
-			case "Ajouter":
+			case gettext("Ajouter"):
 			
 				afficherFormulaireObjet($actionNaviguation);
 			
 			
-			case "Supprimer":
+			case gettext("Supprimer"):
 				
 				if ( $idObjet ){
 					
@@ -37,7 +37,7 @@
 				
 			break;
 			
-			case "Modifier":
+			case gettext("Modifier"):
 			
 				if ( $idObjet ){
 					
@@ -65,7 +65,7 @@
 			
 			switch ( $actionFormulaire ){
 			
-				case   "Ajouter":
+				case gettext("Ajouter"):
 
 					$objet = new Objet();
 				
@@ -86,7 +86,7 @@
 				
 					break;
 				
-				case   "Modifier":
+				case gettext("Modifier"):
 				
 					$objet = new Objet();
 					
@@ -104,7 +104,7 @@
 				
 					break;
 				
-				case   "Supprimer":
+				case gettext("Supprimer"):
 								
 					$objet = new Objet();		
 								
