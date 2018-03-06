@@ -17,27 +17,62 @@
 						<li>
 							<label for="prenom"> <?php echo gettext("Prénom"); ?>: </label>
 							<input type="text" name="prenom" id="prenom" value="<?php if ( $utilisateur) echo $utilisateur->getPrenom(); ?>" />
-							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('prenom'));?>												
+							<?php if ( $utilisateur) {
+								
+								afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('prenom'));
+								?><script>indiquerErreurInscription('prenom');</script><?php
+								
+								}
+							?>												
 						</li>
 						<li>
 							<label for="nom"> <?php echo gettext("Nom"); ?>: </label>
 							<input type="text" name="nom" id="nom" value="<?php if ( $utilisateur) echo $utilisateur->getNom(); ?>" />  
-							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('nom'));?>												
+							<?php 
+								if ( $utilisateur){
+									
+									afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('nom'));
+									?><script>indiquerErreurInscription('nom');</script><?php
+								} 
+							?>												
 						</li>
 						<li>
 							<label for="annee-naissance"> <?php echo gettext("Année de naissance"); ?>: </label>
 							<input type="text" name="anneenaissance" id="annee-naissance" value="<?php if ( $utilisateur) echo $utilisateur->getAge(); ?>" />
-							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('age'));?>
+							<?php 
+							
+								if ( $utilisateur){
+									
+									afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('age'));
+									?><script>indiquerErreurInscription('annee-naissance');</script><?php
+								} 
+								
+							
+							?>
 						</li>
 						<li>
 							<label for="pseudonyme"> <?php echo gettext("Pseudonyme"); ?>: </label>
 							<input type="text" name="pseudonyme" id="pseudonyme" value="<?php if ( $utilisateur) echo $utilisateur->getPseudonyme(); ?>" />
-							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('pseudonyme'));?>
+							<?php 
+								if ( $utilisateur){
+									
+									afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('pseudonyme'));
+									?><script>indiquerErreurInscription('pseudonyme');</script><?php
+									
+								} 
+								
+							?>
 						</li>
 						<li>
 							<label for="illustration"> <?php echo gettext("Illustration"); ?>: </label>
 							<input type="text" name="illustration" id="illustration" value="<?php if ( $utilisateur) echo $utilisateur->getIllustration(); ?>" />
-							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('illustration'));?>
+							<?php
+								if ( $utilisateur){
+									
+									afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('illustration'));
+									?><script>indiquerErreurInscription('illustration');</script><?php
+								}
+							?>
 						</li>
 						<input type="hidden" name="adresse"  value="<?php if ( $utilisateur) echo $utilisateur->getAdresse(); ?>" />
 						<input type="hidden" name="codepostal" value="<?php if ( $utilisateur) echo $utilisateur->getCodepostal(); ?>"/>
@@ -144,10 +179,7 @@
 	<?php	
 	}
 	?>
-	
-	<script>
-		indiquerErreurInscription('nom');
-	</script>
+
 <?php 
 	include "piedPage.php";
 	
