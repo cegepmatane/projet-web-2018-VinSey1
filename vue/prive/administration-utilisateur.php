@@ -7,9 +7,10 @@ require_once UTILISATEUR_CONTROLEUR;
 function afficherFormulaireUtilisateur($actionFormulaire, $utilisateur=null){
 ?>	
 	<form action="administration-utilisateur.php" id="formulaire-creation" method="post">
-		<ul>
-			<div id = "blocs-formulaire">
-				<div id = "bloc-formulaire-1">		
+		
+		<div id = "blocs-formulaire">
+			<div id = "bloc-formulaire-1">		
+				<ul>
 					<input type="hidden" name="idUtilisateur" value="<?php if ( $utilisateur) echo $utilisateur->getIdUtilisateur(); ?>"/>
 
 					
@@ -69,9 +70,10 @@ function afficherFormulaireUtilisateur($actionFormulaire, $utilisateur=null){
 					<li>Role : <input type="text" name="role" value="<?php if ( $utilisateur) echo $utilisateur->getRole(); ?>" />
 						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('role'));?>
 					</li>
-				</div>	
-			</div>
-		</ul>
+				</ul>
+			</div>	
+		</div>
+	
 		<input id="bouton" type="submit" value="<?php echo $actionFormulaire ?>" name="actionFormulaire"/>
     </form>		
 		
