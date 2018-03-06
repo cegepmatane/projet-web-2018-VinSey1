@@ -106,22 +106,29 @@
 		<form action="inscription.php" id="formulaire-creation" method="post">
 			<div id = "blocs-formulaire">
 				<div id = "bloc-formulaire-1">
-					<input type="hidden" name="nom" value="<?php if ( $utilisateur) echo $utilisateur->getNom(); ?>" />  						
-					<input type="hidden" name="prenom" value="<?php if ( $utilisateur) echo $utilisateur->getPrenom(); ?>" />						
-					<input type="hidden" name="anneenaissance"  value="<?php if ( $utilisateur) echo $utilisateur->getAge(); ?>" />						
-					<input type="hidden" name="pseudonyme" value="<?php if ( $utilisateur) echo $utilisateur->getPseudonyme(); ?>" />						
-					<input type="hidden" name="illustration" value="<?php if ( $utilisateur) echo $utilisateur->getIllustration(); ?>" />						
-					<input type="hidden" name="adresse"  value="<?php if ( $utilisateur) echo $utilisateur->getAdresse(); ?>" />						
-					<input type="hidden" name="codepostal" value="<?php if ( $utilisateur) echo $utilisateur->getCodepostal(); ?>"/>						
-					<input type="hidden" name="pays" value="<?php if ( $utilisateur) echo $utilisateur->getPays(); ?>" />		
-					<input type="hidden" name="ville"  value="<?php if ( $utilisateur) echo $utilisateur->getVille(); ?>" />
+					<ul>
+						
+						<input type="hidden" name="nom" value="<?php if ( $utilisateur) echo $utilisateur->getNom(); ?>" />  						
+						<input type="hidden" name="prenom" value="<?php if ( $utilisateur) echo $utilisateur->getPrenom(); ?>" />						
+						<input type="hidden" name="anneenaissance"  value="<?php if ( $utilisateur) echo $utilisateur->getAge(); ?>" />						
+						<input type="hidden" name="pseudonyme" value="<?php if ( $utilisateur) echo $utilisateur->getPseudonyme(); ?>" />						
+						<input type="hidden" name="illustration" value="<?php if ( $utilisateur) echo $utilisateur->getIllustration(); ?>" />						
+						<input type="hidden" name="adresse"  value="<?php if ( $utilisateur) echo $utilisateur->getAdresse(); ?>" />						
+						<input type="hidden" name="codepostal" value="<?php if ( $utilisateur) echo $utilisateur->getCodepostal(); ?>"/>						
+						<input type="hidden" name="pays" value="<?php if ( $utilisateur) echo $utilisateur->getPays(); ?>" />		
+						<input type="hidden" name="ville"  value="<?php if ( $utilisateur) echo $utilisateur->getVille(); ?>" />
 
-					<li>Adresse e-mail : <input type="text" name="email"  value="<?php if ( $utilisateur) echo $utilisateur->getEmail(); ?>" />
-						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('email'));?>
-					</li>
-					<li>Téléphone : <input type="text" name="telephone" value="<?php if ( $utilisateur) echo $utilisateur->getTelephone(); ?>" />
-						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('telephone'));?>
-					</li>
+						<li>
+							<label for="email"> <?php echo gettext("Adresse mail"); ?>: </label>						
+							<input type="text" id="email" name="email"  value="<?php if ( $utilisateur) echo $utilisateur->getEmail(); ?>" />
+							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('email'));?>
+						</li>
+						<li>
+							<label for="telephone"> <?php echo gettext("Téléphone"); ?>: </label>
+							<input type="text" name="telephone" id="téléphone" value="<?php if ( $utilisateur) echo $utilisateur->getTelephone(); ?>" />
+							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('telephone'));?>
+						</li>
+					</ul>
 				</div>
 			</div>
 			<button type="submit" value="PrecedentTroisiemeFormulaire" name="actionFormulaire"/><?php echo gettext("Précédent");?></button>		
