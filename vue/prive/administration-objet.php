@@ -13,7 +13,6 @@ function afficherFormulaireObjet($actionFormulaire, $objet=null){
 				<ul>
 					<input type="hidden" name="idObjet" value="<?php if ( $objet) echo $objet->getIdObjet(); ?>"/>
 
-					<label for="tireDeVente"> <?php echo gettext("Titre de vente"); ?>: </label>	
 					<li>
 						<label for="tireDeVente"> <?php echo gettext("Titre de vente"); ?>: </label>						
 						<input type="text" name="titreDeVente" id="titreDeVente" value="<?php if ( $objet) echo $objet->getTitreDeVente(); ?>" />  

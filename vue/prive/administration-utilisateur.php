@@ -89,7 +89,6 @@ function afficherFormulaireUtilisateur($actionFormulaire, $utilisateur=null){
 				</ul>
 			</div>	
 		</div>
-	
 		<input id="bouton" type="submit" value="<?php echo $actionFormulaire ?>" name="actionFormulaire"/>
     </form>		
 		
@@ -139,11 +138,9 @@ function afficherRetroactionNegative($message){?>
 	
 <?php	
 }
-
 ?>
 
 
 <?php 
 	include "piedPage.php";
-
 ?>

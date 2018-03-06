@@ -17,12 +17,12 @@
 		
 		switch ( $actionNaviguation ){
 			
-			case "Ajouter":
+			case gettext("Ajouter"):
 			
 				afficherFormulaireUtilisateur($actionNaviguation);
 			
 			
-			case "Supprimer":
+			case gettext("Supprimer"):
 				
 				if ( $idUtilisateur ){
 					
@@ -36,7 +36,7 @@
 				
 			break;
 			
-			case "Modifier":
+			case gettext(""):
 			
 				if ( $idUtilisateur ){
 					
@@ -63,7 +63,7 @@
 			
 			switch ( $actionFormulaire ){
 			
-				case   "Ajouter":
+				case gettext("Ajouter"):
 
 					$utilisateur = new Utilisateur();
 				
@@ -84,7 +84,7 @@
 				
 					break;
 				
-				case   "Modifier":
+				case  gettext("Modifier"):
 				
 					$utilisateur = new Utilisateur();
 					
@@ -102,7 +102,7 @@
 				
 					break;
 				
-				case   "Supprimer":
+				case gettext("Supprimer"):
 								
 					$utilisateur = new Utilisateur();		
 								

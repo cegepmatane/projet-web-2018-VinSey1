@@ -7,7 +7,11 @@
 	if ( isset($_POST['actionFormulaire'])){
 		
 				
-		if ( $_POST['actionFormulaire'] == 'finPremierFormulaire' ){
+		$actionNaviguation = $_POST['actionFormulaire'];
+				
+		switch ( $actionNaviguation ){
+			
+			case 'finPremierFormulaire':
 			
 			$utilisateur = new Utilisateur();
 			
@@ -35,8 +39,9 @@
 				
 			}
 			
+			break;
 			
-		}else if ( $_POST['actionFormulaire'] == 'finDeuxiemeFormulaire' ){
+		case 'finDeuxiemeFormulaire':
 				
 			$utilisateur = new Utilisateur();
 			
@@ -58,8 +63,10 @@
 				
 				afficherDeuxiemeFormulaire($utilisateur);
 			}			
-		}
-		else if ( $_POST['actionFormulaire'] == 'finTroisiemeFormulaire' ){
+		
+			break;
+		
+		case 'finTroisiemeFormulaire':
 			
 			$utilisateur = new Utilisateur();
 		
@@ -85,9 +92,10 @@
 				afficherTroisiemeFormulaire($utilisateur);
 
 			}
+			break;
 			
-		}
-		else if ( $_POST['actionFormulaire'] == 'PrecedentDeuxiemeFormulaire' ){
+		
+		case 'PrecedentDeuxiemeFormulaire':
 			
 			$utilisateur = new Utilisateur();
 			
@@ -103,9 +111,9 @@
 			$utilisateur->setVille($_POST['ville']);
 				
 			afficherPremierFormulaire($utilisateur);
-			
-		}
-		else if ( $_POST['actionFormulaire'] == 'PrecedentTroisiemeFormulaire' ){
+			break;
+		
+		case 'PrecedentTroisiemeFormulaire' :
 			
 			$utilisateur = new Utilisateur();
 			
@@ -119,15 +127,15 @@
 			$utilisateur->setCodepostal($_POST['codepostal']);
 			$utilisateur->setPays($_POST['pays']);			
 			$utilisateur->setVille($_POST['ville']);
-			
 				
 			afficherDeuxiemeFormulaire($utilisateur);
-			
+			break;
+		
 		}
-	}
-	else{
+	}else{
 		afficherPremierFormulaire();
 	}
+	
 	
 	
 	function ajouter($utilisateur){
@@ -141,16 +149,5 @@
 		$utilisateurDAO->insererUtilisateur($utilisateur);
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 ?>
