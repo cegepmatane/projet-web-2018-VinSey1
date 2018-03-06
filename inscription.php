@@ -8,24 +8,35 @@
 	
 	function afficherPremierFormulaire($utilisateur = null){
 	?>
-		<p> Renseignement sur l'identité <p>
+		<script src="retourUtilisateurInscriptionPublique.js"></script> 
+		<h3> Renseignement sur l'identité </h3>
 		<form action="inscription.php" id="formulaire-creation" method="post">
-			<ul>
-				<div id = "blocs-formulaire">
-					<div id = "bloc-formulaire-1">
-						<li>Prénom : <input type="text" name="prenom" value="<?php if ( $utilisateur) echo $utilisateur->getPrenom(); ?>" />
+			<div id = "blocs-formulaire">
+				<div id = "bloc-formulaire-1">
+					<ul>
+						<li>
+							<label for="prenom"> <?php echo gettext("Prénom"); ?>: </label>
+							<input type="text" name="prenom" id="prenom" value="<?php if ( $utilisateur) echo $utilisateur->getPrenom(); ?>" />
 							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('prenom'));?>												
 						</li>
-						<li>Nom : <input type="text" name="nom" value="<?php if ( $utilisateur) echo $utilisateur->getNom(); ?>" />  
+						<li>
+							<label for="nom"> <?php echo gettext("Nom"); ?>: </label>
+							<input type="text" name="nom" id="nom" value="<?php if ( $utilisateur) echo $utilisateur->getNom(); ?>" />  
 							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('nom'));?>												
 						</li>
-						<li>Âge : <input type="text" name="anneenaissance"  value="<?php if ( $utilisateur) echo $utilisateur->getAge(); ?>" />
+						<li>
+							<label for="annee-naissance"> <?php echo gettext("Année de naissance"); ?>: </label>
+							<input type="text" name="anneenaissance" id="annee-naissance" value="<?php if ( $utilisateur) echo $utilisateur->getAge(); ?>" />
 							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('age'));?>
 						</li>
-						<li>Pseudonyme : <input type="text" name="pseudonyme" value="<?php if ( $utilisateur) echo $utilisateur->getPseudonyme(); ?>" />
+						<li>
+							<label for="pseudonyme"> <?php echo gettext("Pseudonyme"); ?>: </label>
+							<input type="text" name="pseudonyme" id="pseudonyme" value="<?php if ( $utilisateur) echo $utilisateur->getPseudonyme(); ?>" />
 							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('pseudonyme'));?>
 						</li>
-						<li>Illustration : <input type="text" name="illustration" value="<?php if ( $utilisateur) echo $utilisateur->getIllustration(); ?>" />
+						<li>
+							<label for="illustration"> <?php echo gettext("Illustration"); ?>: </label>
+							<input type="text" name="illustration" id="illustration" value="<?php if ( $utilisateur) echo $utilisateur->getIllustration(); ?>" />
 							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('illustration'));?>
 						</li>
 						<input type="hidden" name="adresse"  value="<?php if ( $utilisateur) echo $utilisateur->getAdresse(); ?>" />
@@ -33,11 +44,10 @@
 						<input type="hidden" name="pays" value="<?php if ( $utilisateur) echo $utilisateur->getPays(); ?>" />
 						<input type="hidden" name="ville"  value="<?php if ( $utilisateur) echo $utilisateur->getVille(); ?>" />
 						<input type="hidden" name="email"  value="<?php if ( $utilisateur) echo $utilisateur->getEmail(); ?>" />						
-						<input type="hidden" name="telephone" value="<?php if ( $utilisateur) echo $utilisateur->getTelephone(); ?>" />
-															
-					</div>
+						<input type="hidden" name="telephone" value="<?php if ( $utilisateur) echo $utilisateur->getTelephone(); ?>" />			
+					</ul>
 				</div>
-			</ul>
+			</div>	
 			<button type="submit" value="finPremierFormulaire" name="actionFormulaire"/><?php echo gettext("Suivant");?></button>
 		</form>
 
@@ -46,7 +56,7 @@
 
 	function afficherDeuxiemeFormulaire($utilisateur){ ?>
 	
-		<p> Renseignement sur l'adressse <p>
+		<h3> Renseignement sur l'adressse </h3>
 		<form action="inscription.php" id="formulaire-creation" method="post">
 			<div id = "blocs-formulaire">
 				<div id = "bloc-formulaire-1">
@@ -84,7 +94,7 @@
 	
 	function afficherTroisiemeFormulaire($utilisateur) {
 	?>
-		<p> Renseignement sur les communications <p>
+		<h3> Renseignement sur les communications </h3>
 		<form action="inscription.php" id="formulaire-creation" method="post">
 			<div id = "blocs-formulaire">
 				<div id = "bloc-formulaire-1">
@@ -123,5 +133,5 @@
 	
 <?php 
 	include "piedPage.php";
-
+	
 ?>

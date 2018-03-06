@@ -14,7 +14,7 @@ function afficherFormulaireObjet($actionFormulaire, $objet=null){
 					<input type="hidden" name="idObjet" value="<?php if ( $objet) echo $objet->getIdObjet(); ?>"/>
 
 					<li>
-						<label for="tireDeVente"> <?php echo gettext("Titre de vente"); ?>: </label>						
+						<label for="titreDeVente"> <?php echo gettext("Titre de vente"); ?>: </label>						
 						<input type="text" name="titreDeVente" id="titreDeVente" value="<?php if ( $objet) echo $objet->getTitreDeVente(); ?>" />  
 						<?php if ( $objet) afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('titre'));?>												
 					</li>
