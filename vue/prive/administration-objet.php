@@ -11,34 +11,54 @@ function afficherFormulaireObjet($actionFormulaire, $objet=null){
 		<div id = "blocs-formulaire">
 			<div id = "bloc-formulaire-1">
 				<ul>
-					<input type="hidden" name="idObjet" value="<?php if ( $objet) echo $objet->getIdObjet(); ?>"/>			
-					<li>Titre de vente : <input type="text" name="titreDeVente" value="<?php if ( $objet) echo $objet->getTitreDeVente(); ?>" />  
+					<input type="hidden" name="idObjet" value="<?php if ( $objet) echo $objet->getIdObjet(); ?>"/>
+
+					<label for="tireDeVente"> <?php echo gettext("Titre de vente"); ?>: </label>	
+					<li>
+						<label for="tireDeVente"> <?php echo gettext("Titre de vente"); ?>: </label>						
+						<input type="text" name="titreDeVente" id="titreDeVente" value="<?php if ( $objet) echo $objet->getTitreDeVente(); ?>" />  
 						<?php if ( $objet) afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('titre'));?>												
 					</li>
-					<li>Identifiant vendeur : <input type="text" name="identifiantVendeur" value="<?php if ( $objet) echo $objet->getIdentifiantVendeur(); ?>" />
+					<li>
+						<label for="identifiantVendeur"> <?php echo gettext("Identifiant du vendeur"); ?>: </label>
+						<input type="text" id="identifiantVendeur" name="identifiantVendeur" value="<?php if ( $objet) echo $objet->getIdentifiantVendeur(); ?>" />
 						<?php if ( $objet) afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('identifiantVendeur'));?>												
 					</li>
-					<li>Adresse : <input type="text" name="adresse"  value="<?php if ( $objet) echo $objet->getAdresse(); ?>" />
+					<li>						
+						<label for="adresse"> <?php echo gettext("Adresse"); ?>: </label>						
+						<input type="text" name="adresse" id="adresse" value="<?php if ( $objet) echo $objet->getAdresse(); ?>" />
 						<?php if ( $objet) afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('adresse'));?>
 					</li>
-					<li>Illustration : <input type="text" name="illustration" value="<?php if ( $objet) echo $objet->getIllustration(); ?>" />
+					<li>
+						<label for="illustration"> <?php echo gettext("Ilustration"); ?>: </label>
+						<input type="text" name="illustration" id="illustration" value="<?php if ( $objet) echo $objet->getIllustration(); ?>" />
 						<?php if ( $objet) afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('illustration'));?>
 					</li>
 				</div>	
 				<div id = "bloc-formulaire-2">
-					<li>Categorie : <input type="text" name="categorie" value="<?php if ( $objet) echo $objet->getCategorie(); ?>"/>
+					<li>
+						<label for="categorie"> <?php echo gettext("Categorie"); ?>: </label>
+						<input type="text" name="categorie" id="categorie" value="<?php if ( $objet) echo $objet->getCategorie(); ?>"/>
 						<?php if ( $objet) afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('categorie'));?>
 					</li>
-					<li>Prix : <input type="text" name="prix" value="<?php if ( $objet) echo $objet->getPrix(); ?>" />
+					<li>
+						<label for="prix"> <?php echo gettext("Prix"); ?>: </label>
+						<input type="text" name="prix" id="prix" value="<?php if ( $objet) echo $objet->getPrix(); ?>" />
 						<?php if ( $objet) afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('prix'));?>
 					</li>
-					<li>Description du produit : <input type="text" name="descriptionProduit"  value="<?php if ( $objet) echo $objet->getDescriptionProduit(); ?>" />
+					<li>
+						<label for="descriptionProduit"> <?php echo gettext("Description du produit"); ?>: </label>
+						<input type="text" id="descriptionProduit" name="descriptionProduit"  value="<?php if ( $objet) echo $objet->getDescriptionProduit(); ?>" />
 						<?php if ( $objet) afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('description'));?>
 					</li>
-					<li>Details de vente : <input type="text" name="detailsVente"  value="<?php if ( $objet) echo $objet->getDetailsVente(); ?>" />
+					<li>
+						<label for="detailsVente"> <?php echo gettext("Détails de la vente"); ?>: </label>
+						<input type="text" name="detailsVente" id="detailsVente" value="<?php if ( $objet) echo $objet->getDetailsVente(); ?>" />
 						<?php if ( $objet) afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('details'));?>
 					</li>
-					<li>Vedette : <input type="text" name="vedette"  value="<?php if ( $objet) echo $objet->getVedette(); ?>" />
+					<li>
+						<label for="vedette"> <?php echo gettext("Vedette"); ?>: </label>
+						<input type="text" name="vedette" id="vedette" value="<?php if ( $objet) echo $objet->getVedette(); ?>" />
 						<?php if ( $objet) afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('vedette'));?>
 					</li>
 				</ul>
