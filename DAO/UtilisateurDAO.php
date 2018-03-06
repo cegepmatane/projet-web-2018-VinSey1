@@ -9,7 +9,8 @@ class UtilisateurDAO{
 		
 		global $connexionBDActive;
 		
-		$requete = $connexionBDActive->prepare("SELECT * FROM utilisateur WHERE id_utilisateur = :identifiantDemande");
+		$requete = $connexionBDActive->prepare("SELECT * FROM utilisateur 
+				WHERE id_utilisateur = :identifiantDemande");
 		$requete->bindParam(':identifiantDemande', $identifiantDemande, PDO::PARAM_INT);
 		$requete->execute();
 				
@@ -62,7 +63,22 @@ class UtilisateurDAO{
 		$telephone = $utilisateur->getTelephone();
 		$role = $utilisateur->getRole();
 	
-		$requete = $connexionBDActive->prepare("UPDATE utilisateur SET nom=:nom, prenom=:prenom, pseudonyme=:pseudonyme, email=:email, adresse=:adresse, codepostal=:codepostal, pays=:pays, ville=:ville, nbachats=:nbachats, nbventes=:nbventes, illustration=:illustration, age=:age, telephone=:telephone, role=:role WHERE id_utilisateur=:idUtilisateur ");
+		$requete = $connexionBDActive->prepare("UPDATE utilisateur SET
+			nom=:nom,
+			prenom=:prenom,
+			pseudonyme=:pseudonyme,
+			email=:email,
+			adresse=:adresse,
+			codepostal=:codepostal,
+			pays=:pays,
+			ville=:ville,
+			nbachats=:nbachats,
+			nbventes=:nbventes,
+			illustration=:illustration,
+			age=:age,
+			telephone=:telephone,
+			role=:role
+			WHERE id_utilisateur=:idUtilisateur ");
 												
 		
 		$requete->bindParam(':idUtilisateur', $idUtilisateur, PDO::PARAM_STR);
@@ -106,7 +122,36 @@ class UtilisateurDAO{
 		$telephone = $utilisateur->getTelephone();
 		$role = $utilisateur->getRole();
 	
-		$requete = $connexionBDActive->prepare("INSERT INTO utilisateur(nom, prenom, pseudonyme, email, adresse, codepostal, pays, ville, nbachats, nbventes, illustration, age, telephone, role) VALUES (:nom, :prenom, :pseudonyme, :email, :adresse, :codepostal, :pays, :ville, :nbachats, :nbventes, :illustration, :age, :telephone, :role)");
+		$requete = $connexionBDActive->prepare("INSERT INTO utilisateur(
+			nom,
+			prenom,
+			pseudonyme,
+			email,
+			adresse,
+			codepostal,
+			pays,
+			ville,
+			nbachats,
+			nbventes,
+			illustration,
+			age,
+			telephone,
+			role) 
+			VALUES (
+			:nom,
+			:prenom,
+			:pseudonyme,
+			:email,
+			:adresse,
+			:codepostal,
+			:pays,
+			:ville,
+			:nbachats,
+			:nbventes,
+			:illustration,
+			:age,
+			:telephone,
+			:role)");
 		
 		$requete->bindParam(':nom', $nom, PDO::PARAM_STR);
 		$requete->bindParam(':prenom', $prenom, PDO::PARAM_STR);
@@ -137,7 +182,10 @@ class UtilisateurDAO{
 		$prenom = $utilisateur->getPrenom();
 		$pseudonyme = $utilisateur->getPseudonyme();
 		
-		$requete = $connexionBDActive->prepare("DELETE FROM utilisateur WHERE id_utilisateur = :identifiant AND nom = :nom AND prenom=:prenom AND pseudonyme = :pseudonyme");
+		$requete = $connexionBDActive->prepare("DELETE FROM utilisateur
+			WHERE id_utilisateur = :identifiant
+			AND nom = :nom AND prenom=:prenom
+			AND pseudonyme = :pseudonyme");
 		
 		$requete->bindParam(':identifiant', $idUtilisateur, PDO::PARAM_INT);
 		$requete->bindParam(':nom', $nom, PDO::PARAM_INT);
@@ -173,7 +221,22 @@ class UtilisateurDAO{
 			
 			$utilisateur = new Utilisateur();
 			
-			$utilisateur->construireDonneesSecurise($enregistrementUtilisateur->id_utilisateur, $enregistrementUtilisateur->nom, $enregistrementUtilisateur->prenom, $enregistrementUtilisateur->pseudonyme, $enregistrementUtilisateur->email, $enregistrementUtilisateur->adresse, $enregistrementUtilisateur->codepostal, $enregistrementUtilisateur->pays, $enregistrementUtilisateur->ville, $enregistrementUtilisateur->nbachats, $enregistrementUtilisateur->nbventes, $enregistrementUtilisateur->illustration, $enregistrementUtilisateur->age, $enregistrementUtilisateur->telephone, $enregistrementUtilisateur->role );
+			$utilisateur->construireDonneesSecurise(
+					$enregistrementUtilisateur->id_utilisateur,
+					$enregistrementUtilisateur->nom,
+					$enregistrementUtilisateur->prenom,
+					$enregistrementUtilisateur->pseudonyme,
+					$enregistrementUtilisateur->email,
+					$enregistrementUtilisateur->adresse,
+					$enregistrementUtilisateur->codepostal,
+					$enregistrementUtilisateur->pays,
+					$enregistrementUtilisateur->ville,
+					$enregistrementUtilisateur->nbachats,
+					$enregistrementUtilisateur->nbventes,
+					$enregistrementUtilisateur->illustration,
+					$enregistrementUtilisateur->age,
+					$enregistrementUtilisateur->telephone,
+					$enregistrementUtilisateur->role );
 						
 			
 			$listeUtilisateur[]=$utilisateur;
@@ -187,7 +250,8 @@ class UtilisateurDAO{
 	public function compterUtilisateur() {
 		
 		global $connexionBDActive;
-		$requete = $connexionBDActive->prepare("SELECT COUNT(*) as NbUtilisateur FROM utilisateur");
+		$requete = $connexionBDActive->prepare("SELECT COUNT(*) as NbUtilisateur
+										FROM utilisateur");
 		$requete->execute();
 		
 		$resultat = $requete->fetch(PDO::FETCH_ASSOC);
