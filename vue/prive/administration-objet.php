@@ -8,9 +8,9 @@ function afficherFormulaireObjet($actionFormulaire, $objet=null){
 
 ?>	
 	<form action="administration-objet.php" id="formulaire-creation" method="post">
-		<ul>
-			<div id = "blocs-formulaire">
-				<div id = "bloc-formulaire-1">		
+		<div id = "blocs-formulaire">
+			<div id = "bloc-formulaire-1">
+				<ul>
 					<input type="hidden" name="idObjet" value="<?php if ( $objet) echo $objet->getIdObjet(); ?>"/>			
 					<li>Titre de vente : <input type="text" name="titreDeVente" value="<?php if ( $objet) echo $objet->getTitreDeVente(); ?>" />  
 						<?php if ( $objet) afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('titre'));?>												
@@ -41,11 +41,11 @@ function afficherFormulaireObjet($actionFormulaire, $objet=null){
 					<li>Vedette : <input type="text" name="vedette"  value="<?php if ( $objet) echo $objet->getVedette(); ?>" />
 						<?php if ( $objet) afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('vedette'));?>
 					</li>
-				</div>	
-			</div>
-		</ul>
-		<input id="bouton" type="submit" value="<?php echo $actionFormulaire ?>" name="actionFormulaire"/>
-    </form>		
+				</ul>
+			</div>	
+		</div>
+	<input id="bouton" type="submit" value="<?php echo $actionFormulaire ?>" name="actionFormulaire"/>
+</form>		
 		
 <?php	
 	
