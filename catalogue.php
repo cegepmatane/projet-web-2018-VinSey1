@@ -3,16 +3,10 @@
 	require_once OBJET_DAO;
 	require_once OBJET_MODELE;
 	require_once "/controleur/controleurCatalogue.php";
-	
+	include "barreDeRecherche.php";
 ?>
-
 	<script src="ajax/montrerProduitCategorie.js"></script>
 	<script src="ajax/listerTousLesObjets.js"></script>
-	<div id="barre-de-recherche" >
-		<img src=./illustrations/petit/loupe.png id="image-loupe">
-		<input type="text" name="nato_pf"/>
-		<button type="button" name="chercher">Chercher</button>
-	</div>
 	<div id="contenu-index">
 		<ul id="zone-categories-index">
 			<div id="categories-index">

@@ -3,13 +3,9 @@
 	include "entete.php";
 	require_once OBJET_DAO;
 	require_once OBJET_MODELE;
+	include "barreDeRecherche.php";
+	
 ?>
-
-
-	<div id="barre-de-recherche" >
-		<img src=./illustrations/petit/loupe.png id="image-loupe">
-		<input type="text" name="nato_pf"/>
-	</div>
 	<div id="contenu-index">
 		<ul id="zone-categories-index">
 			<div id="categories-index">
