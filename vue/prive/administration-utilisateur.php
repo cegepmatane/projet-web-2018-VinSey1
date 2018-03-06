@@ -10,23 +10,37 @@ function afficherFormulaireUtilisateur($actionFormulaire, $utilisateur=null){
 		<ul>
 			<div id = "blocs-formulaire">
 				<div id = "bloc-formulaire-1">		
-					<input type="hidden" name="idUtilisateur" value="<?php if ( $utilisateur) echo $utilisateur->getIdUtilisateur(); ?>"/>			
-					<li>Nom : <input type="text" name="nom" value="<?php if ( $utilisateur) echo $utilisateur->getNom(); ?>" />  
+					<input type="hidden" name="idUtilisateur" value="<?php if ( $utilisateur) echo $utilisateur->getIdUtilisateur(); ?>"/>
+
+					
+					<li>
+						<label for="nom"> <?php echo gettext("Nom"); ?>: </label>
+						<input type="text" name="nom" id="nom" value="<?php if ( $utilisateur) echo $utilisateur->getNom(); ?>" />  
 						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('nom'));?>												
 					</li>
-					<li>Prénom : <input type="text" name="prenom" value="<?php if ( $utilisateur) echo $utilisateur->getPrenom(); ?>" />
+					<li>
+						<label for="prenom"> <?php echo gettext("Prenom"); ?>: </label>
+						<input type="text" name="prenom" id="prenom" value="<?php if ( $utilisateur) echo $utilisateur->getPrenom(); ?>" />
 						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('prenom'));?>												
 					</li>
-					<li>Pseudonyme : <input type="text" name="pseudonyme" value="<?php if ( $utilisateur) echo $utilisateur->getPseudonyme(); ?>" />
+					<li>
+						<label for="pseudonyme"> <?php echo gettext("Pseudonyme"); ?>: </label>
+						<input type="text" name="pseudonyme" id="pseudonyme" value="<?php if ( $utilisateur) echo $utilisateur->getPseudonyme(); ?>" />
 						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('pseudonyme'));?>												
 					</li>
-					<li>Adresse e-mail : <input type="text" name="email"  value="<?php if ( $utilisateur) echo $utilisateur->getEmail(); ?>" />
+					<li>
+						<label for="email"> <?php echo gettext("Adresse mail"); ?>: </label>
+						<input type="text" name="email" id="email" value="<?php if ( $utilisateur) echo $utilisateur->getEmail(); ?>" />
 						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('email'));?>
 					</li>
-					<li>Adresse : <input type="text" name="adresse"  value="<?php if ( $utilisateur) echo $utilisateur->getAdresse(); ?>" />
+					<li>
+						<label for="adresse"> <?php echo gettext("Adresse"); ?>: </label>
+						<input type="text" name="adresse" id="adresse" value="<?php if ( $utilisateur) echo $utilisateur->getAdresse(); ?>" />
 						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('adresse'));?>
 					</li>
-					<li>Illustration : <input type="text" name="illustration" value="<?php if ( $utilisateur) echo $utilisateur->getIllustration(); ?>" />
+					<li>
+						<label for="illustration"> <?php echo gettext("Illustration"); ?>: </label>
+						<input type="text" name="illustration" id="illustration" value="<?php if ( $utilisateur) echo $utilisateur->getIllustration(); ?>" />
 						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('illustration'));?>
 					</li>
 				</div>	
