@@ -179,12 +179,23 @@
 						<li>
 							<label for="email"> <?php echo gettext("Adresse mail"); ?>: </label>						
 							<input type="text" id="email" name="email"  value="<?php if ( $utilisateur) echo $utilisateur->getEmail(); ?>" />
-							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('email'));?>
+							<?php
+								if ( $utilisateur){
+									afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('email'));
+									?><script>indiquerErreurInscription('email');</script><?php
+								} 
+							?>
 						</li>
 						<li>
 							<label for="telephone"> <?php echo gettext("Téléphone"); ?>: </label>
-							<input type="text" name="telephone" id="téléphone" value="<?php if ( $utilisateur) echo $utilisateur->getTelephone(); ?>" />
-							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('telephone'));?>
+							<input type="text" name="telephone" id="telephone" value="<?php if ( $utilisateur) echo $utilisateur->getTelephone(); ?>" />
+							<?php
+								if ( $utilisateur){
+									
+									afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('telephone'));
+									?><script>indiquerErreurInscription('telephone');</script><?php
+								} 	
+							?>
 						</li>
 					</ul>
 				</div>
