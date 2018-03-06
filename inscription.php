@@ -8,7 +8,7 @@
 	
 	function afficherPremierFormulaire($utilisateur = null){
 	?>
-		<script src="retourUtilisateurInscriptionPublique.js"></script> 
+		<script src="../scripts/retourUtilisateurInscriptionPublique.js"></script> 
 		<h3> Renseignement sur l'identité </h3>
 		<form action="inscription.php" id="formulaire-creation" method="post">
 			<div id = "blocs-formulaire">
@@ -145,7 +145,9 @@
 	}
 	?>
 	
-	
+	<script>
+		indiquerErreurInscription('nom');
+	</script>
 <?php 
 	include "piedPage.php";
 	
