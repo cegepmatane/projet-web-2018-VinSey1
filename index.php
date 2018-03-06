@@ -7,17 +7,7 @@
 	
 ?>
 	<div id="contenu-index">
-		<ul id="zone-categories-index">
-			<div id="categories-index">
-				<li id="titre-categories"><h3><?php echo gettext("Catégories"); ?></h3></li>
-				<li><?php echo gettext("Catégorie 1"); ?></li>
-				<li><?php echo gettext("Catégorie 2"); ?></li>
-				<li><?php echo gettext("Catégorie 3"); ?></li>
-				<li><?php echo gettext("Catégorie 4"); ?></li>
-				<li><?php echo gettext("Catégorie 5"); ?></li>
-				<li><?php echo gettext("Catégorie 6"); ?></li>
-			</div>
-		</ul>
+		<?php include "categories.php" ?>
 		<div id="ensemble-produits">
 			<?php
 				$objetDAO = new ObjetDAO();
