@@ -10,7 +10,8 @@ class ObjetDAO{
 		
 		global $connexionBDActive;
 		
-		$requete = $connexionBDActive->prepare("SELECT * FROM objet WHERE id_objet = :identifiantDemande");
+		$requete = $connexionBDActive->prepare("SELECT * FROM objet
+								WHERE id_objet = :identifiantDemande");
 		$requete->bindParam(':identifiantDemande', $identifiantDemande, PDO::PARAM_INT);
 		$requete->execute();
 			
@@ -64,7 +65,17 @@ class ObjetDAO{
 		
 		foreach($resultat as $key => $enregistrementObjet) {
 			$objet = new Objet();
-			$objet->construireDonneesSecurise($enregistrementObjet->id_objet, $enregistrementObjet->identifiantVendeur, $enregistrementObjet->titreDeVente, $enregistrementObjet->categorie, $enregistrementObjet->prix, $enregistrementObjet->descriptionProduit, $enregistrementObjet->detailsVente, $enregistrementObjet->adresse, $enregistrementObjet->illustration, $enregistrementObjet->vedette);
+			$objet->construireDonneesSecurise(
+								$enregistrementObjet->id_objet, 
+								$enregistrementObjet->identifiantVendeur, 
+								$enregistrementObjet->titreDeVente, 
+								$enregistrementObjet->categorie, 
+								$enregistrementObjet->prix, 
+								$enregistrementObjet->descriptionProduit, 
+								$enregistrementObjet->detailsVente, 
+								$enregistrementObjet->adresse, 
+								$enregistrementObjet->illustration, 
+								$enregistrementObjet->vedette);
 			$listeObjet[]=$objet;
 		}
 		
@@ -91,7 +102,17 @@ class ObjetDAO{
 		$vedette = $objet->getVedette();
 		
 	
-		$requete = $connexionBDActive->prepare("UPDATE objet SET identifiantVendeur=:identifiantVendeur, titreDeVente=:titreDeVente, categorie=:categorie, prix=:prix, descriptionProduit=:descriptionProduit, detailsVente=:detailsVente, adresse=:adresse, illustration=:illustration, vedette=:vedette WHERE id_objet =:idObjet");
+		$requete = $connexionBDActive->prepare("UPDATE objet SET 
+			identifiantVendeur=:identifiantVendeur,
+			titreDeVente=:titreDeVente,
+			categorie=:categorie,
+			prix=:prix,
+			descriptionProduit=:descriptionProduit,
+			detailsVente=:detailsVente,
+			adresse=:adresse,
+			illustration=:illustration,
+			vedette=:vedette
+			WHERE id_objet =:idObjet");
 		
 		$requete->bindParam(':idObjet', $idObjet, PDO::PARAM_STR);
 		$requete->bindParam(':identifiantVendeur', $identifiantVendeur, PDO::PARAM_STR);
@@ -123,7 +144,26 @@ class ObjetDAO{
 			$vedette = $objet->getVedette();
 			
 		
-			$requete = $connexionBDActive->prepare("INSERT INTO objet(identifiantVendeur, titreDeVente, categorie, prix, descriptionProduit, detailsVente, adresse, illustration, vedette) VALUES ( :identifiantVendeur, :titreDeVente, :categorie, :prix, :descriptionProduit, :detailsVente, :adresse, :illustration, :vedette)");
+			$requete = $connexionBDActive->prepare("INSERT INTO objet(
+				identifiantVendeur, 
+				titreDeVente, 
+				categorie, 
+				prix, 
+				descriptionProduit, 
+				detailsVente, 
+				adresse, 
+				illustration, 
+				vedette) 
+				VALUES ( 
+				:identifiantVendeur, 
+				:titreDeVente, 
+				:categorie, 
+				:prix, 
+				:descriptionProduit, 
+				:detailsVente, 
+				:adresse, 
+				:illustration, 
+				:vedette)");
 			
 			$requete->bindParam(':identifiantVendeur', $identifiantVendeur, PDO::PARAM_STR);
 			$requete->bindParam(':titreDeVente', $titreDeVente, PDO::PARAM_STR);
@@ -174,7 +214,17 @@ class ObjetDAO{
 		
 		foreach($resultat as $key => $enregistrementObjet) {
 			$objet = new Objet();
-			$objet->construireDonneesSecurise($enregistrementObjet->id_objet, $enregistrementObjet->identifiantVendeur, $enregistrementObjet->titreDeVente, $enregistrementObjet->categorie, $enregistrementObjet->prix, $enregistrementObjet->descriptionProduit, $enregistrementObjet->detailsVente, $enregistrementObjet->adresse, $enregistrementObjet->illustration, $enregistrementObjet->vedette);
+			$objet->construireDonneesSecurise(
+				$enregistrementObjet->id_objet, 
+				$enregistrementObjet->identifiantVendeur, 
+				$enregistrementObjet->titreDeVente, 
+				$enregistrementObjet->categorie, 
+				$enregistrementObjet->prix, 
+				$enregistrementObjet->descriptionProduit, 
+				$enregistrementObjet->detailsVente, 
+				$enregistrementObjet->adresse, 
+				$enregistrementObjet->illustration, 
+				$enregistrementObjet->vedette);
 			$listeObjet[]=$objet;
 		}
 		
