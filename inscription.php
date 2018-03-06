@@ -92,6 +92,8 @@
 	function afficherDeuxiemeFormulaire($utilisateur){ ?>
 	
 		<h3> Renseignement sur l'adressse </h3>
+		<script src="../scripts/retourUtilisateurInscriptionPublique.js"></script> 
+
 		<form action="inscription.php" id="formulaire-creation" method="post">
 			<div id = "blocs-formulaire">
 				<div id = "bloc-formulaire-1">
@@ -105,23 +107,43 @@
 						<li>
 							<label for="adresse"> <?php echo gettext("Adresse"); ?>: </label>
 							<input type="text" name="adresse" id="adresse" value="<?php if ( $utilisateur) echo $utilisateur->getAdresse(); ?>" />
-							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('adresse'));?>
+							<?php
+								if ( $utilisateur){
+									afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('adresse'));
+									?><script>indiquerErreurInscription('adresse');</script><?php
+								}
+							?>
 						</li>
 						<li>
 							<label for="code-postal"> <?php echo gettext("Code postal"); ?>: </label>
 							<input type="text" name="codepostal" id="code-postal" value="<?php if ( $utilisateur) echo $utilisateur->getCodepostal(); ?>"/>
-							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('codepostal'));?>
+							<?php
+								if ( $utilisateur){								
+									afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('codepostal'));
+									?><script>indiquerErreurInscription('code-postal');</script><?php
+								}
+							?>		
 						</li>
 						
 						<li>
 							<label for="ville"> <?php echo gettext("Ville"); ?>: </label>
 							<input type="text" name="ville" id="ville" value="<?php if ( $utilisateur) echo $utilisateur->getVille(); ?>" />
-							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('ville'));?>
+							<?php
+								if ( $utilisateur){
+									afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('ville'));
+									?><script>indiquerErreurInscription('ville');</script><?php
+								} 
+							?>
 						</li>
 						<li>
 							<label for="pays"> <?php echo gettext("Pays"); ?>: </label>
 							<input type="text" name="pays" id="pays" value="<?php if ( $utilisateur) echo $utilisateur->getPays(); ?>" />
-							<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('pays'));?>
+							<?php
+								if ( $utilisateur){									
+									afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('pays'));
+									?><script>indiquerErreurInscription('pays');</script><?php
+								}
+							?>
 						</li>
 						<input type="hidden" name="email"  value="<?php if ( $utilisateur) echo $utilisateur->getEmail(); ?>" />
 						<input type="hidden" name="telephone" value="<?php if ( $utilisateur) echo $utilisateur->getTelephone(); ?>" />
@@ -138,6 +160,7 @@
 	function afficherTroisiemeFormulaire($utilisateur) {
 	?>
 		<h3> Renseignement sur les communications </h3>
+		<script src="../scripts/retourUtilisateurInscriptionPublique.js"></script> 
 		<form action="inscription.php" id="formulaire-creation" method="post">
 			<div id = "blocs-formulaire">
 				<div id = "bloc-formulaire-1">
