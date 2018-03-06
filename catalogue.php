@@ -18,9 +18,9 @@
 				}
 			?>
 		</div>
-		<u id="boutons-index">
+		<ul id="boutons-index">
 			<li><?php echo gettext("Prix")?></li>
-			<li><input type="range" min="1" max="100" value="50" class="slider" id="myRange"></button></li>
+			<li><input type="range" min="1" max="100" value="50" class="slider" id="myRange"></li>
 			<li><?php echo gettext("De 0 à ")?> <span id="demo"></span> $</li>
 			<li><button type="button"><?php echo gettext("Se connecter"); ?></button></li>
 			<li><button type="button"><?php echo gettext("S'inscrire"); ?></button></li>
