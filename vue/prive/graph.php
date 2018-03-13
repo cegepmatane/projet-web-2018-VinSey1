@@ -45,8 +45,8 @@
 							data:[
 								{value:<?php $objetDAO->compterObjetParCategorie(1); ?>, name:'Literie'},
 								{value:<?php $objetDAO->compterObjetParCategorie(2); ?>, name:'Cuisine'},
-								{value:<?php $objetDAO->compterObjetParCategorie(4); ?>, name:'Fournitures de Bureau'},
 								{value:<?php $objetDAO->compterObjetParCategorie(3); ?>, name:'Livres'},
+								{value:<?php $objetDAO->compterObjetParCategorie(4); ?>, name:'Fournitures de Bureau'},
 								{value:<?php $objetDAO->compterObjetParCategorie(5); ?>, name:'Autres'},
 							].sort(function (a, b) { return a.value - b.value; }),
 							roseType: 'radius',
