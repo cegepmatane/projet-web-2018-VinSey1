@@ -8,7 +8,6 @@
 	
 ?>
 	<div id="contenu-index">
-		<?php include "categories.php" ?>
 		<div id="ensemble-produits">
 			<?php
 				$objetDAO = new ObjetDAO();
