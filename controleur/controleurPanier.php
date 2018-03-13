@@ -39,4 +39,38 @@ class Panier {
     public function getPrixTotal(){
         return $this->contenuPanier['prixTotal'];
     }
+
+    //Fonction qui met un item dans le panier et qui sauvegarde le panier dans la session
+    public function ajouter($item = array()) {
+        if(!is_array($item) or count($item) == 0){
+            return FALSE;
+        } else {
+            if(!isset($item['id'], $item['nom'], $item['prix'], $item['qty'])){
+                return FALSE;
+            } else {
+                //Met l'item dans le panier
+                //Prépare la quantité
+                $item['qty'] = (float) $item['qty'];
+                if($item['qty'] == 0){
+                    return FALSE;
+                }
+                //Prépare le prix
+                $item['prix'] = (float) $item['prix'];
+                //Crée un identifiant unique pour l'item qui va être inséré dans le panier
+                $rowid = md5($item['id']);
+                //Récupère la quantité si il y en a déjà une et l'ajoute à celle actuelle
+                $ancienneQty = isset($this->contenuPanier[$rowid]['qty']) ? (int) $this->cart_contents[$rowid]['qty'] : 0;
+                //Recrée l'entrée avec un identifiant unique et met à jour la quantité
+                $item['rowid'] = $rowId;
+                $item['qty'] += $ancienneQty;
+                $this->contenuPanier[$rowId] = $item;
+                //Sauvegarde l'item dans le panier
+                if($this->sauvegarderPanier()){
+                    return issert($rowId) ? $rowId : TRUE;
+                } else {
+                    return FALSE;
+                }
+            }
+        }
+    }
 }
