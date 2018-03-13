@@ -29,4 +29,9 @@ class Panier {
     public function getItem($rowId){
         return (in_array($rowId, array('prixTotal', 'itemsTotal'), TRUE) OR !isset($this->contenuPanier[$rowId]))?FALSE:$this->contenuPanier[$rowId];
     }
+
+    //Fonction qui récupère le nombre total d'items
+    public function getItemsTotal(){
+        return $this->contenuPanier['itemsTotal'];
+    }
 }
