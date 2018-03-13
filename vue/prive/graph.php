@@ -44,10 +44,10 @@
 							center: ['50%', '50%'],
 							data:[
 								{value:<?php $objetDAO->compterObjetParCategorie(1); ?>, name:'Literie'},
-								{value:1, name:'Ustensiles'},
-								{value:3, name:'Ménage'},
-								{value:4, name:'Livres'},
-								{value:5, name:'Fournitures de bureau'},
+								{value:<?php $objetDAO->compterObjetParCategorie(2); ?>, name:'Cuisine'},
+								{value:<?php $objetDAO->compterObjetParCategorie(4); ?>, name:'Fournitures de Bureau'},
+								{value:<?php $objetDAO->compterObjetParCategorie(3); ?>, name:'Livres'},
+								{value:<?php $objetDAO->compterObjetParCategorie(5); ?>, name:'Autres'},
 							].sort(function (a, b) { return a.value - b.value; }),
 							roseType: 'radius',
 							label: {
