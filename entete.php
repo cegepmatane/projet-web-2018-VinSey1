@@ -30,5 +30,6 @@
 			<li><a href="vue/prive/administration-utilisateur.php" title="<?php echo gettext("Aller sur la page Administration utilisateur")?>"><?php echo gettext("Page Administration utilisateur")?></a></li>
 			<li><a href="vue/prive/administration-objet.php" title="<?php echo gettext("Aller sur la page Administration Objet")?>"><?php echo gettext("Page Administration objet")?></a></li>
 			<li><a href="vue/prive/panneau-administration.php" title="<?php echo gettext("Aller sur le panneau d'administration")?>"><?php echo gettext("Panneau d'administration")?></a></li>
+			<li><a href="test.php" title="<?php echo gettext("test")?>"><?php echo gettext("test")?></a></li>
 		</ul>
     </nav>
