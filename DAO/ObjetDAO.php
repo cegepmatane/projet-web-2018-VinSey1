@@ -247,6 +247,40 @@ class ObjetDAO{
 		
 		
 	}
+	
+	public function compterObjetParCategorie($categorieDemande) {
+		
+		switch($categorieDemande){
+			
+			case 1:
+				$categorie = "Literie";
+				break;
+				
+			case 2:
+				$categorie = "Couverts";
+				break;
+			
+			case 3:
+				$categorie = "Autre";
+				break;
+		}
+		
+		global $connexionBDActive;
+		
+		$requete = $connexionBDActive->prepare("SELECT COUNT(*) as NbObjet FROM objet WHERE categorie = :categorieDemande");
+		$requete->bindParam(':categorieDemande', $categorie, PDO::PARAM_STR);
+		$requete->execute();
+		
+		$resulat = $requete->fetch(PDO::FETCH_ASSOC);
+		
+		echo $resulat['NbObjet'];
+		
+		
+		
+		
+	
+		
+	}
 
 }
 ?>
