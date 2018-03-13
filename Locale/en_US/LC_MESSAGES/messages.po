@@ -26,5 +26,11 @@ msgstr "User management"
 msgid "Administration objet"
 msgstr "Object management"
 
-msgid "Administration objet"
-msgstr "Object management"	
+msgid "Vendre un objet"
+msgstr "Sell an object"	
+
+msgid "Se connecter"
+msgstr "Sign in"	
+
+msgid "S'inscrire"
+msgstr "Sign up
