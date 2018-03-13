@@ -34,3 +34,24 @@ msgstr "Sign in"
 
 msgid "S'inscrire"
 msgstr "Sign up
+
+msgid "Chercher"
+msgstr "Search"
+
+msgid "De 0 à "
+msgstr "From 0 to "
+
+sgid "Literie"
+msgstr "Bedding"
+
+sgid "Cuisine"
+msgstr "Kitchen"
+
+sgid "Livres"
+msgstr "Books"
+
+sgid "Autres"
+msgstr "Others"
+
+sgid "Voir tous les objets"
+msgstr "Show every object"

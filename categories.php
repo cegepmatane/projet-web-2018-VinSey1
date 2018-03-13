@@ -8,4 +8,4 @@
         <button type="button" onclick="montrerProduitCategorie(5)"><?php echo gettext("Autres"); ?></button>
         <button type="button" onclick="listerTousLesObjets()"><?php echo gettext("Voir tous les objets"); ?></button>
     </div>
-</ul>
+</ul>	
