@@ -148,3 +148,6 @@ msgstr "The object has been deleted"
 
 msgid "L'objet n'existe pas"
 msgstr "The object doesn't exist"
+
+msgid "Panneau administration"
+msgstr "Administration panel"
