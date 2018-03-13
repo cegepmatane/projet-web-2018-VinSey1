@@ -147,6 +147,8 @@ afficherListeUtilisateur();
 		$utilisateur->setNbachats($_POST['nbachats']);	
 		$utilisateur->setRole($_POST['role']);	
 		$utilisateur->setIllustration($_POST['illustration']);	
+		$pass_cache = password_hash($_POST['motdepasse'], PASSWORD_DEFAULT);
+		$utilisateur->setMotDePasse($pass_cache);
 		
 		if ($utilisateur->estValide()){
 			
