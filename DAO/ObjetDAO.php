@@ -47,7 +47,7 @@ class ObjetDAO{
 				break;
 				
 			case 2:
-				$categorie = "Couverts";
+				$categorie = "Cuisine";
 				break;
 			
 			case 3:
