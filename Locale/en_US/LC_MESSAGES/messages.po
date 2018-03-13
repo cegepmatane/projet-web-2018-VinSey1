@@ -41,17 +41,113 @@ msgstr "Search"
 msgid "De 0 à "
 msgstr "From 0 to "
 
-sgid "Literie"
+msgid "Literie"
 msgstr "Bedding"
 
-sgid "Cuisine"
+msgid "Cuisine"
 msgstr "Kitchen"
 
-sgid "Livres"
+msgid "Livres"
 msgstr "Books"
 
-sgid "Autres"
+msgid "Autres"
 msgstr "Others"
 
-sgid "Voir tous les objets"
+msgid "Voir tous les objets"
 msgstr "Show every object"
+
+msgid "Nom"
+msgstr "Name"
+
+msgid "Prénom"
+msgstr "Firstname"
+
+msgid "Pseudonyme"
+msgstr "Pseudonym"
+
+msgid "Adresse mail"
+msgstr "E-mail"
+
+msgid "Adresse"
+msgstr "Adress"
+
+msgid "Illustration"
+msgstr "Picture"
+
+msgid "Code postal"
+msgstr "Postcode"
+
+msgid "Pays"
+msgstr "Country"
+
+msgid "Ville"
+msgstr "City"
+
+msgid "Date de naissance"
+msgstr "Postcode"
+
+msgid "Téléphone"
+msgstr "Phone"
+
+msgid "Nombre de ventes"
+msgstr "Number sales"
+
+msgid "Nombre d'achats"
+msgstr "Number buying"
+
+msgid "Rôle"
+msgstr "Role"
+
+msgid "Ajouter"
+msgstr "Create"
+
+msgid "Supprimer"
+msgstr "Delete"
+
+msgid "Modifier"
+msgstr "Modify"
+
+msgid "Ajout d'utilisateur réussi"
+msgstr "The user has been added"
+
+msgid "Modification d'utilisateur réussi"
+msgstr "The user has been modified"
+
+msgid "Supression d'utilisateur réussi"
+msgstr "The user has been deleted"
+
+msgid "Supression d'utilisateur réussi"
+msgstr "The user has been deleted"
+
+msgid "L'utilisateur n'existe pas"
+msgstr "The user doesn't exist"
+
+msgid "Titre de vente"
+msgstr "Sell title"
+
+msgid "Identifiant du vendeur"
+msgstr "Seller identifier"
+
+msgid "Catégorie"
+msgstr "Category"
+
+msgid "Description du produit"
+msgstr "Object description"
+
+msgid "Détails de la vente"
+msgstr "Sell details"
+
+msgid "Vedette"
+msgstr "Star"
+
+msgid "Ajout d'objet réussi"
+msgstr "Object successfully put up for sale"
+
+msgid "Modification d'objet réussi"
+msgstr "The object has been modified"
+
+msgid "Supression d'objet réussi"
+msgstr "The object has been deleted"
+
+msgid "L'objet n'existe pas"
+msgstr "The object doesn't exist"

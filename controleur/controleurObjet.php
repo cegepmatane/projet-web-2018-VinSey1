@@ -115,7 +115,7 @@
 					}
 					else{
 						
-						afficherRetroactionNegative(gettext("l'objet n'existe pas"));
+						afficherRetroactionNegative(gettext("L'objet n'existe pas"));
 					}
 			
 				break;

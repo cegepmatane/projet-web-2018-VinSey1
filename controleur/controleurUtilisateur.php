@@ -36,7 +36,7 @@
 				
 			break;
 			
-			case gettext(""):
+			case gettext("Modifier"):
 			
 				if ( $idUtilisateur ){
 					
@@ -113,7 +113,7 @@
 					}
 					else{
 						
-						afficherRetroactionNegative(gettext("l'utilisateur n'existe pas"));
+						afficherRetroactionNegative(gettext("L'utilisateur n'existe pas"));
 					}
 			
 				break;

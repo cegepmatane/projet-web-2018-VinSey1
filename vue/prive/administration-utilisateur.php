@@ -20,7 +20,7 @@ function afficherFormulaireUtilisateur($actionFormulaire, $utilisateur=null){
 						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('nom'));?>												
 					</li>
 					<li>
-						<label for="prenom"> <?php echo gettext("Prenom"); ?>: </label>
+						<label for="prenom"> <?php echo gettext("Prénom"); ?>: </label>
 						<input type="text" name="prenom" id="prenom" value="<?php if ( $utilisateur) echo $utilisateur->getPrenom(); ?>" />
 						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('prenom'));?>												
 					</li>
@@ -62,7 +62,7 @@ function afficherFormulaireUtilisateur($actionFormulaire, $utilisateur=null){
 						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('ville'));?>
 					</li>
 					<li>
-						<label for="age"> <?php echo gettext("Age"); ?>: </label>
+						<label for="age"> <?php echo gettext("Date de naissance"); ?>: </label>
 						<input type="text" name="anneenaissance" id="age" value="<?php if ( $utilisateur) echo $utilisateur->getAge(); ?>" />
 						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('age'));?>
 					</li>
@@ -82,7 +82,7 @@ function afficherFormulaireUtilisateur($actionFormulaire, $utilisateur=null){
 						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('nbachats'));?>
 					</li>
 					<li>
-						<label for="role"> <?php echo gettext("Role"); ?>: </label>
+						<label for="role"> <?php echo gettext("Rôle"); ?>: </label>
 						<input type="text" name="role" id="role" value="<?php if ( $utilisateur) echo $utilisateur->getRole(); ?>" />
 						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('role'));?>
 					</li>
@@ -115,7 +115,7 @@ function afficherListeUtilisateur(){
 			<ul>
 				<li><?php echo gettext("Nom");?>: <?php echo $utilisateur->getNom();?></li>
 				<li><?php echo gettext("Prenom");?>: <?php echo $utilisateur->getPrenom();?></li>
-				<li><?php echo gettext("Pseudo");?>: <?php echo $utilisateur->getPseudonyme();?></li>
+				<li><?php echo gettext("Pseudonyme");?>: <?php echo $utilisateur->getPseudonyme();?></li>
 				<li><a href= <?php echo $naviguationModification ?> > Modifier </a></li>
 				<li><a href= <?php echo $naviguationSuppression ?> > Supprimer </a></li> 
 			</ul>
@@ -131,7 +131,7 @@ function afficherRetroactionPositive($message){?>
 	
 <?php	
 }
-/* peut etre pas necessaire  (utilisé dans suppression utilisateur)  */
+
 function afficherRetroactionNegative($message){?>
 	
 	<p> <?php echo $message ?> </p>

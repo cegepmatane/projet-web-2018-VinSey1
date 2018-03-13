@@ -29,14 +29,14 @@ function afficherFormulaireObjet($actionFormulaire, $objet=null){
 						<?php if ( $objet) afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('adresse'));?>
 					</li>
 					<li>
-						<label for="illustration"> <?php echo gettext("Ilustration"); ?>: </label>
+						<label for="illustration"> <?php echo gettext("Illustration"); ?>: </label>
 						<input type="text" name="illustration" id="illustration" value="<?php if ( $objet) echo $objet->getIllustration(); ?>" />
 						<?php if ( $objet) afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('illustration'));?>
 					</li>
 				</div>	
 				<div id = "bloc-formulaire-2">
 					<li>
-						<label for="categorie"> <?php echo gettext("Categorie"); ?>: </label>
+						<label for="categorie"> <?php echo gettext("Catégorie"); ?>: </label>
 						<input type="text" name="categorie" id="categorie" value="<?php if ( $objet) echo $objet->getCategorie(); ?>"/>
 						<?php if ( $objet) afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('categorie'));?>
 					</li>
@@ -88,7 +88,7 @@ function afficherListeObjet(){
 		<div class="produit-courant">
 			<ul>
 				<li><?php echo gettext("Titre de vente");?>: <?php echo $objet->getTitreDeVente();?></li>
-				<li><?php echo gettext("Identifiant vendeur");?>: <?php echo $objet->getIdentifiantVendeur();?></li>
+				<li><?php echo gettext("Identifiant du vendeur");?>: <?php echo $objet->getIdentifiantVendeur();?></li>
 				<li><a href= <?php echo $naviguationModification ?> > Modifier </a></li>
 				<li><a href= <?php echo $naviguationSuppression ?> > Supprimer </a></li> 
 			</ul>
