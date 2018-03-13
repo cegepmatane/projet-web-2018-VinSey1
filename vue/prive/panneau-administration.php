@@ -36,6 +36,12 @@
 		<span id="onglet_utilisateurs" onclick="javascript:changer_onglet('utilisateurs');" ><?php echo gettext("Catalogue des utilisateurs") ?></span>
 	</div>
 	<div id="bloc-stat">
+		<?php 
+					$objetDAO = new ObjetDAO();
+					$listeobjet = $objetDAO->obtenirListeObjet();
+					
+					
+		?>
 		<div id="chart1" style="width: 500px; height: 350px;"></div>
 			<script type="text/javascript">
 				var myChart = echarts.init(document.getElementById('chart1'));
@@ -187,13 +193,9 @@
 		</div>
 	<div>
 		<div class="onglets-profil" id="contenu_onglet_ventes">
-				<?php 
-					$objetDAO = new ObjetDAO();
-					$listeobjet = $objetDAO->obtenirListeObjet();
-					
-				?>
 				
-				<?php echo gettext("Nombre d'objets : ");?><?php $objetDAO->compterObjet(); ?> </br>
+				<?php echo gettext("Nombre d'objets dans literie : "); $objetDAO->compterObjetParCategorie(1); ?>
+				<?php echo gettext("Nombre d'objets : "); $objetDAO->compterObjet(); ?> </br>
 				<?php echo gettext("Chercher des ventes");?></br>
 				<?php echo gettext("Identifiant de la vente");?> <input type="text" ></br>
 				<?php echo gettext("Identifiant du vendeur");?> <input type="text" ></br>
