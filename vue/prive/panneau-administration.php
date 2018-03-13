@@ -5,19 +5,6 @@
 	require_once UTILISATEUR_DAO;
 	require_once UTILISATEUR_MODELE;
 	
-	
-    /*
-    $language = "fr_FR";
-    putenv("LANG=" . $language);
-    setlocale(LC_ALL, $language);
-
-    $domain = "messages";
-    bindtextdomain($domain,"Locale");
-    bind_textdomain_codeset($domain, 'UTF-8');
-    
-    textdomain($domain);
-    */
-
 ?>
 	<script type="text/javascript">
 		
@@ -36,14 +23,9 @@
 		<span id="onglet_utilisateurs" onclick="javascript:changer_onglet('utilisateurs');" ><?php echo gettext("Catalogue des utilisateurs") ?></span>
 	</div>
 	<div id="bloc-stat">
-		<?php 
-					$objetDAO = new ObjetDAO();
-					$listeobjet = $objetDAO->obtenirListeObjet();
-					$literie = $objetDAO->compterObjetParCategorie(1);
-					include "graph.php";
-					
-					
-		?>
+	<?php 
+		include "graph.php";
+	?>
 		
 	<div>
 		<div class="onglets-profil" id="contenu_onglet_ventes">

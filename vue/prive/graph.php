@@ -1,3 +1,14 @@
+
+
+
+<?php 				
+	$objetDAO = new ObjetDAO();				
+	$listeobjet = $objetDAO->obtenirListeObjet();
+	$literie = $objetDAO->compterObjetParCategorie(1);
+	
+					
+					
+?>
 <div id="chart1" style="width: 500px; height: 350px;"></div>
 			<script type="text/javascript">
 				var myChart = echarts.init(document.getElementById('chart1'));
