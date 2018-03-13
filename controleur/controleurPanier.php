@@ -106,4 +106,26 @@ class Panier {
             }
         }
     }
+
+    //Fonction qui sauvegarde le panier à la session
+    protected function sauvegarderPanier(){
+        $this->contenuPanier['itemsTotal'] = $this->contenuPanier['prixTotal'] = 0;
+        foreach($this->contenuPanier as $clé => $val){
+            //On s'assure que le tableau contient les bons indexs
+            if(!is_array($val) OR !isset($val['prix'], $val['qty'])){
+                continue;
+            }
+            $this->contenuPanier['prixTotal'] += ($val['prix'] * $val['qty']);
+            $this->contenuPanier['itemsTotal'] += $val['qty'];
+            $this->contenuPanier[$clé]['sousTotal'] = ($this->contenuPänier[$clé]['prix'] * $this->contenuPanier[$clé]['qty']);
+        }
+        //Si le panier est vide, le supprime de la session
+        if(count($this->contenuPanier) <= 2){
+            unset($_SESSION['contenuPanier']);
+            return FALSE;
+        } else {
+            $_SESSION['contenuPanier'] = $this->contenuPanier;
+            return TRUE;
+        }
+    }
 }
