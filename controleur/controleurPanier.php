@@ -24,4 +24,9 @@ class Panier {
 
         return $panier;
     }
+
+    //Fonction qui retourne les détails d'un item spécifique du panier
+    public function getItem($rowId){
+        return (in_array($rowId, array('prixTotal', 'itemsTotal'), TRUE) OR !isset($this->contenuPanier[$rowId]))?FALSE:$this->contenuPanier[$rowId];
+    }
 }
