@@ -29,11 +29,11 @@
 					},
 
 					visualMap: {
-						show: false,
+						show:  false,
 						min: 1,
 						max: 10,
 						inRange: {
-							colorLightness: [0, 1]
+							colorLightness: [0.2, 1]
 						}
 					},
 					series : [
@@ -48,6 +48,7 @@
 								{value:<?php $objetDAO->compterObjetParCategorie(3); ?>, name:'Livres'},
 								{value:<?php $objetDAO->compterObjetParCategorie(4); ?>, name:'Fournitures de Bureau'},
 								{value:<?php $objetDAO->compterObjetParCategorie(5); ?>, name:'Autres'},
+								
 							].sort(function (a, b) { return a.value - b.value; }),
 							roseType: 'radius',
 							label: {
@@ -70,7 +71,7 @@
 							itemStyle: {
 								normal: {
 									color: '#c23531',
-									shadowBlur: 100,
+									
 									shadowColor: 'rgba(0, 0, 0, 0.5)'
 								}
 							},
