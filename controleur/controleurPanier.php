@@ -34,4 +34,9 @@ class Panier {
     public function getItemsTotal(){
         return $this->contenuPanier['itemsTotal'];
     }
+
+    //Fonction qui récupère le prix total
+    public function getPrixTotal(){
+        return $this->contenuPanier['prixTotal'];
+    }
 }
