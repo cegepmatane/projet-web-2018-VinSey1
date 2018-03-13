@@ -1,5 +1,14 @@
 <?php
 	require_once $_SERVER["DOCUMENT_ROOT"]."/configuration/configuration.staging.php";
+	$language = "en_US.utf8";
+	putenv("LANG=".$language);
+	setlocale(LC_MESSAGES, $language);
+	
+	$chemin = $_SERVER["DOCUMENT_ROOT"]."/Locale";
+	
+	$domain = "messages";
+	bindtextdomain($domain, $chemin );
+	textdomain($domain);
 ?>
 <!DOCTYPE html>
 <html lang="fr">

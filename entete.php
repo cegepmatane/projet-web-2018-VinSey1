@@ -1,12 +1,14 @@
 <?php
 	require_once $_SERVER["DOCUMENT_ROOT"]."/configuration/configuration.staging.php";
 	
-	$language = "en_GB";
+	$language = "en_US.utf8";
 	putenv("LANG=".$language);
-	setlocale(LC_ALL, $language);
+	setlocale(LC_MESSAGES, $language);
+	
+	$chemin = $_SERVER["DOCUMENT_ROOT"]."/Locale";
 	
 	$domain = "messages";
-	bindtextdomain($domain, "Locale");
+	bindtextdomain($domain, $chemin );
 	textdomain($domain);
 ?>
 <!DOCTYPE html>
@@ -30,5 +32,6 @@
 			<li><a href="vue/prive/administration-utilisateur.php" title="<?php echo gettext("Aller sur la page Administration utilisateur")?>"><?php echo gettext("Administration utilisateur")?></a></li>
 			<li><a href="vue/prive/administration-objet.php" title="<?php echo gettext("Aller sur la page Administration Objet")?>"><?php echo gettext("Administration objet")?></a></li>
 			<li><a href="vue/prive/panneau-administration.php" title="<?php echo gettext("Aller sur le panneau d'administration")?>"><?php echo gettext("Panneau d'administration")?></a></li>
+			<li><a href="test.php" title="<?php echo gettext("Aller sur le panneau d'administration")?>"><?php echo gettext("Panneau d'administration")?></a></li>
 		</ul>
     </nav>
