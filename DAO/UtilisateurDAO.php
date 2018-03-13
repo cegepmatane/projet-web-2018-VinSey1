@@ -246,7 +246,6 @@ class UtilisateurDAO{
 					$enregistrementUtilisateur->role,
 					$enregistrementUtilisateur->motdepasse
 					);
-						
 			
 			$listeUtilisateur[]=$utilisateur;
 		}
