@@ -4,7 +4,7 @@
 <?php 				
 	$objetDAO = new ObjetDAO();				
 	$listeobjet = $objetDAO->obtenirListeObjet();
-	$literie = $objetDAO->compterObjetParCategorie(1);
+	 
 	
 					
 					
@@ -30,8 +30,8 @@
 
 					visualMap: {
 						show: false,
-						min: 80,
-						max: 600,
+						min: 1,
+						max: 10,
 						inRange: {
 							colorLightness: [0, 1]
 						}
@@ -43,11 +43,11 @@
 							radius : '55%',
 							center: ['50%', '50%'],
 							data:[
-								{value:335, name:'Literie'},
-								{value:310, name:'Ustensiles'},
-								{value:274, name:'Ménage'},
-								{value:235, name:'Livres'},
-								{value:400, name:'Fournitures de bureau'},
+								{value:<?php $objetDAO->compterObjetParCategorie(1); ?>, name:'Literie'},
+								{value:1, name:'Ustensiles'},
+								{value:3, name:'Ménage'},
+								{value:4, name:'Livres'},
+								{value:5, name:'Fournitures de bureau'},
 							].sort(function (a, b) { return a.value - b.value; }),
 							roseType: 'radius',
 							label: {
@@ -70,7 +70,7 @@
 							itemStyle: {
 								normal: {
 									color: '#c23531',
-									shadowBlur: 200,
+									shadowBlur: 100,
 									shadowColor: 'rgba(0, 0, 0, 0.5)'
 								}
 							},
