@@ -12,4 +12,16 @@ class Panier {
             $this->contenu_panier = array('prix_total' => 0, 'items_total' => 0);
         }
     }
+
+    //Fonction qui retourne l'ensemble du contenu du panier
+    public function contenu(){
+        //Effectue un tri avec l'ajout le plus récent en premier
+        $panier = array_reverse($this->contenu_panier);
+
+        //Enlève le nombre total d'items et le prix total pour ne pas créer d'erreurs
+        unset($panier['prix_total']);
+        unset($panier['items_total']);
+
+        return $panier;
+    }
 }
