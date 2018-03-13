@@ -542,7 +542,7 @@ class Utilisateur{
 		
 		$this->motdepasse= $this->motdepasseTemporaire;
 		
-
+	}
 	public function estValide(){
 		
 		return empty($this->listeMessageErreurActif);

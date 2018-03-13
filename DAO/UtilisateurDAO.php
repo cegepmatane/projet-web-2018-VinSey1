@@ -243,7 +243,9 @@ class UtilisateurDAO{
 					$enregistrementUtilisateur->illustration,
 					$enregistrementUtilisateur->age,
 					$enregistrementUtilisateur->telephone,
-					$enregistrementUtilisateur->role );
+					$enregistrementUtilisateur->role,
+					$enregistrementUtilisateur->motdepasse
+					);
 						
 			
 			$listeUtilisateur[]=$utilisateur;
