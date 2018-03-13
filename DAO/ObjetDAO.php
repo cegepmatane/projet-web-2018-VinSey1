@@ -51,7 +51,15 @@ class ObjetDAO{
 				break;
 			
 			case 3:
-				$categorie = "Autre";
+				$categorie = "Livres";
+				break;
+				
+			case 4:
+				$categorie = "Fournitures de bureau";
+				break;
+				
+			case 5:
+				$categorie = "Autres";
 				break;
 		}
 		
@@ -261,7 +269,15 @@ class ObjetDAO{
 				break;
 			
 			case 3:
-				$categorie = "Autre";
+				$categorie = "Livres";
+				break;
+				
+			case 4:
+				$categorie = "Fournitures de bureau";
+				break;
+				
+			case 5:
+				$categorie = "Autres";
 				break;
 		}
 		
