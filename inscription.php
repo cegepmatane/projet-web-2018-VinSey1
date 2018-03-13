@@ -1,6 +1,5 @@
 <?php
 	include "entete.php";
-	
 
 	require_once LISTE_ERREUR_FORMULAIRE;
 	require_once INSCRIPTION_UTILISATEUR_CONTROLEUR;
