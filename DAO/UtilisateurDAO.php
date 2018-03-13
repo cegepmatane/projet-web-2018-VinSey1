@@ -62,6 +62,7 @@ class UtilisateurDAO{
 		$age = $utilisateur->getAge();
 		$telephone = $utilisateur->getTelephone();
 		$role = $utilisateur->getRole();
+		$motdepasse = $motdepasse->getMotDePasse();
 	
 		$requete = $connexionBDActive->prepare("UPDATE utilisateur SET
 			nom=:nom,
@@ -77,7 +78,8 @@ class UtilisateurDAO{
 			illustration=:illustration,
 			age=:age,
 			telephone=:telephone,
-			role=:role
+			role=:role,
+			motdepasse=:motdepasse;
 			WHERE id_utilisateur=:idUtilisateur ");
 												
 		
@@ -96,6 +98,7 @@ class UtilisateurDAO{
 		$requete->bindParam(':age', $age, PDO::PARAM_INT);
 		$requete->bindParam(':telephone', $telephone, PDO::PARAM_STR);
 		$requete->bindParam(':role', $role, PDO::PARAM_STR);
+		$requete->bindParam(':motdepasse', $motdepasse, PDO::PARAM_STR);
 		
 		$requete->execute();
 			
@@ -121,6 +124,7 @@ class UtilisateurDAO{
 		$age = $utilisateur->getAge();
 		$telephone = $utilisateur->getTelephone();
 		$role = $utilisateur->getRole();
+		$motdepasse = $utilisateur->getMotDePasse();
 	
 		$requete = $connexionBDActive->prepare("INSERT INTO utilisateur(
 			nom,
@@ -136,7 +140,8 @@ class UtilisateurDAO{
 			illustration,
 			age,
 			telephone,
-			role) 
+			role,
+			motdepasse) 
 			VALUES (
 			:nom,
 			:prenom,
@@ -151,7 +156,8 @@ class UtilisateurDAO{
 			:illustration,
 			:age,
 			:telephone,
-			:role)");
+			:role,
+			:motdepasse)");
 		
 		$requete->bindParam(':nom', $nom, PDO::PARAM_STR);
 		$requete->bindParam(':prenom', $prenom, PDO::PARAM_STR);
@@ -167,6 +173,7 @@ class UtilisateurDAO{
 		$requete->bindParam(':age', $age, PDO::PARAM_INT);
 		$requete->bindParam(':telephone', $telephone, PDO::PARAM_STR);
 		$requete->bindParam(':role', $role, PDO::PARAM_STR);
+		$requete->bindParam(':motdepasse', $motdepasse, PDO::PARAM_STR);
 		$requete->execute();
 		
 	}
