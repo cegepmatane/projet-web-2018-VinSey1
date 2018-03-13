@@ -39,6 +39,8 @@
 		<?php 
 					$objetDAO = new ObjetDAO();
 					$listeobjet = $objetDAO->obtenirListeObjet();
+					$literie = $objetDAO->compterObjetParCategorie(1);
+					echo "var Literie='".$literie."';";
 					
 					
 		?>
@@ -194,7 +196,7 @@
 	<div>
 		<div class="onglets-profil" id="contenu_onglet_ventes">
 				
-				<?php echo gettext("Nombre d'objets dans literie : "); $objetDAO->compterObjetParCategorie(1); ?>
+				
 				<?php echo gettext("Nombre d'objets : "); $objetDAO->compterObjet(); ?> </br>
 				<?php echo gettext("Chercher des ventes");?></br>
 				<?php echo gettext("Identifiant de la vente");?> <input type="text" ></br>
@@ -208,7 +210,7 @@
 					<img src="<?=$objet->getIllustration();?>" class="photo-miniature-produit"/>
 					<ul>
 						<li><?php echo $objet->getTitreDeVente();?></li>
-						<li><?php echo gettext("Prix");?>: <?php echo $objet->getPrix();?><?php echo gettext(" $");?></li>
+						<li><?php echo gettext("Prix");?>: <?php echo $objet->getPrix(); echo gettext(" $");?></li>
 						<li><a href="administration-objet.php?idObjet=<?php echo $objet->getIdObjet(); ?>"> Modifier </a></li>
 						<li><a href="administration-objet.php?idObjet=<?php echo $objet->getIdObjet(); ?>"> Supprimer </a></li>
 					</ul>
@@ -220,7 +222,7 @@
 					$utilisateurDAO = new UtilisateurDAO();
 					$listeutilisateur = $utilisateurDAO->obtenirListeUtilisateur();
 				?>
-				<?php echo gettext("Nombre d'utilisateurs : ");?><?php $utilisateurDAO->compterUtilisateur(); ?></br>
+				<?php echo gettext("Nombre d'utilisateurs : "); $utilisateurDAO->compterUtilisateur(); ?></br>
 				<?php echo gettext("Chercher des utilisateurs");?></br>
 				<?php echo gettext("Identifiant");?> <input type="text" ></br>
 				<?php echo gettext("Nom");?> <input type="text" ></br>
