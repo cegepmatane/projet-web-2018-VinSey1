@@ -128,4 +128,11 @@ class Panier {
             return TRUE;
         }
     }
+
+    //Fonction qui supprime un item du panier
+    public function supprimer($rowId){
+        unset($this->contenuPanier[$rowId]);
+        $this->sauvegarderPanier();
+        return TRUE;
+    }
 }
