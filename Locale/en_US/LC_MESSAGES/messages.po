@@ -16,3 +16,15 @@ msgstr ""
 # test
 msgid "Prix"
 msgstr "Price"
+
+msgid "Accueil"
+msgstr "Home"
+
+msgid "Administration utilisateur"
+msgstr "User management"
+
+msgid "Administration objet"
+msgstr "Object management"
+
+msgid "Administration objet"
+msgstr "Object management"	
