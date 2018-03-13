@@ -17,6 +17,7 @@ class Utilisateur{
 	private $age;
 	private $telephone;
 	private $role;
+	private $motdepasse;
 	
 	private $idUtilisateurTemporaire;
 	private $nomTemporaire;
@@ -33,6 +34,7 @@ class Utilisateur{
 	private $ageTemporaire;
 	private $telephoneTemporaire;
 	private $roleTemporaire;
+	private $motdepasseTemporaire;
 
 	private $listeMessageErreur = [
 	
@@ -168,8 +170,13 @@ class Utilisateur{
 		if (isset($this->role)) return $this->role;
 		else return $this->roleTemporaire;
 	}
+	
+	public function getMotDePasse(){
+		if (isset($this->motdepasse)) return $this->motdepasse;
+		else return $this->motdepasseTemporaire;
+	}
 		
-	public function construireDonneesSecurise($idUtilisateur, $nom, $prenom, $pseudonyme, $email, $adresse, $codepostal, $pays, $ville, $nbventes, $nbachats, $illustration, $age, $telephone, $role ){	
+	public function construireDonneesSecurise($idUtilisateur, $nom, $prenom, $pseudonyme, $email, $adresse, $codepostal, $pays, $ville, $nbventes, $nbachats, $illustration, $age, $telephone, $role, $motdepasse){	
 		
 			$this->idUtilisateur = $idUtilisateur;
 			$this->nom = $nom;
@@ -186,6 +193,7 @@ class Utilisateur{
 			$this->age = $age;
 			$this->telephone = $telephone;
 			$this->role = $role;
+			$this->motdepasse = $motdepasse;
 	}
 	
 	
@@ -528,6 +536,12 @@ class Utilisateur{
 				$this->role= $this->roleTemporaire;
 		}		
 	}
+	
+	public function setMotDePasse($role){
+		
+		
+		$this->motdepasse= $this->motdepasseTemporaire;
+		
 
 	public function estValide(){
 		
