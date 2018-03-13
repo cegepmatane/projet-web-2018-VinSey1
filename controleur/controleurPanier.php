@@ -73,4 +73,37 @@ class Panier {
             }
         }
     }
+
+    //Fonction qui met à jour le panier
+    public function update($item = array()){
+        if (!is_array($item) OR count($item) == 0){
+            return FALSE;
+        } else {
+            if (!isset($item['rowId'], $this->contenuProduit[$item['rowId']])){
+                return FALSE;
+            } else {
+                //Prépare la quantité
+                if(isset($item['qty'])){
+                    $item['qty'] = (float) $item['qty'];
+                    //Enlève l'item du panier si la quantité est nulle
+                    if($item['qty'] == 0){
+                        unset($this->contenuPanier[$item['rowId']]);
+                        return TRUE;
+                    }
+                }
+                //Trouve les clés qui peuvent être mises à jour
+                $clés = array_intersect(array_keys($this->contenuPanier[$item['rowId']]), array_keys($item));
+                //Prépare le prix
+                if(isset($item['prix'])){
+                    $item['prix'] = (float) $item['prix'];
+                }
+                foreach(array_diff($clés, array('id', 'nom')) as $clé){
+                    $this->contenuPanier[$item['rowId']][$clé] = $item[$clé];
+                }
+                //Sauvegarde le panier
+                $this->sauvegarderPanier();
+                return TRUE;
+            }
+        }
+    }
 }
