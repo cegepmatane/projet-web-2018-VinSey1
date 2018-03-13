@@ -135,4 +135,10 @@ class Panier {
         $this->sauvegarderPanier();
         return TRUE;
     }
+
+    //Fonction qui permet de reset le panier et d'enlever celui de la session
+    public function destroy(){
+        $this->contenuPanier = array('prixTotal' => 0, 'itemsTotal' => 0);
+        unset($_SESSION['contenuPanier']);
+    }
 }
