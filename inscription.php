@@ -63,7 +63,7 @@
 							?>
 						</li>
 						<li>
-							<label for="motdepasse"> <?php echo gettext("Mot de passe : "); ?>: </label>
+							<label for="motdepasse"> <?php echo gettext("Mot de passe"); ?>: </label>
 							<input type="text" name="motdepasse" id="motdepasse" value="<?php if ( $utilisateur) echo $utilisateur->getMotDePasse(); ?>" />
 						</li>
 						<li>

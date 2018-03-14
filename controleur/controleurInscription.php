@@ -20,6 +20,8 @@
 			$utilisateur->setPseudonyme($_POST['pseudonyme']);
 			$utilisateur->setAge($_POST['anneenaissance']);		
 			$utilisateur->setIllustration($_POST['illustration']);
+			$pass_cache = password_hash($_POST['motdepasse'], PASSWORD_DEFAULT);
+			$utilisateur->setMotDePasse($pass_cache);
 			
 			if (!empty($_POST['adresse'])){ $utilisateur->setAdresse($_POST['adresse']);}
 			if (!empty($_POST['codepostal'])){ $utilisateur->setCodepostal($_POST['codepostal']);}
@@ -48,6 +50,8 @@
 			$utilisateur->setPseudonyme($_POST['pseudonyme']);
 			$utilisateur->setAge($_POST['anneenaissance']);		
 			$utilisateur->setIllustration($_POST['illustration']);
+			$pass_cache = password_hash($_POST['motdepasse'], PASSWORD_DEFAULT);
+			$utilisateur->setMotDePasse($pass_cache);
 			$utilisateur->setAdresse($_POST['adresse']);
 			$utilisateur->setCodepostal($_POST['codepostal']);
 			$utilisateur->setPays($_POST['pays']);			
@@ -73,6 +77,8 @@
 			$utilisateur->setPseudonyme($_POST['pseudonyme']);
 			$utilisateur->setAge($_POST['anneenaissance']);		
 			$utilisateur->setIllustration($_POST['illustration']);
+			$pass_cache = password_hash($_POST['motdepasse'], PASSWORD_DEFAULT);
+			$utilisateur->setMotDePasse($pass_cache);
 			$utilisateur->setAdresse($_POST['adresse']);
 			$utilisateur->setCodepostal($_POST['codepostal']);
 			$utilisateur->setPays($_POST['pays']);			
@@ -102,6 +108,8 @@
 			$utilisateur->setPseudonyme($_POST['pseudonyme']);
 			$utilisateur->setAge($_POST['anneenaissance']);
 			$utilisateur->setIllustration($_POST['illustration']);
+			$pass_cache = password_hash($_POST['motdepasse'], PASSWORD_DEFAULT);
+			$utilisateur->setMotDePasse($pass_cache);
 			
 			$utilisateur->setAdresse($_POST['adresse']);
 			$utilisateur->setCodepostal($_POST['codepostal']);
