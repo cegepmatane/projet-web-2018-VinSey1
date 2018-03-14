@@ -44,6 +44,12 @@ function afficherFormulaireUtilisateur($actionFormulaire, $utilisateur=null){
 						<input type="text" name="illustration" id="illustration" value="<?php if ( $utilisateur) echo $utilisateur->getIllustration(); ?>" />
 						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('illustration'));?>
 					</li>
+					
+					<li>
+						<label for="motdepasse"> <?php echo gettext("Mot de passe"); ?>: </label>
+						<input type="password" name="motdepasse" id="motdepasse" value="<?php if ( $utilisateur) echo $utilisateur->getMotDePasse(); ?>" />
+						
+					</li>
 				</div>	
 				<div id = "bloc-formulaire-2">
 					<li>
