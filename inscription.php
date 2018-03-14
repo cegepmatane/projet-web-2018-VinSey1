@@ -64,7 +64,7 @@
 						</li>
 						<li>
 							<label for="motdepasse"> <?php echo gettext("Mot de passe"); ?>: </label>
-							<input type="text" name="motdepasse" id="motdepasse" value="<?php if ( $utilisateur) echo $utilisateur->getMotDePasse(); ?>" />
+							<input type="password" name="motdepasse" id="motdepasse" value="<?php if ( $utilisateur) echo $utilisateur->getMotDePasse(); ?>" />
 						</li>
 						<li>
 							<label for="illustration"> <?php echo gettext("Illustration"); ?>: </label>
