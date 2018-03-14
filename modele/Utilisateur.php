@@ -539,8 +539,8 @@ class Utilisateur{
 	
 	public function setMotDePasse($role){
 		
-		
-		$this->motdepasse= $this->motdepasseTemporaire;
+		$this->motdepasseTemporaire = filter_var($telephone, FILTER_SANITIZE_STRING);
+		$this->motdepasse = $this->motdepasseTemporaire;
 		
 	}
 	public function estValide(){
