@@ -234,6 +234,7 @@ class Utilisateur{
 		
 		$this->nomTemporaire = filter_var($nom, FILTER_SANITIZE_STRING);
 		
+		echo $this->nomTemporaire;
 		
 		if (empty($this->nomTemporaire)){
 			
@@ -288,12 +289,11 @@ class Utilisateur{
 	
 	public function setPseudonyme($pseudonyme){
 		
+		verifAlphaNum($this->prenomTemporaire);
 		$this->pseudonymeTemporaire = filter_var($pseudonyme, FILTER_SANITIZE_STRING);
 		
-		if ( empty($this->pseudonymeTemporaire)){
-			
+		if (empty($this->pseudonymeTemporaire)){		
 			$this->listeMessageErreurActif['pseudonyme'][] = $this->listeMessageErreur['pseudonyme-vide'];
-
 		}
 		
 		if ( strlen($this->prenomTemporaire) > 24){
@@ -524,7 +524,7 @@ class Utilisateur{
 			
 		}
 					
-		if ( !filter_var($this->roleTemporaire, FILTER_VALIDATE_INT) && $this->roleTemporaire != 0 ){  // sinon pas considéré comme entier
+		if (!filter_var($this->roleTemporaire, FILTER_VALIDATE_INT) && $this->roleTemporaire != 0 ){  // sinon pas considéré comme entier
 			
 			$this->listeMessageErreurActif['role'][] = $this->listeMessageErreur['role-non-numerique'];
 
@@ -536,7 +536,7 @@ class Utilisateur{
 			
 		}
 	
-		if ( !$this->getListeErreurActifPourChamp('role') ){
+		if (!$this->getListeErreurActifPourChamp('role') ){
 				$this->role= $this->roleTemporaire;
 		}		
 	}
@@ -545,7 +545,7 @@ class Utilisateur{
 		
 		$this->motDePasseTemporaire = filter_var($motdepasse, FILTER_SANITIZE_STRING);
 
-		if ( empty($this->motDePasseTemporaire)){
+		if (empty($this->motDePasseTemporaire)){
 			$this->listeMessageErreurActif['motdepasse'][] = $this->listeMessageErreur['mdp-vide'];
 		}
 
@@ -555,7 +555,7 @@ class Utilisateur{
 		if (strlen((string)$this->motDePasseTemporaire) < 8){
 			$this->listeMessageErreurActif['motdepasse'][] = $this->listeMessageErreur['mdp-trop-court'];
 		}
-		if ( !$this->getListeErreurActifPourChamp('motdepasse') ){
+		if (!$this->getListeErreurActifPourChamp('motdepasse') ){
 				$this->motdepasse = $this->motDePasseTemporaire;
 		}
 	}
@@ -572,7 +572,23 @@ class Utilisateur{
 		}
 		return [];
 	}
-	
-	
+}
+
+function verifAlpha($valeur){
+    preg_match("/([^A-Za-z .\-])+$/i",$valeur, $resultat);
+    if(!empty($resultat)){
+        return false;
+    }
+    return true;
+}
+
+function verifAlphaNum($valeur){
+    preg_match("/([^A-Za-z0-9 .\-])+$/i",$valeur, $resultat);
+	if(!empty($resultat)){
+		echo "false";
+        return false;
+	}
+	echo "true";
+    return true;
 }
 ?>
