@@ -79,16 +79,20 @@ class Utilisateur{
 		
 		'illustration-vide' => 'Une illustration doit être donnée',
 		
-		'age-vide' => 'l\'age doit être renseigné',
-		'age-non-numerique' => 'l\'age doit être un entier',
-		'age-trop-long' => 'l\'age ne doit pas dépasser 11 chiffres',
+		'age-vide' => 'l\'âge doit être renseigné',
+		'age-non-numerique' => 'l\'âge doit être un entier',
+		'age-trop-long' => 'l\'âge ne doit pas dépasser 11 chiffres',
 		
 		'telephone-vide' => 'Un numéro de téléphone doit être renseigné',
 		'telephone-trop-long' => 'Le numéro de téléphone ne doit pas dépasser 16 chiffres',
 		
 		'role-vide' => 'Un rôle doit être attribué',
 		'role-non-numerique' => 'Le rôle doit être un entier',
-		'role-trop-long' => 'Le numéro de rôle ne doit pas dépasser 11 chiffres'
+		'role-trop-long' => 'Le numéro de rôle ne doit pas dépasser 11 chiffres',
+
+		'mdp-vide' => 'Le mot de passe est vide',
+		'mdp-trop-court' => 'Le mot de passe ne dépasse pas 8 caractères',
+		'mdp-trop-long' => 'Le mot de passe ne doit pas dépasser 20 caractères'
 	];
 	
 	private $listeMessageErreurActif = [];
@@ -173,7 +177,7 @@ class Utilisateur{
 	
 	public function getMotDePasse(){
 		if (isset($this->motdepasse)) return $this->motdepasse;
-		else return $this->motdepasseTemporaire;
+		else return $this->motDePasseTemporaire;
 	}
 		
 	public function construireDonneesSecurise($idUtilisateur, $nom, $prenom, $pseudonyme, $email, $adresse, $codepostal, $pays, $ville, $nbventes, $nbachats, $illustration, $age, $telephone, $role, $motdepasse){	
@@ -539,10 +543,23 @@ class Utilisateur{
 	
 	public function setMotDePasse($motdepasse){
 		
-		$this->motdepasseTemporaire = filter_var($motdepasse, FILTER_SANITIZE_STRING);
-		$this->motdepasse = $this->motdepasseTemporaire;
-		
+		$this->motDePasseTemporaire = filter_var($motdepasse, FILTER_SANITIZE_STRING);
+
+		if ( empty($this->motDePasseTemporaire)){
+			$this->listeMessageErreurActif['motdepasse'][] = $this->listeMessageErreur['mdp-vide'];
+		}
+
+		if (strlen((string)$this->motDePasseTemporaire) < 20){
+			$this->listeMessageErreurActif['motdepasse'][] = $this->listeMessageErreur['mdp-trop-long'];
+		}
+		if (strlen((string)$this->motDePasseTemporaire) < 8){
+			$this->listeMessageErreurActif['motdepasse'][] = $this->listeMessageErreur['mdp-trop-court'];
+		}
+		if ( !$this->getListeErreurActifPourChamp('motdepasse') ){
+				$this->motdepasse = $this->motDePasseTemporaire;
+		}
 	}
+
 	public function estValide(){
 		
 		return empty($this->listeMessageErreurActif);

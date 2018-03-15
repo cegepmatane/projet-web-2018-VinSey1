@@ -65,6 +65,12 @@
 						<li>
 							<label for="motdepasse"> <?php echo gettext("Mot de passe"); ?>: </label>
 							<input type="password" name="motdepasse" id="motdepasse" value="<?php if ( $utilisateur) echo $utilisateur->getMotDePasse(); ?>" />
+							<?php
+								if ( $utilisateur){
+									afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('motdepasse'));
+									?><script>indiquerErreurInscription('motdepasse');</script><?php
+								}
+							?>
 						</li>
 						<li>
 							<label for="illustration"> <?php echo gettext("Illustration"); ?>: </label>
