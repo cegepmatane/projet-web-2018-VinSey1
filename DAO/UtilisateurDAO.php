@@ -79,7 +79,7 @@ class UtilisateurDAO{
 			age=:age,
 			telephone=:telephone,
 			role=:role,
-			motdepasse=:motdepasse;
+			motdepasse=:motdepasse
 			WHERE id_utilisateur=:idUtilisateur ");
 												
 		
