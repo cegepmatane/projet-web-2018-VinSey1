@@ -46,12 +46,13 @@ class Utilisateur{
 		'nom-trop-long' => 'Le nom ne doit pas faire plus de 24 caractères',
 		'nom-non-alphabetique' => 'Le nom doit contenir uniquement des lettres',
 		
-		'prenom-vide' => 'Le prenom ne doit pas être vide',
-		'prenom-trop-long' => 'Le prenom ne doit pas faire plus de 24 caractères',
-		'prenom-non-alphabetique' => 'Le prenom doit contenir uniquement des lettres',
+		'prenom-vide' => 'Le prénom ne doit pas être vide',
+		'prenom-trop-long' => 'Le prénom ne doit pas faire plus de 24 caractères',
+		'prenom-non-alphabetique' => 'Le prénom doit contenir uniquement des lettres',
 		
 		'pseudonyme-vide' => 'Le pseudonyme ne doit pas être vide',
 		'pseudonyme-trop-long' => 'Le pseudonyme ne doit pas faire plus de 24 caractères',
+		'pseudonyme-non-alphanumerique' => 'Le pseudonyme contient des caractères invalides',
 		
 		'email-vide' => 'L\'email ne doit pas être vide',
 		'email-invalide' => 'L\'email n\'est pas valide',
@@ -59,32 +60,38 @@ class Utilisateur{
 		
 		'adresse-vide' => 'L\'adresse ne doit pas être vide',
 		'adresse-trop-longue' => 'L\'adresse ne doit pas dépasser 80 caractères',
+		'adresse-invalide' => 'L\'adresse contient des caractères invalides',
 		
 		'codepostal-vide' => 'Le code postal ne doit pas être vide',
 		'codepostal-trop-long' => 'Le code postal ne doit pas dépasser 14 caractères',
+		'codepostal-invalide' => 'Le code postal contient des caractères invalides',
 		
 		'pays-vide' => 'Le pays ne doit pas être vide',
 		'pays-trop-long' => 'Le pays ne doit pas dépasser 24 caractères',
+		'pays-invalide' => 'Le pays contient des caractères invalides',
 		
 		'ville-vide' => 'La ville ne doit pas être vide',
 		'ville-trop-longue' => 'La ville ne doit pas dépasser 24 caractères',
-		
+		'ville-invalide' => 'La ville contient des caractères invalides',
+
 		'nbachats-vide' => 'Le nombre d\'achats ne doit pas être vide',
 		'nbachats-non-numerique' => 'Le nombre d\'achats doit être un entier',
-		'nbachats-trop-long' => 'Le nombre d\'acahts ne doit pas dépasser 11 chiffre',
+		'nbachats-trop-long' => 'Le nombre d\'achats ne doit pas dépasser 11 chiffre',
 		
 		'nbventes-vide' => 'Le nombre de ventes ne doit pas être vide',
 		'nbventes-non-numerique' => 'Le nombre de ventes doit être un entier',
 		'nbachats-trop-long' => 'Le nombre d\'achats ne doit pas dépasser 11 chiffres',
 		
 		'illustration-vide' => 'Une illustration doit être donnée',
+		'illustration-invalide' => 'L\'illustration contient des caractères invalides',
 		
-		'age-vide' => 'l\'âge doit être renseigné',
-		'age-non-numerique' => 'l\'âge doit être un entier',
-		'age-trop-long' => 'l\'âge ne doit pas dépasser 11 chiffres',
+		'age-vide' => 'L\'âge ne doit pas être vide ou nul',
+		'age-non-numerique' => 'L\'âge doit être un entier',
+		'age-trop-long' => 'L\'âge ne doit pas dépasser 11 chiffres',
 		
 		'telephone-vide' => 'Un numéro de téléphone doit être renseigné',
 		'telephone-trop-long' => 'Le numéro de téléphone ne doit pas dépasser 16 chiffres',
+		'telephone-invalide' => 'Le téléphone contient des caractères invalides',
 		
 		'role-vide' => 'Un rôle doit être attribué',
 		'role-non-numerique' => 'Le rôle doit être un entier',
@@ -92,7 +99,8 @@ class Utilisateur{
 
 		'mdp-vide' => 'Le mot de passe est vide',
 		'mdp-trop-court' => 'Le mot de passe ne dépasse pas 8 caractères',
-		'mdp-trop-long' => 'Le mot de passe ne doit pas dépasser 20 caractères'
+		'mdp-trop-long' => 'Le mot de passe ne doit pas dépasser 20 caractères',
+		'mdp-invalide' => 'Le mot de passe contient des caractères invalides'
 	];
 	
 	private $listeMessageErreurActif = [];
@@ -206,21 +214,16 @@ class Utilisateur{
 		$this->idUtilisateurTemporaire = filter_var($idUtilisateur, FILTER_SANITIZE_NUMBER_INT);
 								
 		if ( !isset($this->idUtilisateurTemporaire)){
-			
 			$this->listeMessageErreurActif['idUtilisateur'][] = $this->listeMessageErreur['identifiant-vide'];
-		}
+		} else {
+			if ( !filter_var($this->idUtilisateurTemporaire) ){			
+				$this->listeMessageErreurActif['idUtilsateur'][] = $this->listeMessageErreur['identifiant-non-numerique'];
+			}	
 			
-		if ( !filter_var($this->idUtilisateurTemporaire) ){
-			
-			$this->listeMessageErreurActif['idUtilsateur'][] = $this->listeMessageErreur['identifiant-non-numerique'];
-		}	
-		
-		if ( $this->idUtilisateurTemporaire > 99999999999 ){
-			
-			$this->listeMessageErreurActif['idUtilsateur'][] = $this->listeMessageErreur['identifiant-trop-long'];			
-			
-		}
-		
+			if ( $this->idUtilisateurTemporaire > 99999999999 ){
+				$this->listeMessageErreurActif['idUtilsateur'][] = $this->listeMessageErreur['identifiant-trop-long'];			
+			}
+		}		
 		
 		if ( !$this->getListeErreurActifPourChamp('idUtilisateur')){
 			
@@ -233,25 +236,25 @@ class Utilisateur{
 	public function setNom($nom){
 		
 		$this->nomTemporaire = filter_var($nom, FILTER_SANITIZE_STRING);
-		
-		echo $this->nomTemporaire;
-		
+
 		if (empty($this->nomTemporaire)){
 			
 			$this->listeMessageErreurActif['nom'][] = $this->listeMessageErreur['nom-vide'];
 						
-		}
-		
-		if ( strlen($this->nomTemporaire) > 24){
+		} else {
+					
+			if ( strlen($this->nomTemporaire) > 24){
+				
+				$this->listeMessageErreurActif['nom'][] = $this->listeMessageErreur['nom-trop-long'];
+			}
 			
-			$this->listeMessageErreurActif['nom'][] = $this->listeMessageErreur['nom-trop-long'];
+			if ( !verifAlpha($this->nomTemporaire) ){
+				
+				$this->listeMessageErreurActif['nom'][] = $this->listeMessageErreur['nom-non-alphabetique'];
+				
+			}
 		}
-		
-		if ( !ctype_alpha($this->nomTemporaire) ){
-			
-			$this->listeMessageErreurActif['nom'][] = $this->listeMessageErreur['nom-non-alphabetique'];
-			
-		}
+
 									
 		if ( !$this->getListeErreurActifPourChamp('nom') ){
 				$this->nom = $this->nomTemporaire;
@@ -262,23 +265,23 @@ class Utilisateur{
 	public function setPrenom($prenom){
 		
 		$this->prenomTemporaire = filter_var($prenom, FILTER_SANITIZE_STRING);
-
 		
 		if ( empty($this->prenomTemporaire)){
-			
 			$this->listeMessageErreurActif['prenom'][] = $this->listeMessageErreur['prenom-vide'];
-		}
+		} else {
 		
-		if ( strlen($this->prenomTemporaire) > 24){
+			if ( strlen($this->prenomTemporaire) > 24){
 			
-			$this->listeMessageErreurActif['prenom'][] = $this->listeMessageErreur['prenom-trop-long'];
+				$this->listeMessageErreurActif['prenom'][] = $this->listeMessageErreur['prenom-trop-long'];
+			}
+			
+			if ( !verifAlpha($this->prenomTemporaire) ){
+				
+				$this->listeMessageErreurActif['prenom'][] = $this->listeMessageErreur['prenom-non-alphabetique'];
+				
+			}	
 		}
-		
-		if ( !ctype_alpha($this->prenomTemporaire) ){
-			
-			$this->listeMessageErreurActif['prenom'][] = $this->listeMessageErreur['prenom-non-alphabetique'];
-			
-		}	
+
 		
 		if ( !$this->getListeErreurActifPourChamp('prenom') ){
 				$this->prenom = $this->prenomTemporaire;
@@ -288,19 +291,24 @@ class Utilisateur{
 	}
 	
 	public function setPseudonyme($pseudonyme){
-		
-		verifAlphaNum($this->prenomTemporaire);
+
 		$this->pseudonymeTemporaire = filter_var($pseudonyme, FILTER_SANITIZE_STRING);
 		
 		if (empty($this->pseudonymeTemporaire)){		
 			$this->listeMessageErreurActif['pseudonyme'][] = $this->listeMessageErreur['pseudonyme-vide'];
-		}
-		
-		if ( strlen($this->prenomTemporaire) > 24){
+		} else {
+			if ( strlen($this->pseudonymeTemporaire) > 24){
 			
-			$this->listeMessageErreurActif['pseudonyme'][] = $this->listeMessageErreur['pseudonyme-trop-long'];
-		}
+				$this->listeMessageErreurActif['pseudonyme'][] = $this->listeMessageErreur['pseudonyme-trop-long'];
+			}
 				
+			if ( !verifAlphaNum($this->pseudonymeTemporaire) ){
+					
+				$this->listeMessageErreurActif['pseudonyme'][] = $this->listeMessageErreur['pseudonyme-non-alphanumerique'];
+				
+			}	
+		}
+
 		if ( !$this->getListeErreurActifPourChamp('pseudonyme') ){
 				$this->pseudonyme = $this->pseudonymeTemporaire;
 		}
@@ -316,16 +324,18 @@ class Utilisateur{
 			
 			$this->listeMessageErreurActif['email'][] = $this->listeMessageErreur['email-vide'];
 			
-		}
-		if ( !filter_var($this->emailTemporaire, FILTER_VALIDATE_EMAIL) ){
+		} else {
+			if ( !verifAlphaNum($this->emailTemporaire, FILTER_VALIDATE_EMAIL) ){
 			
-			$this->listeMessageErreurActif['email'][] = $this->listeMessageErreur['email-invalide'];
-			
-		}
-		if ( !$this->getListeErreurActifPourChamp('email') ){
-				$this->email = $this->emailTemporaire;
-		}
+				$this->listeMessageErreurActif['email'][] = $this->listeMessageErreur['email-invalide'];
 				
+			}
+
+		}	
+		
+		if ( !$this->getListeErreurActifPourChamp('email') ){
+			$this->email = $this->emailTemporaire;
+		}
 	}
 	
 	public function setAdresse($adresse){
@@ -336,6 +346,12 @@ class Utilisateur{
 			
 			$this->listeMessageErreurActif['adresse'][] = $this->listeMessageErreur['adresse-vide'];
 
+		} else {
+			if ( !verifAlphaNum($this->adresseTemporaire) ){
+			
+				$this->listeMessageErreurActif['adresse'][] = $this->listeMessageErreur['adresse-invalide'];
+				
+			}
 		}
 		
 		if ( !$this->getListeErreurActifPourChamp('adresse') ){
@@ -352,6 +368,12 @@ class Utilisateur{
 		if ( empty($this->codepostalTemporaire)){
 			
 			$this->listeMessageErreurActif['codepostal'][] = $this->listeMessageErreur['codepostal-vide'];
+		} else {
+			if ( !verifAlphaNum($this->codepostalTemporaire) ){
+			
+				$this->listeMessageErreurActif['codepostal'][] = $this->listeMessageErreur['codepostal-invalide'];
+				
+			}
 		}
 		
 		if ( !$this->getListeErreurActifPourChamp('codepostal') ){
@@ -369,6 +391,12 @@ class Utilisateur{
 			
 			$this->listeMessageErreurActif['pays'][] = $this->listeMessageErreur['pays-vide'];
 
+		} else {
+			if ( !verifAlpha($this->paysTemporaire) ){
+			
+				$this->listeMessageErreurActif['pays'][] = $this->listeMessageErreur['pays-invalide'];
+				
+			}
 		}
 		
 		if ( !$this->getListeErreurActifPourChamp('pays') ){
@@ -384,6 +412,10 @@ class Utilisateur{
 		if ( empty($this->villeTemporaire)){
 			
 			$this->listeMessageErreurActif['ville'][] = $this->listeMessageErreur['ville-vide'];
+		} else {
+			if(!verifAlpha($this->villeTemporaire)){
+				$this->listeMessageErreurActif['ville'][] = $this->listeMessageErreur['ville-invalide'];
+			}
 		}
 		
 
@@ -401,20 +433,19 @@ class Utilisateur{
 		if ( !isset($this->nbachatsTemporaire)){
 			
 			$this->listeMessageErreurActif['nbachats'][] = $this->listeMessageErreur['nbachats-vide'];
-		}
-		
-		if ( !filter_var($this->nbachatsTemporaire, FILTER_VALIDATE_INT) && $this->nbachatsTemporaire != 0 ){
+		} else {
+			if ( !filter_var($this->nbachatsTemporaire, FILTER_VALIDATE_INT) && $this->nbachatsTemporaire != 0 ){
 			
-			$this->listeMessageErreurActif['nbachats'][] = $this->listeMessageErreur['nbachats-non-numerique'];
-
-		}
-		
-		if ( $this->nbachatsTemporaire > 99999999999 ){
+				$this->listeMessageErreurActif['nbachats'][] = $this->listeMessageErreur['nbachats-non-numerique'];
+	
+			}
 			
-			$this->listeMessageErreurActif['nbachats'][] = $this->listeMessageErreur['nbachats-trop-long'];			
-			
+			if ( $this->nbachatsTemporaire > 99999999999 ){
+				
+				$this->listeMessageErreurActif['nbachats'][] = $this->listeMessageErreur['nbachats-trop-long'];			
+				
+			}
 		}
-		
 		if ( !$this->getListeErreurActifPourChamp('nbachats') ){
 				$this->nbachats= $this->nbachatsTemporaire;
 		}
@@ -429,19 +460,21 @@ class Utilisateur{
 			
 			$this->listeMessageErreurActif['nbventes'][] = $this->listeMessageErreur['nbventes-vide'];
 			
-		}
+		} else {
 		
-		if ( !filter_var($this->nbventesTemporaire, FILTER_VALIDATE_INT) && $this->nbventesTemporaire!= 0){
+			if ( !filter_var($this->nbventesTemporaire, FILTER_VALIDATE_INT) && $this->nbventesTemporaire!= 0){
 			
-			$this->listeMessageErreurActif['nbventes'][] = $this->listeMessageErreur['nbventes-non-numerique'];
+				$this->listeMessageErreurActif['nbventes'][] = $this->listeMessageErreur['nbventes-non-numerique'];
+	
+			}
+			
+			if ( $this->nbventesTemporaire > 99999999999 ){
+				
+				$this->listeMessageErreurActif['nbventes'][] = $this->listeMessageErreur['nbventes-trop-long'];			
+				
+			}
+		}
 
-		}
-		
-		if ( $this->nbventesTemporaire > 99999999999 ){
-			
-			$this->listeMessageErreurActif['nbventes'][] = $this->listeMessageErreur['nbventes-trop-long'];			
-			
-		}
 		
 		if ( !$this->getListeErreurActifPourChamp('nbventes') ){
 				$this->nbventes= $this->nbventesTemporaire;
@@ -457,6 +490,10 @@ class Utilisateur{
 			
 			$this->listeMessageErreurActif['illustration'][] = $this->listeMessageErreur['illustration-vide'];
 			
+		} else {
+			if(!verifAlphaNum($this->illustrationTemporaire)){
+				$this->listeMessageErreurActif['illustration'][] = $this->listeMessageErreur['illustration-invalide'];
+			}
 		}
 		
 		if ( !$this->getListeErreurActifPourChamp('illustration') ){
@@ -467,23 +504,23 @@ class Utilisateur{
 	public function setAge($age){
 		
 		$this->ageTemporaire = filter_var($age, FILTER_SANITIZE_NUMBER_INT);
-		
-		if ( !isset($this->ageTemporaire)){
-			
+		echo $this->ageTemporaire;
+		if ( empty($this->ageTemporaire)){
+			echo "oui";
 			$this->listeMessageErreurActif['age'][] = $this->listeMessageErreur['age-vide'];
 			
-		}
-		
-		if ( !filter_var($this->ageTemporaire, FILTER_VALIDATE_INT) ){
+		} else {
+			if ( !filter_var($this->ageTemporaire, FILTER_VALIDATE_INT) ){
 			
-			$this->listeMessageErreurActif['age'][] = $this->listeMessageErreur['age-non-numerique'];
-
-		}
-		
-		if ( $this->ageTemporaire > 99999999999 ){
+				$this->listeMessageErreurActif['age'][] = $this->listeMessageErreur['age-non-numerique'];
+	
+			}
 			
-			$this->listeMessageErreurActif['age'][] = $this->listeMessageErreur['age-trop-long'];			
-			
+			if ( $this->ageTemporaire > 99999999999 ){
+				
+				$this->listeMessageErreurActif['age'][] = $this->listeMessageErreur['age-trop-long'];			
+				
+			}
 		}
 		
 		if ( !$this->getListeErreurActifPourChamp('age') ){
@@ -500,13 +537,18 @@ class Utilisateur{
 			
 			$this->listeMessageErreurActif['telephone'][] = $this->listeMessageErreur['telephone-vide'];
 
+		} else {
+			if ( $this->telephoneTemporaire > 99999999999 ){
+			
+				$this->listeMessageErreurActif['telephone'][] = $this->listeMessageErreur['telephone-trop-long'];			
+				
+			}
+			if(!verifAlphaNum($this->telephoneTemporaire)){
+				$this->listeMessageErreurActif['telephone'][] = $this->listeMessageErreur['telephone-invalide'];
+			}
 		}
 		
-		if ( $this->telephoneTemporaire > 99999999999 ){
-			
-			$this->listeMessageErreurActif['telephone'][] = $this->listeMessageErreur['telephone-trop-long'];			
-			
-		}
+
 		
 		if ( !$this->getListeErreurActifPourChamp('telephone') ){
 				$this->telephone= $this->telephoneTemporaire;
@@ -522,19 +564,21 @@ class Utilisateur{
 			
 			$this->listeMessageErreurActif['role'][] = $this->listeMessageErreur['role-vide'];			
 			
+		} else {
+			if (!filter_var($this->roleTemporaire, FILTER_VALIDATE_INT) && $this->roleTemporaire != 0 ){  // sinon pas considéré comme entier
+			
+				$this->listeMessageErreurActif['role'][] = $this->listeMessageErreur['role-non-numerique'];
+	
+			}
+			
+			if ( $this->roleTemporaire > 99999999999 ){
+				
+				$this->listeMessageErreurActif['role'][] = $this->listeMessageErreur['role-trop-long'];			
+				
+			}
 		}
 					
-		if (!filter_var($this->roleTemporaire, FILTER_VALIDATE_INT) && $this->roleTemporaire != 0 ){  // sinon pas considéré comme entier
-			
-			$this->listeMessageErreurActif['role'][] = $this->listeMessageErreur['role-non-numerique'];
 
-		}
-		
-		if ( $this->roleTemporaire > 99999999999 ){
-			
-			$this->listeMessageErreurActif['role'][] = $this->listeMessageErreur['role-trop-long'];			
-			
-		}
 	
 		if (!$this->getListeErreurActifPourChamp('role') ){
 				$this->role= $this->roleTemporaire;
@@ -554,6 +598,10 @@ class Utilisateur{
 			if (strlen((string)$this->motDePasseTemporaire) < 8){
 				$this->listeMessageErreurActif['motdepasse'][] = $this->listeMessageErreur['mdp-trop-court'];
 			}
+			/*
+			if (!verifAlphaNum((string)$this->motDePasseTemporaire)){
+				$this->listeMessageErreurActif['motdepasse'][] = $this->listeMessageErreur['mdp-invalide'];
+			}*/
 		}
 		if (!$this->getListeErreurActifPourChamp('motdepasse') ){
 				$this->motdepasse = $this->motDePasseTemporaire;
@@ -573,22 +621,20 @@ class Utilisateur{
 		return [];
 	}
 }
-
+//FACTORISER
 function verifAlpha($valeur){
     preg_match("/([^A-Za-z .\-])+$/i",$valeur, $resultat);
     if(!empty($resultat)){
-        return false;
-    }
+		return false;
+	}
     return true;
 }
 
 function verifAlphaNum($valeur){
     preg_match("/([^A-Za-z0-9 .\-])+$/i",$valeur, $resultat);
 	if(!empty($resultat)){
-		echo "false";
         return false;
 	}
-	echo "true";
     return true;
 }
 ?>

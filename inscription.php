@@ -36,7 +36,7 @@
 							?>												
 						</li>
 						<li>
-							<label for="annee-naissance"> <?php echo gettext("Année de naissance"); ?>: </label>
+							<label for="annee-naissance"> <?php echo gettext("Âge"); ?>: </label>
 							<input type="text" name="anneenaissance" id="annee-naissance" value="<?php if ( $utilisateur) echo $utilisateur->getAge(); ?>" />
 							<?php 
 							
@@ -123,7 +123,7 @@
 						<input type="hidden" name="pseudonyme" value="<?php if ( $utilisateur) echo $utilisateur->getPseudonyme(); ?>" />
 						<input type="hidden" name="illustration" value="<?php if ( $utilisateur) echo $utilisateur->getIllustration(); ?>" />
 						<input type="hidden" name="motdepasse"  value="<?php if ( $utilisateur) echo $utilisateur->getMotDePasse(); ?>" />
-						
+
 						<li>
 							<label for="adresse"> <?php echo gettext("Adresse"); ?>: </label>
 							<input type="text" name="adresse" id="adresse" value="<?php if ( $utilisateur) echo $utilisateur->getAdresse(); ?>" />
