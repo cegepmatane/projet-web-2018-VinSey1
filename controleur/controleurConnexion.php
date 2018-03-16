@@ -24,7 +24,8 @@
 					$_SESSION['id'] = $resultat['id_utilisateur'];
 					$_SESSION['pseudonyme'] = $pseudonyme;
 					$_SESSION['role'] = $resultat['role'];
-					echo 'Vous êtes connecté !';				
+					echo "<script type='text/javascript'>document.location.replace('index.php');</script>";
+									
 					
 				}
 				else {
