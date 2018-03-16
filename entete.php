@@ -26,7 +26,12 @@
     <header>
         <div id="titre"> <?php echo gettext("Survie étudiante") ?></div>
         <div id="sous-titre"><?php echo gettext("Partie Publique") ?> </div>
-    </header>	
+    </header>
+	<?php 
+		if (isset($_SESSION['id']) && isset($_SESSION['pseudonyme'])) {
+			echo "salut";
+		}
+	?>
     <nav>
         <ul>
             <li><a href="index.php" title="<?php echo gettext("Aller sur la page d'Accueil")?>"><?php echo gettext("Accueil")?></a></li>
