@@ -78,7 +78,7 @@
 							<?php
 								if ( $utilisateur){
 									afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('motdepasse'));
-									?><script>indiquerErreurInscription('motdepasse');</script><?php
+									?><script>indiquerErreurInscription('confirmationmotdepasse');</script><?php
 								}
 							?>
 						</li>

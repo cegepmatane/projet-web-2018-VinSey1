@@ -547,13 +547,13 @@ class Utilisateur{
 
 		if (empty($this->motDePasseTemporaire)){
 			$this->listeMessageErreurActif['motdepasse'][] = $this->listeMessageErreur['mdp-vide'];
-		}
-
-		if (strlen((string)$this->motDePasseTemporaire) < 20){
-			$this->listeMessageErreurActif['motdepasse'][] = $this->listeMessageErreur['mdp-trop-long'];
-		}
-		if (strlen((string)$this->motDePasseTemporaire) < 8){
-			$this->listeMessageErreurActif['motdepasse'][] = $this->listeMessageErreur['mdp-trop-court'];
+		} else {
+			if (strlen((string)$this->motDePasseTemporaire) > 20){
+				$this->listeMessageErreurActif['motdepasse'][] = $this->listeMessageErreur['mdp-trop-long'];
+			}
+			if (strlen((string)$this->motDePasseTemporaire) < 8){
+				$this->listeMessageErreurActif['motdepasse'][] = $this->listeMessageErreur['mdp-trop-court'];
+			}
 		}
 		if (!$this->getListeErreurActifPourChamp('motdepasse') ){
 				$this->motdepasse = $this->motDePasseTemporaire;
