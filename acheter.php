@@ -33,8 +33,8 @@
 	</ul>
 	<h3>Vendeur</h3>
 	<ul>
-		<li><?php echo ($utilisateur->getNom()+' "'+$utilisateur->getPseudonyme()+'" '+$utilisateur->getPrenom())?></li>
-		<li><?php echo ($utilisateur->getAdresse()+' '+$utilisateur->getPrenom())?></li>
+		<li><?php echo ($utilisateur->getNom().' "'.$utilisateur->getPseudonyme().'" '.$utilisateur->getPrenom());?></li>
+		<li><?php echo ($utilisateur->getAdresse()+' '+$utilisateur->getPrenom());?></li>
 	</ul>
 </body>
 </html>
