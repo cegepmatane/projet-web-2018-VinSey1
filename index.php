@@ -21,7 +21,12 @@
 		</div>
 		<ul id="boutons-index">
 			<li><button type="button"><?php echo gettext("Vendre un objet"); ?></button></li>
-			<li><button type="button"><?php echo gettext("Se connecter"); ?></button></li>
+			
+			<li>
+				<form action="connexion.php">
+					<input type="submit" value="Se connecter"/>
+				</form>
+			</li>
 			<li>
 				<form action="inscription.php">
 					<input type="submit" value="S'inscrire"/>
