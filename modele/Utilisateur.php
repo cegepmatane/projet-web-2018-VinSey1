@@ -34,7 +34,7 @@ class Utilisateur{
 	private $ageTemporaire;
 	private $telephoneTemporaire;
 	private $roleTemporaire;
-	private $motdepasseTemporaire;
+	private $motDePasseTemporaire;
 
 	private $listeMessageErreur = [
 	
@@ -590,9 +590,10 @@ class Utilisateur{
 		if (empty($this->motDePasseTemporaire)){
 			$this->listeMessageErreurActif['motdepasse'][] = $this->listeMessageErreur['mdp-vide'];
 		} else {
+			/*
 			if (strlen((string)$this->motDePasseTemporaire) > 20){
 				$this->listeMessageErreurActif['motdepasse'][] = $this->listeMessageErreur['mdp-trop-long'];
-			}
+			}*/
 			if (strlen((string)$this->motDePasseTemporaire) < 8){
 				$this->listeMessageErreurActif['motdepasse'][] = $this->listeMessageErreur['mdp-trop-court'];
 			}

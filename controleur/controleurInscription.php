@@ -86,7 +86,6 @@
 			$utilisateur->setEmail($_POST['email']);
 			
 			if ( $utilisateur->estValide() ){
-				
 				ajouter($utilisateur);
 				afficherRetroactionPositive(gettext("Votre compte a bien été créé"));
 			}

@@ -21,22 +21,22 @@ class UtilisateurDAO{
 			$utilisateur = new Utilisateur();
 				
 			$utilisateur->construireDonneesSecurise(
-										   $resultat->id_utilisateur,
-										   $resultat->nom, 
-										   $resultat->prenom,
-										   $resultat->pseudonyme,
-										   $resultat->email,
-										   $resultat->adresse,
-										   $resultat->codepostal,
-										   $resultat->pays,
-										   $resultat->ville,
-										   $resultat->nbventes,
-										   $resultat->nbachats,
-										   $resultat->illustration,
-										   $resultat->age,
-										   $resultat->telephone,
-										   $resultat->role
-										   );
+											$resultat->id_utilisateur,
+											$resultat->nom, 
+											$resultat->prenom,
+											$resultat->pseudonyme,
+											$resultat->email,
+											$resultat->adresse,
+											$resultat->codepostal,
+											$resultat->pays,
+											$resultat->ville,
+											$resultat->nbventes,
+											$resultat->nbachats,
+											$resultat->illustration,
+											$resultat->age,
+											$resultat->telephone,
+											$resultat->role
+											);
 		}			
 		return $utilisateur;
 	}
@@ -107,7 +107,7 @@ class UtilisateurDAO{
 	
 	
 	public function insererUtilisateur($utilisateur){
-		
+
 		global $connexionBDActive;
 	
 		$nom = $utilisateur->getNom();
@@ -174,8 +174,7 @@ class UtilisateurDAO{
 		$requete->bindParam(':telephone', $telephone, PDO::PARAM_STR);
 		$requete->bindParam(':role', $role, PDO::PARAM_STR);
 		$requete->bindParam(':motdepasse', $motdepasse, PDO::PARAM_STR);
-		$requete->execute();
-		
+		$requete->execute();		
 	}
 	
 	
@@ -183,7 +182,7 @@ class UtilisateurDAO{
 	public function supprimerUtilisateur($utilisateur){
 		
 		global $connexionBDActive;
-				
+		
 		$idUtilisateur = $utilisateur->getidUtilisateur();
 		$nom = $utilisateur->getNom();
 		$prenom = $utilisateur->getPrenom();
@@ -199,9 +198,6 @@ class UtilisateurDAO{
 		$requete->bindParam(':prenom', $prenom, PDO::PARAM_INT);
 		$requete->bindParam(':pseudonyme', $pseudonyme, PDO::PARAM_INT);
 
-		
-		
-		
 		$requete->execute();
 	}
 
