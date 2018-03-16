@@ -7,7 +7,7 @@
 	
 ?>
 
-<h3>Connectez-vous ! C'est gratuit et tellement simple !</h3>
+<h3 id="sous-titre">Connectez-vous ! C'est gratuit et tellement simple !</h3>
 <form action="connexion.php" id="formulaire-creation" method="post">
 			<div id = "blocs-formulaire">
 				<div id = "bloc-formulaire-1">
