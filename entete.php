@@ -11,6 +11,7 @@
 	bindtextdomain($domain, $chemin );
 	textdomain($domain);
 	*/
+	session_start();
 ?>
 <!DOCTYPE html>
 <html lang="fr">

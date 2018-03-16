@@ -33,7 +33,7 @@
 				</form>
 			</li>
 			<li>
-			<?php var_dump($_COOKIE); ?>
+			<?php var_dump($_SESSION); ?>
 			</li>
 			
 		</ul>
