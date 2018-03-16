@@ -73,7 +73,7 @@
 							?>
 						</li>
 						<li>
-							<label for="confirmationmotdepasse"> <?php echo gettext("Mot de passe"); ?>: </label>
+							<label for="confirmationmotdepasse"> <?php echo gettext("Confirmation du mot de passe"); ?>: </label>
 							<input type="password" name="confirmationmotdepassemotdepasse" id="confirmationmotdepasse" value="<?php if ( $utilisateur) echo $utilisateur->getMotDePasse(); ?>" />
 							<?php
 								if ( $utilisateur){
