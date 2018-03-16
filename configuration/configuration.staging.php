@@ -10,6 +10,7 @@ define( "OBJET_CONTROLEUR", $_SERVER["DOCUMENT_ROOT"]."/controleur/controleurObj
 define( "LISTE_ERREUR_FORMULAIRE", $_SERVER["DOCUMENT_ROOT"]."/listeErreurFormulaire.php" );
 
 define("INSCRIPTION_UTILISATEUR_CONTROLEUR",$_SERVER["DOCUMENT_ROOT"]."/controleur/controleurInscription.php" );
+define("CONNEXION_UTILISATEUR_CONTROLEUR",$_SERVER["DOCUMENT_ROOT"]."/controleur/controleurConnexion.php" );
 
 //---------- BD ---------------------
 define("BD_NOM", "survie_etudiante" );

@@ -1,9 +1,8 @@
 <?php
 
 	include "entete.php";
-	require_once OBJET_DAO;
-	require_once OBJET_MODELE;
-	include "barreDeRecherche.php";
+	
+	require_once CONNEXION_UTILISATEUR_CONTROLEUR;
 	
 	
 ?>
