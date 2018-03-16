@@ -6,7 +6,7 @@ function listeObjets ($objet){ ?>
         <ul>
             <li><?php echo $objet->getTitreDeVente();?></li>
             <li><?php echo gettext("Prix");?>: <?php echo $objet->getPrix();?><?php echo gettext(" $");?></li>
-          
+            <li><a class="lienbouton" href="achat.php?<?php echo $objet->getIdObjet();?>" >Acheter Maintenant !</a></li>
         </ul>
     </div>
 <?php } ?>
