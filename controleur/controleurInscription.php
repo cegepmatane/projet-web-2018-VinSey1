@@ -28,7 +28,7 @@
 			if (!empty($_POST['pays'])){ $utilisateur->setPays($_POST['pays']);}
 			if (!empty($_POST['ville'])){ $utilisateur->setVille($_POST['ville']);}
 			
-			if ( $utilisateur->estValide()){
+			if ( $utilisateur->estValide() && $_POST['motdepasse']==$_POST['confirmationmotdepasse']){
 				
 				afficherDeuxiemeFormulaire($utilisateur);
 			}
