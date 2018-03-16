@@ -20,27 +20,27 @@
 
 		else
 
-	{
+			{
 
-		if ($isPasswordCorrect) {
+				if ($isPasswordCorrect) {
 
-			session_start();
+					session_start();
 
-			$_SESSION['id'] = $resultat['id_utilisateur'];
+					$_SESSION['id'] = $resultat['id_utilisateur'];
 
-			$_SESSION['pseudo'] = $pseudonyme;
+					$_SESSION['pseudo'] = $pseudonyme;
 
-			echo 'Vous êtes connecté !';
+					echo 'Vous êtes connecté !';
 
-		}
+				}
 
-		else {
+				else {
 
-			echo 'Mauvais identifiant ou mot de passe !';
+					echo 'Mauvais identifiant ou mot de passe !';
 
-		}
+				}
 
-		}
+			}
 	}
 	
 ?>

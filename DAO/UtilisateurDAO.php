@@ -274,6 +274,7 @@ class UtilisateurDAO{
 		$requete->execute();
 				
 		$resultat = $requete->fetch();
+		return $resultat;
 	}
 }
 ?>
