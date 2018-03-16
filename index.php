@@ -38,9 +38,7 @@
 				</form>
 			</li>
 			
-			<li>
-			<?php var_dump($_SESSION); ?>
-			</li>
+			
 			
 		</ul>
 	</div>

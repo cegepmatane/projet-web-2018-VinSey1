@@ -28,18 +28,8 @@
         <div id="sous-titre"><?php echo gettext("Partie Publique") ?> </div>
     </header>
 	<?php 
-		if (isset($_SESSION['id']) && isset($_SESSION['pseudonyme'])) {
+		if (isset($_SESSION['id']) && isset($_SESSION['pseudonyme']) && $_SESSION['role']==1) {
 		?>
-		<nav>
-			<ul>
-				<li><a href="index.php" title="<?php echo gettext("Aller sur la page d'Accueil")?>"><?php echo gettext("Accueil")?></a></li>
-				<li><a href="catalogue.php" title="<?php echo gettext("Aller sur la page Catalogue")?>"><?php echo gettext("Catalogue")?></a></li>			
-			</ul>
-		</nav>
-		
-	<?php } else {
-		
-	 ?>
 		
 		<nav>
 			<ul>
@@ -48,6 +38,17 @@
 				<li><a href="vue/prive/administration-utilisateur.php" title="<?php echo gettext("Aller sur la page Administration utilisateur")?>"><?php echo gettext("Administration utilisateur")?></a></li>
 				<li><a href="vue/prive/administration-objet.php" title="<?php echo gettext("Aller sur la page Administration Objet")?>"><?php echo gettext("Administration objet")?></a></li>
 				<li><a href="vue/prive/panneau-administration.php" title="<?php echo gettext("Aller sur le panneau d'administration")?>"><?php echo gettext("Panneau d'administration")?></a></li>
+			</ul>
+		</nav>
+		
+		
+	<?php } else {
+		
+	 ?>
+		<nav>
+			<ul>
+				<li><a href="index.php" title="<?php echo gettext("Aller sur la page d'Accueil")?>"><?php echo gettext("Accueil")?></a></li>
+				<li><a href="catalogue.php" title="<?php echo gettext("Aller sur la page Catalogue")?>"><?php echo gettext("Catalogue")?></a></li>			
 			</ul>
 		</nav>
 		
