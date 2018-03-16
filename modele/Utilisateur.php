@@ -504,9 +504,7 @@ class Utilisateur{
 	public function setAge($age){
 		
 		$this->ageTemporaire = filter_var($age, FILTER_SANITIZE_NUMBER_INT);
-		echo $this->ageTemporaire;
 		if ( empty($this->ageTemporaire)){
-			echo "oui";
 			$this->listeMessageErreurActif['age'][] = $this->listeMessageErreur['age-vide'];
 			
 		} else {
