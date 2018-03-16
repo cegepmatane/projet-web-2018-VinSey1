@@ -269,7 +269,7 @@ class UtilisateurDAO{
 		$requete->bindParam(':pseudoDemandeDemande', $pseudoDemandeDemande, PDO::PARAM_STR);
 		$requete->execute();
 				
-		$resultat = $requete->fetch();
+		$resultat = $requete->fetch(PDO::FETCH_ASSOC);
 		return $resultat;
 	}
 }
