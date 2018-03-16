@@ -4,7 +4,7 @@
 	require_once OBJET_DAO;
 	require_once OBJET_MODELE;
 	include "barreDeRecherche.php";
-	include "listeObjets.php";
+	include "detailsObjet.php";
 	
 ?>
 	<div id="contenu-index">
@@ -14,7 +14,7 @@
 				$listeObjet = $objetDAO->obtenirListeObjet();
 				foreach($listeObjet as $key => $objet) {
 					if ($objet->getVedette() == 1) {
-						listeObjets($objet);
+						detailsObjet($objet);
 					}
 				} 
 			?>
