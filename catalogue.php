@@ -18,22 +18,7 @@
 				}
 			?>
 		</div>
-		<ul id="boutons-index">
-			<li><?php echo gettext("Prix")?></li>
-			<li><input type="range" min="1" max="100" value="50" class="slider" id="myRange"></li>
-			<li><?php echo gettext("De 0 à ")?> <span id="demo"></span> $</li>
-			<li><button type="button"><?php echo gettext("Se connecter"); ?></button></li>
-			<li><button type="button"><?php echo gettext("S'inscrire"); ?></button></li>
-		</ul>
 	</div>
-	<script>
-	var slider = document.getElementById("myRange");
-	var output = document.getElementById("demo");
-	output.innerHTML = slider.value;
-	slider.oninput = function() {
-		output.innerHTML = this.value;
-	}
-</script>
 <?php 
 	include "piedPage.php";
 
