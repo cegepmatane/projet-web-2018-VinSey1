@@ -10,7 +10,7 @@
 		$utilisateurDAO = new UtilisateurDAO();
 		$resultat = $utilisateurDAO->recupererInformationConnexion($pseudonyme);
 		//var_dump($resulat);
-		$isPasswordCorrect = password_verify($_POST['motdepasse'], $resultat['motdepasse'], $resulat['role']);
+		$isPasswordCorrect = password_verify($_POST['motdepasse'], $resultat['motdepasse']);
 		
 		if (!$resultat)
 		{
