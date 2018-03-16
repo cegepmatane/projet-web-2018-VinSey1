@@ -1,7 +1,7 @@
 <?php 
 
 	include "entete.php";
-
+	include "./transactions/test_stripe.php";
 	require_once OBJET_DAO;
 	require_once OBJET_MODELE;
 	require_once UTILISATEUR_DAO;
@@ -34,8 +34,9 @@
 	<h3>Vendeur</h3>
 	<ul>
 		<li><?php echo ($utilisateur->getNom().' "'.$utilisateur->getPseudonyme().'" '.$utilisateur->getPrenom());?></li>
-		<li><?php echo ($utilisateur->getAdresse()+' '+$utilisateur->getPrenom());?></li>
+		<li><?php echo ($utilisateur->getAdresse().', '.$utilisateur->getCodePostal().' '.$utilisateur->getVille().', '.$utilisateur->getPays());?></li>
 	</ul>
+	<?php paiement($objet);?>
 </body>
 </html>
 <?php include "piedPage.php"; ?>
