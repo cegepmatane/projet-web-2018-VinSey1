@@ -24,6 +24,9 @@
 					$_SESSION['id'] = $resultat['id_utilisateur'];
 					$_SESSION['pseudonyme'] = $pseudonyme;
 					echo 'Vous êtes connecté !';
+					$expire = time() + 365*24*3600;
+					setcookie('pseudo', $_SESSION['pseudonyme'], $expire); 
+									
 					var_dump($_SESSION);
 				}
 				else {

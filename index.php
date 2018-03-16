@@ -32,6 +32,9 @@
 					<input type="submit" value="S'inscrire"/>
 				</form>
 			</li>
+			<li>
+			<?php var_dump($_COOKIE); ?>
+			</li>
 			
 		</ul>
 	</div>
