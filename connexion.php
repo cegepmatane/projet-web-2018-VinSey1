@@ -23,6 +23,10 @@
 							<input type="password" name="motdepasse" id="motdepasse" value="<?php if ( $utilisateur) echo $utilisateur->getMotDePasse(); ?>" />  
 																			
 						</li>
+						<li>
+							<button type="submit" value="connexion" name="actionFormulaire"/><?php echo gettext("Se connecter");?></button>
+						</li>
+</form>
 <?php 
 	include "piedPage.php";
 ?>
