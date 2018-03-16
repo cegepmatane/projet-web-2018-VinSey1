@@ -20,7 +20,20 @@
 			?>
 		</div>
 		<ul id="boutons-index">
-			<li><button type="button"><?php echo gettext("Vendre un objet"); ?></button></li>
+		<?php 
+			if (isset($_SESSION['id']) && isset($_SESSION['pseudonyme'])) {
+		?>
+			<li>
+				<form action="deconnexion.php">
+					<input type="submit" value="Se déconnecter"/>
+				</form>
+			</li>
+			
+		<?php } else { ?>
+			
+			
+			
+			
 			
 			<li>
 				<form action="connexion.php">
@@ -28,15 +41,13 @@
 				</form>
 			</li>
 			<li>
-				<form action="deconnexion.php">
-					<input type="submit" value="Se déconnecter"/>
-				</form>
-			</li>
-			<li>
 				<form action="inscription.php">
 					<input type="submit" value="S'inscrire"/>
 				</form>
 			</li>
+		<?php } ?>
+			
+			<li><button type="button"><?php echo gettext("Vendre un objet"); ?></button></li>
 			
 			
 			

@@ -26,6 +26,11 @@
     <header>
         <div id="titre"> <?php echo gettext("Survie étudiante") ?></div>
         <div id="sous-titre"><?php echo gettext("Partie Publique") ?> </div>
+	<?php 
+		if (isset($_SESSION['id']) && isset($_SESSION['pseudonyme'])) {
+		?>
+		<div id="session"> <?php echo gettext($_SESSION['pseudonyme']) ?>
+	<?php } ?>
     </header>
 	<?php 
 		if (isset($_SESSION['id']) && isset($_SESSION['pseudonyme']) && $_SESSION['role']==1) {
