@@ -24,6 +24,7 @@
 					$_SESSION['id'] = $resultat['id_utilisateur'];
 					$_SESSION['pseudonyme'] = $pseudonyme;
 					echo 'Vous êtes connecté !';
+					var_dump($_SESSION);
 				}
 				else {
 

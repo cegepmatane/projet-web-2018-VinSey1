@@ -273,7 +273,8 @@ class UtilisateurDAO{
 		$requete->execute();
 				
 		$resultat = $requete->fetch(PDO::FETCH_ASSOC);
-		var_dump($resultat);
+		
+		return $resultat;
 		
 	}
 }
