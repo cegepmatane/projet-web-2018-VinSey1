@@ -32,6 +32,7 @@
 					<input type="submit" value="S'inscrire"/>
 				</form>
 			</li>
+			
 		</ul>
 	</div>
 <?php 
