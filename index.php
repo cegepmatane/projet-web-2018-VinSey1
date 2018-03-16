@@ -28,10 +28,16 @@
 				</form>
 			</li>
 			<li>
+				<form action="deconnexion.php">
+					<input type="submit" value="Se déconnecter"/>
+				</form>
+			</li>
+			<li>
 				<form action="inscription.php">
 					<input type="submit" value="S'inscrire"/>
 				</form>
 			</li>
+			
 			<li>
 			<?php var_dump($_SESSION); ?>
 			</li>

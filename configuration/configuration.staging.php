@@ -11,6 +11,7 @@ define( "LISTE_ERREUR_FORMULAIRE", $_SERVER["DOCUMENT_ROOT"]."/listeErreurFormul
 
 define("INSCRIPTION_UTILISATEUR_CONTROLEUR",$_SERVER["DOCUMENT_ROOT"]."/controleur/controleurInscription.php" );
 define("CONNEXION_UTILISATEUR_CONTROLEUR",$_SERVER["DOCUMENT_ROOT"]."/controleur/controleurConnexion.php" );
+define("DECONNEXION_UTILISATEUR_CONTROLEUR",$_SERVER["DOCUMENT_ROOT"]."/controleur/controleurDeconnexion.php" );
 
 //---------- BD ---------------------
 define("BD_NOM", "survie_etudiante" );
