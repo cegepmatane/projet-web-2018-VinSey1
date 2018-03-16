@@ -19,10 +19,11 @@
 							<?php if ( $utilisateur) {
 								
 								afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('prenom'));
-								?><script>indiquerErreurInscription('prenom');</script><?php
-								
+								if(!empty($utilisateur->getListeErreurActifPourChamp('prenom'))){?>
+									<script>indiquerErreurInscription('prenom');</script><?php
 								}
-							?>												
+							}
+							?>											
 						</li>
 						<li>
 							<label for="nom"> <?php echo gettext("Nom"); ?>: </label>
@@ -31,8 +32,10 @@
 								if ( $utilisateur){
 									
 									afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('nom'));
-									?><script>indiquerErreurInscription('nom');</script><?php
-								} 
+									if(!empty($utilisateur->getListeErreurActifPourChamp('nom'))){?>
+										<script>indiquerErreurInscription('nom');</script><?php
+									}
+								}
 							?>												
 						</li>
 						<li>
@@ -43,10 +46,10 @@
 								if ( $utilisateur){
 									
 									afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('age'));
-									?><script>indiquerErreurInscription('annee-naissance');</script><?php
-								} 
-								
-							
+									if(!empty($utilisateur->getListeErreurActifPourChamp('age'))){?>
+										<script>indiquerErreurInscription('annee-naissance');</script><?php
+									}
+								}
 							?>
 						</li>
 						<li>
@@ -56,10 +59,10 @@
 								if ( $utilisateur){
 									
 									afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('pseudonyme'));
-									?><script>indiquerErreurInscription('pseudonyme');</script><?php
-									
-								} 
-								
+									if(!empty($utilisateur->getListeErreurActifPourChamp('pseudonyme'))){?>
+										<script>indiquerErreurInscription('pseudonyme');</script><?php
+									}
+								}
 							?>
 						</li>
 						<li>
@@ -68,7 +71,9 @@
 							<?php
 								if ( $utilisateur){
 									afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('motdepasse'));
-									?><script>indiquerErreurInscription('motdepasse');</script><?php
+									if(!empty($utilisateur->getListeErreurActifPourChamp('motdepasse'))){?>
+										<script>indiquerErreurInscription('motdepasse');</script><?php
+									}
 								}
 							?>
 						</li>
@@ -78,7 +83,9 @@
 							<?php
 								if ( $utilisateur){
 									afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('motdepasse'));
-									?><script>indiquerErreurInscription('confirmationmotdepasse');</script><?php
+									if(!empty($utilisateur->getListeErreurActifPourChamp('motdepasse'))){?>
+										<script>indiquerErreurInscription('confirmationmotdepasse');</script><?php
+									}
 								}
 							?>
 						</li>
@@ -89,7 +96,9 @@
 								if ( $utilisateur){
 									
 									afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('illustration'));
-									?><script>indiquerErreurInscription('illustration');</script><?php
+									if(!empty($utilisateur->getListeErreurActifPourChamp('illustration'))){?>
+										<script>indiquerErreurInscription('illustration');</script><?php
+									}
 								}
 							?>
 						</li>
@@ -130,7 +139,9 @@
 							<?php
 								if ( $utilisateur){
 									afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('adresse'));
-									?><script>indiquerErreurInscription('adresse');</script><?php
+									if(!empty($utilisateur->getListeErreurActifPourChamp('adresse'))){?>
+										<script>indiquerErreurInscription('adresse');</script><?php
+									}
 								}
 							?>
 						</li>
@@ -140,7 +151,9 @@
 							<?php
 								if ( $utilisateur){								
 									afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('codepostal'));
-									?><script>indiquerErreurInscription('code-postal');</script><?php
+									if(!empty($utilisateur->getListeErreurActifPourChamp('codepostal'))){?>
+										<script>indiquerErreurInscription('codepostal');</script><?php
+									}
 								}
 							?>		
 						</li>
@@ -151,8 +164,10 @@
 							<?php
 								if ( $utilisateur){
 									afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('ville'));
-									?><script>indiquerErreurInscription('ville');</script><?php
-								} 
+									if(!empty($utilisateur->getListeErreurActifPourChamp('ville'))){?>
+										<script>indiquerErreurInscription('ville');</script><?php
+									}
+								}
 							?>
 						</li>
 						<li>
@@ -161,7 +176,9 @@
 							<?php
 								if ( $utilisateur){									
 									afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('pays'));
-									?><script>indiquerErreurInscription('pays');</script><?php
+									if(!empty($utilisateur->getListeErreurActifPourChamp('pays'))){?>
+										<script>indiquerErreurInscription('pays');</script><?php
+									}
 								}
 							?>
 						</li>
@@ -203,8 +220,10 @@
 							<?php
 								if ( $utilisateur){
 									afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('email'));
-									?><script>indiquerErreurInscription('email');</script><?php
-								} 
+									if(!empty($utilisateur->getListeErreurActifPourChamp('email'))){?>
+										<script>indiquerErreurInscription('email');</script><?php
+									}
+								}
 							?>
 						</li>
 						<li>
@@ -214,8 +233,10 @@
 								if ( $utilisateur){
 									
 									afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('telephone'));
-									?><script>indiquerErreurInscription('telephone');</script><?php
-								} 	
+									if(!empty($utilisateur->getListeErreurActifPourChamp('telephone'))){?>
+										<script>indiquerErreurInscription('telephone');</script><?php
+									}
+								}
 							?>
 						</li>
 					</ul>

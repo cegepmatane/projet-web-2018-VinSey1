@@ -87,7 +87,7 @@ class Utilisateur{
 		
 		'age-vide' => 'L\'âge ne doit pas être vide ou nul',
 		'age-non-numerique' => 'L\'âge doit être un entier',
-		'age-trop-long' => 'L\'âge ne doit pas dépasser 11 chiffres',
+		'age-trop-long' => 'L\'âge doit être réaliste',
 		
 		'telephone-vide' => 'Un numéro de téléphone doit être renseigné',
 		'telephone-trop-long' => 'Le numéro de téléphone ne doit pas dépasser 16 chiffres',
@@ -514,7 +514,7 @@ class Utilisateur{
 	
 			}
 			
-			if ( $this->ageTemporaire > 99999999999 ){
+			if ( $this->ageTemporaire > 150 ){
 				
 				$this->listeMessageErreurActif['age'][] = $this->listeMessageErreur['age-trop-long'];			
 				
