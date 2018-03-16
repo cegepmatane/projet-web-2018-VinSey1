@@ -267,7 +267,7 @@ class UtilisateurDAO{
 		
 		
 		global $connexionBDActive;
-		$requete = $connexionBDActive->prepare("SELECT id_utilisateur, motdepasse FROM utilisateur
+		$requete = $connexionBDActive->prepare("SELECT id_utilisateur, motdepasse, role FROM utilisateur
 												WHERE pseudonyme = :pseudoDemande");
 		$requete->bindParam(':pseudoDemande', $pseudoDemande, PDO::PARAM_STR);
 		$requete->execute();
