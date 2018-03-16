@@ -8,7 +8,8 @@
 		
 		$pseudonyme = $_POST['pseudonyme'];
 		$utilisateurDAO = new UtilisateurDAO();
-		$utilisateurDAO->recupererInformationConnexion($pseudonyme);
+		$resultat = $utilisateurDAO->recupererInformationConnexion($pseudonyme);
+		//var_dump($resulat);
 		$isPasswordCorrect = password_verify($_POST['motdepasse'], $resultat['motdepasse']);
 		
 		if (!$resultat)

@@ -264,13 +264,17 @@ class UtilisateurDAO{
 	}
 	
 	public function recupererInformationConnexion($pseudoDemande) {
+		
+		
 		global $connexionBDActive;
-		$requete = $connexionBDActive->prepare("SELECT id, motdepasse FROM utilisateur WHERE pseudonyme = :pseudoDemande ");
-		$requete->bindParam(':pseudoDemandeDemande', $pseudoDemandeDemande, PDO::PARAM_STR);
+		$requete = $connexionBDActive->prepare("SELECT motdepasse FROM utilisateur
+												WHERE pseudonyme = :pseudoDemande");
+		$requete->bindParam(':pseudoDemande', $pseudoDemande, PDO::PARAM_STR);
 		$requete->execute();
 				
 		$resultat = $requete->fetch(PDO::FETCH_ASSOC);
-		return $resultat;
+		var_dump($resultat);
+		
 	}
 }
 ?>
