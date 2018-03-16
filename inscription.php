@@ -122,7 +122,8 @@
 						<input type="hidden" name="anneenaissance"  value="<?php if ( $utilisateur) echo $utilisateur->getAge(); ?>" />
 						<input type="hidden" name="pseudonyme" value="<?php if ( $utilisateur) echo $utilisateur->getPseudonyme(); ?>" />
 						<input type="hidden" name="illustration" value="<?php if ( $utilisateur) echo $utilisateur->getIllustration(); ?>" />
-		
+						<input type="hidden" name="motdepasse"  value="<?php if ( $utilisateur) echo $utilisateur->getMotDePasse(); ?>" />
+						
 						<li>
 							<label for="adresse"> <?php echo gettext("Adresse"); ?>: </label>
 							<input type="text" name="adresse" id="adresse" value="<?php if ( $utilisateur) echo $utilisateur->getAdresse(); ?>" />
@@ -194,6 +195,7 @@
 						<input type="hidden" name="codepostal" value="<?php if ( $utilisateur) echo $utilisateur->getCodepostal(); ?>"/>						
 						<input type="hidden" name="pays" value="<?php if ( $utilisateur) echo $utilisateur->getPays(); ?>" />		
 						<input type="hidden" name="ville"  value="<?php if ( $utilisateur) echo $utilisateur->getVille(); ?>" />
+						<input type="hidden" name="motdepasse"  value="<?php if ( $utilisateur) echo $utilisateur->getMotDePasse(); ?>" />
 
 						<li>
 							<label for="email"> <?php echo gettext("Adresse mail"); ?>: </label>						
