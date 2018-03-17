@@ -19,6 +19,3 @@
 </div>
 
 
-<?php 
-	include_once "piedPage.php";
-?>
