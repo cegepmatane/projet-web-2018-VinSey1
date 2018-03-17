@@ -8,9 +8,9 @@
 		
 		session_destroy();
 		?>
-		<?php
-		<script type='text/javascript'>document.location.replace('index.php');</script>
 		
+		<script type='text/javascript'>document.location.replace('index.php');</script>
+		<?php
 	}
 	
 	
