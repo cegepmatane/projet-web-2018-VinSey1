@@ -7,7 +7,7 @@
 ?>
 
 
-
+<body>
 
 <div id="barre-de-recherche" >
 		<img src=./illustrations/petit/loupe.png id="image-loupe" alt="barre de recherche survie étudiante">
