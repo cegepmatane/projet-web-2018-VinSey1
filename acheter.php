@@ -23,6 +23,8 @@
 ?>
 <html>
 <body>
+	<?php if (isset($_SESSION['id']) && isset($_SESSION['pseudonyme']) && $_SESSION['role']==1) {
+		?>
 	<h3>Vente</h3>
 	<?php echo $objet->getIllustration(); ?>
 	<ul>
@@ -36,7 +38,10 @@
 		<li><?php echo ($utilisateur->getNom().' "'.$utilisateur->getPseudonyme().'" '.$utilisateur->getPrenom());?></li>
 		<li><?php echo ($utilisateur->getAdresse().', '.$utilisateur->getCodePostal().' '.$utilisateur->getVille().', '.$utilisateur->getPays());?></li>
 	</ul>
-	<?php paiement($objet);?>
+	<?php paiement($objet);
+	} else {
+		echo "<script type='text/javascript'>document.location.replace('connexion.php');</script>";
+	}?>
 </body>
 </html>
 <?php include "piedPage.php"; ?>

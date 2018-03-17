@@ -6,7 +6,7 @@
 	
 	
 ?>
-
+<body>
 <h3 id="sous-titre">Connectez-vous ! C'est gratuit et tellement simple !</h3>
 <form action="connexion.php" id="formulaire-creation" method="post">
 			<div id = "blocs-formulaire">
@@ -25,7 +25,11 @@
 						<li>
 							<button type="submit" value="connexion" name="actionFormulaire"/><?php echo gettext("Se connecter");?></button>
 						</li>
+					</ul>
+				</div>
+			</div>
 </form>
+<a href="inscription.php"><?php echo gettext("Pas de compte ? Inscrivez-vous !")?></a>
 <?php 
 	include "piedPage.php";
 ?>
