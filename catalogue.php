@@ -14,7 +14,7 @@
 				$objetDAO = new ObjetDAO();
 				$listeObjet = $objetDAO->obtenirListeObjet();
 				foreach($listeObjet as $key => $objet) {
-					detailsObjets($objet);
+					detailsObjet($objet);
 				}
 			?>
 		</div>
