@@ -25,7 +25,7 @@
 <body>
 	<?php if (isset($_SESSION['id']) && isset($_SESSION['pseudonyme'])) {
 		?>
-	<h3>Vente</h3>
+	<h3><?php echo gettext("Vente"); ?></h3>
 	<?php echo $objet->getIllustration(); ?>
 	<ul>
 		<li><?php echo gettext("Titre de vente : "); echo $objet->getTitreDeVente()?></li>
@@ -33,15 +33,14 @@
 		<li><?php echo gettext("Détails de vente : "); echo $objet->getDetailsVente()?></li>
 		<li><?php echo gettext("Adresse : "); echo $objet->getAdresse()?></li>
 	</ul>
-	<h3>Vendeur</h3>
+	<h3><?php echo gettext("Vendeur");?></h3>
 	<ul>
 		<li><?php echo ($utilisateur->getNom().' "'.$utilisateur->getPseudonyme().'" '.$utilisateur->getPrenom());?></li>
 		<li><?php echo ($utilisateur->getAdresse().', '.$utilisateur->getCodePostal().' '.$utilisateur->getVille().', '.$utilisateur->getPays());?></li>
 	</ul>
 	<?php paiement($objet);
-	} else {
-		echo "<script type='text/javascript'>document.location.replace('connexion.php');</script>";
-	}?>
+	} else {?>
+		<script type='text/javascript'>document.location.replace('connexion.php');</script>
+	<?php }?>
 </body>
 </html>
-<?php include "piedPage.php"; ?>
