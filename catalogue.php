@@ -3,7 +3,7 @@
 	require_once OBJET_DAO;
 	require_once OBJET_MODELE;
 	include "barreDeRecherche.php";
-	include "listeObjets.php";
+	include "detailsObjet.php";
 ?>
 	<script src="ajax/montrerProduitCategorie.js"></script>
 	<script src="ajax/listerTousLesObjets.js"></script>
@@ -14,7 +14,7 @@
 				$objetDAO = new ObjetDAO();
 				$listeObjet = $objetDAO->obtenirListeObjet();
 				foreach($listeObjet as $key => $objet) {
-					listeObjets($objet);
+					detailsObjets($objet);
 				}
 			?>
 		</div>
