@@ -32,9 +32,6 @@
 		<?php } else { ?>
 			
 			
-			
-			
-			
 			<li>
 				<form action="connexion.php">
 					<input type="submit" value="Se connecter"/>
