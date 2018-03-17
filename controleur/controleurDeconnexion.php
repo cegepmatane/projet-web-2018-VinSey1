@@ -7,7 +7,9 @@
 	if ( isset($_POST['actionFormulaire'])){
 		
 		session_destroy();
-		
+		?>
+		<?php
+		<script type='text/javascript'>document.location.replace('index.php');</script>
 		
 	}
 	

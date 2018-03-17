@@ -24,9 +24,10 @@
 					$_SESSION['id'] = $resultat['id_utilisateur'];
 					$_SESSION['pseudonyme'] = $pseudonyme;
 					$_SESSION['role'] = $resultat['role'];
-					echo "<script type='text/javascript'>document.location.replace('index.php');</script>";
+				?>
+					<script type='text/javascript'>document.location.replace('index.php');</script>
 									
-					
+				<?php	
 				}
 				else {
 
