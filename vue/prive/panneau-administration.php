@@ -1,4 +1,5 @@
 <?php 
+	
 	include "entete.php";
 	require_once OBJET_DAO;
 	require_once OBJET_MODELE;	
@@ -86,6 +87,3 @@
 		changer_onglet(onglet_courant);
 		
 	</script>
-<?php 
-	include "piedPage.php";
-?>
