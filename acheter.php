@@ -23,7 +23,7 @@
 ?>
 <html>
 <body>
-	<?php if (isset($_SESSION['id']) && isset($_SESSION['pseudonyme']) && $_SESSION['role']==1) {
+	<?php if (isset($_SESSION['id']) && isset($_SESSION['pseudonyme'])) {
 		?>
 	<h3>Vente</h3>
 	<?php echo $objet->getIllustration(); ?>
