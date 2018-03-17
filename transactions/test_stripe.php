@@ -1,5 +1,5 @@
 <?php function paiement($objet) { ?>
-    <form action="your-server-side-code" method="POST">
+    <form action="../retour-achat.php?idObjet=<?php echo $objet->getIdObjet();?>" method="POST">
     <script
         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
         data-key="pk_test_yXhm1rmmGnCVqBauOp3ZTqeJ"
