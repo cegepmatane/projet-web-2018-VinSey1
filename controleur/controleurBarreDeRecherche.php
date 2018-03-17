@@ -9,7 +9,9 @@
 		$requete = $_POST['requete'];
 		$objetDAO = new ObjetDAO();
 		$resultat = $objetDAO->rechercherObjet($requete);
-		var_dump($resultat);
+		foreach($resultat as $key => $objet) {
+					detailsObjet($objet);
+				}
 	}	
 	
 ?>

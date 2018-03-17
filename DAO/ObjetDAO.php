@@ -300,8 +300,26 @@ class ObjetDAO{
 		$requete->bindParam(':recherche', $recherche, PDO::PARAM_STR);
 		$requete->execute();
 		$resultat = $requete->fetch(PDO::FETCH_ASSOC);
+		foreach($resultat as $key => $enregistrementObjet) {
+			$objet = new Objet();
+			$objet->construireDonneesSecurise(
+				$enregistrementObjet->id_objet, 
+				$enregistrementObjet->identifiantVendeur, 
+				$enregistrementObjet->titreDeVente, 
+				$enregistrementObjet->categorie, 
+				$enregistrementObjet->prix, 
+				$enregistrementObjet->descriptionProduit, 
+				$enregistrementObjet->detailsVente, 
+				$enregistrementObjet->adresse, 
+				$enregistrementObjet->illustration, 
+				$enregistrementObjet->vedette);
+			$listeObjet[]=$objet;
+		}
 		
-		return $resultat;
+				
+		return $listeObjet;
+		
+		
 	}
 
 }
