@@ -86,5 +86,6 @@
 		changer_onglet(onglet_courant);
 		
 	</script>
-</body>
-</html>
+<?php 
+	include "piedPage.php";
+?>
