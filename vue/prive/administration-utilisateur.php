@@ -6,6 +6,7 @@ require_once UTILISATEUR_CONTROLEUR;
 
 function afficherFormulaireUtilisateur($actionFormulaire, $utilisateur=null){
 ?>	
+	<script src="../../scripts/retourUtilisateurInscriptionPublique.js"></script> 
 	<form action="administration-utilisateur.php" id="formulaire-creation" method="post">
 		
 		<div id = "blocs-formulaire">
@@ -17,12 +18,20 @@ function afficherFormulaireUtilisateur($actionFormulaire, $utilisateur=null){
 					<li>
 						<label for="nom"> <?php echo gettext("Nom"); ?>: </label>
 						<input type="text" name="nom" id="nom" value="<?php if ( $utilisateur) echo $utilisateur->getNom(); ?>" />  
-						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('nom'));?>												
+						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('nom'));
+						if(!empty($utilisateur->getListeErreurActifPourChamp('nom'))){ ?>
+									<script>indiquerErreurInscription('nom');</script><?php
+						}	
+						?>
 					</li>
 					<li>
 						<label for="prenom"> <?php echo gettext("Prénom"); ?>: </label>
 						<input type="text" name="prenom" id="prenom" value="<?php if ( $utilisateur) echo $utilisateur->getPrenom(); ?>" />
-						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('prenom'));?>												
+						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('prenom'));
+						if(!empty($utilisateur->getListeErreurActifPourChamp('prenom'))){ ?>
+							<script>indiquerErreurInscription('prenom');</script><?php
+						}	
+						?>											
 					</li>
 					<li>
 						<label for="pseudonyme"> <?php echo gettext("Pseudonyme"); ?>: </label>
@@ -88,6 +97,14 @@ function afficherFormulaireUtilisateur($actionFormulaire, $utilisateur=null){
 						<input type="text" name="role" id="role" value="<?php if ( $utilisateur) echo $utilisateur->getRole(); ?>" />
 						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('role'));?>
 					</li>
+					<?php 
+					if ($actionFormulaire == "Modifier"){?>
+						<input type="hidden" name="motdepasse"  value="<?php if ( $utilisateur) echo $utilisateur->getMotDePasse(); ?>" />
+					<?php } else {?>
+						<label for="motdepasse"> <?php echo gettext("Mot de passe"); ?>: </label>
+						<input type="text" name="motdepasse" id="motdepasse" value="<?php if ( $utilisateur) echo $utilisateur->getRole(); ?>" />
+						<?php if ( $utilisateur) afficherListeErreurFormulaire($utilisateur->getListeErreurActifPourChamp('motdepasse'));?>
+					<?php }?>
 				</ul>
 			</div>	
 		</div>

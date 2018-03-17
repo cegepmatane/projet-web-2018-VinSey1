@@ -40,7 +40,7 @@
 	</ul>
 	<?php paiement($objet);
 	} else {?>
-		<script type='text/javascript'>document.location.replace('connexion.php');</script>
+		<script type='text/javascript'>document.location.replace('connexion.php?enAchatIdObjet=<?php echo $objet->getIdObjet();?>');</script>
 	<?php }?>
 </body>
 </html>

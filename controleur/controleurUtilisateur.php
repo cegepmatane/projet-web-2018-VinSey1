@@ -162,7 +162,10 @@ afficherListeUtilisateur();
 		
 
 	function modifier($utilisateur){
-				
+			
+		echo "OUI !";
+		echo $utilisateur->getMotDePasse();
+		
 		$utilisateur->setIdUtilisateur($_POST['idUtilisateur']);
 		$utilisateur->setNom($_POST['nom']);
 		$utilisateur->setPrenom($_POST['prenom']);

@@ -63,7 +63,7 @@ class UtilisateurDAO{
 		$age = $utilisateur->getAge();
 		$telephone = $utilisateur->getTelephone();
 		$role = $utilisateur->getRole();
-		$motdepasse = $motdepasse->getMotDePasse();
+		$motdepasse = $utilisateur->getMotDePasse();
 	
 		$requete = $connexionBDActive->prepare("UPDATE utilisateur SET
 			nom=:nom,
@@ -127,6 +127,24 @@ class UtilisateurDAO{
 		$role = $utilisateur->getRole();
 		$motdepasse = $utilisateur->getMotDePasse();
 	
+		echo $nom."</br>";
+		echo $prenom."</br>";
+		echo $pseudonyme."</br>";
+		echo $email."</br>";
+		echo $adresse."</br>";
+		echo $codepostal."</br>";
+		echo $pays."</br>";
+		echo $ville."</br>";
+		echo $nbachats."</br>";
+		echo $nbventes."</br>";
+		echo $illustration."</br>";
+		echo $age."</br>";
+		echo $telephone."</br>";
+		echo $role."</br>";
+		echo $motdepasse."</br>";
+		
+		
+
 		$requete = $connexionBDActive->prepare("INSERT INTO utilisateur(
 			nom,
 			prenom,
