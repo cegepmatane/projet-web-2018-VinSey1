@@ -13,7 +13,6 @@
 	}
 
 	$objet = $objetDAO->chercherParIdentifiant($idObjet);
-    var_dump($objet);
 ?>
 <html>
 <body>
