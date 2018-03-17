@@ -35,7 +35,8 @@ class UtilisateurDAO{
 											$resultat->illustration,
 											$resultat->age,
 											$resultat->telephone,
-											$resultat->role
+											$resultat->role,
+											$resultat->motdepasse
 											);
 		}			
 		return $utilisateur;

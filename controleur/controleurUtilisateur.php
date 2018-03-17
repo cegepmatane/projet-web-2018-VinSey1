@@ -147,8 +147,7 @@ afficherListeUtilisateur();
 		$utilisateur->setNbachats($_POST['nbachats']);	
 		$utilisateur->setRole($_POST['role']);	
 		$utilisateur->setIllustration($_POST['illustration']);	
-		$pass_cache = password_hash($_POST['motdepasse'], PASSWORD_DEFAULT);
-		$utilisateur->setMotDePasse($pass_cache);
+		$utilisateur->setMotDePasse($_POST['motdepasse']);
 		
 		if ($utilisateur->estValide()){
 			
@@ -179,8 +178,7 @@ afficherListeUtilisateur();
 		$utilisateur->setNbachats($_POST['nbachats']);	
 		$utilisateur->setRole($_POST['role']);	
 		$utilisateur->setIllustration($_POST['illustration']);	
-		$pass_cache = password_hash($_POST['motdepasse'], PASSWORD_DEFAULT);
-		$utilisateur->setMotDePasse($pass_cache);
+		$utilisateur->setMotDePasse($_POST['motdepasse']);
 				
 		/*
 		
@@ -219,8 +217,8 @@ afficherListeUtilisateur();
 		$utilisateur->setNbachats($_POST['nbachats']);	
 		$utilisateur->setRole($_POST['role']);	
 		$utilisateur->setIllustration($_POST['illustration']);
-		$pass_cache = password_hash($_POST['motdepasse'], PASSWORD_DEFAULT);
-		$utilisateur->setMotDePasse($pass_cache);
+		
+		$utilisateur->setMotDePasse($_POST['motdepasse']);
 		
 		
 		if ( $utilisateur->estValide() ){
