@@ -290,12 +290,18 @@ class ObjetDAO{
 		$resulat = $requete->fetch(PDO::FETCH_ASSOC);
 		
 		echo $resulat['NbObjet'];
-		
-		
-		
-		
+				
+	}
 	
+	public function rechercherObjet($recherche){
 		
+		global $connexionBDActive;
+		$requete = $connexionBDActive->prepare("SELECT * FROM objet WHERE titreDeVente LIKE :recherche ORDER BY id_objet DESC");
+		$requete->bindParam(':recherche', $recherche, PDO::PARAM_INT);
+		$requete->execute();
+		$resulat = $requete->fetch(PDO::FETCH_ASSOC);
+		
+		return $resulat;
 	}
 
 }
