@@ -3,11 +3,12 @@
 	require_once OBJET_DAO;
 	require_once OBJET_MODELE;
 
-if ( isset($_POST['actionFormulaire'])){
+	if ( isset($_POST['actionFormulaire'])){
 	
-	$requete = htmlspecialchars($_POST['requete']);
-	$objetDAO = new ObjetDAO();
-	$resultat = $objetDAO->rechercherObjet($requete);
-}	
+		$requete = $_POST['requete'];
+		$objetDAO = new ObjetDAO();
+		$resultat = $objetDAO->rechercherObjet();
+	
+	}	
 	
 ?>
