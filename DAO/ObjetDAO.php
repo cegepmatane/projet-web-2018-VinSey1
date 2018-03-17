@@ -299,26 +299,9 @@ class ObjetDAO{
 		$requete = $connexionBDActive->prepare("SELECT * FROM objet WHERE titreDeVente LIKE :recherche");
 		$requete->bindParam(':recherche', $recherche, PDO::PARAM_STR);
 		$requete->execute();
-		$resulat = $requete->fetch(PDO::FETCH_ASSOC);
+		$resultat = $requete->fetch(PDO::FETCH_ASSOC);
 		
-			if ($resultat ){
-			
-			$objet = new Objet();
-			$objet->construireDonneesSecurise(
-			
-			 				   $resultat->id_objet,
-			 				   $resultat->identifiantVendeur,
-			 				   // $resultat->titreDeVente,
-			 				   $resultat->categorie,
-			 				   $resultat->prix,
-			 				   $resultat->descriptionProduit,
-			 				   $resultat->detailsVente,
-			 				   $resultat->adresse,
-			 				   $resultat->illustration,
-			 				   $resultat->vedette
-			 				   );
-		}	
-		return $objet;
+		return $resultat;
 	}
 
 }

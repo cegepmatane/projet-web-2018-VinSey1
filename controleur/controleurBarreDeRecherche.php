@@ -5,11 +5,11 @@
 	
 
 	if ( isset($_POST['actionFormulaire'])){
-		echo "salut";
+		
 		$requete = $_POST['requete'];
 		$objetDAO = new ObjetDAO();
 		$resultat = $objetDAO->rechercherObjet($requete);
-	
+		var_dump($resultat);
 	}	
 	
 ?>
