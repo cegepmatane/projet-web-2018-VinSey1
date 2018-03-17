@@ -20,5 +20,5 @@
 
 
 <?php 
-	include "piedPage.php";
+	include_once "piedPage.php";
 ?>
