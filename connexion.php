@@ -14,12 +14,12 @@
 					<ul>
 						<li>
 							<label for="pseudonyme"> <?php echo gettext("Pseudonyme"); ?>: </label>
-							<input type="text" name="pseudonyme" id="pseudonyme" value="<?php if ( $utilisateur) echo $utilisateur->getPseudonyme(); ?>" />
+							<input type="text" name="pseudonyme" id="pseudonyme"/>
 																		
 						</li>
 						<li>
 							<label for="motdepasse"> <?php echo gettext("Mot de passe"); ?>: </label>
-							<input type="password" name="motdepasse" id="motdepasse" value="<?php if ( $utilisateur) echo $utilisateur->getMotDePasse(); ?>" />  
+							<input type="password" name="motdepasse" id="motdepasse"/>  
 																			
 						</li>
 						<li>
