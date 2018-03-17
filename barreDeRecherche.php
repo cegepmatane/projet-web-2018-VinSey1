@@ -1,6 +1,6 @@
 <?php
 
-	
+	include_once "entete.php";
 	require_once RECHERCHE_UTILISATEUR_CONTROLEUR;
 	
 	
