@@ -28,6 +28,7 @@
     <header>
         <div id="titre"> <?php echo gettext("Survie étudiante") ?></div>
         <div id="sous-titre"><?php echo gettext("Partie Publique") ?> </div>
+		<div id="date"><?php echo date('l \t\h\e jS'); ?>
 	<?php 
 		if (isset($_SESSION['id']) && isset($_SESSION['pseudonyme'])) {
 		?>

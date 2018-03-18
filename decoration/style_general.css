@@ -21,14 +21,21 @@ header{
 	text-align: center;
 	font-size: 40px;
 	font-family: Verdana, sans-serif;
-	color: darkgray;
+	color: gray;
 }
 
 #session{
 	text-align: center;
 	font-size: 30px;
 	font-family: Verdana, sans-serif;
-	color: gray;
+	color: white;
+}
+
+#date{
+	text-align: center;
+	font-size: 30px;
+	font-family: Verdana, sans-serif;
+	color: darkgray;
 }
 nav{
 	width: 100%;
