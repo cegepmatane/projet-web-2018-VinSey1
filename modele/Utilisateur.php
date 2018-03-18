@@ -85,9 +85,10 @@ class Utilisateur{
 		'illustration-vide' => 'Une illustration doit être donnée',
 		'illustration-invalide' => 'L\'illustration contient des caractères invalides',
 		
-		'age-vide' => 'L\'âge ne doit pas être vide ou nul',
-		'age-non-numerique' => 'L\'âge doit être un entier',
-		'age-trop-long' => 'L\'âge doit être réaliste',
+		'age-vide' => 'L\'année de naissance ne doit pas être vide ou nul',
+		'age-non-numerique' => 'L\'année de naissance doit être un entier',
+		'age-trop-court' => 'Le site n\'est disponible que pour les personnes de plus de 15 ans',
+		'age-trop-long' => 'L\année de naissance doit-être réaliste',
 		
 		'telephone-vide' => 'Un numéro de téléphone doit être renseigné',
 		'telephone-trop-long' => 'Le numéro de téléphone ne doit pas dépasser 16 chiffres',
@@ -514,10 +515,15 @@ class Utilisateur{
 	
 			}
 			
-			if ( $this->ageTemporaire > 150 ){
+			if ( $this->ageTemporaire < 1900){
 				
 				$this->listeMessageErreurActif['age'][] = $this->listeMessageErreur['age-trop-long'];			
 				
+			}
+			if ( $this->ageTemporaire > 2003 ){
+
+				$this->listeMessageErreurActif['age'][] = $this->listeMessageErreur['age-trop-court'];			
+
 			}
 		}
 		

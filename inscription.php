@@ -39,7 +39,7 @@
 							?>												
 						</li>
 						<li>
-							<label for="annee-naissance"> <?php echo gettext("Âge"); ?>: </label>
+							<label for="annee-naissance"> <?php echo gettext("Année de naissance"); ?>: </label>
 							<input type="text" name="anneenaissance" id="annee-naissance" value="<?php if ( $utilisateur) echo $utilisateur->getAge(); ?>" />
 							<?php 
 							
@@ -249,9 +249,8 @@
 	<?php
 	}
 	function afficherRetroactionPositive($message){?>
-		
-		<p> <?php echo $message ?><p>
-		
+		<h3><?php echo $message ?></h3>
+		<li><a href="connexion.php" title="<?php echo gettext("Aller sur la page de connexion")?>"><?php echo gettext("Se connecter")?></a></li>
 	<?php	
 	}
 	?>
