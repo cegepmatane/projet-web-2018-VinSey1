@@ -20,15 +20,17 @@
 		else
 			{
 				if ($isPasswordCorrect) {
-					session_start();
 					$_SESSION['id'] = $resultat['id_utilisateur'];
 					$_SESSION['pseudonyme'] = $pseudonyme;
 					$_SESSION['role'] = $resultat['role'];
+
+				if ( isset($_GET['enAchatIdObjet']) ){
 				?>
-					<script type='text/javascript'>document.location.replace('index.php');</script>
-									
+					<script type='text/javascript'>document.location.replace('acheter.php?idObjet=<?php echo $_GET["enAchatIdObjet"]?>');</script>
 				<?php	
-				}
+				} else { ?>
+					<script type='text/javascript'>document.location.replace('index.php');</script>
+				<?php } }
 				else {
 
 					echo 'Mauvais identifiant ou mot de passe !';
