@@ -2,6 +2,7 @@
 define( "UTILISATEUR_DAO", $_SERVER["DOCUMENT_ROOT"]."/DAO/UtilisateurDAO.php"   );
 define( "UTILISATEUR_MODELE", $_SERVER["DOCUMENT_ROOT"]."/modele/Utilisateur.php"   );
 define( "UTILISATEUR_CONTROLEUR", $_SERVER["DOCUMENT_ROOT"]."/controleur/controleurUtilisateur.php" );
+define( "MODIFICATION_PROFIL_CONTROLEUR", $_SERVER["DOCUMENT_ROOT"]."/controleur/controleurProfil.php" );
 
 define( "OBJET_DAO", $_SERVER["DOCUMENT_ROOT"]."/DAO/ObjetDAO.php"   );
 define( "OBJET_MODELE", $_SERVER["DOCUMENT_ROOT"]."/modele/Objet.php"   );
