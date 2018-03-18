@@ -4,9 +4,6 @@
 	require_once UTILISATEUR_MODELE;
 	
 ?>
-	<?php
-		if (isset($_SESSION['id']) && isset($_SESSION['pseudonyme']) && $_SESSION['role']==1) {
-	?>
 	<!--
 	<script type="text/javascript">
 		
@@ -88,9 +85,5 @@
 		changer_onglet(onglet_courant);
 		
 	</script>
-	<?php
-	} else {?>
-		<script type='text/javascript'>document.location.replace('../../inscription.php?enPageProfil=1');</script>
-	<?php }?>
 </body>
 </html>
