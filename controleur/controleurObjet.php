@@ -156,6 +156,11 @@ afficherListeObjet();
 
 	function modifier($objet){
 				
+		if($_POST['vedette'] == "oui"){
+			$vedette = 1;
+		} else {
+			$vedette = 0;
+		}
 		$objet->setIdObjet($_POST['idObjet']);
 		$objet->setTitreDeVente($_POST['titreDeVente']);
 		$objet->setIdentifiantVendeur($_POST['identifiantVendeur']);
@@ -165,7 +170,7 @@ afficherListeObjet();
 		$objet->setPrix($_POST['prix']);
 		$objet->setDescriptionProduit($_POST['descriptionProduit']);	
 		$objet->setDetailsVente($_POST['detailsVente']);
-		$objet->setVedette($_POST['vedette']);	
+		$objet->setVedette($vedette);	
 		
 		
 		/*
