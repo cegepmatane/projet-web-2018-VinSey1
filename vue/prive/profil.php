@@ -5,6 +5,7 @@
 	
 
 	function formulaireModification($utilisateur){?>
+		<script src="../../scripts/retourUtilisateurInscriptionPublique.js"></script> 
 		<form action="profil.php?Modification=1" id="formulaire-creation" method="post">
 			<div id = "blocs-formulaire">
 				<div id = "bloc-formulaire-1">		
