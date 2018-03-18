@@ -13,7 +13,7 @@
 				<div id = "bloc-formulaire-1">
 					<ul>
 						<li>
-							<button type="submit" value="deconnexion" name="actionFormulaire"/><?php echo gettext("Se deconnecter");?></button>
+							<button type="submit" value="deconnexion" name="actionFormulaire"/><?php echo gettext("Se déconnecter");?></button>
 						</li>
 </form>
 <?php 

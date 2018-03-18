@@ -4,7 +4,6 @@
 	
 	require_once CONNEXION_UTILISATEUR_CONTROLEUR;
 	
-	
 ?>
 <body>
 <h3 id="sous-titre">Connectez-vous ! C'est gratuit et tellement simple !</h3>
@@ -28,6 +27,7 @@
 					</ul>
 				</div>
 			</div>
+			<input type="hidden" name="achat"  value="<?php if (isset($_GET['idObjet'])) {echo $_GET['idObjet'];} else {echo "-1";} ?>" />
 </form>
 <a href="inscription.php"><?php echo gettext("Pas de compte ? Inscrivez-vous !")?></a>
 <?php 
