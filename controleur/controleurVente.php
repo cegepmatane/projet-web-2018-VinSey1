@@ -9,7 +9,7 @@
 		$objet = new Objet();
 		
 		$objet->setCategorie($_POST['categorie']);
-		$
+		
 		
 		
 	}

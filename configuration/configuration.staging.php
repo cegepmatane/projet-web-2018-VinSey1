@@ -7,6 +7,8 @@ define( "MODIFICATION_PROFIL_CONTROLEUR", $_SERVER["DOCUMENT_ROOT"]."/controleur
 define( "OBJET_DAO", $_SERVER["DOCUMENT_ROOT"]."/DAO/ObjetDAO.php"   );
 define( "OBJET_MODELE", $_SERVER["DOCUMENT_ROOT"]."/modele/Objet.php"   );
 define( "OBJET_CONTROLEUR", $_SERVER["DOCUMENT_ROOT"]."/controleur/controleurObjet.php" );
+define( "CREATION_VENTE_CONTROLEUR", $_SERVER["DOCUMENT_ROOT"]."/controleur/controleurVente.php" );
+
 
 define( "LISTE_ERREUR_FORMULAIRE", $_SERVER["DOCUMENT_ROOT"]."/listeErreurFormulaire.php" );
 

@@ -1,6 +1,8 @@
 <?php
-	require_once $_SERVER["DOCUMENT_ROOT"]."/controleur/controleurVente.php";
+	
 	include "entete.php";
+	require_once LISTE_ERREUR_FORMULAIRE;
+	require_once CREATION_VENTE_CONTROLEUR;
 ?>
 
 	<form action="vente.php" id="formulaire-vente" method="post">
