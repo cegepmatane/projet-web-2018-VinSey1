@@ -47,7 +47,7 @@
 			<li><input type="text" name="details" size="50" id="gros-texte"/>
 			<?php if ( $objet){ afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('details'));
 						if(!empty($objet->getListeErreurActifPourChamp('details'))){ ?>
-									<script>indiquerErreurInscription('detailsVente');</script><?php
+									<script>indiquerErreurInscription('details');</script><?php
 						}	}	
 						?>	
 			</li>
