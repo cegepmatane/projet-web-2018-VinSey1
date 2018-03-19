@@ -7,8 +7,6 @@ define( "MODIFICATION_PROFIL_CONTROLEUR", $_SERVER["DOCUMENT_ROOT"]."/controleur
 define( "OBJET_DAO", $_SERVER["DOCUMENT_ROOT"]."/DAO/ObjetDAO.php"   );
 define( "OBJET_MODELE", $_SERVER["DOCUMENT_ROOT"]."/modele/Objet.php"   );
 define( "OBJET_CONTROLEUR", $_SERVER["DOCUMENT_ROOT"]."/controleur/controleurObjet.php" );
-define( "CREATION_VENTE_CONTROLEUR", $_SERVER["DOCUMENT_ROOT"]."/controleur/controleurVente.php" );
-
 
 define( "LISTE_ERREUR_FORMULAIRE", $_SERVER["DOCUMENT_ROOT"]."/listeErreurFormulaire.php" );
 
@@ -17,6 +15,7 @@ define("INSCRIPTION_UTILISATEUR_CONTROLEUR",$_SERVER["DOCUMENT_ROOT"]."/controle
 define("CONNEXION_UTILISATEUR_CONTROLEUR",$_SERVER["DOCUMENT_ROOT"]."/controleur/controleurConnexion.php" );
 define("DECONNEXION_UTILISATEUR_CONTROLEUR",$_SERVER["DOCUMENT_ROOT"]."/controleur/controleurDeconnexion.php" );
 define("RECHERCHE_UTILISATEUR_CONTROLEUR",$_SERVER["DOCUMENT_ROOT"]."/controleur/controleurBarreDeRecherche.php" );
+define("ACHAT_UTILISATEUR", $_SERVER["DOCUMENT_ROOT"]."/controleur/controleurRetourAchat.php");
 //---------- BD ---------------------
 define("BD_NOM", "survie_etudiante" );
 define("BD_HOTE", "localhost" );
