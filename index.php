@@ -28,6 +28,11 @@
 					<input type="submit" value="Se déconnecter"/>
 				</form>
 			</li>
+			<li>
+				<form action="vue/prive/vente.php">
+					<input type="submit" value="Vendre un objet"/>
+				</form>
+			</li>
 			
 		<?php } else { ?>
 			
@@ -44,7 +49,7 @@
 			</li>
 		<?php } ?>
 			
-			<li><button type="button"><?php echo gettext("Vendre un objet"); ?></button></li>
+			
 			
 			
 			
