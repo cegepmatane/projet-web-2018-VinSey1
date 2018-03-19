@@ -23,10 +23,8 @@
 			
 			
 			$objetDAO->insererObjet($objet);
-
-			?>
 			
-			<?php
+			
 
 		} 
 	

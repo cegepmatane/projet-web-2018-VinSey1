@@ -9,7 +9,7 @@
 		<ul>
 			<li><?php echo gettext("Type de produit :")?>
 				<select name="categorie">
-					<option value="autre"><?php echo gettext("Autre")?></option>
+					<option value="autres"><?php echo gettext("Autres")?></option>
 					<option value="cuisine"><?php echo gettext("Cuisine")?></option>
 					<option value="literie"><?php echo gettext("Literie")?></option>
 					<option value="bureau"><?php echo gettext("Fournitures de bureau")?></option>
@@ -83,7 +83,7 @@
 			</li>
 			<input type="hidden" name="vedette"  value="0" />
 		</ul>
-		<input id="bouton" type="submit" value="Valider" name="actionFormulaire/>
+		<input id="bouton" type="submit" value="Valider" name="actionFormulaire"/>
 	</form>
 </body>
 </html>
