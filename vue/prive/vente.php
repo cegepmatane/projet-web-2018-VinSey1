@@ -58,6 +58,15 @@
 						?>	
 			</li>
 			
+			<li><?php echo gettext("Illustration : ")?></li>
+			<li><input type="text" name="illustration" size="50"/>
+			<?php if ( $objet){ afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('illustration'));
+						if(!empty($objet->getListeErreurActifPourChamp('illustration'))){ ?>
+									<script>indiquerErreurInscription('illustration');</script><?php
+						}	}	
+						?>	
+			</li>
+			
 			
 			<li>
 				<?php echo gettext("Prix : ")?> <input type="text" name="prix" size="1"/>
@@ -72,8 +81,9 @@
 						}	}	
 						?>
 			</li>
+			<input type="hidden" name="vedette"  value="0" />
 		</ul>
-		<input id="bouton" type="submit" value="Valider" name="controleur_vente"/>
+		<input id="bouton" type="submit" value="Valider" name="actionFormulaire/>
 	</form>
 </body>
 </html>
