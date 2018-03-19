@@ -16,6 +16,7 @@ define("CONNEXION_UTILISATEUR_CONTROLEUR",$_SERVER["DOCUMENT_ROOT"]."/controleur
 define("DECONNEXION_UTILISATEUR_CONTROLEUR",$_SERVER["DOCUMENT_ROOT"]."/controleur/controleurDeconnexion.php" );
 define("RECHERCHE_UTILISATEUR_CONTROLEUR",$_SERVER["DOCUMENT_ROOT"]."/controleur/controleurBarreDeRecherche.php" );
 define("ACHAT_UTILISATEUR", $_SERVER["DOCUMENT_ROOT"]."/controleur/controleurRetourAchat.php");
+define("CREATION_VENTE_CONTROLEUR", $_SERVER["DOCUMENT_ROOT"]."/controleur/controleurVente.php");
 //---------- BD ---------------------
 define("BD_NOM", "survie_etudiante" );
 define("BD_HOTE", "localhost" );
