@@ -3,8 +3,11 @@
 	include "entete.php";
 	require_once LISTE_ERREUR_FORMULAIRE;
 	require_once CREATION_VENTE_CONTROLEUR;
+	
+	
+	
+	function formulaireAjout($objet){
 ?>
-
 	<form action="vente.php" id="formulaire-vente" method="post">
 		<ul>
 			<li><?php echo gettext("Type de produit :")?>
@@ -85,5 +88,6 @@
 		</ul>
 		<input id="bouton" type="submit" value="Valider" name="actionFormulaire"/>
 	</form>
+<?php } ?>
 </body>
 </html>

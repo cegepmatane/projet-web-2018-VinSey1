@@ -4,10 +4,13 @@
 	require_once OBJET_MODELE;
 
 	$objetDAO = new ObjetDAO();
+	$objet = $objetDAO->chercherParIdentifiant(5);
+
+	formulaireAjout($objet);
 	
 	if ( isset($_POST['actionFormulaire'])){
 		
-		$objet = new Objet();
+		
 		
 		$objet->setCategorie($_POST['categorie']);
 		$objet->setTitreDeVente($_POST['titreDeVente']);
