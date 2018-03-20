@@ -1,16 +1,36 @@
 <?php
 	require_once $_SERVER["DOCUMENT_ROOT"]."/configuration/configuration.staging.php";
-	//$language = "en_US.utf8";
-	//putenv("LANG=".$language);
-	//setlocale(LC_MESSAGES, $language);
 	
-	//$chemin = $_SERVER["DOCUMENT_ROOT"]."/Locale";
-	
-	//$domain = "messages";
-	//bindtextdomain($domain, $chemin );
-	//textdomain($domain);
-
 	session_start();
+	
+	$language  = locale_accept_from_http($_SERVER['HTTP_ACCEPT_LANGUAGE']);
+	
+	switch( $language ){
+		
+		case "en":
+			$language = "en_US.utf8";
+		
+			break;
+
+		default:
+		
+			$language = "fr_CA.utf8";
+			break;
+			
+	}
+	
+	
+	$language = "en_US.utf8";
+
+	putenv("LANG=".$language);
+	setlocale(LC_ALL, $language);
+	
+	$chemin = $_SERVER["DOCUMENT_ROOT"]."/Locale";
+	
+	$domain = "messages";
+	bindtextdomain($domain, $chemin );
+	textdomain($domain);
+	
 
 ?>
 <!DOCTYPE html>

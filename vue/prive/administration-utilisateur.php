@@ -13,8 +13,6 @@ function afficherFormulaireUtilisateur($actionFormulaire, $utilisateur=null){
 			<div id = "bloc-formulaire-1">		
 				<ul>
 					<input type="hidden" name="idUtilisateur" value="<?php if ( $utilisateur) echo $utilisateur->getIdUtilisateur(); ?>"/>
-
-					
 					<li>
 						<label for="nom"> <?php echo gettext("Nom"); ?>: </label>
 						<input type="text" name="nom" id="nom" value="<?php if ( $utilisateur) echo $utilisateur->getNom(); ?>" />  

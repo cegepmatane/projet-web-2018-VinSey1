@@ -185,7 +185,7 @@ afficherListeUtilisateur();
 			estValide ne suffit pas, il faudrait questionner la BD pour savoir si cet utilisateur existe
 		
 		*/
-		
+				
 		if ($utilisateur->estValide()){
 				
 			$utilisateurDAO = new UtilisateurDAO();

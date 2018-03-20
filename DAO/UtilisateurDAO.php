@@ -245,11 +245,8 @@ class UtilisateurDAO{
 					);
 			
 			$listeUtilisateur[]=$utilisateur;
-		}
-		
-				
-		return $listeUtilisateur;
-				
+		}			
+		return $listeUtilisateur;				
 	}
 	
 	public function compterUtilisateur() {
