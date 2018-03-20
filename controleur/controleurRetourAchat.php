@@ -18,11 +18,14 @@
 
 		$utilisateur = $utilisateurDAO->chercherParIdentifiant($_SESSION['id']);
 
-		$utilisateur->setNbachats($utilisateur->getNbachats() +1);
+		
 
 		if($utilisateur->estValide()){
+			$utilisateur->setNbachats($utilisateur->getNbachats() +1);
             $utilisateurDAO->modifierUtilisateur($utilisateur);
             afficherMessage($objet);
+			$objet->setVedette(10);
+			$objetDAO->modifierObjet($objet);
         }
     } else {
         ?> <script type='text/javascript'>document.location.replace('index.php');</script> <?php
