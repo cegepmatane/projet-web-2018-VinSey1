@@ -89,7 +89,7 @@
 					$utilisateur = new Utilisateur();
 					
 					if ( modifier($utilisateur) ){
-						var_dump($utilisateur);
+						
 						afficherRetroactionPositive(gettext("Modification d'utilisateur réussi"));
 						
 					}
@@ -108,12 +108,12 @@
 								
 					if ( supprimer($utilisateur) ){
 						
-						var_dump($utilisateur);
+						
 						afficherRetroactionPositive(gettext("Supression d'utilisateur réussi"));
 						
 					}
 					else{
-						var_dump($utilisateur);
+						
 						afficherRetroactionNegative(gettext("L'utilisateur n'existe pas"));
 					}
 			
