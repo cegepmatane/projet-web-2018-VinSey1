@@ -261,6 +261,19 @@ class UtilisateurDAO{
 		
 	}
 	
+	public function compterUtilisateurParAnneeDeNaissance($anneeDeNaissance) {
+		
+		global $connexionBDActive;
+		$requete = $connexionBDActive->prepare("SELECT COUNT(*) as NbUtilisateur
+										FROM utilisateur WHERE age = :anneeDeNaissance ");
+		$requete->bindParam(':anneeDeNaissance', $anneeDeNaissance, PDO::PARAM_STR);
+		$requete->execute();
+		
+		$resultat = $requete->fetch(PDO::FETCH_ASSOC);
+		echo $resultat['NbUtilisateur'];
+		
+	}
+	
 	public function recupererInformationConnexion($pseudoDemande) {
 		
 		
