@@ -32,7 +32,7 @@
 		?>
 		<div id="session"> <?php echo gettext($_SESSION['pseudonyme']) ?>
 	<?php } else {
-		?> <script type='text/javascript'>document.location.replace('index.php');</script> <?php
+		?> <script type='text/javascript'>document.location.replace('../../index.php');</script> <?php
 	} ?>
     </header>	
 	<nav>
