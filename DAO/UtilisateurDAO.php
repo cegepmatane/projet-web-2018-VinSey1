@@ -195,9 +195,9 @@ class UtilisateurDAO{
 			AND pseudonyme = :pseudonyme");
 		
 		$requete->bindParam(':identifiant', $idUtilisateur, PDO::PARAM_INT);
-		$requete->bindParam(':nom', $nom, PDO::PARAM_INT);
-		$requete->bindParam(':prenom', $prenom, PDO::PARAM_INT);
-		$requete->bindParam(':pseudonyme', $pseudonyme, PDO::PARAM_INT);
+		$requete->bindParam(':nom', $nom, PDO::PARAM_STR);
+		$requete->bindParam(':prenom', $prenom, PDO::PARAM_STR);
+		$requete->bindParam(':pseudonyme', $pseudonyme, PDO::PARAM_STR);
 
 		$requete->execute();
 	}

@@ -216,8 +216,7 @@ afficherListeUtilisateur();
 		$utilisateur->setNbventes($_POST['nbventes']);	
 		$utilisateur->setNbachats($_POST['nbachats']);	
 		$utilisateur->setRole($_POST['role']);	
-		$utilisateur->setIllustration($_POST['illustration']);
-		
+		$utilisateur->setIllustration($_POST['illustration']);	
 		$utilisateur->setMotDePasse($_POST['motdepasse']);
 		
 		
