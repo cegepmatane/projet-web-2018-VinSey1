@@ -94,8 +94,8 @@ function afficherFormulaireObjet($actionFormulaire, $objet=null){ ?>
 					</li>
 					<li>
 						<label for="vedette"> <?php echo gettext("Vedette"); ?> : </label>
-						<input <?php if ($objet){ if($objet->getVedette() == 1){ echo "checked"; }}?> type="radio" name="vedette" value="oui"><?php echo gettext("Oui");?>
-						<input <?php if ($objet){ if($objet->getVedette() == 0){ echo "checked"; }}?> type="radio" name="vedette" value="non"><?php echo gettext("Non");?>
+						<input <?php if ($objet){ if($objet->getVedette() == 1){ echo "checked"; }}?> type="radio" name="vedette" value="1"><?php echo gettext("Oui");?>
+						<input <?php if ($objet){ if($objet->getVedette() == 0){ echo "checked"; }}?> type="radio" name="vedette" value="0"><?php echo gettext("Non");?>
 						<?php if ( $objet){ afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('vedette'));
 						if(!empty($objet->getListeErreurActifPourChamp('vedette'))){ ?>
 									<script>indiquerErreurInscription('vedette');</script><?php
