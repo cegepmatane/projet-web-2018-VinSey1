@@ -7,22 +7,7 @@
 	require_once UTILISATEUR_MODELE;
 	
 ?>
-	<script type="text/javascript">
-		
-		function changer_onglet(name){
-		
-			document.getElementById('onglet_'+onglet_courant).className = "onglet-non-selectionne";
-			document.getElementById('contenu_onglet_'+onglet_courant).style.display = 'none';
-			document.getElementById('contenu_onglet_'+name).style.display = 'block';
-			document.getElementById('onglet_'+name).className = "onglet-selectionne";
-			onglet_courant = name;
-		}	
-		
-	</script>
-	<div class="onglet-cliquable">
-		<span id="onglet_ventes" onclick="javascript:changer_onglet('ventes');" ><?php echo gettext("Catalogue des Ventes") ?></span>
-		<span id="onglet_utilisateurs" onclick="javascript:changer_onglet('utilisateurs');" ><?php echo gettext("Catalogue des utilisateurs") ?></span>
-	</div>
+	
 	<div id="bloc-stat">
 	<?php 
 		include "graph.php";
