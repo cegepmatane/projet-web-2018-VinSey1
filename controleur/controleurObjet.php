@@ -156,7 +156,7 @@ afficherListeObjet();
 
 	function modifier($objet){
 				
-		if($_POST['vedette'] == "oui"){
+		if($_POST['vedette'] == "1"){
 			$vedette = 1;
 		} else {
 			$vedette = 0;
