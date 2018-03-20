@@ -122,13 +122,21 @@
 						type: 'value'
 					},
 					series: [{
-						data: [{value:<?php $utilisateurDAO->compterUtilisateurParAnneeDeNaissance(56); ?>, name:'Literie'},
-								{value:<?php $objetDAO->compterObjetParCategorie(2); ?>, name:'Cuisine'},
-								{value:<?php $objetDAO->compterObjetParCategorie(3); ?>, name:'Livres'},
-								{value:<?php $objetDAO->compterObjetParCategorie(4); ?>, name:'Fournitures de Bureau'},
-								{value:<?php $objetDAO->compterObjetParCategorie(5); ?>, name:'Autres'},
-								{value:<?php $objetDAO->compterObjetParCategorie(4); ?>, name:'Fournitures de Bureau'},
-								{value:<?php $objetDAO->compterObjetParCategorie(5); ?>, name:'Autres'},],
+						data: [{value:<?php $utilisateurDAO->compterUtilisateurParAnneeDeNaissance(1990); ?>},
+							{value:<?php $utilisateurDAO->compterUtilisateurParAnneeDeNaissance(1991); ?>},
+							{value:<?php $utilisateurDAO->compterUtilisateurParAnneeDeNaissance(1992); ?>},
+							{value:<?php $utilisateurDAO->compterUtilisateurParAnneeDeNaissance(1993); ?>},
+							{value:<?php $utilisateurDAO->compterUtilisateurParAnneeDeNaissance(1994); ?>},
+							{value:<?php $utilisateurDAO->compterUtilisateurParAnneeDeNaissance(1995); ?>},
+							{value:<?php $utilisateurDAO->compterUtilisateurParAnneeDeNaissance(1996); ?>},
+							{value:<?php $utilisateurDAO->compterUtilisateurParAnneeDeNaissance(1997); ?>},
+							{value:<?php $utilisateurDAO->compterUtilisateurParAnneeDeNaissance(1998); ?>},
+							{value:<?php $utilisateurDAO->compterUtilisateurParAnneeDeNaissance(1999); ?>},
+							{value:<?php $utilisateurDAO->compterUtilisateurParAnneeDeNaissance(2000); ?>},
+							{value:<?php $utilisateurDAO->compterUtilisateurParAnneeDeNaissance(2001); ?>},
+							{value:<?php $utilisateurDAO->compterUtilisateurParAnneeDeNaissance(2002); ?>},
+							{value:<?php $utilisateurDAO->compterUtilisateurParAnneeDeNaissance(2003); ?>},
+								],
 						type: 'bar'
 					}]
 				};
