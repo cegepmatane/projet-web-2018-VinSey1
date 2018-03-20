@@ -40,7 +40,7 @@
     <header>
         <div id="titre"> <?php echo gettext("Survie étudiante") ?></div>
         <div id="sous-titre"><?php echo gettext("Partie Publique") ?> </div>
-		<div id="date"><?php echo date('l \t\h\e jS'); ?>
+		<div id="date"><?php  setlocale (LC_TIME, 'fr_FR.utf8','fra'); echo (strftime("%A %d %B"));  ?>
 	<?php 
 		if (isset($_SESSION['id']) && isset($_SESSION['pseudonyme'])) {
 		?>
