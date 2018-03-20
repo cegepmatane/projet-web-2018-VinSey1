@@ -3,10 +3,10 @@
 	
 	session_start();
 
-	/**
-	$language = locale_accept_from_http("fr,fr-FR;q=0.8");
 	
-	echo $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+	$language = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);
+	
+	
 	
 	switch( $language ){
 		
@@ -28,7 +28,7 @@
 	$domain = "messages";
 	bindtextdomain($domain, $chemin );
 	textdomain($domain);	
-	*/
+	
 
 ?>
 <!DOCTYPE html>
