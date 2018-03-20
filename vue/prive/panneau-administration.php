@@ -5,6 +5,7 @@
 	require_once OBJET_MODELE;	
 	require_once UTILISATEUR_DAO;
 	require_once UTILISATEUR_MODELE;
+	include "detailsObjet.php";
 	
 ?>
 	
@@ -19,6 +20,13 @@
 				
 				<?php echo gettext("Nombre d'objets : "); $objetDAO->compterObjet(); ?> </br>
 				<?php echo gettext("Nombre d'objets vendus : "); $objetDAO->compterObjetVendu(); ?> </br>
+		
+				<form action="vue/prive/vendu.php">
+					<input type="submit" value="Voir les objets vendus"/>
+				</form>
+					
+				
+		</div>
 						
 			
 			<?php foreach($listeobjet as $key => $objet) { ?>		
