@@ -293,6 +293,21 @@ class ObjetDAO{
 				
 	}
 	
+	
+	public function compterObjetVendu() {
+		
+		
+		global $connexionBDActive;
+		
+		$requete = $connexionBDActive->prepare("SELECT COUNT(*) as NbObjet FROM objet WHERE vedette = 10");
+		$requete->execute();
+		
+		$resulat = $requete->fetch(PDO::FETCH_ASSOC);
+		
+		echo $resulat['NbObjet'];
+				
+	}
+	
 	public function rechercherObjet($recherche){
 		
 		$listeObjet = [];
