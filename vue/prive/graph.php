@@ -93,7 +93,7 @@
 					
 					
 					title: {
-						text: 'Nombre de connexions par jour',
+						text: 'Répartition des années de naissance',
 						left: 'center',
 						top: 20,
 						textStyle: {
