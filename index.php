@@ -13,7 +13,7 @@
 				$objetDAO = new ObjetDAO();
 				$listeObjet = $objetDAO->obtenirListeObjet();
 				foreach($listeObjet as $key => $objet) {
-					if ($objet->getVedette() == 1) {
+					if ($objet->getVedette() == 1 && $objet->getVedette()!=10) {
 						detailsObjet($objet);
 					}
 				} 
