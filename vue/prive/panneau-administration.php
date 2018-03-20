@@ -43,6 +43,7 @@
 					$utilisateurDAO = new UtilisateurDAO();
 					$listeutilisateur = $utilisateurDAO->obtenirListeUtilisateur();
 				?>
+				
 				<?php echo gettext("Nombre d'utilisateurs : "); $utilisateurDAO->compterUtilisateur(); ?></br>
 				<?php echo gettext("Chercher des utilisateurs");?></br>
 				<?php echo gettext("Identifiant");?> <input type="text" ></br>

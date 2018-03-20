@@ -4,7 +4,7 @@
 <?php 				
 	$objetDAO = new ObjetDAO();				
 	$listeobjet = $objetDAO->obtenirListeObjet();
-	 
+	$utilisateurDAO = new UtilisateurDAO(); 
 	
 					
 					
@@ -108,21 +108,27 @@
 
 					visualMap: {
 						show: false,
-						min: 10,
-						max: 400,
+						min: 1,
+						max: 10,
 						inRange: {
-							colorLightness: [0, 1]
+							colorLightness: [0.2, 1]
 						}
 					},
 					xAxis: {
 						type: 'category',
-						data: ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim']
+						data: ['1990', '1991', '1992', '1993', '1994', '1995', '1996','1997','1998','1999','2000','2001','2002','2003']
 					},
 					yAxis: {
 						type: 'value'
 					},
 					series: [{
-						data: [120, 200, 150, 80, 70, 110, 130],
+						data: [{value:<?php $utilisateurDAO->compterUtilisateurParAnneeDeNaissance(56); ?>, name:'Literie'},
+								{value:<?php $objetDAO->compterObjetParCategorie(2); ?>, name:'Cuisine'},
+								{value:<?php $objetDAO->compterObjetParCategorie(3); ?>, name:'Livres'},
+								{value:<?php $objetDAO->compterObjetParCategorie(4); ?>, name:'Fournitures de Bureau'},
+								{value:<?php $objetDAO->compterObjetParCategorie(5); ?>, name:'Autres'},
+								{value:<?php $objetDAO->compterObjetParCategorie(4); ?>, name:'Fournitures de Bureau'},
+								{value:<?php $objetDAO->compterObjetParCategorie(5); ?>, name:'Autres'},],
 						type: 'bar'
 					}]
 				};
