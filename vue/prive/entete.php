@@ -44,6 +44,9 @@
         <div id="titre"> <?php echo gettext("Survie étudiante") ?></div>
         <div id="sous-titre"><?php echo gettext("Partie Privée") ?> </div>
 		<div id="date"><?php  setlocale (LC_TIME, 'fr_FR.utf8','fra'); echo (strftime("%A %d %B"));  ?>
+		<?php 
+		if (isset($_SESSION['id']) && isset($_SESSION['pseudonyme'])) {
+		?>
 		<div id="session"> <?php echo gettext($_SESSION['pseudonyme']) ?>
 	<?php } else {
 		?> <script type='text/javascript'>document.location.replace('../../index.php');</script> <?php
