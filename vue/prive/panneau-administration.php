@@ -21,7 +21,7 @@
 				<?php echo gettext("Nombre d'objets : "); $objetDAO->compterObjet(); ?> </br>
 				<?php echo gettext("Nombre d'objets vendus : "); $objetDAO->compterObjetVendu(); ?> </br>
 		
-				<form action="vue/prive/vendu.php">
+				<form action="vendu.php">
 					<input type="submit" value="Voir les objets vendus"/>
 				</form>
 					
