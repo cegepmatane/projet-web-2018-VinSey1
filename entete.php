@@ -2,12 +2,9 @@
 	require_once $_SERVER["DOCUMENT_ROOT"]."/configuration/configuration.staging.php";
 	
 	session_start();
-
-	
+		
 	$language = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);
-	
-	
-	
+
 	switch( $language ){
 		
 		case "en":
@@ -17,7 +14,6 @@
 		default:
 			$language = "fr_CA.utf8";
 			break;
-			
 	}	
 	
 	putenv("LANG=".$language);
