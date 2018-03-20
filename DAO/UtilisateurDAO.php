@@ -46,8 +46,6 @@ class UtilisateurDAO{
 		
 		global $connexionBDActive;
 	
-		
-	
 		$idUtilisateur = $utilisateur->getidUtilisateur();
 		$nom = $utilisateur->getNom();
 		$prenom = $utilisateur->getPrenom();
@@ -188,6 +186,7 @@ class UtilisateurDAO{
 		$nom = $utilisateur->getNom();
 		$prenom = $utilisateur->getPrenom();
 		$pseudonyme = $utilisateur->getPseudonyme();
+		
 		
 		$requete = $connexionBDActive->prepare("DELETE FROM utilisateur
 			WHERE id_utilisateur = :identifiant
