@@ -11,7 +11,7 @@
 		$resultat = $objetDAO->rechercherObjet($requete);
 		foreach($resultat as $key => $objet) {
 			if ($objet->getVedette()!=10){
-					detailsObjet($objet);
+					detailsObjet($objet,0);
 				}
 		}
 	}	

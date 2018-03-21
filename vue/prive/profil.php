@@ -119,7 +119,7 @@
 				$listeObjet = $objetDAO->obtenirListeObjet();
 				foreach($listeObjet as $key => $objet) {
 					if ($objet->getIdentifiantVendeur() == $utilisateur->getIdUtilisateur()) {
-						detailsObjet($objet);
+						detailsObjet($objet,1);
 					}
 				} 
 			?>
