@@ -3,6 +3,9 @@
 	require_once UTILISATEUR_DAO;
 	require_once UTILISATEUR_MODELE;
 	
+	if ($_SESSION['role'] != 1){
+		?> <script type='text/javascript'>document.location.replace('../../index.php');</script> <?php
+	} else {
 	if ( isset($_GET['actionNaviguation'])){
 		
 		$idUtilisateur = null;
@@ -232,5 +235,5 @@ afficherListeUtilisateur();
 		
 		return false;
 		
-	}
+	}}
 ?>

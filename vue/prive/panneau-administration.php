@@ -6,6 +6,10 @@
 	require_once UTILISATEUR_DAO;
 	require_once UTILISATEUR_MODELE;
 	include "detailsObjet.php";
+
+	if ($_SESSION['role'] != 1){
+		?> <script type='text/javascript'>document.location.replace('../../index.php');</script> <?php
+	} else {
 	
 ?>
 	
@@ -72,3 +76,4 @@
 		changer_onglet(onglet_courant);
 		
 	</script>
+	<?php }?>

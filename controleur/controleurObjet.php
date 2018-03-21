@@ -3,7 +3,9 @@
 	require_once OBJET_DAO;
 	require_once OBJET_MODELE;
 	
-	
+	if ($_SESSION['role'] != 1){
+		?> <script type='text/javascript'>document.location.replace('../../index.php');</script> <?php
+	} else {
 	if ( isset($_GET['actionNaviguation'])){
 		
 		$idObjet=null;
@@ -215,7 +217,7 @@ afficherListeObjet();
 		
 		return false;
 		
-	}
+	}}
 ?>
 
 
