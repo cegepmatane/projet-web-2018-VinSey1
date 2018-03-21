@@ -60,7 +60,7 @@ class Objet{
 		'illustration-caracteres-speciaux' => 'L\'illustration contient des caractères invalides',
 
 		'categorie-vide' => 'La catégorie est vide',
-		'categorie-trop-long' => 'La catégorie fait plus de 20 caractères',
+		'categorie-trop-long' => 'La catégorie fait plus de 50 caractères',
 		'categorie-caracteres-speciaux' => 'La catégorie contient des caractères invalides',
 
 		'vedette-vide' => 'Vedette est vide ou contient des caractères invalides',
@@ -192,7 +192,7 @@ class Objet{
 		if (empty($this->categorieTemporaire)){
 			$this->listeMessageErreurActif['categorie'][] = $this->listeMessageErreur['categorie-vide'];
 		} else {
-			if (strlen($this->categorieTemporaire) > 20){
+			if (strlen($this->categorieTemporaire) > 50){
 				$this->listeMessageErreurActif['categorie'][] = $this->listeMessageErreur['categorie-trop-long'];
 			}
 			if (!verifAlpha($this->categorieTemporaire)){
