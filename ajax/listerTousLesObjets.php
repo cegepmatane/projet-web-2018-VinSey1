@@ -8,5 +8,8 @@
 	$objetDAO = new ObjetDAO();
 	$listeObjet = $objetDAO->obtenirListeObjet();
 	foreach($listeObjet as $key => $objet) {
-		detailsObjet($objet);
+		if ($objet->getVedette()!=10) {
+			detailsObjet($objet);
+		}
+		
 	} ?>
