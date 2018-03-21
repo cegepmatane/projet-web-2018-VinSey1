@@ -3,7 +3,7 @@
 	require_once OBJET_DAO;
 	require_once OBJET_MODELE;
 	include "barreDeRecherche.php";
-	include "detailsObjet.php";
+	include_once "detailsObjet.php";
 ?>
 	<script src="ajax/montrerProduitCategorie.js"></script>
 	<script src="ajax/listerTousLesObjets.js"></script>
