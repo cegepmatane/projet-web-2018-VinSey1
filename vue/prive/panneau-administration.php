@@ -48,7 +48,7 @@
 				?>
 				
 				<?php echo gettext("Nombre d'utilisateurs : "); $utilisateurDAO->compterUtilisateur(); ?></br>
-				<?php echo gettext("Chercher des utilisateurs");?></br>
+				
 				
 		
 			
