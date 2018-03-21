@@ -7,7 +7,7 @@
 	
 ?>
 
-<h3 id="sous-titre">Deconnectez-vous ! C'est gratuit et tellement simple !</h3>
+<h3 id="sous-titre">Vous nous quittez déjà ? </h3>
 <form action="deconnexion.php" id="formulaire-creation" method="post">
 			<div id = "blocs-formulaire">
 				<div id = "bloc-formulaire-1">
