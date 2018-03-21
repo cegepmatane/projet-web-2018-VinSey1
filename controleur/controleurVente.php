@@ -8,7 +8,6 @@
 	$objet = new Objet();
 
 
-	formulaireAjout($objet);
 	
 	if ( isset($_POST['actionFormulaire'])){
 		
@@ -23,16 +22,16 @@
 		$objet->setIllustration($_POST['illustration']);
 		
 		if ($objet->estValide()){
-				
-			
-			
-			$objetDAO->insererObjet($objet);
-			?> <script type='text/javascript'>document.location.replace('../../acheter.php?idObjet='.$objet->getIdObjet();.'php');</script> <?php
-			
 
-		} 
+			$objetDAO->insererObjet($objet);
+
+		} else {
+			formulaireAjout($objet);
+		}
 	
 		
+	} else {
+		formulaireAjout($objet);
 	}
 	
 	
