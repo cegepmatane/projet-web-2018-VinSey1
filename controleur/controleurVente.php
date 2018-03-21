@@ -22,7 +22,6 @@
 		$objet->setVedette($_POST['vedette']);
 		$objet->setIllustration($_POST['illustration']);
 		
-		var_dump($objet);
 		if ($objet->estValide()){
 				
 			

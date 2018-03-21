@@ -1,6 +1,6 @@
 <?php
 function verifAlpha($valeur){
-    preg_match("~^([\p{L}-\s']+)$~ui",$valeur, $resultat);
+    preg_match("/([^A-Za-zÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ .\-])+$/i",$valeur, $resultat);
     if(!empty($resultat)){
 		return false;
 	}
@@ -8,7 +8,7 @@ function verifAlpha($valeur){
 }
 
 function verifAlphaNum($valeur){
-    preg_match("~^([\p{L}-\s'0-9]+)$~ui",$valeur, $resultat);
+    preg_match("/([^A-Za-z0-9ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ .\-])+$/i",$valeur, $resultat);
 	if(!empty($resultat)){
         return false;
 	}
