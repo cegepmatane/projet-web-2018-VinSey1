@@ -55,7 +55,7 @@ class ObjetDAO{
 				break;
 				
 			case 4:
-				$categorie = "Fournitures de bureau";
+				$categorie = "Bureautique";
 				break;
 				
 			case 5:
@@ -273,7 +273,7 @@ class ObjetDAO{
 				break;
 				
 			case 4:
-				$categorie = "Fournitures de bureau";
+				$categorie = "Bureautique";
 				break;
 				
 			case 5:

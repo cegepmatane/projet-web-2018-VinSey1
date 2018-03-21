@@ -16,7 +16,7 @@
 					<option value="autres"><?php echo gettext("Autres")?></option>
 					<option value="cuisine"><?php echo gettext("Cuisine")?></option>
 					<option value="literie"><?php echo gettext("Literie")?></option>
-					<option value="bureau"><?php echo gettext("Fournitures de bureau")?></option>
+					<option value="bureau"><?php echo gettext("Bureautique")?></option>
 					<option value="livres"><?php echo gettext("Livres")?></option>
 				</select>
 				<?php if ( $objet){

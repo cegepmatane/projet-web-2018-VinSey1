@@ -56,7 +56,7 @@ function afficherFormulaireObjet($actionFormulaire, $objet=null){ ?>
 						<OPTION><?php echo gettext("Literie");?>
 						<OPTION><?php echo gettext("Cuisine");?>
 						<OPTION><?php echo gettext("Livres");?>
-						<OPTION><?php echo gettext("Fournitures de bureau");?>
+						<OPTION><?php echo gettext("Bureautique");?>
 						<OPTION selected><?php echo gettext("Autres");?>
 						</SELECT>
 						<?php if ( $objet){ afficherListeErreurFormulaire($objet->getListeErreurActifPourChamp('categorie'));
