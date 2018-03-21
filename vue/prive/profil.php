@@ -2,6 +2,8 @@
 	include "entete.php";
 	require_once LISTE_ERREUR_FORMULAIRE;
 	require_once MODIFICATION_PROFIL_CONTROLEUR;
+	require_once OBJET_DAO;
+	require_once OBJET_MODELE;
 	
 
 	function formulaireModification($utilisateur){?>
@@ -104,7 +106,25 @@
 			<li><?php echo gettext("Nombre de ventes : ").$utilisateur->getNbventes(); ?></li>
 		</ul>
 	</div>
-	<a href="profil.php?Modifier"><?php echo gettext("Modifier vos informations")?></a>
+	<a href="profil.php?Modifier"><?php echo gettext("Modifier vos informations")?></a><br>
+	<a href="profil.php?Ventes"><?php echo gettext("Afficher mes ventes")?></a>
+
+<?php }?>
+
+<?php function afficherVentes($utilisateur) {?>
+	<div id="contenu-index">
+		<div id="ensemble-produits">
+			<?php
+				$objetDAO = new ObjetDAO();
+				$listeObjet = $objetDAO->obtenirListeObjet();
+				foreach($listeObjet as $key => $objet) {
+					if ($objet->getIdentifiantVendeur() == $utilisateur->getIdUtilisateur()) {
+						detailsObjet($objet);
+					}
+				} 
+			?>
+		</div>
+	
 </body>
 </html>
 <?php }?>

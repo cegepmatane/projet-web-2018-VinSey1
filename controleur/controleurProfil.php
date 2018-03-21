@@ -2,15 +2,21 @@
 	
 	require_once UTILISATEUR_DAO;
 	require_once UTILISATEUR_MODELE;
+	require_once OBJET_DAO;
+	require_once OBJET_MODELE;
+	include_once "../../detailsObjet.php";
 
 	$utilisateurDAO = new UtilisateurDAO();
 
 	$utilisateur = $utilisateurDAO->chercherParIdentifiant($_SESSION['id']);
-
+	
+	
 
 	if ( isset($_GET['Modifier'])){
 		formulaireModification($utilisateur);
-	} else if ( isset($_GET['Modification'])){
+	} 
+	
+	else if ( isset($_GET['Modification'])){
 
 		$utilisateurModifie = new Utilisateur();
 
@@ -43,9 +49,15 @@
 			formulaireModification($utilisateurModifie);
 		}
 	}
+	
 	else{
 		afficherInformations($utilisateur);
 	}
+	
+if (isset($_GET['Ventes'])){
+		afficherVentes($utilisateur);	
+	}
+	
 	
 
 
