@@ -312,9 +312,8 @@ class ObjetDAO{
 		
 		$listeObjet = [];
 		global $connexionBDActive;
-		$requete = $connexionBDActive->prepare("SELECT * FROM objet WHERE titreDeVente LIKE :recherche");
-		$requete->bindParam(':recherche', $recherche, PDO::PARAM_STR);
-		$requete->execute();
+		$requete = $connexionBDActive->prepare('SELECT * FROM objet WHERE titreDeVente LIKE :recherche');
+		$requete->execute(array(':recherche' => $recherche.'%'));
 		$resultat = $requete->fetchAll(PDO::FETCH_OBJ);
 		foreach($resultat as $key => $enregistrementObjet) {
 			$objet = new Objet();
