@@ -24,7 +24,7 @@
 		if ($objet->estValide()){
 
 			$objetDAO->insererObjet($objet);
-			?> <script type='text/javascript'>document.location.replace('../../acheter.php?idObjet='.$objet->getIdObjet().'.php');</script> <?php
+			?> <script type='text/javascript'>document.location.replace('../../catalogue.php');</script> <?php
 		} else {
 			formulaireAjout($objet);
 		}
