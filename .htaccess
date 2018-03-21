@@ -1,3 +1,4 @@
 RewriteEngine on
 RewriteRule ^accueil$ index.php [NC]
+RewriteRule	^catalogue$ catalogue.php [NC]
 

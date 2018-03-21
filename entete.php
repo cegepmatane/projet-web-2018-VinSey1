@@ -50,7 +50,7 @@
 	<nav>
 		<ul>
 			<li><a href="accueil" title="<?php echo gettext("Aller sur la page d'Accueil")?>"><?php echo gettext("Accueil")?></a></li>
-			<li><a href="catalogue.php" title="<?php echo gettext("Aller sur la page Catalogue")?>"><?php echo gettext("Catalogue")?></a></li>
+			<li><a href="catalogue" title="<?php echo gettext("Aller sur la page Catalogue")?>"><?php echo gettext("Catalogue")?></a></li>
 			<?php if (isset($_SESSION['id']) && isset($_SESSION['pseudonyme'])){ ?>
 					<li><a href="vue/prive/profil.php" title="<?php echo gettext("Aller sur la page Profil")?>"><?php echo gettext("Profil")?></a></li>
 				<?php if ($_SESSION['role'] == 1){  ?>

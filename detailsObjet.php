@@ -6,7 +6,7 @@ function detailsObjet ($objet){ ?>
         <ul>
             <li><?php echo $objet->getTitreDeVente();?></li>
             <li><?php echo gettext("Prix");?>: <?php echo $objet->getPrix();?><?php echo gettext(" $");?></li>
-			<?php if (!$objet->getVedette()==10) {
+			<?php if ($objet->getVedette()!=10) {
 			?>
             <li><a class="lienbouton" href="acheter.php?idObjet=<?php echo $objet->getIdObjet();?>" >Acheter Maintenant !</a></li>
 			<?php } ?>
