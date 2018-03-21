@@ -57,7 +57,7 @@
 			<li><a href="../../index.php" title="<?php echo gettext("Aller sur la page d'Accueil")?>"><?php echo gettext("Accueil")?></a></li>
 			<li><a href="../../catalogue.php" title="<?php echo gettext("Aller sur la page Catalogue")?>"><?php echo gettext("Catalogue")?></a></li>
 			<li><a href="../../blog" title="<?php echo gettext("Aller sur le blog")?>"><?php echo gettext("Blog")?></a></li>
-			<li><a href="../../doc/page-mission.html" title="<?php echo gettext("Aller sur la page mission")?>"><?php echo gettext("Page mission")?></a></li>
+			<li><a href="../../pageMission.php" title="<?php echo gettext("Aller sur la page mission")?>"><?php echo gettext("Page mission")?></a></li>
 			<li><a href="profil.php" title="<?php echo gettext("Aller sur la page Profil")?>"><?php echo gettext("Profil")?></a></li>
 				<?php if ($_SESSION['role'] == 1){  ?>
 					<li><a href="administration-utilisateur.php" title="<?php echo gettext("Aller sur la page Administration utilisateur")?>"><?php echo gettext("Administration utilisateur")?></a></li>
