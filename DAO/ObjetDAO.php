@@ -315,7 +315,7 @@ class ObjetDAO{
 		$requete = $connexionBDActive->prepare("SELECT * FROM objet WHERE titreDeVente LIKE :recherche");
 		$requete->bindParam(':recherche', $recherche, PDO::PARAM_STR);
 		$requete->execute();
-		$resultat = $requete->fetchAll(PDO::FETCH_ASSOC);
+		$resultat = $requete->fetchAll(PDO::FETCH_OBJ);
 		foreach($resultat as $key => $enregistrementObjet) {
 			$objet = new Objet();
 			$objet->construireDonneesSecurise(

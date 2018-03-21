@@ -2,7 +2,7 @@
 
 	require_once OBJET_DAO;
 	require_once OBJET_MODELE;
-	
+	include_once "detailsObjet.php";
 
 	if ( isset($_POST['actionFormulaire'])){
 		
